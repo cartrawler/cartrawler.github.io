@@ -25,9 +25,13 @@ collections:
     title: Theming
     position: 4
     product: nativesdk
-  section_release_notes:
-    title: Release notes
+  section_release_notes2020:
+    title: Release notes (2020)
     position: 5
+    product: nativesdk
+  section_release_notes2019:
+    title: Release notes (2019)
+    position: 6
     product: nativesdk
   ondemand_ios:
     title: iOS
