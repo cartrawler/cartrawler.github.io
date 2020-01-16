@@ -22,7 +22,7 @@ right_code: >-
        implementation "com.cartrawler.android:car-rental:$latestVersion" 
   ~~~
 
-  {: title="Gradle }
+  {: title="Gradle" }
 
   ~~~ java 
   
