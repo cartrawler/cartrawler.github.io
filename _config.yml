@@ -26,9 +26,13 @@ collections:
     position: 4
     product: nativesdk
   section_release_notes:
-    title: Release notes
+    title: Release notes (2020)
     position: 5
     product: nativesdk
+    section_release_notes:
+      title: Release notes (2019)
+      position: 6
+      product: nativesdk
   ondemand_ios:
     title: iOS
     position: 1
