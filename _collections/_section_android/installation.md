@@ -5,6 +5,7 @@ type: Android
 description: Supports Android 4.4 KitKat (SDK version 19) and above
 right_code: >-
   ~~~ java
+       // Add to root build.gradle
        repositories {
           maven {
               url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
@@ -14,9 +15,14 @@ right_code: >-
               }
           }
        }
+       
+       // CarTrawler dependency (Add to module build.gradle)
+                   
+       // Please use the version number sent to you by the CarTrawler team
+       implementation "com.cartrawler.android:car-rental:$latestVersion" 
   ~~~
 
-  {: title="Gradle (Root build.gradle) }
+  {: title="Gradle }
 
   ~~~ java 
   
