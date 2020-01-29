@@ -2,7 +2,7 @@
 title: Installation
 position: 0
 type: iOS
-description: 'Supports iOS versions 9, 10, 11 and 12'
+description: 'Supports iOS versions 9 through to 13'
 right_code: |-
   ~~~ruby
     source 'https://github.com/CocoaPods/Specs.git'
