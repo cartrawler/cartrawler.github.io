@@ -90,6 +90,7 @@ right_code: |-
     let dropoffDate: Date // Drop off date
     let extrasIncludedForFree: Array // Array of included extras
     let extrasPayableAtDesk: Array // Array of extras payable at desk
+    let extrasPayableNow: Array // Array of extras payable now
     let isBuyingInsurance: Bool // is buying insurance
     let insuranceCost: Number // Insurance cost
     let vehicleCharges: Array // Array of Vehicle Charges
@@ -99,6 +100,7 @@ right_code: |-
     let qty: Integer // Quantity of the extra
     let isIncludedInRate: Bool  // If the extra is included 
     let isTaxInclusive: Bool  // If extra is tax inclusive 
+    let isGuaranteedInd: Bool // If extra is pre paid 
     let chargeAmount: Number // Cost of extra
     let currencyCode: String // Currency code of extra
     let equipType: String // Raw extra type code
