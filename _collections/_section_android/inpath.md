@@ -121,9 +121,10 @@ The CartrawlerSDK.TRIP_DETAILS object:
             var returnDateTime: String? = null,
             var pickupLocation: @RawValue LocationDetails? = null,
             var returnLocation: @RawValue LocationDetails? = null,
-            var vehicleCharges: List<VehicleCharge> // The list of Vehicle Charges (0 or more)
-            var extras: List<Extra>) : Parcelable // The list of extras (0 or more)
-            
+            var vehicleCharges: List<VehicleCharge>, // The list of Vehicle Charges
+            var extras: List<Extra>, // The list of extras
+            var isPrePaidExtra: Boolean? = null //Determines if the extra requires payment
+            ): Parceable 
             
     @Parcelize
     data class Extra (
