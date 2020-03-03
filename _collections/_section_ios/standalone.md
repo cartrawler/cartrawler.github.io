@@ -185,6 +185,8 @@ The steps to use the SDK are:
 <h5>Custom Parameters</h5>
 
 <dl>
+  <dt>orderID</dt>
+  <dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
   <dt>loyaltyEnabled</dt>
   <dd>A boolean key to enable loyalty field in the payment form</dd>
   <dt>customProgramID</dt>
