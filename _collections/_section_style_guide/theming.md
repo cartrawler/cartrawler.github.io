@@ -26,7 +26,7 @@ right_code: |-
    // my own custom styles
    </style>
 
-   <style name="CartTrawlerSDKTheme parent="BestAppTheme">
+   <style name="CartTrawlerSDKTheme parent="CTDarkTheme">
         <item name="CTPrimaryColor">@color/colorPrimary</item>
         <item name="CTPrimaryDarkColor">@color/colorPrimaryDark</item>
         <item name="CTPrimaryLightColor">@color/colorPrimaryLight</item>
@@ -47,6 +47,8 @@ Theming is achieved by creating the CTStyle (iOS) and CTAppTheme (Android) objec
 
 The style objects have the following properties:
 
+iOS
+
 theme
 <br>primaryColor
 <br>primaryLightColor (optional)
@@ -54,6 +56,19 @@ theme
 <br>ctaFontColor (optional)
 <br>secondaryCtaColor (optional)
 <br>secondaryCtaFontColor (optional)
+
+Android
+<br>primaryColor
+<br>colorPrimaryDark
+<br>colorAccent
+<br>CTPrimaryColor
+<br>CTPrimaryLightColor (optional)
+<br>CTPrimaryDarkColor (optional)
+<br>CTCTAColor(optional)
+<br>CTCTATextColor (optional)
+<br>CTSecondaryActionColor (optional)
+<br>CTSecondaryActionTextColor (optional)
+
 
 By Default, the colour for text and icons on colour backgrounds are white for native SDK. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
 <picture>
