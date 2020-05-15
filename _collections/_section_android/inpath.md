@@ -162,6 +162,29 @@ The total amount to be authorized against the customers credit card, is the auth
 *Extras*
 * If the user has selected extras, the total amount of extra fees will set in payAtDeskAmount. <br>
 
+*Extract Free Extras*
+
+We expose a free extra with the IncludedInRate set to true. In order to display this in the UI you need to do the following logic:
+
+A free additional driver
+
+```kotlin  
+    data class Extra (
+            var amount: Double? = 20.00,
+            var currencyCode: String? = "EUR",
+            var name: String? = "Additional Driver",
+            var description: String? = "Additional Driver",
+            var type: String? = "101.EQP",
+            var selected: Int? = 1, 
+            var includedInRate: Boolean? = true
+    )
+```
+
+To display this as a free additional driver in your UI, you can simple check the IncludedInRate returns true. 
+
+There will be an improvement to extract free extras and standard extras in future releases.
+
+
 *Totals*
 * payNowAmount is the total amount for only the car element (excludes extras,  bookingfee and insurance)
 * bookingFeeAmount is a cartrawler fee which is separate to the payNowAmount.
