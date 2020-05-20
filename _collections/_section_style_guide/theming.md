@@ -27,6 +27,9 @@ right_code: |-
    </style>
 
    <style name="CartTrawlerSDKTheme parent="CTDarkTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="CTPrimaryColor">@color/colorPrimary</item>
         <item name="CTPrimaryDarkColor">@color/colorPrimaryDark</item>
         <item name="CTPrimaryLightColor">@color/colorPrimaryLight</item>
