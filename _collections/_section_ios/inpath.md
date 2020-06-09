@@ -20,7 +20,7 @@ right_code: |-
   import CarTrawlerSDK
 
   // Create a context for inPath flow
-  let context = CTContext(clientID: "105614", flow: .inPath)
+  let context = CTContext(clientID: "12345", flow: .inPath)
   context.countryCode = "IE"
   context.currencyCode = "EUR"
   context.languageCode = "EN"
