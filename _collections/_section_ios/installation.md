@@ -2,16 +2,16 @@
 title: Installation
 position: 0
 type: iOS
-description: 'Supports iOS versions 9 through to 13'
+description: 'Supports iOS versions iOS 10 through to iOS 13'
 right_code: |-
   ~~~ruby
     source 'https://github.com/CocoaPods/Specs.git'
     source 'https://github.com/cartrawler/cartrawler-ios-pods'
 
-    platform :ios, '9.0'
+    platform :ios, '10.0'
 
     target 'CarTrawlerPartner' do
-      pod 'CarTrawlerSDK', '~> 10.3.0'
+      pod 'CarTrawlerSDK', '~> 10.4.0'
     end
   ~~~
     {: title="Podfile" }
