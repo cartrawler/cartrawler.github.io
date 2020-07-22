@@ -32,7 +32,6 @@ right_code: >
                      .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
                      .setFlightNumberRequired(required = true)
                      .setLogging(logging = true)
-                     .setLoyalty(loyaltyProgramId = "LoyaltyId", membershipNumber = "123")
                      .setOrderId(orderId = "IE1234")
                      .setPassenger(ctPassenger = cartrawlerSDKPassenger)
                      .setPickupLocation(iataAirportCode = "YXJ")
@@ -58,7 +57,6 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 <dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd>
 <dt>setFlightNumberRe...</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
 <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
-<dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
 <dt>setOrderId</dt><dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
 <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>

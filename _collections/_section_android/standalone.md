@@ -10,15 +10,14 @@ right_code: >
           .setRentalStandAloneClientId(clientId = "1234")
           .setAccountId(accountId = "123")
           .setCountry(twoLetterISOCountry = "IE")
-           .setCurrency(currency = "EUR")
-           .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-           .setFlightNumberRequired(required = true)
-           .setLogging(logging = true)
-           .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
-           .setOrderId(orderId = "123")
-           .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-           .setVisitorId(visitorId = "123")
-           .startRentalStandalone(activity = this, requestCode = 123)
+          .setCurrency(currency = "EUR")
+          .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
+          .setFlightNumberRequired(required = true)
+          .setLogging(logging = true)
+          .setOrderId(orderId = "123")
+          .setPassenger(ctPassenger = cartrawlerSDKPassenger)
+          .setVisitorId(visitorId = "123")
+          .startRentalStandalone(activity = this, requestCode = 123)
   ~~~
 
   {: title="Standalone" }
@@ -34,7 +33,6 @@ right_code: >
          .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
          .setFlightNumberRequired(required = true)
          .setLogging(logging = true)
-         .setLoyalty(loyaltyProgramId = "LoyaltyId",membershipNumber =  "123")
          .setOrderId(orderId = "123")
          .setPassenger(ctPassenger = cartrawlerSDKPassenger)
          .setPickupLocation(iataAirportCode = "YXJ")
@@ -64,7 +62,8 @@ right_code: >
                                         val postcode: String?, // Post Code
                                         val country: String?, // Country ISO code, e.g. IE, FR, DE
                                         val flightNumber: String?, // Flight number
-                                        var age: String?) : Parcelable { // Driver Age , "30"
+                                        var age: String?,
+                                        val membershipId: String? = null // Loyalty program / user membership ID) : Parcelable { // Driver Age , "30"
            
   ~~~
     
@@ -85,7 +84,6 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 <dt>setEnvironment</dt><dd>Switch between CarTrawlers endpoints for STAGING and PRODUCTION environments.</dd>
 <dt>setFlightNumberRe...</dt><dd>A boolean key to enable Flight Number as a required field in the Payment Form.</dd>
 <dt>setLogging</dt><dd>Boolean value for additional logging while debugging.</dd>
-<dt>setLoyalty</dt><dd>loyaltyProgramId: A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES". membershipNumber: A String value that is used to pre-populate the loyalty field.</dd>
 <dt>setOrderId</dt><dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
 <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
@@ -110,52 +108,89 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
     // The Reservation Object is defined as the following
     
     data class ReservationDetails (
-       val status: String,// In this scernario it will be confirmed
-       val givenName: String, // first name
-       val surname: String, // Surname
-       val resId: String, // Reservation ID
-       val resuid: String, // resuid, use this along with the resId to retrieve the booking later
-       val pickUpDateTime: GregorianCalendar, //The date & time of pickup
-       val returnDateTime: GregorianCalendar,  //The date & time of pickup 
-       val pickupLocation: LocationDetails, //Location details of pickup
-       val returnLocation: LocationDetails, //Location details of pickup
-       val insurance: Insurance, // Insurance, null if none attached
-       val rentalInfo: RentalInfo, // Information on reservation costs
-       val vehicle: VehicleDetails) // Information on the selected vehicle
+       // In this scernario it will be confirmed
+       val status: String,
+       // first name
+       val givenName: String, 
+       // Surname
+       val surname: String, 
+       // Reservation ID
+       val resId: String, 
+       // resuid, use this along with the resId to retrieve the booking later
+       val resuid: String, 
+       //The date & time of pickup
+       val pickUpDateTime: GregorianCalendar, 
+       //The date & time of pickup 
+       val returnDateTime: GregorianCalendar,  
+       //Location details of pickup
+       val pickupLocation: LocationDetails, 
+       //Location details of pickup
+       val returnLocation: LocationDetails, 
+       // Insurance, null if none attached
+       val insurance: Insurance, 
+       // Information on reservation costs
+       val rentalInfo: RentalInfo, 
+       //Information on selected vehicle
+       val vehicle: VehicleDetails,
+       //Loyalty membership id and program name
+       var custLoyalty: CustLoyalty? = null) 
       
         data class LocationDetails (
-           val atAirport: Boolean, // Location at Airport? (boolean)
-           val iataCode: String,  // IATA Code (if airport)
-           val code: Int,  // Unique Location Code (code type is internal to Cartrawler)
-           val name: String, // Text description of location
-           val address: Address, // Postal address of location
-           val phoneNumber: String // Vendor contact number
+           // Determines if the location is at airport
+           val atAirport: Boolean, 
+           // IATA Code
+           val iataCode: String,  
+           // Unique Location Code (code type is internal to Cartrawler)
+           val code: Int,  
+           // Text description of location
+           val name: String, 
+           // Postal address of location
+           val address: Address, 
+           // Vendor contact number
+           val phoneNumber: String 
        )
     
        data class Insurance (
-           val company: String, // Insurance company name
-           val id: String, // Code of offered insurance product
-           val cost: Double, // base cost
-           val currency: String, // base currency
-           val createDate: String, // date insurance was purchased
-           val costCharge: Double, // Cost converted into charged currency (presented currency)
-           val currencyCharge: String, // the presented currency to the customer
-           val companyLogo: String, // a link to the company logo
-           val companyPolicyURL: String, // a link to the policy terms and conditions
-           val text: String, // A marketing description of the insurance (markup)
+           // Insurance company name
+           val company: String, 
+           // Code of offered insurance product
+           val id: String, 
+           // base cost
+           val cost: Double, 
+           // base currency
+           val currency: String, 
+           // date insurance was purchased
+           val createDate: String, 
+           // Cost converted into charged currency (presented currency)
+           val costCharge: Double, 
+           // the presented currency to the customer
+           val currencyCharge: String,
+           // a link to the company logo
+           val companyLogo: String, 
+           // a link to the policy terms and conditions
+           val companyPolicyURL: String, 
+           // A marketing description of the insurance (markup)
+           val text: String, 
        )
     
        data class RentalInfo (
-           val cost: Double, // base cost
-           val currency: String, // base currency
-           val customerCost: Double, // /cost in the currency of the customer
-           val customerCurrency: String // the presented currency to the customer
+           // base cost
+           val cost: Double, 
+           // currency (base currency is EUR)
+           val currency: String, 
+           // cost in the currency of the customer
+           val customerCost: Double, 
+           // the presented currency to the customer
+           val customerCurrency: String 
        )
     
        data class Address (
-           val addressLine: String, // Post adddress of location
-           val countryNameCode: String // 2 letter country code.
+           // Post adddress of location
+           val addressLine: String, 
+           // 2 letter country code.
+           val countryNameCode: String 
        )
+
        
        @Parcelize
        data class VehicleDetails(
@@ -193,6 +228,10 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
             val pricePerDay: Double,
             val currencyCode: String
        ) : Parcelable
+
+        @Parcelize
+        data class CustLoyalty(val membershipID: String? = null, val programID: String? = null): Parcelable
+
     }
 ```    
     
