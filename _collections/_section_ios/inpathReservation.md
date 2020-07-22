@@ -117,7 +117,11 @@ Example JSON Payload:
                 },
                 "CitizenCountryName": {
                     "@Code": "IE"
-                }
+                },
+                "CustLoyalty": [{
+					"@ProgramID": "CARTRAWLER",
+					"@MembershipID": "12345"
+				}]
             }
         },
         "DriverType": {
