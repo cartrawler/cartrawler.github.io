@@ -41,6 +41,8 @@ right_code: |-
         let insurance: CTInsuranceDetails? // Insurance, null if none attached
         let rentalInfo: RentalInfo? // Information on reservation costs
         let vehicleDetails: CTVehicleDetails // Information on booked vehicle
+        let loyaltyProgramId: String // Loyalty program ID
+        let loyaltyNumber: String // Loyalty number
     }
   ```
   {: title="CTReservationDetails" }
@@ -73,6 +75,8 @@ class CTReservationDetails: NSObject {
     let insurance: CTInsuranceDetails? // Insurance, null if none attached
     let rentalInfo: RentalInfo? // Information on reservation costs
     let vehicleDetails: CTVehicleDetails // Information on booked vehicle
+    let loyaltyProgramId: String // Loyalty program ID
+    let loyaltyNumber: String // Loyalty number
 }
 
 class CTLocationDetails: NSObject {

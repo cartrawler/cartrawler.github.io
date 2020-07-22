@@ -72,6 +72,7 @@ right_code: |-
                               email: "ryan.oconnor@cartrawler.com",
                               phone: "0838880000",
                               phoneCountryPrefix: "353",
+                              loyaltyProgramNumber: "1234",
                               isPrimaryDriver: true)
   ```
   {: title="CTPassenger" }
@@ -83,13 +84,15 @@ right_code: |-
     let surname: String // Surname
     let resId: String // Reservation ID
     let resUid: String // Hashed customer email
-    let pickUpDateTime: Date //The date & time of pickup
-    let returnDateTime: Date  //The date & time of pickup 
-    let pickUpLocation: CTLocationDetails //Location details of pickup
-    let returnLocation: CTLocationDetails //Location details of pickup
+    let pickUpDateTime: Date // The date & time of pickup
+    let returnDateTime: Date  // The date & time of pickup 
+    let pickUpLocation: CTLocationDetails // Location details of pickup
+    let returnLocation: CTLocationDetails // Location details of pickup
     let insurance: CTInsuranceDetails? // Insurance, null if none attached
     let rentalInfo: RentalInfo? // Information on reservation costs
     let vehicleDetails: CTVehicleDetails // Information on booked vehicle
+    let loyaltyProgramId: String // Loyalty program ID
+    let loyaltyNumber: String // Loyalty number
   }
 
   class CTLocationDetails: NSObject {
@@ -187,12 +190,6 @@ The steps to use the SDK are:
 <dl>
   <dt>orderID</dt>
   <dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
-  <dt>loyaltyEnabled</dt>
-  <dd>A boolean key to enable loyalty field in the payment form</dd>
-  <dt>customProgramID</dt>
-  <dd>A String value that represents the Loyalty Program ID , Example: "HAWAIIAN_MILES"</dd>
-  <dt>membershipID</dt>
-  <dd>A String value that represents the membershipID, it will be pre populated in the Payment Form. Example: "123"</dd>
   <dt>flightNumberRequired</dt>
   <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</dd>
 </dl>
@@ -273,6 +270,9 @@ class CTReservationDetails: NSObject {
   let returnLocation: CTLocationDetails //Location details of pickup
   let insurance: CTInsuranceDetails? // Insurance, null if none attached
   let rentalInfo: RentalInfo?) // Information on reservation costs
+  let vehicleDetails: CTVehicleDetails // Information on booked vehicle
+  let loyaltyProgramId: String // Loyalty program ID
+  let loyaltyNumber: String // Loyalty number
 }
 
 class CTLocationDetails: NSObject (
