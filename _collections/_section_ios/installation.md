@@ -11,7 +11,7 @@ right_code: |-
     platform :ios, '10.0'
 
     target 'CarTrawlerPartner' do
-      pod 'CarTrawlerSDK', '~> 10.5.0'
+      pod 'CarTrawlerSDK', '~> 10.6.0'
     end
   ~~~
     {: title="Podfile" }

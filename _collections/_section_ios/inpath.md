@@ -94,6 +94,7 @@ right_code: |-
     let isBuyingInsurance: Bool // is buying insurance
     let insuranceCost: Number // Insurance cost
     let vehicleCharges: Array // Array of Vehicle Charges
+    let loyalty: CTLoyalty? // User loyalty info
   }
 
   class CTExtraEquipment: NSObject {
@@ -117,6 +118,11 @@ right_code: |-
     let currencyCode: String // Currency code of charge
     let purpose: String // Purpose code of the charge
     let calculation: CTVehicleChargeCalculation // .beforePickup
+  }
+
+  class CTLoyalty: NSObject {
+    let programName: String // Loyalty program name
+    let points: Number // Loyalty points earned
   }
   ```
   {: title="CTInPathVehicle" }

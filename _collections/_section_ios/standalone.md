@@ -57,6 +57,26 @@ right_code: |-
   }
   ```
   {: title="Delegate" }
+  
+  ``` swift
+  class CTContext: NSObject {
+    let clientID: String
+    let flowType: CTFlowType
+    let countryCode: String
+    let currencyCode: String
+    let pickupDate: Date
+    let dropOffDate: Date
+    let pickupLocation: String
+    let dropOffLocation: String
+    let flightNumber: String
+    let pickupLocationID: String
+    let dropOffLocationID: String
+    let pinnedVehicleID: String
+    let passengers: [CTPassenger]
+    let loyaltyRegex: String
+  }
+  ```
+  {: title="CTContext" }
 
   ``` swift
   import CarTrawlerSDK
@@ -206,6 +226,7 @@ To initialise standalone flow, it is necessary to instanciate a CTContext object
   <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
+  <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field</dd>
 </dl>
 
 <h5>Initialising CTContext for Standalone with Deeplinking</h5>
@@ -232,6 +253,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
+  <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field</dd>
 </dl>
 
 <h5>Presenting standalone</h5>
