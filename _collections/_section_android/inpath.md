@@ -122,6 +122,7 @@ The CartrawlerSDK.TRIP_DETAILS object:
             var vehicleCharges: List<VehicleCharge>, // The list of Vehicle Charges
             var extras: List<Extra>, // The list of extras
             var isPrePaidExtra: Boolean? = null //Determines if the extra requires payment
+            val loyalty: Loyalty? = null //Loyalty details
             ): Parceable 
             
     @Parcelize
@@ -144,6 +145,12 @@ The CartrawlerSDK.TRIP_DETAILS object:
         var calculation: String? = null, // Reserved as "BeforePickup"
         var amount: Double? = null, // The amount of charge
         var currencyCode: String? = null // The currencyCode of the charge
+    )  : Parcelable
+
+    @Parcelize
+    class VehicleCharge (
+        val programId: String? = null,
+        val points: Int? = 0
     )  : Parcelable
 ```
           
