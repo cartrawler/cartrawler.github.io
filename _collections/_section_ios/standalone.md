@@ -253,7 +253,7 @@ If a user backs out of the list, it will return the user to the Cartrawler searc
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
-  <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field</dd>
+  <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6,}$</dd>
 </dl>
 
 <h5>Presenting standalone</h5>

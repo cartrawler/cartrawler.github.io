@@ -17,6 +17,7 @@ right_code: >
           .setOrderId(orderId = "123")
           .setPassenger(ctPassenger = cartrawlerSDKPassenger)
           .setVisitorId(visitorId = "123")
+          .setLoyaltyRegex(loyaltyRegex = "^[A-Za-z0-9]{6,}$")
           .startRentalStandalone(activity = this, requestCode = 123)
   ~~~
 
@@ -43,6 +44,7 @@ right_code: >
          .setPickupTime(pickupDateTime = GregorianCalendar())
          .setVisitorId(visitorId = "123")
          .setPinnedVehicle(refId = "123")
+         .setLoyaltyRegex(loyaltyRegex = "^[A-Za-z0-9]{6,}$")
          .startRentalStandalone(activity = this, requestCode = 123)
          
   ~~~
