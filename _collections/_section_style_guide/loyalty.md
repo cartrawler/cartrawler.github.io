@@ -39,7 +39,7 @@ right_code: |-
   
 ---
 
-It is not required, but you can change the background colour and the text/icon colour of loyalty components to fit in with your app’s loyalty program branding. Loyalty components include a general messaging banner and more car and specific loyalty chips. See more on the components section of this style guide.
+It is possible to change the background colour and the text/icon colour of loyalty components to fit in with your app’s loyalty program branding. Loyalty components include a general messaging banner and more car and specific loyalty chips. See more on the components section of this style guide.
 
 Similar to SDK theming, if you are changing the background colour to a dark background (and configuring the loyalty program as a dark theme), it is recommended you change the text and icon colour to a lighter colour for legibility. The SDK will change the Loyalty Program logo automatically for loyalty dark theme and light theme.
 
