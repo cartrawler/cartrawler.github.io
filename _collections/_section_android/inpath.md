@@ -115,42 +115,41 @@ The CartrawlerSDK.TRIP_DETAILS object:
 ```kotlin
     @Parcelize
     data class TripDetails(
-            var pickUpDateTime: String? = null,
-            var returnDateTime: String? = null,
-            var pickupLocation: @RawValue LocationDetails? = null,
-            var returnLocation: @RawValue LocationDetails? = null,
-            var vehicleCharges: List<VehicleCharge>, // The list of Vehicle Charges
-            var extras: List<Extra>, // The list of extras
-            var isPrePaidExtra: Boolean? = null //Determines if the extra requires payment
-            val loyalty: Loyalty? = null //Loyalty details
-            ): Parceable 
+       val pickUpDateTime: String? = null,
+       val returnDateTime: String? = null,
+       val pickupLocation: @RawValue LocationDetails? = null,
+       val returnLocation: @RawValue LocationDetails? = null,
+       val vehicleCharges: List<VehicleCharge>, // The list of Vehicle Charges
+       val extras: List<Extra>, // The list of extras
+       val isPrePaidExtra: Boolean? = null //Determines if the extra requires payment
+       val loyalty: Loyalty? = null): Parceable 
             
     @Parcelize
     data class Extra (
-            var amount: Double? = null,
-            var currencyCode: String? = null,
-            var name: String? = null,
-            var description: String? = null,
-            var type: String? = null, // the CT Code we use
-            var selected: Int? = null, // the number of selected extras or qty
-            var includedInRate: Boolean? = null // Is this an extra selected by the user or already part of rate
+       var amount: Double? = null,
+       var currencyCode: String? = null,
+       var name: String? = null,
+       var description: String? = null,
+       var type: String? = null, // the CT Code we use
+       var selected: Int? = null, // the number of selected extras or qty
+       var includedInRate: Boolean? = null // Is this an extra selected by the user or already part of rate
     ): Parcelable
     
     @Parcelize
-    class VehicleCharge (
-        var chargeDescription: String? = null, // The localized description
-        var taxInclusive: String? = null, // Is tax included?
-        var includedInRate: String? = null, // In this inpath payload use case this is always 'true'
-        var purpose: String? = null, // Internal Purpose code
-        var calculation: String? = null, // Reserved as "BeforePickup"
-        var amount: Double? = null, // The amount of charge
-        var currencyCode: String? = null // The currencyCode of the charge
+     class VehicleCharge (
+       var chargeDescription: String? = null, // The localized description
+       var taxInclusive: String? = null, // Is tax included?
+       var includedInRate: String? = null, // In this inpath payload use case this is always 'true'
+       var purpose: String? = null, // Internal Purpose code
+       var calculation: String? = null, // Reserved as "BeforePickup"
+       var amount: Double? = null, // The amount of charge
+       var currencyCode: String? = null // The currencyCode of the charge
     )  : Parcelable
 
     @Parcelize
-    class VehicleCharge (
-        val programId: String? = null,
-        val points: Int? = 0
+    class Loyalty(
+       val programID: String? = null,
+       val points: Int? = 0
     )  : Parcelable
 ```
           
