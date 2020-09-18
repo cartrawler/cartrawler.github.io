@@ -79,6 +79,7 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 <h5>Standalone</h5>
 
 <dl>
+<dt>requestCode</dt><dd>Partner provided unique integer value used to send back reservation details from Systems API.</dd>
 <dt>setClientId</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
 <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
 <dt>setCountry</dt><dd>An optional country code to used switch between languages</dd>
