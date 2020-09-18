@@ -49,7 +49,9 @@ Usage of the SDK is demonstrated to the right, the parameters are as follows:
 
 <h5>Inpath</h5>
 
-<dl><dt>CartrawlerSDKPass...</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
+<dl>
+<dt>requestCode</dt><dd>Partner provided unique integer value used to send back reservation details from Systems API.</dd>
+<dt>CartrawlerSDKPass...</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 <dt>setRentalInPathCl...</dt><dd>Your client ID, required to use the CarTrawler API.</dd>
 <dt>setAccountId</dt><dd>A String value that represents the Account ID.</dd>
 <dt>setCountry</dt><dd>An optional country code to used switch between languages</dd>
