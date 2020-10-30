@@ -2,7 +2,7 @@
 title: Installation
 position: 1
 type: Android
-description: Supports Android 4.4 KitKat (SDK version 19) and above
+description: Supports Android 5 Lollipop (SDK version 21) and above
 right_code: >-
   ~~~ java
        // Add to root build.gradle
