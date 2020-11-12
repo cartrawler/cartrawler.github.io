@@ -33,7 +33,6 @@ right_code: |-
         <item name="CTPrimaryColor">@color/colorPrimary</item>
         <item name="CTPrimaryDarkColor">@color/colorPrimaryDark</item>
         <item name="CTPrimaryLightColor">@color/colorPrimaryLight</item>
-        <item name="CTSecondaryColor">@color/colorPrimaryDark</item>
    ... etc
    </style>
 
