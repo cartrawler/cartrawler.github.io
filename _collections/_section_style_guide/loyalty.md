@@ -70,14 +70,12 @@ Apply ```dark``` to apply a light (white) logo for the dark theme
 
 ### Applying the Theme - Android
 Override the following properties in your SDK theme
-```kotlin
+```xml
 <style name="BestAppTheme" parent="Theme.AppCompat.Light">
    // my own custom styles
 </style>
 
-   <style name="CartTrawlerSDKTheme parent="CTDarkTheme">
-        ....
-        .... 
+   <style name="CartTrawlerSDKTheme" parent="CTDarkTheme" >
         <item name="CTLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
         <item name="CTLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
         <item name="CTLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
