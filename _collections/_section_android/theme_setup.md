@@ -34,6 +34,17 @@ The following code snippet will show you how to style the app to suit your brand
     </style>
 ```
 
+Once you completed styling your theme you can initialise the theme in the SDK builder as follows:
+
+```java
+
+  CartrawlerSDK.Builder()
+  //..
+  .setTheme(R.style.SampleTheme)
+  .start***()
+  
+```
+
 #### Optional colour overrides
 <br>
 You can override the following SDK attribute defaults if you need to.

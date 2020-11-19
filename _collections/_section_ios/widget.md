@@ -3,51 +3,7 @@ title: Widgets
 position: 5
 type: iOS
 description:
-right_code: |-
-  ```swift
-    let widgetStyle = CTWidgetStyle()
-    let widgetContainer = CarTrawlerSDK.sharedInstance()
-    .getWidget(status: .simple,
-    style: widgetStyle,
-    delegate: self)
-    self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
-  ```
-  {: title="Initialisation" }
-
-  ```swift
-    func didTapView(_ container: CTWidgetContainer) {
-      // Widget view tapped
-    }
-    
-    func didTapRemoveButton(_ container: CTWidgetContainer) {
-      // Widget remove button tapped
-    }
-    
-    func didTapAddCarHire(_ container: CTWidgetContainer) {
-      // Widget 'Car Hire' button tapped
-    }
-    
-    func vehicleSelected(_ vehicle: CTVehicleDetails) {
-      // Vehicle selected by user
-    }
-  ```
-  {: title="CTWidgetContainerDelegate" }
-  
-  ``` swift
-  // Set price label value
-  func setPrice(String)
-
-  // Set vehicle details for CTVehicleWidget
-  func setVehicle(CTVehicleDetails)
-
-  // Set vehicle visible status: .simple, .simpleAddedCar, .bestPrice or .vehicle
-  func setStatus(CTWidgetStatus)
-  ```
-  {: title="CTWidgetContainer" }
-  
-  ```swift
-  
-  ```
+right_code: >-
 
 ---
 
@@ -126,10 +82,36 @@ When a user has completed the CarTrawler inPath flow and added a vehicle, the ve
 <br />
 <h5>Handling user interaction</h5> 
   
-Conform to the CTWidgetContainerDelegate and override any of the following functions that you require: <br />
-1. didTapView
-2. didTapAddCarHire
-3. didTapRemoveButton
-4. vehicleSelected
+Conform to the CTWidgetContainerDelegate and override any of the following functions that you require: 
+<br />
+didTapView
 
+  ```swift
+    func didTapView(_ container: CTWidgetContainer) {
+      // Widget view tapped
+    }
+  ```
+
+didTapAddCarHire
+
+  ```swift    
+    func didTapAddCarHire(_ container: CTWidgetContainer) {
+      // Widget 'Car Hire' button tapped
+    }
+  ```
+didTapRemoveButton
+
+  ```swift    
+    func didTapRemoveButton(_ container: CTWidgetContainer) {
+      // Widget remove button tapped
+    }
+  ```
+
+vehicleSelected
+
+  ```swift
+    func vehicleSelected(_ vehicle: CTVehicleDetails) {
+      // Vehicle selected by user
+    }
+  ```
 

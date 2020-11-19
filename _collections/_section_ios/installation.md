@@ -1,37 +1,11 @@
 ---
 title: Installation
-position: 0
+position: 1
 type: iOS
 description: 'Supports iOS versions iOS 10 through to iOS 13'
-right_code: |-
-  ~~~ruby
-    source 'https://github.com/CocoaPods/Specs.git'
-    source 'https://github.com/cartrawler/cartrawler-ios-pods'
+right_code: >-
 
-    platform :ios, '10.0'
-
-    target 'CarTrawlerPartner' do
-      pod 'CarTrawlerSDK', '~> 10.14.0'
-    end
-  ~~~
-    {: title="Podfile" }
-  
-  ``` swift
-  // Clear local storage
-  CarTrawlerSDK.sharedInstance().clearStorage { (error) in
-    if let error = error {
-        print("Storage not cleared with error:" + error.localizedDescription)
-    } else {
-        print("Storage cleared with success")
-    }
-  }
-  ```
-  {: title="clearStorage" }
-  
-  ```swift
-  
-  ```
-
+  {: title="Installation" }
 ---
 
 
@@ -40,6 +14,17 @@ right_code: |-
 1. Include the CarTrawler private spec repository in your podfile: source 'https://github.com/cartrawler/cartrawler-ios-pods'
 2. Include the pod in your podfile: pod 'CarTrawlerSDK'
 3. From the terminal, run: pod install.
+
+```ruby
+      source 'https://github.com/CocoaPods/Specs.git'
+      source 'https://github.com/cartrawler/cartrawler-ios-pods'
+  
+      platform :ios, '10.0'
+  
+      target 'CarTrawlerPartner' do
+        pod 'CarTrawlerSDK', '~> 10.14.0'
+      end
+```
 
 
 

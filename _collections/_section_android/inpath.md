@@ -3,51 +3,48 @@ title: Inpath
 position: 3
 type: Androidimage = "https://ota-cars.imgix.net/otaimages/renault/clio_3dr_nologo.jpg?w=180&dpr=2",
 description:
-right_code: >
-  
-  ~~~java      
-
-     //Passenger
-            new CartrawlerSDKPassenger(
-              "firstname",
-                             "lastName",
-                             "email",
-                             "phoneCountryCode",
-                             "phoneNumber",
-                             "Address",
-                             "City",
-                             "Postcode",
-                             "Country",
-                             "Flight Number",
-                             "Age");
-
-     //InPath
-         try {
-           CartrawlerSDK.Builder()
-                     .setRentalInPathClientId(clientId = "1234")
-                     .setAccountId(accountId = "123")
-                     .setCountry(twoLetterISOCountry = "IE")
-                     .setCurrency(currency = "EUR")
-                     .setDropOffTime(dropOffDateTime = GregorianCalendar())
-                     .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-                     .setFlightNumberRequired(required = true)
-                     .setLogging(logging = true)
-                     .setOrderId(orderId = "IE1234")
-                     .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-                     .setPickupLocation(iataAirportCode = "YXJ")
-                     .setPickupTime(pickupDateTime = GregorianCalendar())
-                     .setVisitorId(visitorId = "123")
-                     .startRentalInPath(activity = this, requestCode = 123)
-  ~~~
-
-  {: title="Inpath" }
-  
+right_code: >-
 
 ---
 
-Usage of the SDK is demonstrated to the right, the parameters are as follows:
+Initialise the in path flow with the following SDK builder properties:
 
-<h5>Inpath</h5>
+```kotlin
+
+ CartrawlerSDK.Builder()
+            .setRentalInPathClientId(clientId(activity, palette))
+            .setEnvironment(environment)
+            .setCurrency(currency)
+            .setCountry(countryISO)
+            .setFlightNumberRequired(true)
+            .setPassenger(passenger)
+            .setAccountId("123")
+            .setLogging(true)
+            .setPickupTime(getPickUpDate())
+            .setPickupLocation("DUB")
+            .setDropOffLocationId(11)
+            .setDropOffTime(getDropOffDate())
+            .setTheme(getSelectedTheme(palette))
+            .startRentalInPath(activity, REQUEST_CODE_IN_PATH)
+
+ //Setup your lead passenger object
+ val passenger = CartrawlerSDKPassenger(
+              firstName = "John",
+              lastName = "Smith",
+              email = "john@example.com",
+              phoneCountryCode = "353",
+              phoneNumber = "81234567",
+              address = "Dundrum Business Park",
+              city = "Dublin",
+              postcode = "D14 R7V2",
+              country = "IE", 
+              flightNumber = "EZY130",
+              age = "26", //Default age is 30
+              membershipId = "123456") 
+
+```
+
+<h5>Inpath builder properties descriptions</h5>
 
 <dl>
 <dt>requestCode</dt><dd>Partner provided unique integer value used to send back reservation details from Systems API.</dd>

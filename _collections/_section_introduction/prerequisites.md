@@ -12,7 +12,7 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 * A car rental product, comprises of the physical car rental itself, and optional add on product line items, to include insurance and car extras.
 * A Flow is a set of Cartrawler UI Screens, with a specific business objective.
 * Currently there are two business flows (implemented in SDK):  Standalone, Inpath Rental.
-* It should be noted that the Inpath Rental solution requires **additional backend development effort** and orginazation between CarTrawler and Partners.
+* It should be noted that the Inpath Rental solution requires **additional backend development effort** and organisation between CarTrawler and Partners.
 
 **Workflows**
 * Standalone - Allows the customer to reserve a car rental product independently from the flight.

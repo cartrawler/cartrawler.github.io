@@ -3,8 +3,15 @@ title: Inpath
 position: 3
 type: iOS
 description:
-right_code: |-
-  
+right_code: >-
+
+---
+
+
+The steps to use the SDK are:
+
+Step 1 - Initialise the SDK in App Delegate
+
   ``` swift
   import CarTrawlerSDK
 
@@ -14,7 +21,8 @@ right_code: |-
     customParameters: nil,
     production: false)
   ```
-  {: title="App Delegate" }
+
+Step 2 - Initialise the CTContext object with the parameters required
 
   ``` swift
   import CarTrawlerSDK
@@ -32,49 +40,20 @@ right_code: |-
   // Will trigger a first automatically bestDailyRate request
   CarTrawlerSDK.sharedInstance().setContext(context)
   ```
-  {: title="Initialisation" }
 
-  ```swift
-  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
-  self.carTrawlerSDK.presentInPath(from: viewController)
-  ```
-  {: title="Presentation" }
+Step 3 - Set the InPath context on the SDK, to trigger the initial requests
 
-  ``` swift
-  import CarTrawlerSDK
+Step 4 - Present the SDK
 
-  // Required. Called when user wants to add in path booking to their flight booking.
-  func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle, payment: Payment) {
-    print("\(request)")
+After the initialisation of inPath flow and setting a CTContext object filled with your parameters, is needed to use the presentation method:
 
-    print("Total \(vehicle.totalCost)")
-    print("Insurance \(vehicle.insuranceCost)")
+```swift
+let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+self.carTrawlerSDK.presentInPath(from: viewController)
+```
 
-    print("Vehicle Name \(vehicle.vehicleName)")
-    print("Vehicle First Name \(vehicle.firstName)")
-    print("Vehicle LastName \(vehicle.lastName)")
-
-    print("*** PAYNOW: \(vehicle.payNowPrice)\n" ,
-    "*** PAYLATER: \(vehicle.payLaterPrice)\n" ,
-    "*** PAYDESK: \(vehicle.payAtDeskPrice)\n" ,
-    "*** BOOKINGFEE: \(vehicle.bookingFeePrice)\n")
-
-    print("*** Payment ***")
-    print("authTotal: \(payment.authTotal)")
-    print("authCurrency: \(payment.authCurrency)")
-  
-  }
-
-  // Called when best daily rate received, setContext: method will trigger this request automatically
-  func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
-  }
-
-  // Called when best daily rate fails
-  func didFailToReceiveBestDailyRate(error: Error) {
-  }
-  ```
-  {: title="Delegate" }
-
+Inpath Vehicle Object
+    
   ``` swift
   class CTInPathVehicle: NSObject {
     let firstName: String // First name
@@ -125,21 +104,6 @@ right_code: |-
     let points: Number // Loyalty points earned
   }
   ```
-  {: title="CTInPathVehicle" }
-
-  ``` swift
-
-   ```
-
----
-
-
-The steps to use the SDK are:
-
-1. Initialise the SDK in App Delegate
-2. Initialise the CTContext object with the parameters required
-3. Set the InPath context on the SDK, to trigger the initial requests
-3. Present the SDK
 
 <h5>Initialisation of the SDK</h5>
 
@@ -152,7 +116,7 @@ The steps to use the SDK are:
 <h5>Initialising CTContext for Inpath</h5>
 
 Allows a customer to reserve a car rental product to accompany their flight, this product forms part of the customer’s  flight itenary. 
-See code to right for available methods and callbacks for in path.
+See code snippet above for available methods and callbacks for in path.
 
 <dl>
   <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
@@ -168,28 +132,3 @@ See code to right for available methods and callbacks for in path.
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Your class that will handle callback methods</dd>
 </dl>
-
-<h5>Set the InPath context on the SDK</h5>
-```swift
-  // Create a context for inPath flow
-  let context = CTContext(clientID: "105614", flow: .inPath)
-  context.countryCode = "IE"
-  context.currencyCode = "EUR"
-  context.languageCode = "EN"
-  context.pickupLocation = "DUB"
-  context.pickupDate = Date(timeIntervalSinceNow: 86400)
-  context.flightNumber = "FL1234"
-  context.delegate = self
-
-  // Will trigger a first automatically bestDailyRate request
-  CarTrawlerSDK.sharedInstance().setContext(context)
-```
-
-<h5>Presenting Inpath</h5>
-
-After the initialisation of inPath flow using and setting a CTContext object filled with your parameters, is needed to use the presentation method:
-
-```swift
-let viewController = UIViewController() // Your view controller from which the SDK will be presented.
-self.carTrawlerSDK.presentInPath(from: viewController)
-```

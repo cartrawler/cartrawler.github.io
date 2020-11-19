@@ -3,13 +3,16 @@ title: Reservations API
 position: 8
 type: Android
 description:
-right_code: |-
+right_code: >-
+---
+
+<h5>Get Booking Reservation</h5>
+
+Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resuid. 
+
   ~~~java
-  val  builder = CartrawlerSDK.Builder()
-                         .setRentalInPathClientId(clientId)
-                         .setEnvironment(prod)
-                         .setLogging(loggingValue)
-     
+                 CartrawlerSDK.Builder()
+                 //..
                  builder.requestReservationDetails(
                          context = this,
                          resId = resid,
@@ -19,47 +22,25 @@ right_code: |-
      
                              @SuppressLint("SetTextI18n")
                              override fun onNoResults() {
-                                 hideFetchApiLoading()
-                                 rentalPrice.text = "No Results"
+                                //Handle no results
                              }
      
                              override fun onError(connectionError: CartrawlerSDK.ConnectionError) {
-                                 hideFetchApiLoading()
-                                 Log.e("Builder", connectionError.message, connectionError)
-                                 rentalPrice.text = connectionError.message
+                               //Handle error result
                              }
      
                              @SuppressLint("SetTextI18n")
                              override fun onReceiveReservationDetails(reservationDetails: ReservationDetails) {
-                                 hideFetchApiLoading()
-                                 Log.d("GenericBuilderActivity", reservationDetails.toString())
-     
-                                 val gson = GsonBuilder().setPrettyPrinting().create()
-                                 val list = gson.toJson(reservationDetails)
-     
-                                 AlertDialog.Builder(this@GenericBuilderActivity)
-                                         .setTitle("Reservation")
-                                         .setMessage(list)
-                                         .setPositiveButton("OK") { _: DialogInterface, _: Int -> }
-                                         .create()
-                                         .show()
+                               //Handle success result
                              }
-     
                          })
   ~~~
-  {: title="Reservations API" }
-
----
-
-<h5>Get Booking Reservation</h5>
-
-Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resuid. 
 
 These properties can be found in the ReservationDetails object that is returned upon successful completion of the standalone flow, on onActivityForResult e.g. getStringExtra(CartrawlerSDK.RESERVATION)
 
 The reservations object takes the following form:
-```
-// The Reservation Object is defined as the following
+
+```kotlin
     
     data class ReservationDetails (
        val status: String,// In this scernario it will be confirmed
@@ -145,8 +126,5 @@ The reservations object takes the following form:
             val pricePerDay: Double,
             val currencyCode: String
        ) : Parcelable
-    }
-
-
-
+   
 ```

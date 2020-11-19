@@ -4,7 +4,12 @@ position: 1
 type: Android
 description: Supports Android 5 Lollipop (SDK version 21) and above
 right_code: >-
-  ~~~ java
+  
+---
+
+**Add our maven repository and enter the artifactory credentials**
+
+  ~~~groovy
        // Add to root build.gradle
        repositories {
           maven {
@@ -22,7 +27,9 @@ right_code: >-
        implementation "com.cartrawler.android:car-rental:$latestVersion" 
   ~~~
 
-  {: title="Gradle" }
+**Create a theme that extends the ```CTDayNightTheme```. Please refer to <a href="https://cartrawler.github.io/#section_style_guidetheming" target="_blank">theme section</a> for further details.**
+
+**If you are using proguard, update the proguard config as shown below.**
 
   ~~~ java 
   
@@ -50,13 +57,6 @@ right_code: >-
    
   ~~~
 
-  {: title="Proguard" }
-  
----
-
-1. Add our maven repository and enter the artifactory credentials (see Gradle tab on the right).
-2. Create a theme that extends the **CTAppTheme**. Please refer to <a href="https://cartrawler.github.io/#section_style_guidetheming" target="_blank">theme section</a> for further details.
-3. If you are using proguard, update the proguard config as shown on the right.
 
 **Clear Storage**
 

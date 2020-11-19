@@ -3,40 +3,7 @@ title: Loyalty
 position: 4
 type:
 description:
-right_code: |-
-  ```swift
-
-   let style = CTStyle(theme: .dark,  // Main app style
-             primaryColor: UIColor.gray)
-
-   let loyaltyStyle = CTLoyaltyStyle(theme: .light) // Loyalty style Either .dark or .light. Default is .light
-   loyaltyStyle.primaryColor = UIColor.lightGray // Optional, default #e5ebed
-   loyaltyStyle.primaryTextColor = UIColor.darkGray // Optional, default #333333
-   loyaltyStyle.secondaryColor = UIColor.blue // Optional, default #FFFFFF
-   loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
-   
-   style.loyaltyStyle = loyaltyStyle
-
-  ```  
-  {: title="iOS" }
-  
-  ~~~java
-   <style name="BestAppTheme" parent="Theme.AppCompat.Light">
-   // my own custom styles
-   </style>
-
-   <style name="CartTrawlerSDKTheme parent="CTDarkTheme">
-        ....
-        .... 
-        <item name="CTLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
-        <item name="CTLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
-        <item name="CTLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
-        <item name="CTLoyaltySecondaryColorText">@color/loyaltySecondaryColorText</item>
-        <item name="CTLoyaltyTheme">dark</item> //Either "dark" or "light" Default is "light"
-   </style>
-  ~~~
-  {: title="Android" }
-  
+right_code: >-
 ---
 
 It is possible to change the background colour and the text/icon colour of loyalty components to fit in with your app’s loyalty program branding. Loyalty components include a general messaging banner and more car and specific loyalty chips. See more on the components section of this style guide.
@@ -71,11 +38,8 @@ Apply ```dark``` to apply a light (white) logo for the dark theme
 ### Applying the Theme - Android
 Override the following properties in your SDK theme
 ```xml
-<style name="BestAppTheme" parent="Theme.AppCompat.Light">
-   // my own custom styles
-</style>
-
-   <style name="CartTrawlerSDKTheme" parent="CTDarkTheme" >
+   <style name="CartTrawlerSDKTheme" parent="CTDayNightTheme" >
+        //..
         <item name="CTLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
         <item name="CTLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
         <item name="CTLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>

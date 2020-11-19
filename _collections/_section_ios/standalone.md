@@ -3,17 +3,13 @@ title: Standalone
 position: 2
 type: iOS
 description:
-right_code: |-
-  ``` swift
-  import CarTrawlerSDK
+right_code: >-
+  {: title="Standalone" }
+---
 
-  // In application(_:didFinishLaunchingWithOptions:)
-  CarTrawlerSDK.sharedInstance().initialiseSDK(
-    with: nil,
-    customParameters: nil,
-    production: false)
-  ```
-  {: title="App Delegate" }
+The steps to use the SDK are:
+
+1. Initialise the SDK in App Delegate
 
   ``` swift
   import CarTrawlerSDK
@@ -25,7 +21,49 @@ right_code: |-
 
   CarTrawlerSDK.sharedInstance().present(from: self, context: context)
   ```
-  {: title="Standalone" }
+
+2. Initialise the CTContext object with the parameters required
+
+  ``` swift
+  class CTContext: NSObject {
+    let clientID: String
+    let flowType: CTFlowType
+    let countryCode: String
+    let currencyCode: String
+    let pickupDate: Date
+    let dropOffDate: Date
+    let pickupLocation: String
+    let dropOffLocation: String
+    let flightNumber: String
+    let pickupLocationID: String
+    let dropOffLocationID: String
+    let pinnedVehicleID: String
+    let passengers: [CTPassenger]
+    let loyaltyRegex: String
+  }
+  ```
+
+CTPassenger 
+
+ ``` swift
+  import CarTrawlerSDK
+
+  let passenger = CTPassenger(firstName: "Ryan",
+                              lastName: "O'Connor",
+                              addressLine1: "DunDrum",
+                              addressLine2: "Dublin 14",
+                              city: "Dublin",
+                              postcode: "Dublin 14",
+                              countryCode: "IE",
+                              age: 25,
+                              email: "ryan.oconnor@cartrawler.com",
+                              phone: "0838880000",
+                              phoneCountryPrefix: "353",
+                              loyaltyProgramNumber: "1234",
+                              isPrimaryDriver: true)
+  ```
+
+Standalone flow
 
   ``` swift
   import CarTrawlerSDK
@@ -46,8 +84,8 @@ right_code: |-
   
   CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
   ```
-  {: title="Deeplink" }
 
+Deeplink
   ``` swift
   import CarTrawlerSDK
 
@@ -56,46 +94,8 @@ right_code: |-
         
   }
   ```
-  {: title="Delegate" }
-  
-  ``` swift
-  class CTContext: NSObject {
-    let clientID: String
-    let flowType: CTFlowType
-    let countryCode: String
-    let currencyCode: String
-    let pickupDate: Date
-    let dropOffDate: Date
-    let pickupLocation: String
-    let dropOffLocation: String
-    let flightNumber: String
-    let pickupLocationID: String
-    let dropOffLocationID: String
-    let pinnedVehicleID: String
-    let passengers: [CTPassenger]
-    let loyaltyRegex: String
-  }
-  ```
-  {: title="CTContext" }
 
-  ``` swift
-  import CarTrawlerSDK
-
-  let passenger = CTPassenger(firstName: "Ryan",
-                              lastName: "O'Connor",
-                              addressLine1: "DunDrum",
-                              addressLine2: "Dublin 14",
-                              city: "Dublin",
-                              postcode: "Dublin 14",
-                              countryCode: "IE",
-                              age: 25,
-                              email: "ryan.oconnor@cartrawler.com",
-                              phone: "0838880000",
-                              phoneCountryPrefix: "353",
-                              loyaltyProgramNumber: "1234",
-                              isPrimaryDriver: true)
-  ```
-  {: title="CTPassenger" }
+Reservation Details
 
   ``` swift
   class CTReservationDetails: NSObject {
@@ -149,7 +149,8 @@ right_code: |-
     let countryNameCode: String // 2 letter country code.
   }
   ```
-  {: title="CTReservationDetails" }
+
+Vehicle Details
 
   ``` swift
   class CTVehicleDetails: NSObject {
@@ -181,20 +182,8 @@ right_code: |-
     let currencyCode: String // vehicle price currency code
   }
   ```
-  {: title="CTVehicleDetails" }
-  
-  ```swift
-  
-  ```
 
 
----
-
-
-The steps to use the SDK are:
-
-1. Initialise the SDK in App Delegate
-2. Initialise the CTContext object with the parameters required
 3. Present the SDK
 
 <h5>Initialisation of the SDK</h5>
