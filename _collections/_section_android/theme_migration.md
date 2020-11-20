@@ -39,6 +39,8 @@ You can then start mapping the old attributes to new ones as follows:
 | colorAccent 	         |  colorSecondary	|
 | CTCTAAccentColor 	         |  colorSecondary	|
 | CTPrimaryLightColor 	         |  colorPrimaryVariant (it can be your light or dark variant)	|
+| CTSecondaryActionColor 	         |  colorSecondaryVariant	|
+| CTCTAColor 	         |  colorSecondary	|
 
 
 New attributes usage:
