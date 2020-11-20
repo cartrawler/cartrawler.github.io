@@ -20,7 +20,6 @@ Calling the requestReservationDetails function will trigger a vehicles request b
                          email = null,
                          requestReservationDetailsListener = object : CartrawlerSDK.RequestReservationDetailsListener {
      
-                             @SuppressLint("SetTextI18n")
                              override fun onNoResults() {
                                 //Handle no results
                              }
@@ -29,7 +28,6 @@ Calling the requestReservationDetails function will trigger a vehicles request b
                                //Handle error result
                              }
      
-                             @SuppressLint("SetTextI18n")
                              override fun onReceiveReservationDetails(reservationDetails: ReservationDetails) {
                                //Handle success result
                              }
@@ -56,75 +54,74 @@ The reservations object takes the following form:
        val rentalInfo: RentalInfo, // Information on reservation costs
        val vehicle: VehicleDetails) // Information on the selected vehicle
       
-        data class LocationDetails (
-           val atAirport: Boolean, // Location at Airport? (boolean)
-           val iataCode: String,  // IATA Code (if airport)
-           val code: Int,  // Unique Location Code (code type is internal to Cartrawler)
-           val name: String, // Text description of location
-           val address: Address, // Postal address of location
-           val phoneNumber: String // Vendor contact number
-       )
+    data class LocationDetails (
+       val atAirport: Boolean, // Location at Airport? (boolean)
+       val iataCode: String,  // IATA Code (if airport)
+       val code: Int,  // Unique Location Code (code type is internal to Cartrawler)
+       val name: String, // Text description of location
+       val address: Address, // Postal address of location
+       val phoneNumber: String // Vendor contact number
+    )
     
-       data class Insurance (
-           val company: String, // Insurance company name
-           val id: String, // Code of offered insurance product
-           val cost: Double, // base cost
-           val currency: String, // base currency
-           val createDate: String, // date insurance was purchased
-           val costCharge: Double, // Cost converted into charged currency (presented currency)
-           val currencyCharge: String, // the presented currency to the customer
-           val companyLogo: String, // a link to the company logo
-           val companyPolicyURL: String, // a link to the policy terms and conditions
-           val text: String, // A marketing description of the insurance (markup)
-       )
+    data class Insurance (
+       val company: String, // Insurance company name
+       val id: String, // Code of offered insurance product
+       val cost: Double, // base cost
+       val currency: String, // base currency
+       val createDate: String, // date insurance was purchased
+       val costCharge: Double, // Cost converted into charged currency (presented currency)
+       val currencyCharge: String, // the presented currency to the customer
+       val companyLogo: String, // a link to the company logo
+       val companyPolicyURL: String, // a link to the policy terms and conditions
+       val text: String, // A marketing description of the insurance (markup)
+     )
     
-       data class RentalInfo (
-           val cost: Double, // base cost
-           val currency: String, // base currency
-           val customerCost: Double, // /cost in the currency of the customer
-           val customerCurrency: String // the presented currency to the customer
-       )
+    data class RentalInfo (
+       val cost: Double, // base cost
+       val currency: String, // base currency
+       val customerCost: Double, // /cost in the currency of the customer
+       val customerCurrency: String // the presented currency to the customer
+     )
     
-       data class Address (
-           val addressLine: String, // Post adddress of location
-           val countryNameCode: String // 2 letter country code.
-       )
+    data class Address (
+       val addressLine: String, // Post adddress of location
+       val countryNameCode: String // 2 letter country code.
+     )
        
-       @Parcelize
-       data class VehicleDetails(
-           //OTA
-            val referenceId: String,
-            val name: String,
-            val orSimilar: String,
-            val code: String,
-            val vehicleAssetNumber: String,
-            val pictureURL: String,
-            val passengerQuantity: Int,
-            val doorCount: Int?,
-            val baggageQuantity: Int
-            val fuelType: String,
-            val driveType: Stringl,
-            val airConditionInd: Boolean,
-            val transmissionType: String,
-            val size: String,
+    data class VehicleDetails(
+       //OTA values
+       val referenceId: String,
+       val name: String,
+       val orSimilar: String,
+       val code: String,
+       val vehicleAssetNumber: String,
+       val pictureURL: String,
+       val passengerQuantity: Int,
+       val doorCount: Int?,
+       val baggageQuantity: Int,
+       val fuelType: String,
+       val driveType: String,
+       val airConditionInd: Boolean,
+       val transmissionType: String,
+       val size: String,
        
-            //Supplier
-            val supplier: String,
-            val supplierRating: Double,
-            val supplierImageURL: String,
+       //Supplier
+       val supplier: String,
+       val supplierRating: Double,
+       val supplierImageURL: String,
        
-            //Widget localization values
-            val passengersText: String,
-            val baggageText: String?,
-            val doorsCountText: String,
-            val transmissionText: String,
-            val categoryText: String,
-            val sizeText: String
+       //Widget localization values
+       val passengersText: String,
+       val baggageText: String?,
+       val doorsCountText: String,
+       val transmissionText: String,
+       val categoryText: String,
+       val sizeText: String,
        
-            //Price
-            val price: Double,
-            val pricePerDay: Double,
-            val currencyCode: String
-       ) : Parcelable
+       //Price
+       val price: Double,
+       val pricePerDay: Double,
+       val currencyCode: String
+    )
    
 ```

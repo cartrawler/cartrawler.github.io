@@ -1,6 +1,6 @@
 ---
 title: Loyalty
-position: 4
+position: 5
 type:
 description:
 right_code: >-

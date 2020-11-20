@@ -10,8 +10,9 @@ right_code: >
 
 Supporting documentation for outlining the steps for migrating to v11.x.x for the styling of the material theme. 
 
-If you haven’t already migrated to Material Theme we recommend that you start reading the official documentation. 
-[Material offical documentation](https://material.io/develop/android/docs/getting-started)
+If you haven’t already migrated to Material Theme we recommend that you read the [material documentation](https://material.io/develop/android/docs/getting-started) on how to get started. 
+<br/>
+
 
 Instead of inheriting ```CTDarkTheme```  , ```CTLightDarkTheme``` or ```CTAppTheme``` please migrate to the new ```CTDayNightTheme```.
 
@@ -22,6 +23,10 @@ Instead of inheriting ```CTDarkTheme```  , ```CTLightDarkTheme``` or ```CTAppThe
     </style>
 
 ```
+
+<h4>New material attributes</h4>
+<br/>
+The SDK theme uses the material theme attributes to style the SDK to suit your branding requirements.
 
 You can then start mapping the old attributes to new ones as follows:
 

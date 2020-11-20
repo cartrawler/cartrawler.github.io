@@ -1,30 +1,22 @@
 ---
 title: Dark Mode
-position: 10
-type: Android
-description:
-right_code: >
+position: 3
+type: 
+description: 'Customising the CarTrawler SDK'
+right_code: >- 
+---  
 
-  {: title="Dark Mode Support" }
----
+The SDKs both support dark mode and by default it will be turned off. The SDKs provide you the option to turn on, off or follow the system settings. Apply the setting that fits your use case.
 
+<h4>iOS Dark Mode Setup</h4>
+.......
+
+<h4>Android Dark Mode Setup</h4>
 You can configure dark mode support in the SDK by sending the constants from the AppCompatDelegate class. By default, dark mode is off.
-
-Code sample
-
-```kotlin
-
-    builder.setDarkModeConfig(AppCompatDelegate.MODE_NIGHT_ON)
-    CartrawlerSDK.Builder()
-        .setDarkModeConfig(AppCompatDelegate.MODE_NIGHT_ON)
-        // ..
-
-```
-
 
 The following constants are supported:
 
-```kotlin
+```java
 
     AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
     AppCompatDelegate.MODE_NIGHT_YES
@@ -32,11 +24,23 @@ The following constants are supported:
 
 ```
 
-#### How to style your dark mode theme
+Then initialise the SDK with the preferred setting:
+
+```java
+
+    CartrawlerSDK.Builder()
+        //..
+        .setDarkModeConfig(AppCompatDelegate.NIGHT_FOLLOW_SYSTEM)
+        .setTheme(R.style.SampleTheme)
+        .start***
+
+```
+
+<h5>How to style your dark mode theme</h5>
 <br>
 The SDK uses the Theme.MaterialComponents.DayNight theme which allows us to support dark mode.
 
-You can place the SDK theme in the ```values-night``` folder to apply your dark mode colour palette that suits your brand guidelines.
+You can place the SDK theme in your ```values-night``` folder to apply your dark mode colour palette that fits your brand requirements.
 
 ```xml
     <style name="SampleTheme" parent="CTDayNightTheme">
@@ -57,6 +61,3 @@ You can place the SDK theme in the ```values-night``` folder to apply your dark 
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
     </style>
 ```
-
-
-

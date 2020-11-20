@@ -9,80 +9,51 @@ right_code: >-
 
 The steps to use the SDK are:
 
-1. Initialise the SDK in App Delegate
+Step 1. Initialise the SDK in App Delegate
+
+Step 2. Initialise the CTContext object with the parameters required
 
   ``` swift
-  import CarTrawlerSDK
-
-  let context = CTContext(clientID: "105614", flow: .standAlone)
-  context.countryCode = "IE"
-  context.currencyCode = "EUR"
-  context.languageCode = "en"
-
-  CarTrawlerSDK.sharedInstance().present(from: self, context: context)
-  ```
-
-2. Initialise the CTContext object with the parameters required
-
-  ``` swift
-  class CTContext: NSObject {
-    let clientID: String
-    let flowType: CTFlowType
-    let countryCode: String
-    let currencyCode: String
-    let pickupDate: Date
-    let dropOffDate: Date
-    let pickupLocation: String
-    let dropOffLocation: String
-    let flightNumber: String
-    let pickupLocationID: String
-    let dropOffLocationID: String
-    let pinnedVehicleID: String
-    let passengers: [CTPassenger]
-    let loyaltyRegex: String
-  }
-  ```
-
-CTPassenger 
-
- ``` swift
-  import CarTrawlerSDK
-
-  let passenger = CTPassenger(firstName: "Ryan",
-                              lastName: "O'Connor",
-                              addressLine1: "DunDrum",
-                              addressLine2: "Dublin 14",
-                              city: "Dublin",
-                              postcode: "Dublin 14",
-                              countryCode: "IE",
-                              age: 25,
-                              email: "ryan.oconnor@cartrawler.com",
-                              phone: "0838880000",
-                              phoneCountryPrefix: "353",
-                              loyaltyProgramNumber: "1234",
-                              isPrimaryDriver: true)
-  ```
-
-Standalone flow
-
-  ``` swift
-  import CarTrawlerSDK
-
-  // Create a context for standAlone flow
-  let context = CTContext(clientID: "105614", flow: .standAlone)
-  context.countryCode = "IE"
-  context.currencyCode = "EUR"
-  context.languageCode = "EN"
-  context.pickupLocationID = "11" // Dublin airport code
-  context.dropOffLocationID = "1316" // Cork airport code
-  context.pinnedVehicleID = "1892038" // Vehicle RefID
-  context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
-  context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
-  context.delegate = self
+    import CarTrawlerSDK
   
-  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+    let context = CTContext(clientID: "105614", flow: .standAlone)
+    context.countryCode = "IE"
+    context.currencyCode = "EUR"
+    context.languageCode = "en"
   
-  CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+    CarTrawlerSDK.sharedInstance().present(from: self, context: context)
+
+    class CTContext: NSObject {
+        let clientID: String
+        let flowType: CTFlowType
+        let countryCode: String
+        let currencyCode: String
+        let pickupDate: Date
+        let dropOffDate: Date
+        let pickupLocation: String
+        let dropOffLocation: String
+        let flightNumber: String
+        let pickupLocationID: String
+        let dropOffLocationID: String
+        let pinnedVehicleID: String
+        let passengers: [CTPassenger]
+        let loyaltyRegex: String
+   }
+
+    //Passenger object
+    let passenger = CTPassenger(firstName: "Ryan",
+                                lastName: "O'Connor",
+                                addressLine1: "DunDrum",
+                                addressLine2: "Dublin 14",
+                                city: "Dublin",
+                                postcode: "Dublin 14",
+                                countryCode: "IE",
+                                age: 25,
+                                email: "ryan.oconnor@cartrawler.com",
+                                phone: "0838880000",
+                                phoneCountryPrefix: "353",
+                                loyaltyProgramNumber: "1234",
+                                isPrimaryDriver: true)
   ```
 
 Deeplink
@@ -92,61 +63,6 @@ Deeplink
   // Optional. Called after payment has made, return the reservation details
   func didReceive(_ reservationDetails: CTReservationDetails) {
         
-  }
-  ```
-
-Reservation Details
-
-  ``` swift
-  class CTReservationDetails: NSObject {
-    let status: String // In this scernario it will be confirmed
-    let givenName: String // First name
-    let surname: String // Surname
-    let resId: String // Reservation ID
-    let resUid: String // Hashed customer email
-    let pickUpDateTime: Date // The date & time of pickup
-    let returnDateTime: Date  // The date & time of pickup 
-    let pickUpLocation: CTLocationDetails // Location details of pickup
-    let returnLocation: CTLocationDetails // Location details of pickup
-    let insurance: CTInsuranceDetails? // Insurance, null if none attached
-    let rentalInfo: RentalInfo? // Information on reservation costs
-    let vehicleDetails: CTVehicleDetails // Information on booked vehicle
-    let loyaltyProgramId: String // Loyalty program ID
-    let loyaltyNumber: String // Loyalty number
-  }
-
-  class CTLocationDetails: NSObject {
-    let atAirport: Bool // Location at Airport? (boolean)
-    let iataCode: String  // IATA Code (if airport)
-    let code: Int  // Unique Location Code (code type is internal to Cartrawler)
-    let name: String // Text description of location
-    let address: CTAddress // Postal address of location
-    let phoneNumber: String // Vendor contact number
-  }
-
-  class CTInsuranceDetails: NSObject {
-    let upSell: Bool
-    let company: String // Insurance company name
-    let insuranceID: String // Code of offered insurance product
-    let cost: Double // base cost
-    let currency: String // base currency
-    let costCharge: Double // Cost converted into charged currency (presented currency)
-    let currencyCharge: String // the presented currency to the customer
-    let companyLogo: URL // a link to the company logo
-    let companyPolicyURL: URL // a link to the policy terms and conditions
-    let text: String // A marketing description of the insurance (markup)
-  }
-
-  class CTRentalInfo: NSObject {
-    let cost: Double // base cost
-    let currency: String // base currency
-    let customerCost: Double // /cost in the currency of the customer
-    let customerCurrency: String // the presented currency to the customer
-  }
-
-  class CTAddress: NSObject {
-    let addressLine: String // Post adddress of location
-    let countryNameCode: String // 2 letter country code.
   }
   ```
 
@@ -184,7 +100,27 @@ Vehicle Details
   ```
 
 
-3. Present the SDK
+Step 3. Present the SDK
+
+  ``` swift
+  import CarTrawlerSDK
+
+  // Create a context for standAlone flow
+  let context = CTContext(clientID: "105614", flow: .standAlone)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  context.pickupLocationID = "11" // Dublin airport code
+  context.dropOffLocationID = "1316" // Cork airport code
+  context.pinnedVehicleID = "1892038" // Vehicle RefID
+  context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
+  context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
+  context.delegate = self
+  
+  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+  
+  CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+  ```
 
 <h5>Initialisation of the SDK</h5>
 

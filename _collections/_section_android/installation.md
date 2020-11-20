@@ -29,35 +29,6 @@ right_code: >-
 
 **Create a theme that extends the ```CTDayNightTheme```. Please refer to <a href="https://cartrawler.github.io/#section_style_guidetheming" target="_blank">theme section</a> for further details.**
 
-**If you are using proguard, update the proguard config as shown below.**
-
-  ~~~ java 
-  
-   # rxjava
-   -keep class rx.schedulers.Schedulers {
-     public static <methods>;
-   }
-   -keep class rx.schedulers.ImmediateScheduler {
-      public <methods>;
-   }
-   -keep class rx.schedulers.TestScheduler {
-      public <methods>;
-   }
-   -keep class rx.schedulers.Schedulers {
-      public static ** test();
-   }
-   -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
-      long producerIndex;
-      long consumerIndex;
-   }
-   -keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-      long producerNode;
-      long consumerNode;
-   }
-   
-  ~~~
-
-
 **Clear Storage**
 
 Note: The apps storage (database of recent searches, and bookings) can be cleared prior to starting the cartrawler flow, the following API can be used to clear the storage.
