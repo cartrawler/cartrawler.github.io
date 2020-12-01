@@ -53,4 +53,6 @@ New attributes usage:
 | colorSecondary 	         |  Colour used for CTA buttons. 	|
 | colorOnSecondary 	         |  Colour applied on top of secondary colour	|
 | android:statusBarColor 	         |  Colour used to style the Android status bar	|
-
+| ctIllustrationColor	         |  Colour used to style the booking summary car illustration, default is primaryColor	|
+| ctTextLinkColor	         |  Attribute color for the text links, default is blue	|
+| ctProgressBarColor	         |  Attribute color for the horizontal progress bar on the availability screen.	|

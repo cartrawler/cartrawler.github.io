@@ -38,13 +38,13 @@ Apply ```dark``` to apply a light (white) logo for the dark theme
 ### Applying the Theme - Android
 Override the following properties in your SDK theme
 ```xml
-   <style name="CartTrawlerSDKTheme" parent="CTDayNightTheme" >
+   <style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
         //..
-        <item name="CTLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
-        <item name="CTLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
-        <item name="CTLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
-        <item name="CTLoyaltySecondaryColorText">@color/loyaltySecondaryColorText</item>
-        <item name="CTLoyaltyTheme">dark</item> //Either "dark" or "light" Default is "light"
+        <item name="ctLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
+        <item name="ctLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
+        <item name="ctLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
+        <item name="ctLoyaltySecondaryColorText">@color/loyaltySecondaryColorText</item>
+        <item name="ctLoyaltyTheme">dark</item> //Either "dark" or "light" Default is "light"
    </style>
 ```   
 

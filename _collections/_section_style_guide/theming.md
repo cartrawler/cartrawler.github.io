@@ -90,12 +90,12 @@ You can override the following SDK attribute defaults if you need to.
         <!-- Customisable colours -->
 
         <!-- This is the attribute for text link colour -->
-        <item name="CTTextLinkColor">@color/CT_Blue</item>
+        <item name="ctTextLinkColor">@color/CT_Blue</item>
         <!-- This is the attribute for the horizontal progress bar on the availability screen. -->
         <!-- If you have a white primary colour, we recommend you override this in the theme and use your secondaryColor -->
-        <item name="CTProgressBarColor">?colorPrimaryVariant</item>
+        <item name="ctProgressBarColor">?colorPrimaryVariant</item>
         <!-- This is the attribute for the car illustrations on landing and booking confirmation screens -->
-        <item name="CTIllustrationColor">?colorPrimaryVariant</item>
+        <item name="ctIllustrationColor">?colorPrimaryVariant</item>
 ```
 
 <br/>
