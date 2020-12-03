@@ -9,20 +9,21 @@ right_code: >-
 
 The steps to use the SDK are:
 
-Step 1. Initialise the SDK in App Delegate
+<b>Step 1. Initialise the SDK in App Delegate:</b>
 
-Step 2. Initialise the CTContext object with the parameters required
+<b>Note that production parameter must be true when your application is deployed to production.</b>
 
+```swift
+  // In application(_:didFinishLaunchingWithOptions:)
+  CarTrawlerSDK.sharedInstance().initialiseSDK(with: nil,
+                                 customParameters: nil,
+                                 production: false)
+```
+
+<b>Step 2. Initialise the CTContext object with the parameters required</b>
+
+  Object description:
   ``` swift
-    import CarTrawlerSDK
-  
-    let context = CTContext(clientID: "105614", flow: .standAlone)
-    context.countryCode = "IE"
-    context.currencyCode = "EUR"
-    context.languageCode = "en"
-  
-    CarTrawlerSDK.sharedInstance().present(from: self, context: context)
-
     class CTContext: NSObject {
         let clientID: String
         let flowType: CTFlowType
@@ -39,7 +40,19 @@ Step 2. Initialise the CTContext object with the parameters required
         let passengers: [CTPassenger]
         let loyaltyRegex: String
    }
+```
+Required parameters initialisation:
+```swift
+    import CarTrawlerSDK
 
+    let context = CTContext(clientID: "105614", flow: .standAlone)
+    context.countryCode = "IE"
+    context.currencyCode = "EUR"
+    context.languageCode = "en"
+```
+
+Optional addition of passengers:
+```swift
     //Passenger object
     let passenger = CTPassenger(firstName: "Ryan",
                                 lastName: "O'Connor",
@@ -54,57 +67,12 @@ Step 2. Initialise the CTContext object with the parameters required
                                 phoneCountryPrefix: "353",
                                 loyaltyProgramNumber: "1234",
                                 isPrimaryDriver: true)
+
+    context.passengers = [passenger]
   ```
 
-Deeplink
+Optional use of deeplink to vehicle list:
   ``` swift
-  import CarTrawlerSDK
-
-  // Optional. Called after payment has made, return the reservation details
-  func didReceive(_ reservationDetails: CTReservationDetails) {
-        
-  }
-  ```
-
-Vehicle Details
-
-  ``` swift
-  class CTVehicleDetails: NSObject {
-    let referenceId: String // vehicle reference ID 
-    let name: String // vehicle name
-    let orSimilar: String // localised "or similar" text
-    let code: String // vehicle code 
-    let vehicleAssetNumber: String // vehicle asset number
-    let pictureURL: URL // vehicle image url 
-    let passengerQuantity: Int // vehicle number of passengers
-    let doorCount: Int // vehicle number of doors 
-    let baggageQuantity: Int // vehicle number of bags
-    let fuelType: String // vehicle fuel type
-    let driveType: String // vehicle drive type
-    let airConditionInd: Bool // vehicle is airconditioning included
-    let transmissionType: String // vehicle transmission type 
-    let size: String // ota size number
-    let supplier: String // vehicle supplier name
-    let supplierRating: NSNumber // vehicle supplier rating
-    let supplierImageURL: URL // vehicle supplier logo
-    let passengersText: String // localised "passengers" text
-    let baggageText: String // localised "baggage" text
-    let doorsCountText: String // localised "doors" text
-    let transmissionText: String // localised "transmission" text
-    let sizeText: String // localised "size" text
-    let categortyText: String // localised category
-    let price: NSNumber // vehicle price
-    let pricePerDay: NSNumber // vehicle price per day
-    let currencyCode: String // vehicle price currency code
-  }
-  ```
-
-
-Step 3. Present the SDK
-
-  ``` swift
-  import CarTrawlerSDK
-
   // Create a context for standAlone flow
   let context = CTContext(clientID: "105614", flow: .standAlone)
   context.countryCode = "IE"
@@ -116,13 +84,23 @@ Step 3. Present the SDK
   context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
   context.delegate = self
-  
-  let viewController = UIViewController() // Your view controller from which the SDK will be presented.
-  
-  CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
   ```
 
-<h5>Initialisation of the SDK</h5>
+<b>Step 3. Present the SDK</b>
+
+``` swift
+import CarTrawlerSDK
+
+let viewController = UIViewController() // Your view controller from which the SDK will be presented.
+
+CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+```
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h2>Initialisation of the SDK</h2>
 
 <dl>
 <dt>style</dt><dd>An optional style object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
@@ -141,7 +119,7 @@ Step 3. Present the SDK
 
 <h5>Initialing CTContext for Standalone</h5>
 
-To initialise standalone flow, it is necessary to instanciate a CTContext object and set the context in the SDK.
+To initialise standalone flow, it is necessary to instantiate a CTContext object and set the context in the SDK.
 
 <dl>
   <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
@@ -156,9 +134,9 @@ To initialise standalone flow, it is necessary to instanciate a CTContext object
 
 <h5>Initialising CTContext for Standalone with Deeplinking</h5>
 
-This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and dropoff parameters, rather than the regular initial search screen.
+This is a variant on the standalone flow whereby the vehicle list is shown based on the pickup and drop off parameters, rather than the regular initial search screen.
 Optionally, if a vehicle refId is provided, this will be become the pinned item in the list.
-If a user backs out of the list, it will return the user to the Cartrawler search.
+If a user backs out of the list, it will return the user to the CarTrawler search.
 
 - If the pickup and drop off dates are invalid, out of date, or not present the SDK will fallback to regular standalone search.
 - If the vehicle refId is invalid (or out of date), the list will be shown without the vehicle being pinned.
@@ -192,7 +170,7 @@ self.carTrawlerSDK.present(from: viewController, context: context)
 
 <h5>Reservation Retrieval from Standalone Process</h5>
 
-If a user booked a car during the standalone process, we will use the delegate to pass the callback informations.
+If a user booked a car during the standalone process, we will use the delegate to pass the callback information.
 The reservation object is accessed via the return delegate method didReceive(reservationDetails:)
 
 CarTrawlerSDKDelegate method called after a user booked a vehicle:
@@ -206,13 +184,13 @@ CarTrawlerSDKDelegate method called after a user booked a vehicle:
 CTReservationDetails description objects:
 ```swift
 class CTReservationDetails: NSObject {
-  let status: String // In this scernario it will be confirmed
+  let status: String // In this scenario it will be confirmed
   let customerGivenName: String // first name
   let customerSurname: String // Surname
   let resId: String // Reservation ID
   let resUid: String // Hashed customer email
   let pickUpDateTime: Date //The date & time of pickup
-  let returnDateTime: Date  //The date & time of pickup 
+  let returnDateTime: Date  //The date & time of pickup
   let pickUpLocation: CTLocationDetails //Location details of pickup
   let returnLocation: CTLocationDetails //Location details of pickup
   let insurance: CTInsuranceDetails? // Insurance, null if none attached
@@ -222,10 +200,39 @@ class CTReservationDetails: NSObject {
   let loyaltyNumber: String // Loyalty number
 }
 
+class CTVehicleDetails: NSObject {
+    let referenceId: String // vehicle reference ID
+    let name: String // vehicle name
+    let orSimilar: String // localised "or similar" text
+    let code: String // vehicle code
+    let vehicleAssetNumber: String // vehicle asset number
+    let pictureURL: URL // vehicle image url
+    let passengerQuantity: Int // vehicle number of passengers
+    let doorCount: Int // vehicle number of doors
+    let baggageQuantity: Int // vehicle number of bags
+    let fuelType: String // vehicle fuel type
+    let driveType: String // vehicle drive type
+    let airConditionInd: Bool // vehicle is air conditioning included
+    let transmissionType: String // vehicle transmission type
+    let size: String // ota size number
+    let supplier: String // vehicle supplier name
+    let supplierRating: NSNumber // vehicle supplier rating
+    let supplierImageURL: URL // vehicle supplier logo
+    let passengersText: String // localised "passengers" text
+    let baggageText: String // localised "baggage" text
+    let doorsCountText: String // localised "doors" text
+    let transmissionText: String // localised "transmission" text
+    let sizeText: String // localised "size" text
+    let categoryText: String // localised category
+    let price: NSNumber // vehicle price
+    let pricePerDay: NSNumber // vehicle price per day
+    let currencyCode: String // vehicle price currency code
+  }
+
 class CTLocationDetails: NSObject (
   let atAirport: Bool // Location at Airport? (boolean)
   let iataCode: String  // IATA Code (if airport)
-  let code: Int  // Unique Location Code (code type is internal to Cartrawler)
+  let code: Int  // Unique Location Code (code type is internal to CarTrawler)
   let name: String // Text description of location
   let address: CTAddress // Postal address of location
   let phoneNumber: String // Vendor contact number
@@ -252,7 +259,8 @@ class CTRentalInfo: NSObject (
 )
 
 class CTAddress: NSObject (
-  let addressLine: String // Post adddress of location
+  let addressLine: String // Post address of location
   let countryNameCode: String // 2 letter country code.
 )
+
 ```

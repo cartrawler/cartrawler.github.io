@@ -30,7 +30,16 @@ theme
    style.secondaryCtaColor = UIColor.black // Optional, default primary color
    style.secondaryCtaFontColor = UIColor.white // Optional, default white or dark based on theme
 
-  ``` 
+  ```
+
+  After CTStyle configured, it must be passed on AppDelegate initialise call:
+
+```swift
+  // In application(_:didFinishLaunchingWithOptions:)
+  CarTrawlerSDK.sharedInstance().initialiseSDK(with: style,
+                                 customParameters: nil,
+                                 production: false)
+```
 
 <h4>Android Theme Setup</h4>
 

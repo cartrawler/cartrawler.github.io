@@ -9,7 +9,38 @@ right_code: >-
 The SDKs both support dark mode and by default it will be turned off. The SDKs provide you the option to turn on, off or follow the system settings. Apply the setting that fits your use case.
 
 <h4>iOS Dark Mode Setup</h4>
-.......
+You can configure dark mode support in the SDK by setting the property <b>userInterfaceStyle</b> in the CTStyle class. By default, dark mode is off.
+
+The following values are supported:
+
+```swift
+    .dark // Forces to be always dark mode
+    .light // Default - Forces to be always light mode
+    .system // Use user system settings to determine if is light/dark mode
+```
+
+Dark mode colors can be configured using CTStyle and dark mode properties:
+
+```swift
+    let style = CTStyle(theme: .dark,  // .dark or .light
+                        primaryColor: UIColor.gray)
+    style.userInterfaceStyle = .system
+    style.dmPrimaryLightColor = UIColor.lightGray
+    style.dmPrimaryDarkColor = UIColor.darkGray
+    style.dmCtaColor = UIColor.blue
+    style.dmCtaFontColor = UIColor.white
+    style.dmSecondaryCtaColor = UIColor.black
+    style.dmSecondaryCtaFontColor = UIColor.white
+```
+
+After CTStyle configured, it must be passed on AppDelegate initialise call:
+
+```swift
+  // In application(_:didFinishLaunchingWithOptions:)
+  CarTrawlerSDK.sharedInstance().initialiseSDK(with: style,
+                                 customParameters: nil,
+                                 production: false)
+```
 
 <h4>Android Dark Mode Setup</h4>
 You can configure dark mode support in the SDK by sending the constants from the AppCompatDelegate class. By default, dark mode is off.
