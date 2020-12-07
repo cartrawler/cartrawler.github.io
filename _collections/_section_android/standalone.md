@@ -8,7 +8,7 @@ right_code: >
 
 <h5>To initialise the SDK with standalone flow you need to implement the SDK builder as follows:</h5>
 
-  ```java
+  ```kotlin
  CartrawlerSDK.Builder()
             .setRentalStandAloneClientId(clientId = "12345") // Ask your partner manager for your client id
             .setAccountId("CZ638817950")
@@ -26,7 +26,7 @@ right_code: >
 
 <h5>To support a deeplink to the availability screen you need to add pinned veh ref along with the drop off time, pick up time and the pickup and drop off locations as follows:</h5>
 
- ```java
+ ```kotlin
  CartrawlerSDK.Builder()
             .setPickupTime(pickupDateTime = GregorianCalendar())
             .setDropOffTime(dropOffDateTime = GregorianCalendar()

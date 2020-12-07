@@ -10,7 +10,7 @@ right_code: >-
 
 Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resuid. 
 
-  ~~~java
+  ~~~kotlin
                  CartrawlerSDK.Builder()
                  //..
                  builder.requestReservationDetails(
@@ -18,7 +18,7 @@ Calling the requestReservationDetails function will trigger a vehicles request b
                          resId = resid,
                          resuid = resuid,
                          email = null,
-                         requestReservationDetailsListener = object : CartrawlerSDK.RequestReservationDetailsListener {
+                         requestReservationDetailsListener = object: CartrawlerSDK.RequestReservationDetailsListener {
      
                              override fun onNoResults() {
                                 //Handle no results

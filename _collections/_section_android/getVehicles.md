@@ -12,7 +12,7 @@ We expose a method on the builder to retrieve the vehicle list based on a sort t
 
 A VehiclesListener is past into the getVehicleDetails method and the SDK will call the relevant methods once the relevant events have happen.
 
-  ~~~java      
+  ~~~kotlin      
 
    CartrawlerSDK.Builder()
            //..
@@ -20,7 +20,7 @@ A VehiclesListener is past into the getVehicleDetails method and the SDK will ca
                context = this,
                numberOfVehicles = 10, //Range from 1 to 10
                sortType = CartrawlerSDK.Builder.FLAG_BEST_PRICE, // OR CartrawlerSDK.Builder.FLAG_RECOMMENDED
-                   vehiclesListener = object : CartrawlerSDK.VehiclesListener{
+                   vehiclesListener = object: CartrawlerSDK.VehiclesListener {
                        override fun onReceiveVehicleDetails(vehicleDetails: List<VehicleDetails>) {
                         //Handle success result
                        }

@@ -32,10 +32,12 @@ right_code: >-
 **Clear Storage**
 
 Note: The apps storage (database of recent searches, and bookings) can be cleared prior to starting the cartrawler flow, the following API can be used to clear the storage.
-        
-        fun clearStorage(context: Context) // Pass an Activity context
-        
-This is a static method that can be called directly from the CartrawlerSDK class, e.g
 
-        CartrawlerSDK.clearStorage(activity)
+This is a static method that can be called directly from the CartrawlerSDK class
+
+  ~~~kotlin
+       CartrawlerSDK.clearStorage(activity)
+  ~~~
+
+        
        

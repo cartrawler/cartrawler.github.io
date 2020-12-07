@@ -91,26 +91,9 @@ These objects are accessed via the return intent by onActivityForResult
     
 The json payload object is returned so that the partner can process the payment/reservation with a cartrawler payment end point at a different time and point in the partners basket flow. This JSON playload object is passed to this endpoint. 
 Further details can be found in our OTA developer docs. (Also see inpath reservation section)
-
-The CartrawlerSDK.FEES object:
-```kotlin
-    cartrawler.core.data.external.Payment {
-          
-          public String currency; // The currency of the fees
-
-          public Double payNowAmount; // The pay now amount
-          public Double payAtDeskAmount; // The pay at desk amount
-          public Double bookingFeeAmount; // The booking fee amount
-      
-          public String insuranceName; // The insurance name
-          public Double insuranceAmount; //The insurance amount
-          
-          public String authTotal; //The total amount to be authorized against the customers credit card.
-          pubic  String authCurrency; // The currency code of the authTotal
-     }
-```
     
-The CartrawlerSDK.TRIP_DETAILS object:
+The ``CartrawlerSDK.TRIP_DETAILS``` object:`
+
 ```kotlin
     @Parcelize
     data class TripDetails(

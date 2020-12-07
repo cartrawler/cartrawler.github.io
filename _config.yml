@@ -7,6 +7,10 @@ url:
 google_analytics_key:
 permalink: pretty
 
+markdown: kramdown
+highlighter: rouge
+input: GFM
+
 collections_dir: _collections
 collections:
   section_introduction:
