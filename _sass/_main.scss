@@ -121,8 +121,12 @@ a:hover {
 pre {
 	white-space: pre-wrap;
 	font-size: 1em;
-	margin: 22px 0;
 	word-wrap: break-word;
+	position: relative;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
+	width: 980px;
 }
 
 dl {

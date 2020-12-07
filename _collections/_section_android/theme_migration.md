@@ -47,7 +47,7 @@ New attributes usage:
 
 | Attribute name                 	| Description                                                                  	|
 |-----------------------------	|-------------------------------------------------------------------------	|
-| colorPrimary       	         | Colour applied on top of primary colour 	|
+| colorPrimary       	         | Colour applied for navigation toolbars 	|
 | colorOnPrimary    	      | Colour applied on top of primary colour	|
 | colorSecondaryVariant     	         |  Colour for calendar selection state, car category selection state, search chip choice state and filter button colour. 	|
 | colorSecondary 	         |  Colour used for CTA buttons. 	|
