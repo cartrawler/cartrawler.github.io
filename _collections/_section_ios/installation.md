@@ -2,7 +2,7 @@
 title: Installation
 position: 1
 type: iOS
-description: 'Supports iOS versions iOS 10 through to iOS 13'
+description: 'Supports iOS versions iOS 10 through to iOS 14'
 right_code: >-
 
   {: title="Installation" }
@@ -22,7 +22,7 @@ right_code: >-
       platform :ios, '10.0'
   
       target 'CarTrawlerPartner' do
-        pod 'CarTrawlerSDK', '~> 10.14.0'
+        pod 'CarTrawlerSDK', '~> 11.0.0'
       end
 ```
 
@@ -30,7 +30,7 @@ right_code: >-
 
 **Clear Storage**
 
-CarTrawler SDK provides a method to clear local data stored (Recent searches, Booking summary card), the data is stored in application NSUserDefaults and it's cleared using the method below.
+CarTrawler SDK provides a method to clear local data stored (Recent searches, Booking summary card), the data is stored in NSUserDefaults and it's cleared using the method below.
 
 <b>It's not posible to clear the storage while the SDK is being presented on screen.</b>
 
