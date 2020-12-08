@@ -31,7 +31,7 @@ right_code: >-
 
 **Clear Storage**
 
-Note: The apps storage (database of recent searches, and bookings) can be cleared prior to starting the cartrawler flow, the following API can be used to clear the storage.
+Note: The app's storage (database of recent searches, and bookings) can be cleared prior to starting the cartrawler flow, the following API can be used to clear the storage.
 
 This is a static method that can be called directly from the CartrawlerSDK class
 
