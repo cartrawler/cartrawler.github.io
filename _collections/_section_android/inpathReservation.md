@@ -49,7 +49,7 @@ Additional Flight Information
 
 Example JSON Payload:
 
-```
+```json
 {
     "@xmlns": "http://www.opentravel.org/OTA/2003/05",
     "@Version": "3.000",

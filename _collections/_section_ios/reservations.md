@@ -3,7 +3,12 @@ title: Reservations API
 position: 8
 type: iOS
 description:
-right_code: |-
+right_code: >-
+---
+<h5>Get Booking Reservation</h5>
+
+Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resUid. 
+
   ```swift
     import CarTrawlerSDK
   
@@ -25,40 +30,12 @@ right_code: |-
             }
         }
   ```
-    {: title="Reservations API" }
-
-  ```swift
-    class CTReservationDetails: NSObject {
-        let status: String // In this scernario it will be confirmed
-        let givenName: String // First name
-        let surname: String // Surname
-        let resId: String // Reservation ID
-        let resUid: String // Hashed customer email
-        let pickUpDateTime: Date //The date & time of pickup
-        let returnDateTime: Date  //The date & time of pickup 
-        let pickUpLocation: CTLocationDetails //Location details of pickup
-        let returnLocation: CTLocationDetails //Location details of pickup
-        let insurance: CTInsuranceDetails? // Insurance, null if none attached
-        let rentalInfo: RentalInfo? // Information on reservation costs
-        let vehicleDetails: CTVehicleDetails // Information on booked vehicle
-        let loyaltyProgramId: String // Loyalty program ID
-        let loyaltyNumber: String // Loyalty number
-    }
-  ```
-  {: title="CTReservationDetails" }
-  
-  ```swift
-  
-  ```
-
-
----
-<h5>Get Booking Reservation</h5>
-
-Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resUid. 
 
 These properties can be found in the ReservationDetails object that is returned upon successful completion of the standalone flow 
-~ <i>didReceive(_ reservationDetails: CTReservationDetails)</i>. 
+
+```swift
+didReceive(_ reservationDetails: CTReservationDetails)
+```
 
 The reservations object takes the following form:
 ```swift

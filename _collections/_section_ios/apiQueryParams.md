@@ -3,7 +3,16 @@ title: API Query Params
 position: 6
 type: iOS
 description:
-right_code: |-
+right_code: >-
+---
+
+
+<h5>API Query Params</h5>
+
+An object to use for request on the API methods.
+
+After initializing the SDK, please create a CTAPIQueryParams object and initialize it with the following parameters:
+
   ``` swift
   
     import CarTrawlerSDK
@@ -20,22 +29,10 @@ right_code: |-
     params.numberOfVehicles = 20
     params.sortType = .recommended
   
-    ```
-  
-    {: title="API Query Params" }
-    ``` swift
-  
-     ```
+  ```
 
-
----
-
-
-<h5>API Query Params</h5>
-
-An object to use for request on the API methods.
-
-After initializing the SDK, please create a CTAPIQueryParams object and initialize it with the following parameters:
+Description of each parameter as follows:
+<br/>
 <dl>
 <dt>delegate</dt>
 <dd>a CarTrawlerSDKDelegate to receive the API response.</dd>

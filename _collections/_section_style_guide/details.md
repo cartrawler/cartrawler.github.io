@@ -1,6 +1,6 @@
 ---
 title: Style Guide
-position: 3
+position: 4
 ---
 For more information please see our <a href="https://projects.invisionapp.com/share/FGQ4MIYEJ5P#/screens" target="_blank">style guide</a>.
 

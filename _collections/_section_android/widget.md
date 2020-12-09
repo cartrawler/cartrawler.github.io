@@ -50,9 +50,8 @@ rental car has beed added, by using displaying the view CTSimpleAddedWidget or a
 In order to use the CTVehicleWidget, you will need pass it Vehicle Object, that is returned following the Cartrawler flow, see example below
 on how you would achieve this:
 
-    ~~java
-  
-    override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
+````kotlin
+override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
        if (resultCode == Activity.RESULT_OK) {
            if (requestCode == 123) {
                	// Set the widget to the added state
@@ -61,15 +60,14 @@ on how you would achieve this:
            }
        }
     }
-
-    ~~~
+````
     
 In order to use the CTBestPriceWidget, you will need to set the price on the widget, 
 for example this can be done in onReceiveBestDailyRate (when the price is returned from the API).
 
-                
-    builder.getBestDailyRates(
-            this, object : CartrawlerSDK.BestDailyRatesListener {
+```kotlin
+builder.getBestDailyRates(
+            this, object: CartrawlerSDK.BestDailyRatesListener {
 
         @SuppressLint("SetTextI18n")
         override fun onNoResults(type: Int) {
@@ -89,7 +87,7 @@ for example this can be done in onReceiveBestDailyRate (when the price is return
             ctBestPrice.setPrice("$currency $price")
         }
     }, CartrawlerSDK.Builder.FLAG_RENTAL)
-                
+```
 
 <picture>
   <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_State_Generic.png">
@@ -102,9 +100,10 @@ for example this can be done in onReceiveBestDailyRate (when the price is return
 
 
 Add the following XML styling to your theme xml resources. The example below defines default Android styles (with some CT brand styling) for these Widgets,
-these can be completely tailored to your own brand styling. 
+these can be completely tailored to your own brand styling. `
 
-     <style name="YourWidgetTheme" parent="Theme.AppCompat.Light">
+````xml
+<style name="YourWidgetTheme" parent="Theme.AppCompat.Light">
           
             <!-- New Attributes for new Widgets -->
     
@@ -128,6 +127,7 @@ these can be completely tailored to your own brand styling.
             <item name="CTPriceValueText">@style/TextAppearance.AppCompat.Title</item>
     
         </style>
+````
 
 See Graphics below for descriptions on which style applies to which widget
 

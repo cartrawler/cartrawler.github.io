@@ -3,7 +3,13 @@ title: Best Rates API
 position: 7
 type: iOS
 description:
-right_code: |-
+right_code: >-
+---
+
+<h5>Request Best Daily Rates</h5>
+
+Calling the requestBestDailyRate function will trigger a best daily rate request based on the provided IATA or PickupLocationCode and pickup and dropoff dates.
+
   ``` swift
   
     import CarTrawlerSDK
@@ -23,7 +29,9 @@ right_code: |-
   
     CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
   ```
-  {: title="Best Rates API" }
+
+The best daily rate (price and currency) will be returned in the CarTrawlerSDKDelegate function didReceiveBestDailyRate.
+
 
   ``` swift
   // Called when best daily rate received
@@ -34,13 +42,3 @@ right_code: |-
   func didFailToReceiveBestDailyRate(error: Error) {
   }
   ```
-  {: title="Delegate" }
-
-
----
-
-<h5>Request Best Daily Rates</h5>
-
-Calling the requestBestDailyRate function will trigger a best daily rate request based on the provided IATA or PickupLocationCode and pickup and dropoff dates.
-
-The best daily rate (price and currency) will be returned in the CarTrawlerSDKDelegate function didReceiveBestDailyRate.

@@ -4,79 +4,37 @@ position: 2
 type: Android
 description:
 right_code: >
-  ~~~java
-    //Standalone (Rental)
-      CartrawlerSDK.Builder()
-          .setRentalStandAloneClientId(clientId = "1234")
-          .setAccountId(accountId = "123")
-          .setCountry(twoLetterISOCountry = "IE")
-          .setCurrency(currency = "EUR")
-          .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-          .setFlightNumberRequired(required = true)
-          .setLogging(logging = true)
-          .setOrderId(orderId = "123")
-          .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-          .setVisitorId(visitorId = "123")
-          .setLoyaltyRegex(loyaltyRegex = "^[A-Za-z0-9]{6,}$")
-          .startRentalStandalone(activity = this, requestCode = 123)
-  ~~~
-
-  {: title="Standalone" }
-  
-  ~~~java
-   //Standalone with deeplinking (Rental) 
-    CartrawlerSDK.Builder()
-         .setRentalStandAloneClientId(clientId = "1234")
-         .setAccountId(accountId = "123")
-         .setCountry(twoLetterISOCountry = "IE")
-         .setCurrency(currency = "EUR")
-         .setDropOffTime(dropOffDateTime = GregorianCalendar())
-         .setEnvironment(environment = CartrawlerSDK.Environment.STAGING)
-         .setFlightNumberRequired(required = true)
-         .setLogging(logging = true)
-         .setOrderId(orderId = "123")
-         .setPassenger(ctPassenger = cartrawlerSDKPassenger)
-         .setPickupLocation(iataAirportCode = "YXJ")
-         .setPickupLocationId(locationCode = 123)
-         .setDropOffLocationId(locationCode = 123)
-         .setPickupTime(pickupDateTime = GregorianCalendar())
-         .setDropOffTime(dropOffDateTime = GregorianCalendar()
-         .setPickupTime(pickupDateTime = GregorianCalendar())
-         .setVisitorId(visitorId = "123")
-         .setPinnedVehicle(refId = "123")
-         .setLoyaltyRegex(loyaltyRegex = "^[A-Za-z0-9]{6,}$")
-         .startRentalStandalone(activity = this, requestCode = 123)
-         
-  ~~~
-  
-  {: title="Deeplink" }
-  
-  
-  ~~~java
-     //CartrawlerSDKPassenger
-      data class CartrawlerSDKPassenger(val firstName: String?, // First Name
-                                        val lastName: String?, // Surname
-                                        val email: String?,
-                                        val phoneCountryCode: String?, // 3 digit phone country code
-                                        val phoneNumber: String?, //  Phone number in national format
-                                        val address: String?, // Address line
-                                        val city: String?, // City
-                                        val postcode: String?, // Post Code
-                                        val country: String?, // Country ISO code, e.g. IE, FR, DE
-                                        val flightNumber: String?, // Flight number
-                                        var age: String?,
-                                        val membershipId: String? = null // Loyalty program / user membership ID) : Parcelable { // Driver Age , "30"
-           
-  ~~~
-    
-    
-    {: title="CartrawlerSDKPassenger" }
-
 ---
 
-Usage of the SDK is demonstrated to the right, the parameters are as follows:
+<h5>To initialise the SDK with standalone flow you need to implement the SDK builder as follows:</h5>
 
-<h5>Standalone</h5>
+  ```kotlin
+ CartrawlerSDK.Builder()
+            .setRentalStandAloneClientId(clientId = "12345") // Ask your partner manager for your client id
+            .setAccountId("CZ638817950")
+            .setCountry(countryISO)
+            .setCurrency(currency)
+            .setEnvironment(environment)
+            .setFlightNumberRequired(true)
+            .setLogging(true)
+            .setOrderId("123")
+            .setPassenger(passenger(countryISO))
+            .setVisitorId("123")
+            .setTheme(R.style.SampleTheme)
+            .startRentalStandalone(activity, requestCode = REQUEST_CODE_STANDALONE)
+  ```
+
+<h5>To support a deeplink to the availability screen you need to add pinned veh ref along with the drop off time, pick up time and the pickup and drop off locations as follows:</h5>
+
+ ```kotlin
+ CartrawlerSDK.Builder()
+            .setPickupTime(pickupDateTime = GregorianCalendar())
+            .setDropOffTime(dropOffDateTime = GregorianCalendar()
+            .setPickupLocation(iataAirportCode = "YXJ")
+            //.. Add your other config properties as normal
+  ```
+
+<h5>Standalone builder properties descriptions</h5>
 
 <dl>
 <dt>requestCode</dt><dd>Partner provided unique integer value used to send back reservation details from Systems API.</dd>
