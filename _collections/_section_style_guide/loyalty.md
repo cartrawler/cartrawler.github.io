@@ -35,7 +35,7 @@ The default is ```dark``` and theme values are as follows:
 |-----------------------------	|-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#000000](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
 | Primary Text Color    	      | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
-| Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/#1E1E1E/000000?text=+) #1E1E1E 	|
+| Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 
 ### CTLoyaltyTheme
