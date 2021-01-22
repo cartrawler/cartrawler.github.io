@@ -24,14 +24,24 @@ right_code: >
             .startRentalStandalone(activity, requestCode = REQUEST_CODE_STANDALONE)
   ```
 
-<h5>To support a deeplink to the availability screen you need to add pinned veh ref along with the drop off time, pick up time and the pickup and drop off locations as follows:</h5>
+<h5>Navigation to Car Block screen</h5>
 
+To support navigation to the car block screen you need to add pinned veh ref along with the drop off time, pick up time and the pickup and drop off locations as follows:
  ```kotlin
  CartrawlerSDK.Builder()
             .setPickupTime(pickupDateTime = GregorianCalendar())
             .setDropOffTime(dropOffDateTime = GregorianCalendar()
             .setPickupLocation(iataAirportCode = "YXJ")
             //.. Add your other config properties as normal
+  ```
+
+<h5>Navigation to search screen</h5>
+
+ ```kotlin
+ CartrawlerSDK.Builder()
+        //... 
+        .setRentalStandAloneClientId(clientId)
+        .startSearchFlow(activity, requestCode)
   ```
 
 <h5>Standalone builder properties descriptions</h5>

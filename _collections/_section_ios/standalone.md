@@ -22,7 +22,7 @@ The steps to use the SDK are:
 
 <b>Step 2. Initialise the CTContext object with the parameters required</b>
 
-  Object description:
+  <h5>Object description</h5>
   ``` swift
     class CTContext: NSObject {
         let clientID: String
@@ -41,7 +41,8 @@ The steps to use the SDK are:
         let loyaltyRegex: String
    }
 ```
-Required parameters initialisation:
+<br/><br/>
+<h5>Required parameters initialisation</h5>
 ```swift
     import CarTrawlerSDK
 
@@ -51,7 +52,8 @@ Required parameters initialisation:
     context.languageCode = "en"
 ```
 
-Optional addition of passengers:
+<br/><br/>
+<h5>Optional addition of passengers:</h5>
 ```swift
     //Passenger object
     let passenger = CTPassenger(firstName: "Ryan",
@@ -70,8 +72,8 @@ Optional addition of passengers:
 
     context.passengers = [passenger]
   ```
-
-Optional use of deeplink to vehicle list:
+<br/><br/>
+<h5>Optional navigation to vehicle list:</h5>
   ``` swift
   // Create a context for standAlone flow
   let context = CTContext(clientID: "105614", flow: .standAlone)
@@ -85,7 +87,18 @@ Optional use of deeplink to vehicle list:
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
   context.delegate = self
   ```
-
+<br/><br/>
+<h5>Optional navigation to search screen</h5>
+ ``` swift
+  // Create a context for standAlone flow
+  let context = CTContext(clientID: "105614", flow: .standAlone)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  context.deeplink = .searchForm
+  context.delegate = self
+  ```
+<br/><br/>
 <b>Step 3. Present the SDK</b>
 
 ``` swift
