@@ -11,8 +11,6 @@ Integrating the SDK into a SwiftUI project is simple:
 
 <b>Step 1. Create a view controller that will host the SDK. This is your view controller from which the SDK will be presented. It will also act as the SDK delegate.</b>
 
-<!-- <b>Note that production parameter must be true when your application is deployed to production.</b> -->
-
 ```swift
 
 import UIKit
@@ -80,7 +78,7 @@ struct TestView: View {
     
     var body: some View {
         ZStack {
-            t
+            
             if showSDK {
                 SDKView(closeAction: {
                     withAnimation(.easeOut(duration: 0.25)) { self.showSDK = false }
