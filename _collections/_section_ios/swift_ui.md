@@ -7,7 +7,7 @@ right_code: >-
   {: title="SwiftUI" }
 ---
 
-Integrating the SDK into a SwiftUI project is simple:
+The SDK can be integrated into a SwiftUI project with the following steps:
 
 <b>Step 1. Create a view controller that will host the SDK. This is your view controller from which the SDK will be presented. It will also act as the SDK delegate.</b>
 
@@ -54,7 +54,7 @@ struct SDKHostVCRepresentable: UIViewControllerRepresentable {
 }
 ```
 
-<b>Step 3. Create a SwiftUI view and place the UIViewControllerRepresentable inside it</b>
+<b>Step 3. Create a SwiftUI view and place the UIViewControllerRepresentable inside it.</b>
   
 ``` swift
 struct SDKView: View {
