@@ -22,7 +22,7 @@ right_code: >-
       platform :ios, '10.0'
   
       target 'CarTrawlerPartner' do
-        pod 'CarTrawlerSDK', '~> 11.4.0'
+        pod 'CarTrawlerSDK', '~> 11.5.0'
       end
 ```
 
@@ -32,7 +32,7 @@ right_code: >-
 
 CarTrawler SDK provides a method to clear local data stored (Recent searches, Booking summary card), the data is stored in NSUserDefaults and it's cleared using the method below.
 
-<b>It's not posible to clear the storage while the SDK is being presented on screen.</b>
+<b>It's not possible to clear the storage while the SDK is being presented on screen.</b>
 
 ```swift
   // Clear local storage
