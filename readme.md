@@ -42,6 +42,22 @@ Run `jekyll` commands through Bundler to ensure you're using the right versions:
 $ bundle exec jekyll serve
 ~~~
 
+### Docker
+You can also use [Docker](https://formulae.brew.sh/formula/docker) if you don't want to install the dependencies manually, it's super easy you just need to run: 
+~~~bash 
+docker-compose up 
+~~~
+
+After docker-compose finish its work you'll be able to access the page in the following address:
+
+http://localhost:4000
+<br/>
+or
+<br/>
+http://0.0.0.0:4000
+
+** Make sure you have Docker set up on you machine, if you don't you can easily install using [brew install](https://formulae.brew.sh/formula/docker)
+
 ## Editing
 
 CarTrawler is already optimised for adding, updating and removing documentation pages in CloudCannon.
