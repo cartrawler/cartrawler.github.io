@@ -41,7 +41,7 @@ Notes:
 See Graphics below for descriptions on which style applies to which widget:
 
 <picture>
-  <img src="/uploads/cash_usp_banner.svg">
+  <img src="/uploads/usp_banner.svg">
 </picture>
 
 <picture>
