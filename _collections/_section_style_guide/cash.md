@@ -19,18 +19,16 @@ Override the following properties in your SDK theme
         <item name="ctCashSecondaryTextColor">@color/colorSecondary</item>
         <item name="ctCashLogoUrl">https://www.mylogo.com/mylogo.png</item>
         <item name="ctCashSmallLogoUrl">https://www.mylogo.com/mylogo.png</item>
-        <item name="ctUSPLogoUrl">https://www.mylogo.com/mylogo.png</item>
    </style>
 ```   
 
-For every LogoUrl above you also have a way to provide a local drawable instead a remote url. All you need is to
+For every logo url you can provide a local drawable instead of a remote url. All you need is to
 use the following attributes:
 
 ```xml
     <style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
         <item name="ctCashLogoDrawable">@drawable/my_logo</item>
         <item name="ctCashSmallLogoDrawable">@drawable/my_logo_small</item>
-        <item name="ctUSPLogoDrawable">">@drawable/my_logo_usp</item>
     </style>
 ```
 
@@ -39,10 +37,6 @@ Notes:
 * If you don't provide any attributes for the logo, the component that shows the logo will be hidden (View.GONE) 
 
 See Graphics below for descriptions on which style applies to which widget:
-
-<picture>
-  <img src="/uploads/usp_banner.svg">
-</picture>
 
 <picture>
   <source media="(max-height: 367px)" srcset="/uploads/cash_small_banner.svg">
