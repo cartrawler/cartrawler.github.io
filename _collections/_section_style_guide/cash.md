@@ -39,13 +39,13 @@ Notes:
 See Graphics below for descriptions on which style applies to which widget:
 
 <picture>
-  <source media="(max-height: 367px)" srcset="/uploads/cash_small_banner.svg">
-  <source media="(max-width: 1098px)" srcset="/uploads/cash_small_banner.svg">
-  <img src="/uploads/cash_small_banner.svg">
+  <source media="(max-height: 379px)" srcset="/uploads/cash_small_banner.svg">
+  <source media="(max-width: 955px)" srcset="/uploads/cash_small_banner.svg">
+  <img style="max-width: 955px; max-height:379px;" src="/uploads/cash_small_banner.svg">
 </picture>
 
 <picture>
-  <source media="(max-width: 799px)" srcset="/uploads/cash_big_banner.svg">
-  <source media="(min-width: 800px)" srcset="/uploads/cash_big_banner.svg">
-  <img src="/uploads/cash_big_banner.svg">
+  <source media="(max-width: 994px)" srcset="/uploads/cash_big_banner.svg">
+  <source media="(max-height: 463x)" srcset="/uploads/cash_big_banner.svg">
+  <img style="max-width: 994px; max-height:463x;" src="/uploads/cash_big_banner.svg">
 </picture>

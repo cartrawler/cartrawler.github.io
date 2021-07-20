@@ -33,5 +33,5 @@ Notes:
 See Graphics below for descriptions on which style applies to which widget:
 
 <picture>
-  <img src="/uploads/usp_banner.svg">
+  <img style="max-width: 760px; max-height:462px;" src="/uploads/usp_banner.svg">
 </picture>
