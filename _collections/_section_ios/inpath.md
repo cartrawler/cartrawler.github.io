@@ -39,7 +39,8 @@ Object description:
         let dropOffLocationID: String
         let pinnedVehicleID: String
         let passengers: [CTPassenger]
-        let loyaltyRegex: String
+        let loyaltyRegex: String,
+        let customCashTreatment: Bool
    }
   ```
 

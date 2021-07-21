@@ -1,6 +1,6 @@
 ---
 title: Reservations API
-position: 8
+position: 9
 type: Android
 description:
 right_code: >-
