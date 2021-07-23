@@ -144,7 +144,7 @@ To initialise standalone flow, it is necessary to instantiate a CTContext object
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
   <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field</dd>
-  <dt>customCashTreatment</dt><dd>Optional bool used in the SDK as a main toggle to display some features related to the Cash Special Offer</dd>
+  <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
 </dl>
 
 <h5>Initialising CTContext for Standalone with Deeplinking</h5>
@@ -172,7 +172,7 @@ If a user backs out of the list, it will return the user to the CarTrawler searc
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
   <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6,}$</dd>
-  <dt>customCashTreatment</dt><dd>Optional bool used in the SDK as a main toggle to display some features related to the Cash Special Offer</dd>
+  <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
 </dl>
 
 <h5>Presenting standalone</h5>

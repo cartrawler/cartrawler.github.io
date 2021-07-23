@@ -16,11 +16,11 @@ The SDK has some optional properties that can be passed in initialisation to use
 
 <dl>
 <dt>enableCustomCashTreatment</dt>
-<dd>This used in the SDK as a main toggle to display some features related to the Cash Special Offer</dd>
+<dd>This is used in the SDK in order to enable enhanced cash voucher merchandising throughout the booking flow. (Cash voucher banner, Cash voucher widgets etc)</dd>
 <dt>setUSPDisplayType</dt>
-<dd>Partners can choose which USP style they want to use in their apps</dd>
+<dd>This allows Partners to choose which homepage USP style they want to use in the app.</dd>
 <dd>USPDisplayType.DEFAULT_STYLE</dd>
 <dd>USPDisplayType.CHECK_STYLE</dd>
-<dd>Note: If you don't call this method DEFAULT_STYLE will be used by default</dd>
+<dd>Note: If you don't call this method DEFAULT_STYLE will be used.</dd>
 </dl>
 <br/>
