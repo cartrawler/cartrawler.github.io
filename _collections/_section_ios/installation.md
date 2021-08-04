@@ -22,7 +22,7 @@ right_code: >-
       platform :ios, '10.0'
   
       target 'CarTrawlerPartner' do
-        pod 'CarTrawlerSDK', '~> 11.6.0'
+        pod 'CarTrawlerSDK', '~> 11.7.0'
       end
 ```
 
