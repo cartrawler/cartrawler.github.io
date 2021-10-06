@@ -1,7 +1,7 @@
 ---
 title: Inpath
 position: 3
-type: Androidimage = "https://ota-cars.imgix.net/otaimages/renault/clio_3dr_nologo.jpg?w=180&dpr=2",
+type: Android
 description:
 right_code: >-
 
