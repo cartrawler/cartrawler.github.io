@@ -2,7 +2,7 @@
 title: Installation
 position: 1
 type: iOS
-description: 'Supports iOS versions iOS 10 through to iOS 14'
+description: 'Supports iOS versions iOS 10 through to iOS 15'
 right_code: >-
 
   {: title="Installation" }
@@ -20,9 +20,11 @@ right_code: >-
       source 'https://github.com/cartrawler/cartrawler-ios-pods'
   
       platform :ios, '10.0'
+      use_frameworks!
+      inhibit_all_warnings!
   
       target 'CarTrawlerPartner' do
-        pod 'CarTrawlerSDK', '~> 11.7.0'
+        pod 'CarTrawlerSDK', '~> 11.9.0'
       end
 ```
 

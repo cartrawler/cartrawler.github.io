@@ -40,7 +40,8 @@ Object description:
         let pinnedVehicleID: String
         let passengers: [CTPassenger]
         let loyaltyRegex: String,
-        let customCashTreatment: Bool
+        let customCashTreatment: Bool,
+        let promotionCode: String
    }
   ```
 
@@ -214,4 +215,6 @@ See code snippet above for available methods and callbacks for in path.
   <dt>pinnedVehicleID</dt><dd>An optional refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deeplink.</dd>
   <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd>Your class that will handle callback methods</dd>
+  <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
+  <dt>promotionCode</dt><dd>An optional string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>
 </dl>
