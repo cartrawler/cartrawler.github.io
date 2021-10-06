@@ -39,7 +39,8 @@ The steps to use the SDK are:
         let pinnedVehicleID: String
         let passengers: [CTPassenger]
         let loyaltyRegex: String,
-        let customCashTreatment: Bool
+        let customCashTreatment: Bool,
+        let promotionCode: String
    }
 ```
 <br/><br/>
@@ -145,6 +146,7 @@ To initialise standalone flow, it is necessary to instantiate a CTContext object
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
   <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field</dd>
   <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
+  <dt>promotionCode</dt><dd>An optional string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>
 </dl>
 
 <h5>Initialising CTContext for Standalone with Deeplinking</h5>
@@ -173,6 +175,7 @@ If a user backs out of the list, it will return the user to the CarTrawler searc
   <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
   <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6,}$</dd>
   <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
+  <dt>promotionCode</dt><dd>An optional string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>
 </dl>
 
 <h5>Presenting standalone</h5>
