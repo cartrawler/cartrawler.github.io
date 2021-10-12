@@ -29,15 +29,5 @@ right_code: >-
 
 **Create a theme that extends the ```CTDayNightTheme```. Please refer to <a href="https://cartrawler.github.io/#section_style_guidetheming" target="_blank">theme section</a> for further details.**
 
-**Clear Storage**
-
-Note: The app's storage (database of recent searches, and bookings) can be cleared prior to starting the cartrawler flow, the following API can be used to clear the storage.
-
-This is a static method that can be called directly from the CartrawlerSDK class
-
-  ~~~kotlin
-       CartrawlerSDK.clearStorage(activity)
-  ~~~
-
         
        
