@@ -14,10 +14,11 @@ Call the requestRecentSearches function to fetch the three most recent searches 
 
 ```swift
 CarTrawlerSDK.sharedInstance().requestRecentSearches { searches, error in
-    if let error = error {
-        // error occurred 
-    } else if let recentSearches: [CTRecentSearch] = searches {
+    if let recentSearches: [CTRecentSearch] = searches {
         // recent searches fetched successfully
+    }
+    else if let error = error {
+        // error occurred 
     }
 }
 ```
