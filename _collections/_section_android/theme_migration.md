@@ -1,6 +1,6 @@
 ---
 title: Theme Migration
-position: 10
+position: 7
 type: Android
 description:
 right_code: >

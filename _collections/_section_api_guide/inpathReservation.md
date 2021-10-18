@@ -19,7 +19,7 @@ This is the payload structure that is passed back via call backs in our native S
 
 For example if the users country name code is empty/null on input, this will be replaced with the placeholder tag
 
-**Placeholder Fields**
+**Placeholder Fields** 
 
 Passenger details
 <dl>
