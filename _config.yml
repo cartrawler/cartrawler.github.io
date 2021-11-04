@@ -29,17 +29,21 @@ collections:
     title: Theming
     position: 4
     product: nativesdk
+  section_api_guide:
+    title: API Guides
+    position: 5
+    product: nativesdk
   section_release_notes2021:
     title: Release notes (2021)
-    position: 5
+    position: 6
     product: nativesdk
   section_release_notes2020:
     title: Release notes (2020)
-    position: 6
+    position: 7
     product: nativesdk
   section_release_notes2019:
     title: Release notes (2019)
-    position: 7
+    position: 8
     product: nativesdk
   ondemand_ios:
     title: iOS

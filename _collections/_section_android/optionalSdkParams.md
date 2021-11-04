@@ -1,6 +1,6 @@
 ---
 title: Optional SDK Properties
-position: 5
+position: 4
 type: Android
 description:
 right_code: >

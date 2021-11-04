@@ -1,13 +1,13 @@
 ---
 title: API Query Params
-position: 6
+position: 1
 type: iOS
 description:
 right_code: >-
 ---
 
 
-<h5>API Query Params</h5>
+<h5>iOS API Query Params</h5>
 
 An object to use for request on the API methods.
 

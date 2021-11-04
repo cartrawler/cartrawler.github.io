@@ -40,7 +40,8 @@ The steps to use the SDK are:
         let passengers: [CTPassenger]
         let loyaltyRegex: String,
         let customCashTreatment: Bool,
-        let promotionCode: String
+        let promotionCode: String,
+        let recentSearch: CTRecentSearch
    }
 ```
 <br/><br/>
@@ -87,6 +88,17 @@ The steps to use the SDK are:
   context.pinnedVehicleID = "1892038" // Vehicle RefID
   context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
   context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 days
+  context.delegate = self
+  ```
+<br/><br/>
+<h5>Optional navigation to vehicle list <b>via recent search:</b></h5>
+  ``` swift
+  // Create a context for standAlone flow
+  let context = CTContext(clientID: "105614", flow: .standAlone)
+  context.countryCode = "IE"
+  context.currencyCode = "EUR"
+  context.languageCode = "EN"
+  context.recentSearch = recentSearch // your recent search object fetched from the recent searches api. 
   context.delegate = self
   ```
 <br/><br/>
@@ -176,6 +188,27 @@ If a user backs out of the list, it will return the user to the CarTrawler searc
   <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6,}$</dd>
   <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd>An optional string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>
+</dl>
+
+<h5>Initialising CTContext for Standalone with a Recent Search</h5>
+
+This is a variant on the standalone flow whereby the vehicle list is shown based on the recent search parameter, rather than the regular initial search screen.
+If a user backs out of the list, it will exit the standalone flow.
+
+- If the recent search is not present the SDK will fallback to regular standalone search.
+
+<dl>
+  <dt>clientID</dt><dd>A <b>required</b> client ID, required to use the CarTrawler API.</dd>
+  <dt>flow</dt><dd>A <b>required</b> Must be <b>.standAlone</b>.</dd>
+  <dt>countryCode</dt><dd>An optional country code, such as "US". Default is the device location if not provided.</dd>
+  <dt>currencyCode</dt><dd>An optional currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
+  <dt>languageCode</dt><dd>An optional language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>passengers</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
+  <dt>delegate</dt><dd>Optional delegate to receive reservation details after the payment</dd>
+  <dt>loyaltyRegex</dt><dd>Optional regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6,}$</dd>
+  <dt>customCashTreatment</dt><dd>An optional boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
+  <dt>promotionCode</dt><dd>An optional string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>
+  <dt>recentSearch</dt><dd>An optional CTRecentSearch object used to open the SDK on the vehicle list page and bypass the search screen.</dd>
 </dl>
 
 <h5>Presenting standalone</h5>

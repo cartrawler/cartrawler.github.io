@@ -1,13 +1,14 @@
 ---
 title: Best Rates API
-position: 7
-type: iOS
+position: 4
+type: 
 description:
 right_code: >-
 ---
 
-<h5>Request Best Daily Rates</h5>
+Daily Rates API is responsible for returning a wrapper response object of the best rate for a car rental.
 
+### Daily Rates API - iOS
 Calling the requestBestDailyRate function will trigger a best daily rate request based on the provided IATA or PickupLocationCode and pickup and dropoff dates.
 
   ``` swift
@@ -42,3 +43,31 @@ The best daily rate (price and currency) will be returned in the CarTrawlerSDKDe
   func didFailToReceiveBestDailyRate(error: Error) {
   }
   ```
+
+### Daily Rates API - Android
+We expose a method on the builder to retrieve the best rate for the products used.  
+
+A BestDailyRatesListener is past into the getBestDailyRates method and will call the relevant methods once the relevant events have happen. 
+ 
+A flag parameter is used to specify which products are required.
+
+  ~~~kotlin      
+
+   CartrawlerSDK.Builder()
+     //..
+     .getBestDailyRates(
+              context = this,
+              bestDailyRatesListener = object: CartrawlerSDK.BestDailyRatesListener{
+                 override fun onReceiveBestDailyRate(type: Int, price: Double, currency: String) {
+                 //Handle success result
+                 }
+     
+                 override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
+                 //Handle error result
+                 }
+     
+                 override fun onNoResults(type: Int) {
+                 //Handle empty result
+                 }
+
+  ~~~

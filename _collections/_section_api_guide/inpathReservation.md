@@ -1,6 +1,6 @@
 ---
 title: Inpath (Reservation process)
-position: 4
+position: 7
 type:
 description:
 right_code:
@@ -19,7 +19,7 @@ This is the payload structure that is passed back via call backs in our native S
 
 For example if the users country name code is empty/null on input, this will be replaced with the placeholder tag
 
-**Placeholder Fields**
+**Placeholder Fields** 
 
 Passenger details
 <dl>
@@ -178,10 +178,10 @@ Example JSON Payload:
                 "@URL": "http://www.cartrawler.com/res/conditions/insurance/CT_AXA_TC_IE.pdf"
             },
             "Window": {
-                "@name": "IOS-V3",
-                "@engine": "IOS-V3",
-                "@device": "MOBILEIOS",
-                "@svn": "9.1.0"
+                "@engine": "Android Engine",
+                "@name": "ANDROID-V1",
+                "@region": "en-us",
+                "@svn": "1.4.9-14"
             },
             "Tracking": {
                 "CustomerID": "901573475928606",
