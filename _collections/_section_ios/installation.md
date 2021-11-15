@@ -24,7 +24,7 @@ right_code: >-
       inhibit_all_warnings!
   
       target 'CarTrawlerPartner' do
-        pod 'CarTrawlerSDK', '~> 11.9.0'
+        pod 'CarTrawlerSDK', '~> 11.10.1'
       end
 ```
 
