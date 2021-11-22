@@ -57,7 +57,7 @@ val passenger = CartrawlerSDKPassenger(
 ### Retrieval of objects from the In Path Process
 
 
-If a user selected a car during the in path process, the onActivityForResult will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
+If a user selected a car during the In Path process, the onActivityForResult will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
 
 These objects are accessed via the return intent by onActivityForResult
 
@@ -79,8 +79,8 @@ override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent
 }
 ```    
     
-The json payload object is returned so that the partner can process the payment/reservation with a cartrawler payment end point at a different time and point in the partners basket flow. This JSON playload object is passed to this endpoint. 
-Further details can be found in our OTA developer docs. (Also see inpath reservation section)
+The json payload object is returned so that the partner can process the payment/reservation with a CarTrawler payment end point at a different time and point in the partners basket flow. This JSON payload object is passed to this endpoint. 
+Further details can be found in our OTA developer docs. (Also see In Path reservation section)
     
 The ``CartrawlerSDK.TRIP_DETAILS`` object:
 
@@ -111,7 +111,7 @@ data class Extra (
  class VehicleCharge (
    var chargeDescription: String? = null, // The localized description
    var taxInclusive: String? = null, // Is tax included?
-   var includedInRate: String? = null, // In this inpath payload use case this is always 'true'
+   var includedInRate: String? = null, // In this In Path payload use case this is always 'true'
    var purpose: String? = null, // Internal Purpose code
    var calculation: String? = null, // Reserved as "BeforePickup"
    var amount: Double? = null, // The amount of charge
@@ -124,8 +124,7 @@ class Loyalty(
 )  : Parcelable
 ```
           
-     
-The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calcuated by cartrawler using paynow, insurance, and bookingfee amounts when applicable.
+The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calculated by CarTrawler using pay now, insurance, and booking fee amounts when applicable.
  
 ### Notes on other attributes:
 

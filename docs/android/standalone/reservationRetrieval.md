@@ -39,13 +39,13 @@ data class ReservationDetails (
    val resId: String, 
    // resuid, use this along with the resId to retrieve the booking later
    val resuid: String, 
-   //The date & time of pickup
+   //The date & time of pick-up
    val pickUpDateTime: GregorianCalendar, 
-   //The date & time of pickup 
+   //The date & time of pick-up 
    val returnDateTime: GregorianCalendar,  
-   //Location details of pickup
+   //Location details of pick-up
    val pickupLocation: LocationDetails, 
-   //Location details of pickup
+   //Location details of pick-up
    val returnLocation: LocationDetails, 
    // Insurance, null if none attached
    val insurance: Insurance, 

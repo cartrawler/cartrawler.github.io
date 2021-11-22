@@ -13,8 +13,13 @@ permalink: /docs/ios/widgets/simple-added
 
 ---
 
-<picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_Generic_iOS.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_Generic_iOS.png">
-  <img src="/uploads/Simple_Added_Generic_iOS.png">
-</picture>
+![](/uploads/Simple_Added_Generic_iOS.png)
+
+#### Simple Added Widget
+```java
+let widgetStyle = CTWidgetStyle()
+let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .simpleAdded,
+                                                                   style: widgetStyle,
+                                                                   delegate: self)
+self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
+```

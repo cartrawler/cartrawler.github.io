@@ -33,11 +33,11 @@ repositories {
 implementation "com.cartrawler.android:car-rental:$latestVersion" 
 ```
 
-Create a theme that extends the ```CTDayNightTheme```. Please refer to the<a href="https://cartrawler.github.io/#section_style_guidetheming" target="_blank">theme section</a> for further details.
+Create a theme that extends the ```CTDayNightTheme```. Please refer to the <a href="/docs/android/customisation/themes" target="_blank">theme section</a> for further details.
 
 ## App Permissions
 
-On the SDK’s Search Screen, we have added the option for users to search for vehicles using their current location upon tapping the pickup location text field.
+On the SDK’s Search Screen, we have added the option for users to search for vehicles using their current location upon tapping the pick-up location EditText.
 
 To make use of this feature, please ensure your Manifest has either the <b>ACCESS_COARSE_LOCATION</b> or <b>ACCESS_FINE_LOCATION</b> permission.
 

@@ -33,7 +33,7 @@ end
 
 ## App Permissions
 
-On the SDK’s Search Screen, we have added the option for users to search for vehicles using their current location upon tapping the pickup location text field.
+On the SDK’s Search Screen, we have added the option for users to search for vehicles using their current location upon tapping the pick-up location text field.
 
 To make use of this feature, please ensure your plist file has the <b>NSLocationWhenInUseUsageDescription</b> (or <b>NSLocationAlwaysUsageDescription</b> for iOS10) key.
 

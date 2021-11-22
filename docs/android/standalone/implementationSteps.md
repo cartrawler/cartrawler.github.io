@@ -37,7 +37,7 @@ CartrawlerSDK.Builder()
 ---
 ### Navigation to the Vehicle List
 
-To support navigation to the car block screen you need to add pinned veh ref along with the drop off time, pick up time and the pickup and drop off locations as follows:
+To support navigation to the car block screen you need to add pinned veh ref along with the drop-off time, pick-up time and the pick-up and drop-off locations as follows:
 ```java
 CartrawlerSDK.Builder()
            .setPickupTime(pickupDateTime = GregorianCalendar())

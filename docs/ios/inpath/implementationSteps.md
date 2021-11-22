@@ -31,26 +31,26 @@ To implement the SDK's In Path flow within your app, please use the following st
 
 #### Object description:
 
-  ```java
-    class CTContext: NSObject {
-        let clientID: String
-        let flowType: CTFlowType
-        let countryCode: String
-        let currencyCode: String
-        let pickupDate: Date
-        let dropOffDate: Date
-        let pickupLocation: String
-        let dropOffLocation: String
-        let flightNumber: String
-        let pickupLocationID: String
-        let dropOffLocationID: String
-        let pinnedVehicleID: String
-        let passengers: [CTPassenger]
-        let loyaltyRegex: String,
-        let customCashTreatment: Bool,
-        let promotionCode: String
-   }
-  ```
+```java
+class CTContext: NSObject {
+    let clientID: String
+    let flowType: CTFlowType
+    let countryCode: String
+    let currencyCode: String
+    let pickupDate: Date
+    let dropOffDate: Date
+    let pickupLocation: String
+    let dropOffLocation: String
+    let flightNumber: String
+    let pickupLocationID: String
+    let dropOffLocationID: String
+    let pinnedVehicleID: String
+    let passengers: [CTPassenger]
+    let loyaltyRegex: String,
+    let customCashTreatment: Bool,
+    let promotionCode: String
+}
+```
 
 <br/>
 #### Required parameters for initialisation:
@@ -58,7 +58,7 @@ To implement the SDK's In Path flow within your app, please use the following st
   ```java
   import CarTrawlerSDK
 
-  // Create a context for inPath flow
+  // Create a context for in Path flow
   let context = CTContext(clientID: "12345", flow: .inPath)
   context.countryCode = "IE"
   context.currencyCode = "EUR"
@@ -68,32 +68,34 @@ To implement the SDK's In Path flow within your app, please use the following st
   context.flightNumber = "FL1234"
   context.delegate = self
   ```
+<b>Note: the countryCode property refers to the country of residency, and this is used when we make search requests.</b>
 
 <br/>
 #### Pre populating driver details:
 - add a CTPassenger object
 
 ```java
-  //Passenger object
-  let passenger = CTPassenger(firstName: "Ryan",
-                              lastName: "O'Connor",
-                              addressLine1: "DunDrum",
-                              addressLine2: "Dublin 14",
-                              city: "Dublin",
-                              postcode: "Dublin 14",
-                              countryCode: "IE",
-                              age: 25,
-                              email: "ryan.oconnor@cartrawler.com",
-                              phone: "0838880000",
-                              phoneCountryPrefix: "353",
-                              loyaltyProgramNumber: "1234",
-                              isPrimaryDriver: true)
+//Passenger object
+let passenger = CTPassenger(firstName: "Ryan",
+                            lastName: "O'Connor",
+                            addressLine1: "DunDrum",
+                            addressLine2: "Dublin 14",
+                            city: "Dublin",
+                            postcode: "Dublin 14",
+                            countryCode: "IE",
+                            age: 25,
+                            email: "ryan.oconnor@cartrawler.com",
+                            phone: "0838880000",
+                            phoneCountryPrefix: "353",
+                            loyaltyProgramNumber: "1234",
+                            isPrimaryDriver: true)
+context.passengers = [passenger]
+```
+<b>Note: CTPassenger countryCode takes priority over CTContext's countryCode property when we make search requests.</b>
 
-  context.passengers = [passenger]
-  ```
 
 ---
-### Set the InPath context on the SDK, to trigger the initial request
+### Set the In Path context on the SDK, to trigger the initial request
 ```java
   // This will automatically trigger a bestDailyRate request
   CarTrawlerSDK.sharedInstance().setContext(context)
@@ -102,7 +104,7 @@ To implement the SDK's In Path flow within your app, please use the following st
 ---
 ### Present the SDK
 
-After initialisation and setup of your CTContext object for InPath, you must use the following presentation method:
+After initialisation and setup of your CTContext object for In Path, you must use the following presentation method:
 
 ```java
 let viewController = UIViewController() // Your view controller from which the SDK will be presented.
@@ -112,11 +114,11 @@ self.carTrawlerSDK.presentInPath(from: viewController)
 ---
 ### Collect the booking data after flow completion
 
-After a user has gone through the entire InPath flow and selected a vehicle, the SDK will use a delegate callback to send all of the booking data:
+After a user has gone through the entire In Path flow and selected a vehicle, the SDK will use a delegate callback to send all of the booking data:
 
 #### CarTrawler SDK Delegate:
 ```java
-// Required. Called when the user wants to add an InPath booking to their flight booking.
+// Required. Called when the user wants to add an In Path booking to their flight booking.
 func didProduce(inPathPaymentRequest request: [AnyHashable : Any], vehicle: CTInPathVehicle, payment: Payment) {
   print("\(request)")
 
@@ -147,7 +149,7 @@ func didFailToReceiveBestDailyRate(error: Error) {
 }
 ```
 
-#### Inpath Vehicle Object
+#### In Path Vehicle Object
 
   ```java
   class CTInPathVehicle: NSObject {
@@ -158,10 +160,10 @@ func didFailToReceiveBestDailyRate(error: Error) {
     let vendorName: String // Vendor name
     let vehicleImageURL: URL // vehicle image url
     let vendorImageURL: URL // vendorImageURL
-    let pickUpLocationName: String // Pickup location name
-    let dropOffLocationName: String // Drop off location name
-    let pickupDate: Date // Pick up date
-    let dropoffDate: Date // Drop off date
+    let pickUpLocationName: String // pick-up location name
+    let dropOffLocationName: String // drop-off location name
+    let pickupDate: Date // pick-up date
+    let dropoffDate: Date // drop-off date
     let extrasIncludedForFree: Array // Array of included extras
     let extrasPayableAtDesk: Array // Array of extras payable at desk
     let extrasPayableNow: Array // Array of extras payable now

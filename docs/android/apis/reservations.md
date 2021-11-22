@@ -52,10 +52,10 @@ data class ReservationDetails (
    val surname: String, // Surname
    val resId: String, // Reservation ID
    val resuid: String, // resuid, use this along with the resId to retrieve the booking later
-   val pickUpDateTime: GregorianCalendar, //The date & time of pickup
-   val returnDateTime: GregorianCalendar,  //The date & time of pickup 
-   val pickupLocation: LocationDetails, //Location details of pickup
-   val returnLocation: LocationDetails, //Location details of pickup
+   val pickUpDateTime: GregorianCalendar, //The date & time of pick-up
+   val returnDateTime: GregorianCalendar,  //The date & time of pick-up 
+   val pickupLocation: LocationDetails, //Location details of pick-up
+   val returnLocation: LocationDetails, //Location details of pick-up
    val insurance: Insurance, // Insurance, null if none attached
    val rentalInfo: RentalInfo, // Information on reservation costs
    val vehicle: VehicleDetails) // Information on the selected vehicle

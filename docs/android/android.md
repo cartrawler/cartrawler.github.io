@@ -9,5 +9,5 @@ permalink: docs/android
 # Android
 {: .no_toc }
 
-Our SDK supports Android 5 Lollipop (SDK version 21) and above
+Our SDK supports Android 5 Lollipop (SDK version 21) and above.
 {: .fs-6 .fw-300 }

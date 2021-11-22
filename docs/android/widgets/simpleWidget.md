@@ -19,6 +19,6 @@ permalink: /docs/android/widgets/simple/
   <img src="/uploads/Simple_Loaded_Generic_style.png">
 </picture>
 
-You can add a click listener to this CTSimpleWidget that will start the inpath or standalone flow , using the standard View.OnClickListener
+You can add a click listener to this CTSimpleWidget that will start the In Path or standalone flow , using the standard View.OnClickListener
 
-You may decide when onActivityResult is called following the completion of the inpath flow (Activity), you will show that a rental car has beed added, by using displaying the view CTSimpleAddedWidget or alternatively CTVehicleWidget
+You may decide when onActivityResult is called following the completion of the In Path flow (Activity), you will show that a rental car has beed added, by using displaying the view CTSimpleAddedWidget or alternatively CTVehicleWidget

@@ -18,12 +18,12 @@ The diagram below illustrated the user flow for the native SDK. The iOS SDK and 
 
 ### Standalone Flow
 
-Standalone flow is the full booking experience asking the user to enter search criteria all the way through to lead driver and payment information.
+The Standalone flow is the full booking experience asking the user to enter search criteria all the way through to lead driver and payment information.
 
 ![](/uploads/standalone flow.png)
 
 ### In Path Flow
 
-In Path flow is the booking experience that is embedded in another user flow. Example scenarios include during the flight booking flow. The widget is a touchpount that can be adapted to a partner "Add Extras" or ancilliaries screen. 
+The In Path flow is the booking experience that is embedded in another user flow. Example scenarios include during the flight booking flow. The widget is a touchpoint that can be adapted to a partner "Add Extras" or ancillaries screen. 
 
 ![](/uploads/In-Path Flow.png)

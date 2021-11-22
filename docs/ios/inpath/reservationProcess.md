@@ -11,7 +11,7 @@ permalink: /docs/ios/inpath/reservation-process
 
 {: .no_toc }
 
-Following the Inpath process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
+Following the In Path process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
 
 ---
 
@@ -25,7 +25,7 @@ Full details on using the OTA_VehResRQ endpoint and our API in general can be fo
 
 This is the payload structure that is passed back via call backs in our native SDK. A placeholder tag will only be present in the case that input data is not supplied for that tag. 
 
-For example if the users country name code is empty/null on input, this will be replaced with the placeholder tag
+For example if the user's country name code is empty/null on input, this will be replaced with the placeholder tag.
 
 ### Placeholder Fields
 
@@ -38,7 +38,7 @@ For example if the users country name code is empty/null on input, this will be 
 <dt>[ADDRESSLINE1]</dt><dd>Passengers address</dd>
 <dt>[CITY]</dt><dd>Passengers city</dd>
 <dt>[POSTCODE]</dt><dd> Passengers postcode</dd>
-<dt>[COUNTRYNAMECODE]</dt><dd>Address line country code</dd>
+<dt><small>[COUNTRYNAMECODE]</small></dt><dd>Address line country code</dd>
 </dl>
 
 #### Credit Card Payment

@@ -34,10 +34,10 @@ class CTReservationDetails: NSObject {
   let customerSurname: String // Surname
   let resId: String // Reservation ID
   let resUid: String // Hashed customer email
-  let pickUpDateTime: Date //The date & time of pickup
-  let returnDateTime: Date  //The date & time of pickup
-  let pickUpLocation: CTLocationDetails //Location details of pickup
-  let returnLocation: CTLocationDetails //Location details of pickup
+  let pickUpDateTime: Date // The date & time of pick-up
+  let returnDateTime: Date  // The date & time of pick-up
+  let pickUpLocation: CTLocationDetails // Location details of pick-up
+  let returnLocation: CTLocationDetails // Location details of pick-up
   let insurance: CTInsuranceDetails? // Insurance, null if none attached
   let rentalInfo: RentalInfo?) // Information on reservation costs
   let vehicleDetails: CTVehicleDetails // Information on booked vehicle
@@ -99,7 +99,7 @@ class CTInsuranceDetails: NSObject (
 class CTRentalInfo: NSObject (
   let cost: Double // base cost
   let currency: String // base currency
-  let customerCost: Double // /cost in the currency of the customer
+  let customerCost: Double // cost in the currency of the customer
   let customerCurrency: String // the presented currency to the customer
 )
 

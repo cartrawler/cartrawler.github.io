@@ -17,11 +17,11 @@ The Vehicles API is responsible for returning a wrapper response object of the l
 
 We expose a method on the builder to retrieve the vehicle list based on a sort type and limit you specify.
 
-Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, pickup and dropoff date, also we limit the list returned to a set number of vehicles you specify.
+Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, pick-up and drop-off date, also we limit the list returned to a set number of vehicles you specify.
 
 The sort type can be either:
 - FLAG_BEST_PRICE, which returns the cheapest cars in the list
-- FLAG_RECOMMENDED, which returns the cartrawler recommended cars.
+- FLAG_RECOMMENDED, which returns the CarTrawler recommended cars.
 
 A VehiclesListener is past into the getVehicleDetails method and the SDK will call the relevant methods once the relevant events have happen.
 

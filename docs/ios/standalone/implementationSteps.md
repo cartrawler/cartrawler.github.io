@@ -31,7 +31,7 @@ CarTrawlerSDK.sharedInstance().initialiseSDK(with: nil,
 
 #### Object description
   
-````swift
+```swift
 class CTContext: NSObject {
   let clientID: String
   let flowType: CTFlowType
@@ -51,7 +51,7 @@ class CTContext: NSObject {
   let promotionCode: String,
   let recentSearch: CTRecentSearch
 }
-````
+```
 <br/>
 #### Required parameters for initialisation:
 
@@ -62,6 +62,7 @@ context.countryCode = "IE"
 context.currencyCode = "EUR"
 context.languageCode = "en"
 ````
+<b>Note: the countryCode property refers to the country of residency, and this is used when we make search requests.</b>
 
 <br/>
 #### Pre populating driver details:
@@ -84,6 +85,8 @@ let passenger = CTPassenger(firstName: "Ryan",
                             isPrimaryDriver: true)
 context.passengers = [passenger]
 ```
+
+<b>Note: CTPassenger countryCode takes priority over CTContext's countryCode property when we make search requests.</b>
 
 <br/>
 #### Navigation to the vehicle list

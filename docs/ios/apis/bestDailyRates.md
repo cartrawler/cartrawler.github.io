@@ -11,7 +11,7 @@ permalink: /docs/ios/apis/best-daily-rates
 
 {: .no_toc }
 
-The requestBestDailyRate function can be called to receive the cheapest vehicle's price for a given location based on the pickup and drop off dates. 
+The requestBestDailyRate function can be called to receive the cheapest vehicle's price for a given location based on the pick-up and drop-off dates. 
 
 ---
 

@@ -4,7 +4,7 @@ title: Themes
 parent: Customisation
 grand_parent: Android
 nav_order: 1
-permalink: /docs/android/customisation/themes/
+permalink: /docs/android/customisation/themes
 ---
 
 # Themes
@@ -25,7 +25,7 @@ By Default, the colour for text and icons on colour backgrounds are white for na
 
 The Android SDK uses the Material Day Night theme ```Theme.MaterialComponents.DayNight```
 
-Before proceeding, if you were using version 10.x.x and below we recommend you read the <a href="https://cartrawler.github.io/#section_androidtheme_migration" target="_blank">theme migration guide</a> on how to migrate your existing theme.
+Before proceeding, if you were using version 10.x.x and below we recommend you read the <a href="/docs/android/customisation/theme-migration" target="_blank">theme migration guide</a> on how to migrate your existing theme.
 
 The following code snippet will show you how to style the app to suit your brand guidelines.
 

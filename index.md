@@ -29,19 +29,19 @@ Flow
 : a set of CarTrawler UI screens, with a specific business objective. 
 
 ### Flows ###
-There are two main business flows implemented in the SDK, Standalone and In Path <br/>
+There are two main business flows implemented in the SDK, <a href="/docs/style-guide/user-flow#standalone-flow">Standalone</a> and <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a><br/>
 Note: the In Path rental solution requires **additional backend development effort** and organisation between you and CarTrawler.
 
 Standalone
 : Allows the user to reserve a car rental product independently of a flight.
 
 Standalone deeplink
-: a variant of the Standalone flow whereby the user is presented with the vehicle list based on the pickup and dropoff parameters passed to the SDK, thus bypassing the initial search screen.
+: a variant of the Standalone flow whereby the user is presented with the vehicle list based on the pick-up and drop-off parameters passed to the SDK, thus bypassing the initial search screen.
 
-InPath
-: Allows the user to reserve a car rental product to accompany their flight, this product forms part of the user's flight itenary. 
+In Path
+: Allows the user to reserve a car rental product to accompany their flight, this product forms part of the user's flight itinerary. 
 
-## Prerequisits ##
+## Prerequisites ##
 
 Please ensure that you have received the following from a CarTrawler representative:
 {: .present-before-paste}
@@ -51,7 +51,7 @@ Please ensure that you have received the following from a CarTrawler representat
 
 * Relevant Client ID(s) to use with SDK (these will be provided by your Partner Manager)
 * CarTrawler repository credentials
-* Artifactory crendentials (Android)
+* Artifactory credentials (Android)
 * Dedicated Slack support channel for integrating the SDK into your apps. 
 
 ### For Go-Live: ###

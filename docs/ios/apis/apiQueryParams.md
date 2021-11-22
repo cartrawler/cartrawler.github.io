@@ -17,23 +17,21 @@ A CTAPIQueryParams object must be created and initialised after initialising the
 
 ## Example CTAPIQueryParams
 
-  ```java
-  
-    import CarTrawlerSDK
+```java
+import CarTrawlerSDK
 
-    let params = CTAPIQueryParams()  
-    params.delegate = self
-    params.clientID = "your clientID"
-    params.countryCode = "IE"
-    params.currencyCode = "EUR"
-    params.languageCode = "EN"
-    params.iataCode = "DUB"
-    params.pickupDate = Date(timeIntervalSinceNow: 86400) // next day
-    params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
-    params.numberOfVehicles = 20
-    params.sortType = .recommended
-  
-  ```
+let params = CTAPIQueryParams()  
+params.delegate = self
+params.clientID = "your clientID"
+params.countryCode = "IE"
+params.currencyCode = "EUR"
+params.languageCode = "EN"
+params.iataCode = "DUB"
+params.pickupDate = Date(timeIntervalSinceNow: 86400) // next day
+params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
+params.numberOfVehicles = 20
+params.sortType = .recommended
+```
 
 ### Property Descriptions
 
@@ -49,19 +47,19 @@ A CTAPIQueryParams object must be created and initialised after initialising the
 <dt>languageCode</dt>
 <dd>A language code. Default is "EN" if not provided.</dd>
 <dt>pickupDate</dt>
-<dd>A required Pickup Date.</dd>
+<dd><b>[Required]</b> A pick-up Date.</dd>
 <dt>dropOffDate</dt>
-<dd>A required Drop-off Date.</dd>
+<dd><b>[Required]</b> A Drop-off Date.</dd>
 <dt>IATACode </dt>
-<dd>An optional IATA code for pickup location.</dd>
+<dd>An IATA code for pick-up location.</dd>
 <dt>pickupLocationID</dt>
-<dd>An optional OTA Location ID for pickup location.</dd>
+<dd>An OTA Location ID for pick-up location.</dd>
 <dt>dropOffLocationID</dt>
-<dd>An optional OTA Location ID for drop off location.</dd>
+<dd>An OTA Location ID for drop-off location.</dd>
 <dt>passengers</dt>
-<dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
+<dd>An Array of Passengers, the first one will be the main passenger.</dd>
 <dt>numberOfVehicles</dt>
-<dd>An optional number of vehicles to return, used in <a href="https://cartrawler.github.io/#section_iosgetVehicles">Vehicles API</a></dd>
+<dd>A number of vehicles to return, used in the <a href="/docs/ios/apis/vehicles">Vehicles API</a></dd>
 <dt>sortType</dt>
-<dd>An optional sort type, used in <a href="https://cartrawler.github.io/#section_iosgetVehicles">Vehicles API</a></dd>
+<dd>The sort type, used in the <a href="/docs/ios/apis/vehicles">Vehicles API</a></dd>
 </dl>

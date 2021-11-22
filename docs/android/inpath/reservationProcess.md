@@ -11,7 +11,7 @@ permalink: /docs/android/inpath/reservation-process/
 
 {: .no_toc }
 
-Following the Inpath process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
+Following the In Path process, a payload is returned in JSON Format, this JSON can later be used to make a reservation with our backend system.
 
 ---
 
@@ -25,20 +25,20 @@ Full details on using the OTA_VehResRQ endpoint and our API in general can be fo
 
 This is the payload structure that is passed back via call backs in our native SDK. A placeholder tag will only be present in the case that input data is not supplied for that tag. 
 
-For example if the users country name code is empty/null on input, this will be replaced with the placeholder tag
+For example if the user's country name code is empty/null on input, this will be replaced with the placeholder tag.
 
 ### Placeholder Fields
 
 #### Passenger details
 <dl>
-<dt>[FIRSTNAME]</dt><dd>Passengers firstname</dd>
-<dt>[SURNAME]</dt><dd>Passengers surname</dd>
-<dt>[TELEPHONE]</dt><dd>Passengers telephone number</dd>
-<dt>[EMAIL]</dt><dd>Passengers email address</dd>
-<dt>[ADDRESSLINE1]</dt><dd>Passengers address</dd>
-<dt>[CITY]</dt><dd>Passengers city</dd>
-<dt>[POSTCODE]</dt><dd> Passengers postcode</dd>
-<dt>[COUNTRYNAMECODE]</dt><dd>Address line country code</dd>
+<dt>[FIRSTNAME]</dt><dd>Passenger's first name</dd>
+<dt>[SURNAME]</dt><dd>Passenger's surname</dd>
+<dt>[TELEPHONE]</dt><dd>Passenger's telephone number</dd>
+<dt>[EMAIL]</dt><dd>Passenger's email address</dd>
+<dt>[ADDRESSLINE1]</dt><dd>Passenger's address</dd>
+<dt>[CITY]</dt><dd>Passenger's city</dd>
+<dt>[POSTCODE]</dt><dd> Passenger's post code</dd>
+<dt><small>[COUNTRYNAMECODE]</small></dt><dd>Address line country code</dd>
 </dl>
 
 #### Credit Card Payment

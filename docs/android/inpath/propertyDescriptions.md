@@ -26,6 +26,6 @@ permalink: /docs/android/inpath/property-descriptions/
 <dt>setOrderId</dt><dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
 <dt>setPassenger</dt><dd>An optional Array of Passengers, the first one will be the main passenger.</dd>
 <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
-<dt>setPickupTime</dt><dd>Pick up date time for required service.</dd>
+<dt>setPickupTime</dt><dd>pick-up date time for required service.</dd>
 <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
 <dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd></dl>

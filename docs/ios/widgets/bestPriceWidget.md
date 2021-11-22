@@ -11,15 +11,9 @@ permalink: /docs/ios/widgets/best-price
 
 {: .no_toc }
 
-<!-- A CTAPIQueryParams object must be created and initialised after initialising the SDK to make requests using our API methods. -->
-
 ---
 
-<picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Loaded_Generic_iOS.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Loaded_Generic_iOS.png">
-  <img src="/uploads/Pricing_Loaded_Generic_iOS.png_iOS">
-</picture><br />
+![](/uploads/Pricing_Loaded_Generic_iOS.png)
 
 ## Setting the CTBestPriceWidget price
 

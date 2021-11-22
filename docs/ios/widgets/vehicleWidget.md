@@ -13,19 +13,15 @@ permalink: /docs/ios/widgets/vehicle
 
 ---
 
-<picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_Generic_iOS.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_Generic_iOS.png">
-  <img src="/uploads/Pricing_Added_Generic_IOS.png_iOS">
-</picture>
+![](/uploads/Pricing_Added_Generic_IOS.png)
 
 ## Setting the CTVehicleWidget vehicle
 
-When a user has completed the CarTrawler InPath flow and added a vehicle, the vehicle will be returned to you in the vehicleSelected delegate callback. Using the code below, you could switch a best price widget into a populated vehicle widget: 
+When a user has completed the CarTrawler In Path flow and added a vehicle, the vehicle will be returned to you in the vehicleSelected delegate callback. Using the code below, you could switch a best price widget into a populated vehicle widget: 
 
 ```java  
-    func vehicleSelected(_ vehicle: CTVehicleDetails) {
-        self.widgetContainer?.setVehicle(vehicle)
-        self.widgetContainer?.setStatus(.vehicle)
-    }
+func vehicleSelected(_ vehicle: CTVehicleDetails) {
+    self.widgetContainer?.setVehicle(vehicle)
+    self.widgetContainer?.setStatus(.vehicle)
+}
 ```

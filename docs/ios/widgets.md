@@ -10,7 +10,7 @@ has_children: true
 
 {: .no_toc }
 
-The CarTrawler iOS SDK comes prepackaged with four widgets.<br /><br /> When considering the addition of a new touchpoint into the CarTrawler flow from within your app, you can choose the one that best suits your needs.<br /><br /> Each widget is independent of the Standalone and InPath flows, and can be used to launch either of them via your implementation of the CTWidgetContainerDelegate’s didTapView function.<br />
+The CarTrawler iOS SDK comes prepackaged with four widgets.<br /><br /> When considering the addition of a new touchpoint into the CarTrawler flow from within your app, you can choose the one that best suits your needs.<br /><br /> Each widget is independent of the Standalone and In Path flows, and can be used to launch either of them via your implementation of the CTWidgetContainerDelegate’s didTapView function.<br />
 
 ---
 
