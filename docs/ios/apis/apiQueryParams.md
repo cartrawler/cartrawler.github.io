@@ -37,7 +37,7 @@ params.sortType = .recommended
 
 <dl>
 <dt>delegate</dt>
-<dd>a CarTrawlerSDKDelegate to receive the API response.</dd>
+<dd>A CarTrawlerSDKDelegate to receive the API response.</dd>
 <dt>clientID</dt>
 <dd>Your client ID, required to use the CarTrawler API.</dd>
 <dt>countryCode</dt>

@@ -79,7 +79,7 @@ override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent
 }
 ```    
     
-The json payload object is returned so that the partner can process the payment/reservation with a CarTrawler payment end point at a different time and point in the partners basket flow. This JSON payload object is passed to this endpoint. 
+The JSON payload object is returned so that the partner can process the payment/reservation with a CarTrawler payment end point at a different time and point in the partners basket flow. This JSON payload object is passed to this endpoint. 
 Further details can be found in our OTA developer docs. (Also see In Path reservation section)
     
 The ``CartrawlerSDK.TRIP_DETAILS`` object:

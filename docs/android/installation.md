@@ -7,7 +7,7 @@ nav_order: 1
 
 # Installation
 
-To add the CarTrawlerSDK to your app, add our maven repository and enter your artifactory credentials
+To add the CarTrawlerSDK to your app, add our maven repository and enter your artifactory credentials.
 
 ---
 

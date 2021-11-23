@@ -40,7 +40,7 @@ Below are a few examples of applying a palette to the SDK’s Search and Car Res
 
 ### Dark vs. Light Styling
 
-By Default, the colour for text and icons on colour backgrounds are white for the native SDK. If your brand colours are a bright colour (high luminosity), it is recommended you change to a light theme for legibility of text and icons.
+By default, the colour for text and icons on colour backgrounds are white. If your brand colours are a bright colour (high luminosity), it is recommended you change to a light theme for legibility of text and icons.
 
 ![](/uploads/Dark vs Light.png)
 
