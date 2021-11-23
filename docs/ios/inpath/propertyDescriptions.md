@@ -41,13 +41,13 @@ See code snippet above for available methods and callbacks for In Path.
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A language code to switch between languages. Default is "EN" if not provided.</dd>
-  <dt>pickupDate</dt><dd><b>[Required]</b> pick-up Date.</dd>
+  <dt>pickupDate</dt><dd><b>[Required]</b> Pick-up Date.</dd>
   <dt>dropOffDate</dt><dd><b>[Required]</b> Drop-off Date.</dd>
   <dt>pickupLocation</dt><dd><b>[Required]</b> An IATA code for pick-up location.</dd>
   <dt>dropOffLocation</dt><dd> An IATA code for drop-off location.</dd>
   <dt>pinnedVehicleID</dt><dd> A refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deep link.</dd>
   <dt>passengers</dt><dd> An Array of Passengers, the first one will be the main passenger.</dd>
-  <dt>delegate</dt><dd> A delegate that will handle callback methods</dd>
+  <dt>delegate</dt><dd> A delegate that will handle callback methods.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a prepopulated code please provide an empty string.</b></dd>

@@ -38,6 +38,6 @@ Light and Dark text colours and sample custom text colour on colour backgrounds 
 
 ## Theming Examples
 
-By Default, the colour for text and icons on colour backgrounds are white for the native SDK. If your brand colours are a bright colour (high luminosity), it is recommended you change to a light theme for legibility of text and icons.
+By default, the colour for text and icons on colour backgrounds are white for the native SDK. If your brand colours are a bright colour (high luminosity), it is recommended you change to a light theme for legibility of text and icons.
 
 ![](/uploads/Font Theming Examples.png)

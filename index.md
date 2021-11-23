@@ -23,13 +23,13 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 ### Definitions
 
 Car rental product
-: Comprised of the physical car rental itself, and optional add on product line items such as insurance and car extras (additional driver, GPS, child toddler seat, etc).
+: Comprised of the physical car rental itself, and optional add-on product line items such as insurance and car extras (additional driver, GPS, child/toddler seat, etc).
 
 Flow
 : a set of CarTrawler UI screens, with a specific business objective. 
 
 ### Flows ###
-There are two main business flows implemented in the SDK, <a href="/docs/style-guide/user-flow#standalone-flow">Standalone</a> and <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a><br/>
+There are two main business flows implemented in the SDK, <a href="/docs/style-guide/user-flow#standalone-flow">Standalone</a> and <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a><br/>.
 Note: the In Path rental solution requires **additional backend development effort** and organisation between you and CarTrawler.
 
 Standalone

@@ -13,7 +13,7 @@ permalink: /docs/android/customisation/themes
 
 ---
 
-By Default, the colour for text and icons on colour backgrounds are white for native SDK. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
+By default, the colour for text and icons on colour backgrounds are white for native SDK. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
 
 <picture>
   <source media="(max-width: 799px)" srcset="/uploads/theming-example.png">

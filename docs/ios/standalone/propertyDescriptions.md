@@ -38,14 +38,14 @@ Note:
 * the countryCode property refers to the country of residency, and this is used when we make search requests.
 
 <dl>
-  <dt>clientID</dt><dd><b>[Required]</b>Your client ID, required to use the CarTrawler API.</dd>
+  <dt>clientID</dt><dd><b>[Required]</b> Your client ID, required to use the CarTrawler API.</dd>
   <dt>flow</dt><dd><b>[Required]</b> The flow to be launched. Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A code for setting the language. This defaults to "EN" if not provided.</dd>
   <dt>passengers</dt><dd> An array of passengers, the first one will be the main passenger.</dd>
-  <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks</dd>
-  <dt>loyaltyRegex</dt><dd> A regular expression used to validate the loyalty number field</dd>
+  <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
+  <dt>loyaltyRegex</dt><dd> A regular expression used to validate the loyalty number field.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used in the SDK as the main toggle for displaying the promotion code field on the search form or not. Use an empty string to show the field or a string with a promotion code to show the field and pre populate it.</dd>
 </dl>
@@ -55,17 +55,17 @@ Note:
 <br />
 This is a variant on the standalone flow whereby the vehicle list is shown based on the pick-up and drop-off properties, rather than the regular initial search screen.
 Optionally, if a vehicle refId is provided, the vehicle it belongs to will be pinned to the top of the vehicle list.
-If the user navigates back from this screen in this flow variant, list, it will return the user to the CarTrawler search.
+If the user navigates back from the vehicle list in this flow variant, they will be brought to the search screen.
 
 Note:
-* If the pick-up and drop-off dates are invalid, out of date, or not present the SDK will fallback to regular standalone search.
-* If the vehicle refId is invalid (or out of date), the list will be shown without the vehicle being pinned.
+* If the pick-up and drop-off dates are invalid, out-of-date, or not present the SDK will fallback to regular standalone search.
+* If the vehicle refId is invalid or out-of-date, the list will be shown without the vehicle being pinned.
 * If the pick-up and drop-off properties are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
 * The countryCode property refers to the country of residency, and this is used when we make search requests.
 
 <dl>
-  <dt>clientID</dt><dd><b>[Required]</b>client ID, required to use the CarTrawler API.</dd>
-  <dt>flow</dt><dd><b>[Required]</b>The flow to be launched. Must be <b>.standAlone</b>.</dd>
+  <dt>clientID</dt><dd><b>[Required]</b> Your client ID, required to use the CarTrawler API.</dd>
+  <dt>flow</dt><dd><b>[Required]</b> The flow to be launched. Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD".</dd>
   <dd>The currency associated with the device’s system region is used by default.</dd>
@@ -78,11 +78,11 @@ Note:
   <dt>dropOffLocationID</dt><dd> An OTA Location ID for drop-off location.</dd>
   <dt>pinnedVehicleID</dt><dd> A refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deep link.</dd>
   <dt>passengers</dt><dd> An Array of Passengers, the first one will be the main passenger.</dd>
-  <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks</dd>
+  <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
-  <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a prepopulated code please provide an empty string.</b></dd>
+  <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a pre-populated code please provide an empty string.</b></dd>
 </dl>
 
 
@@ -97,13 +97,13 @@ Note:
 * The countryCode property refers to the country of residency, and this is used when we make search requests.
 
 <dl>
-  <dt>clientID</dt><dd><b>[Required]</b> client ID, required to use the CarTrawler API.</dd>
+  <dt>clientID</dt><dd><b>[Required]</b> Your client ID, required to use the CarTrawler API.</dd>
   <dt>flow</dt><dd><b>[Required]</b> The flow to be launched. Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>passengers</dt><dd> An array of Passengers, the first one will be the main passenger.</dd>
-  <dt>delegate</dt><dd> A delegate to receive reservation details after the payment</dd>
+  <dt>delegate</dt><dd> A delegate to receive reservation details after the payment.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>

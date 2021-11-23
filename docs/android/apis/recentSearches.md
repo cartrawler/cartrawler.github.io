@@ -11,7 +11,7 @@ permalink: /docs/android/apis/recent-searches/
 
 {: .no_toc }
 
-We expose recent searches made within the SDK via our recentSearches api. Recent searches can also be cleared or removed individually, and this will be reflected in the SDK as well.
+We expose recent searches made within the SDK via our recentSearches API. Recent searches can also be cleared or removed individually, and this will be reflected in the SDK as well.
 
 ---
 
