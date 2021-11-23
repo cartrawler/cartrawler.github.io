@@ -58,12 +58,12 @@ Override the following properties in your SDK theme
 
 #### Loyalty theming sample code
 ```xml
-   <style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
-        //..
-        <item name="ctLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
-        <item name="ctLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
-        <item name="ctLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
-        <item name="ctLoyaltySecondaryColorText">@color/loyaltySecondaryColorText</item>
-        <item name="ctLoyaltyTheme">dark</item> //Either "dark" or "light" Default is "light"
-   </style>
+<style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
+    //..
+    <item name="ctLoyaltyPrimaryColor">@color/loyaltyPrimaryColor</item>
+    <item name="ctLoyaltyPrimaryTextColor">@color/loyaltyPrimaryTextColor</item>
+    <item name="ctLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
+    <item name="ctLoyaltySecondaryColorText">@color/loyaltySecondaryColorText</item>
+    <item name="ctLoyaltyTheme">dark</item> // Either "dark" or "light" Default is "light"
+</style>
 ```   

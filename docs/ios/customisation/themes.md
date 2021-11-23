@@ -24,18 +24,18 @@ If you do not wish to set the four optional properties manually, the CarTrawler 
 
 ---
 
-Theming is achieved by creating a CTStyle object and initialising the SDK with it.
+Theming is achieved by creating a `CTStyle` object and initialising the SDK with it.
 
-CTStyle has the following properties:
+`CTStyle` has the following properties:
 
-* theme
-* primaryColor
-* primaryLightColor (optional)
-* primaryDarkColor (optional)
-* ctaColor (optional)
-* ctaFontColor (optional)
-* secondaryCtaColor (optional)
-* secondaryCtaFontColor (optional)
+* [Required] `theme` 
+* [Required] `primaryColor` 
+* `primaryLightColor` 
+* `primaryDarkColor` 
+* `ctaColor`
+* `ctaFontColor`
+* `secondaryCtaColor`
+* `secondaryCtaFontColor` 
 
 #### Creating a CTStyle 
 ```java

@@ -11,13 +11,13 @@ permalink: /docs/ios/apis/recent-searches
 
 {: .no_toc }
 
-We expose recent searches made within the SDK via the requestRecentSearches function. Recent Searches can also be cleared or removed individually, and this will be reflected in the SDK as well.
+We expose recent searches made within the SDK via the `requestRecentSearches` function. Recent Searches can also be cleared or removed individually, and this will be reflected in the SDK as well.
 
 ---
 
 ## Fetching Recent Searches
 
-Call the requestRecentSearches function to fetch the three most recent searches a user has made within the SDK.<br/> These will be exposed outside the SDK in a callback as an array of CTRecentSearch objects as shown below: 
+Call the `requestRecentSearches` function to fetch the three most recent searches a user has made within the SDK.<br/> These will be exposed outside the SDK in a callback as an array of `CTRecentSearch` objects as shown below: 
 
 #### Request Recent Searches Code sample
 ```java

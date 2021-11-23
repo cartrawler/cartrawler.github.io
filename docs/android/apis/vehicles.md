@@ -17,15 +17,13 @@ The Vehicles API is responsible for returning a wrapper response object of the l
 
 We expose a method on the builder to retrieve the vehicle list based on a sort type and limit you specify.
 
-Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, pick-up and drop-off date, also we limit the list returned to a set number of vehicles you specify.
+Calling the `requestVehicles` function will trigger a vehicles request based on the provided pick-up and drop-off dates, and an IATA or pick-up location code. The number of vehicles returned can be specified.
 
 The sort type can be either:
-- FLAG_BEST_PRICE, which returns the cheapest cars in the list
-- FLAG_RECOMMENDED, which returns the CarTrawler recommended cars.
+- `FLAG_BEST_PRICE`, which returns the cheapest cars in the list
+- `FLAG_RECOMMENDED`, which returns the CarTrawler recommended cars.
 
-A VehiclesListener is past into the getVehicleDetails method and the SDK will call the relevant methods once the relevant events have happen.
-
-A VehiclesListener is past into the getVehicleDetails method and the SDK will call the relevant methods once the relevant events have happen.
+A `VehiclesListener` is passed into the `getVehicleDetails` method and the SDK will call the required methods once the relevant events have occurred.
 
 ```java
 CartrawlerSDK.Builder()
@@ -54,37 +52,37 @@ The vehicle object takes the following form:
 @Parcelize
 data class VehicleDetails(
     //OTA
-     val referenceId: String,
-     val name: String,
-     val orSimilar: String,
-     val code: String,
-     val vehicleAssetNumber: String,
-     val pictureURL: String,
-     val passengerQuantity: Int,
-     val doorCount: Int?,
-     val baggageQuantity: Int
-     val fuelType: String,
-     val driveType: Stringl,
-     val airConditionInd: Boolean,
-     val transmissionType: String,
-     val size: String,
+    val referenceId: String,
+    val name: String,
+    val orSimilar: String,
+    val code: String,
+    val vehicleAssetNumber: String,
+    val pictureURL: String,
+    val passengerQuantity: Int,
+    val doorCount: Int?,
+    val baggageQuantity: Int
+    val fuelType: String,
+    val driveType: Stringl,
+    val airConditionInd: Boolean,
+    val transmissionType: String,
+    val size: String,
 
-     //Supplier
-     val supplier: String,
-     val supplierRating: Double,
-     val supplierImageURL: String,
+    //Supplier
+    val supplier: String,
+    val supplierRating: Double,
+    val supplierImageURL: String,
 
-     //Widget localization values
-     val passengersText: String,
-     val baggageText: String?,
-     val doorsCountText: String,
-     val transmissionText: String,
-     val categoryText: String,
-     val sizeText: String
+    //Widget localization values
+    val passengersText: String,
+    val baggageText: String?,
+    val doorsCountText: String,
+    val transmissionText: String,
+    val categoryText: String,
+    val sizeText: String,
 
-     //Price
-     val price: Double,
-     val pricePerDay: Double,
-     val currencyCode: String
+    //Price
+    val price: Double,
+    val pricePerDay: Double,
+    val currencyCode: String
 ) : Parcelable
 ```

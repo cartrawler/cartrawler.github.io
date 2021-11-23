@@ -17,7 +17,7 @@ To implement the SDK's In Path flow within your app, please use the following st
 
 
 ### Initialise the SDK in your App Delegate <br/>
-<b>Note that the production parameter must be set to true when submitting your app to the AppStore.</b>
+<b>Note that the `production` parameter must be set to true when submitting your app to the AppStore.</b>
 
 ```java
   // In application(_:didFinishLaunchingWithOptions:)
@@ -55,24 +55,24 @@ class CTContext: NSObject {
 <br/>
 #### Required parameters for initialisation:
 
-  ```java
-  import CarTrawlerSDK
+```java
+import CarTrawlerSDK
 
-  // Create a context for in Path flow
-  let context = CTContext(clientID: "12345", flow: .inPath)
-  context.countryCode = "IE"
-  context.currencyCode = "EUR"
-  context.languageCode = "EN"
-  context.pickupLocation = "DUB"
-  context.pickupDate = Date(timeIntervalSinceNow: 86400)
-  context.flightNumber = "FL1234"
-  context.delegate = self
-  ```
-<b>Note: the countryCode property refers to the country of residency, and this is used when we make search requests.</b>
+// Create a context for in Path flow
+let context = CTContext(clientID: "12345", flow: .inPath)
+context.countryCode = "IE"
+context.currencyCode = "EUR"
+context.languageCode = "EN"
+context.pickupLocation = "DUB"
+context.pickupDate = Date(timeIntervalSinceNow: 86400)
+context.flightNumber = "FL1234"
+context.delegate = self
+```
+<b>Note: the `countryCode` property refers to the country of residency, and this is used when we make search requests.</b>
 
 <br/>
 #### Pre populating driver details:
-- add a CTPassenger object
+- add a `CTPassenger` object
 
 ```java
 //Passenger object
@@ -91,7 +91,7 @@ let passenger = CTPassenger(firstName: "Ryan",
                             isPrimaryDriver: true)
 context.passengers = [passenger]
 ```
-<b>Note: CTPassenger countryCode takes priority over CTContext's countryCode property when we make search requests.</b>
+<b>Note: `CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.</b>
 
 
 ---
@@ -104,7 +104,7 @@ context.passengers = [passenger]
 ---
 ### Present the SDK
 
-After initialisation and setup of your CTContext object for In Path, you must use the following presentation method:
+After initialisation and setup of your `CTContext` object for In Path, you must use the following presentation method:
 
 ```java
 let viewController = UIViewController() // Your view controller from which the SDK will be presented.
@@ -151,53 +151,53 @@ func didFailToReceiveBestDailyRate(error: Error) {
 
 #### In Path Vehicle Object
 
-  ```java
-  class CTInPathVehicle: NSObject {
-    let firstName: String // First name
-    let lastName: String // Last name
-    let vehicleName: String // Vehicle name
-    let vehicleOrSimilar: String // localized "or similar" text
-    let vendorName: String // Vendor name
-    let vehicleImageURL: URL // vehicle image url
-    let vendorImageURL: URL // vendorImageURL
-    let pickUpLocationName: String // pick-up location name
-    let dropOffLocationName: String // drop-off location name
-    let pickupDate: Date // pick-up date
-    let dropoffDate: Date // drop-off date
-    let extrasIncludedForFree: Array // Array of included extras
-    let extrasPayableAtDesk: Array // Array of extras payable at desk
-    let extrasPayableNow: Array // Array of extras payable now
-    let isBuyingInsurance: Bool // is buying insurance
-    let insuranceCost: Number // Insurance cost
-    let vehicleCharges: Array // Array of Vehicle Charges
-    let loyalty: CTLoyalty? // User loyalty info
-  }
+```java
+class CTInPathVehicle: NSObject {
+  let firstName: String // First name
+  let lastName: String // Last name
+  let vehicleName: String // Vehicle name
+  let vehicleOrSimilar: String // localized "or similar" text
+  let vendorName: String // Vendor name
+  let vehicleImageURL: URL // vehicle image url
+  let vendorImageURL: URL // vendorImageURL
+  let pickUpLocationName: String // pick-up location name
+  let dropOffLocationName: String // drop-off location name
+  let pickupDate: Date // pick-up date
+  let dropoffDate: Date // drop-off date
+  let extrasIncludedForFree: Array // Array of included extras
+  let extrasPayableAtDesk: Array // Array of extras payable at desk
+  let extrasPayableNow: Array // Array of extras payable now
+  let isBuyingInsurance: Bool // is buying insurance
+  let insuranceCost: Number // Insurance cost
+  let vehicleCharges: Array // Array of Vehicle Charges
+  let loyalty: CTLoyalty? // User loyalty info
+}
 
-  class CTExtraEquipment: NSObject {
-    let qty: Integer // Quantity of the extra
-    let isIncludedInRate: Bool  // If the extra is included
-    let isTaxInclusive: Bool  // If extra is tax inclusive
-    let isGuaranteedInd: Bool // If extra is pre paid
-    let chargeAmount: Number // Cost of extra
-    let currencyCode: String // Currency code of extra
-    let equipType: String // Raw extra type code
-    let equipmentType: CTExtraEquipmentType // Extra type
-    let name: String // Name of extra
-    let equipDescription: String // Description of extra
-  }
+class CTExtraEquipment: NSObject {
+  let qty: Integer // Quantity of the extra
+  let isIncludedInRate: Bool  // If the extra is included
+  let isTaxInclusive: Bool  // If extra is tax inclusive
+  let isGuaranteedInd: Bool // If extra is pre paid
+  let chargeAmount: Number // Cost of extra
+  let currencyCode: String // Currency code of extra
+  let equipType: String // Raw extra type code
+  let equipmentType: CTExtraEquipmentType // Extra type
+  let name: String // Name of extra
+  let equipDescription: String // Description of extra
+}
 
-  class CTVehicleCharge: NSObject {
-    let chargeDescription: String // The localized description
-    let isIncludedInRate: Bool  // If the charge is included (this case always true)
-    let isTaxInclusive: Bool  // If charge is tax inclusive
-    let amount: Number // Cost of charge
-    let currencyCode: String // Currency code of charge
-    let purpose: String // Purpose code of the charge
-    let calculation: CTVehicleChargeCalculation // .beforePickup
-  }
+class CTVehicleCharge: NSObject {
+  let chargeDescription: String // The localized description
+  let isIncludedInRate: Bool  // If the charge is included (this case always true)
+  let isTaxInclusive: Bool  // If charge is tax inclusive
+  let amount: Number // Cost of charge
+  let currencyCode: String // Currency code of charge
+  let purpose: String // Purpose code of the charge
+  let calculation: CTVehicleChargeCalculation // .beforePickup
+}
 
-  class CTLoyalty: NSObject {
-    let programName: String // Loyalty program name
-    let points: Number // Loyalty points earned
-  }
-  ```
+class CTLoyalty: NSObject {
+  let programName: String // Loyalty program name
+  let points: Number // Loyalty points earned
+}
+```

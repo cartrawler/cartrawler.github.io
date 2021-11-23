@@ -11,7 +11,7 @@ permalink: /docs/ios/apis/api-query-params
 
 {: .no_toc }
 
-A CTAPIQueryParams object must be created and initialised after initialising the SDK to make requests using our API methods.
+A `CTAPIQueryParams` object must be created and initialised after initialising the SDK to make requests using our API methods.
 
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Property Descriptions
 parent: Standalone
 grand_parent: Android
-nav_order: 3
+nav_order: 2
 permalink: /docs/android/standalone/property-descriptions/
 ---
 

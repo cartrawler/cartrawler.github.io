@@ -15,7 +15,7 @@ We expose a method on the builder to retrieve the best rate for the products use
 
 ---
 
-A BestDailyRatesListener is past into the getBestDailyRates method and will call the relevant methods once the relevant events have happen. 
+A `BestDailyRatesListener` is passed into the `getBestDailyRates` method and will call the required methods once the relevant events have occurred. 
  
 A flag parameter is used to specify which products are required.
 
@@ -24,17 +24,17 @@ A flag parameter is used to specify which products are required.
 CartrawlerSDK.Builder()
   //..
   .getBestDailyRates(
-           context = this,
-           bestDailyRatesListener = object: CartrawlerSDK.BestDailyRatesListener {
-              override fun onReceiveBestDailyRate(type: Int, price: Double, currency: String) {
-              //Handle success result
-              }
-  
-              override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
-              //Handle error result
-              }
-  
-              override fun onNoResults(type: Int) {
-              //Handle empty result
-              }
+    context = this,
+    bestDailyRatesListener = object: CartrawlerSDK.BestDailyRatesListener {
+        override fun onReceiveBestDailyRate(type: Int, price: Double, currency: String) {
+        //Handle success result
+        }
+
+        override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
+        //Handle error result
+        }
+
+        override fun onNoResults(type: Int) {
+        //Handle empty result
+        }
 ```

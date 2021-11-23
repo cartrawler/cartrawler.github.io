@@ -10,12 +10,12 @@ has_children: true
 
 {: .no_toc }
 
-The CarTrawler iOS SDK comes prepackaged with four widgets.<br /><br /> When considering the addition of a new touchpoint into the CarTrawler flow from within your app, you can choose the one that best suits your needs.<br /><br /> Each widget is independent of the Standalone and In Path flows, and can be used to launch either of them via your implementation of the CTWidgetContainerDelegate’s didTapView function.<br />
+The CarTrawler iOS SDK comes prepackaged with four widgets.<br /><br /> When considering the addition of a new touchpoint into the CarTrawler flow from within your app, you can choose the one that best suits your needs.<br /><br /> Each widget is independent of the Standalone and In Path flows, and can be used to launch either of them via your implementation of the `CTWidgetContainerDelegate`’s `didTapView` function.<br />
 
 ---
 
-To implement the widgets, you must first create an instance of CTWidgetStyle and set the relevant properties, as shown in the above diagrams. <br /><br />
-The next step is to create an instance of CTWidgetContainer and pass in the following: status (.simple, .simpleAdded, .bestPrice, or .vehicle), style (your CTWidgetStyle object), and a delegate. 
+To implement the widgets, you must first create an instance of `CTWidgetStyle` and set the relevant properties, as shown in each widget's diagram. <br /><br />
+The next step is to create an instance of `CTWidgetContainer` and pass in the following: status (`.simple`, `.simpleAdded`, `.bestPrice`, or `.vehicle`), style (your `CTWidgetStyle` object), and a delegate. 
 We recommend adding the widget container to a stackView, like so: 
 
 ```java

@@ -26,7 +26,7 @@ val carTrawlerDatabase = CarTrawlerDatabase.build(applicationContext)
 val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
 ````
 
-Call the clear storage function as follows:
+Call the `clearStorage` function as follows:
 ```java
 // You can use whatever thread you want for your use case
 val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)

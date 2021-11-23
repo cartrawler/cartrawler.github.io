@@ -20,8 +20,8 @@ We expose a method to retrieve the vehicle list based on a sort type and limit y
 Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, pick-up and drop-off date, also we limit the list returned to a set number of vehicles you specify.
 
 For the sort type can be either:
-- .bestPrice, which returns the cheapest cars in the list
-- .recommended, which returns the CarTrawler recommended cars.
+- `.bestPrice`, which returns the cheapest cars in the list
+- `.recommended`, which returns the CarTrawler recommended cars.
 
 #### Code sample
 
@@ -46,7 +46,7 @@ CarTrawlerSDK.sharedInstance().requestVehicles(params)
 ```
 ---
 
-A list of vehicle objects (CTVehicleDetails) will be returned in the CarTrawlerSDKDelegate function didReceiveVehicles.
+A list of vehicle objects (`CTVehicleDetails`) will be returned in the `CarTrawlerSDKDelegate` function `didReceiveVehicles`.
 #### Delegate functions
 
 ```java

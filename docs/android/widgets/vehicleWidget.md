@@ -13,24 +13,17 @@ permalink: /docs/android/widgets/vehicle/
 
 ---
 
-<picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Pricing_Added_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Pricing_Added_Generic_style.png">
-  <img src="/uploads/Pricing_Added_Generic_style.png">
-</picture>
+![](/uploads/Pricing_Added_Generic_style.png)
 
-
-In order to use the CTVehicleWidget, you will need pass it Vehicle Object, that is returned following the Cartrawler flow, see example below
-on how you would achieve this:
+In order to use the `CTVehicleWidget`, you will need pass in a Vehicle Object.
 
 ```java
 override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
-       if (resultCode == Activity.RESULT_OK) {
-           if (requestCode == 123) {
-               	// Set the widget to the added state
-               ctVehicleWidget.setVehicle(data.getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS))
-              
-           }
-       }
+    if (resultCode == Activity.RESULT_OK) {
+        if (requestCode == 123) {
+            // Set the widget to the added state
+            ctVehicleWidget.setVehicle(data.getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS))
+        }
     }
+}
 ````

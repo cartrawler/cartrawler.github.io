@@ -13,11 +13,11 @@ permalink: /docs/ios/widgets/vehicle
 
 ---
 
-![](/uploads/Pricing_Added_Generic_IOS.png)
+![](/uploads/Pricing_Added_Generic_iOS.png)
 
 ## Setting the CTVehicleWidget vehicle
 
-When a user has completed the CarTrawler In Path flow and added a vehicle, the vehicle will be returned to you in the vehicleSelected delegate callback. Using the code below, you could switch a best price widget into a populated vehicle widget: 
+When a user has completed the CarTrawler In Path flow and added a vehicle, the vehicle will be returned to you in the `vehicleSelected` delegate callback. Using the code below, you could switch a best price widget into a populated vehicle widget: 
 
 ```java  
 func vehicleSelected(_ vehicle: CTVehicleDetails) {

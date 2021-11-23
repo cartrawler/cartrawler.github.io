@@ -11,37 +11,35 @@ permalink: /docs/android/apis/reservations/
 
 {: .no_toc }
 
-Car rental booking reservations can be fetched using the requestReservationDetails function. 
+Car rental booking reservations can be fetched using the `requestReservationDetails` function. 
 
 ---
 
-Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resUid. 
+Calling the `requestReservationDetails` function will trigger a vehicles request based on a resID and email (hashed) or resUid. 
 
 ```java
 CartrawlerSDK.Builder()
 //..
 builder.requestReservationDetails(
-        context = this,
-        resId = resid,
-        resuid = resuid,
-        email = null,
-        requestReservationDetailsListener = object: CartrawlerSDK.RequestReservationDetailsListener {
-
-            override fun onNoResults() {
-               //Handle no results
-            }
-
-            override fun onError(connectionError: CartrawlerSDK.ConnectionError) {
-              //Handle error result
-            }
-
-            override fun onReceiveReservationDetails(reservationDetails: ReservationDetails) {
-              //Handle success result
-            }
-        })
+   context = this,
+   resId = resid,
+   resuid = resuid,
+   email = null,
+   requestReservationDetailsListener = object: CartrawlerSDK.RequestReservationDetailsListener {
+      override fun onNoResults() {
+         //Handle no results
+      }
+      override fun onError(connectionError: CartrawlerSDK.ConnectionError) {
+        //Handle error result
+      }
+      override fun onReceiveReservationDetails(reservationDetails: ReservationDetails) {
+        //Handle success result
+      }
+   }
+)
 ```
 
-These properties can be found in the ReservationDetails object that is returned upon successful completion of the standalone flow, on onActivityForResult e.g. getStringExtra(CartrawlerSDK.RESERVATION)
+These properties can be found in the `ReservationDetails` object that is returned upon successful completion of the standalone flow, on `onActivityForResult` e.g. `getStringExtra(CartrawlerSDK.RESERVATION)`
 
 The reservations object takes the following form:
 

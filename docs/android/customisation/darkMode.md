@@ -11,22 +11,20 @@ permalink: /docs/android/customisation/dark-mode/
 
 {: .no_toc }
 
-The SDKs both support dark mode and by default it will be turned off. The SDKs provide you the option to turn on, off or follow the system settings. Apply the setting that fits your use case.
+The SDK supports dark mode, but it is disabled by default. It can be enabled or set to follow system settings. 
 
 ---
 
 ## Set up
 
-You can configure dark mode support in the SDK by sending the constants from the AppCompatDelegate class. By default, dark mode is off.
+You can configure dark mode support in the SDK by sending the constants from the `AppCompatDelegate` class. By default, dark mode is off.
 
 The following constants are supported:
 
 ```java
-
 AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 AppCompatDelegate.MODE_NIGHT_YES
 AppCompatDelegate.MODE_NIGHT_NO
-
 ```
 
 Then initialise the SDK with the preferred setting:
@@ -40,7 +38,7 @@ CartrawlerSDK.Builder()
 ```
 ## How to Style your Dark Mode Theme
 
-The SDK uses the Theme.MaterialComponents.DayNight theme which allows us to support dark mode.
+The SDK uses the `Theme.MaterialComponents.DayNight` theme which allows us to support dark mode.
 
 You can place the SDK theme in your ```values-night``` folder to apply your dark mode colour palette that fits your brand requirements.
 

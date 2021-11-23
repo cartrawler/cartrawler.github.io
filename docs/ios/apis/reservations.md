@@ -11,11 +11,11 @@ permalink: /docs/ios/apis/reservations
 
 {: .no_toc }
 
-Car rental booking reservations can be fetched using the requestReservationDetails function. 
+Car rental booking reservations can be fetched using the `requestReservationDetails` function. 
 
 ---
 
-Calling the requestReservationDetails function will trigger a vehicles request based on a resID and email (hashed) or resUid. This will return a CTReservationDetails object, or an error if the reservation does not exist. 
+Calling the `requestReservationDetails` function will trigger a vehicles request based on a `resID` and email (hashed) or `resUid`. This will return a `CTReservationDetails` object, or an error if the reservation does not exist. 
 
 #### request reservation details code sample
 
@@ -41,7 +41,7 @@ Calling the requestReservationDetails function will trigger a vehicles request b
         }
   ```
 
-CTReservationDetails objects are also returned upon successful completion of the Standalone flow: 
+`CTReservationDetails` objects are also returned upon successful completion of the Standalone flow: 
 ```java
 didReceive(_ reservationDetails: CTReservationDetails)
 ```

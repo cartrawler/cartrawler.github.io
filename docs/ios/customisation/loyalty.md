@@ -60,14 +60,15 @@ Override the following properties in your SDK style
 
 #### Loyalty theming sample code
 ```java
-   let style = CTStyle(theme: .dark,  // Main app style
-             primaryColor: UIColor.gray)
+let style = CTStyle(theme: .dark,  // Main app style
+          primaryColor: UIColor.gray)
 
-   let loyaltyStyle = CTLoyaltyStyle(theme: .light) // Loyalty style Either .dark or .light. Default is .light
-   loyaltyStyle.primaryColor = UIColor.lightGray // Optional, default #e5ebed
-   loyaltyStyle.primaryTextColor = UIColor.darkGray // Optional, default #333333
-   loyaltyStyle.secondaryColor = UIColor.blue // Optional, default #FFFFFF
-   loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
-   
-   style.loyaltyStyle = loyaltyStyle
+let loyaltyStyle = CTLoyaltyStyle(theme: .light) // Loyalty style Either .light (default) or .dark
+
+loyaltyStyle.primaryColor = UIColor.lightGray // Optional, default #e5ebed
+loyaltyStyle.primaryTextColor = UIColor.darkGray // Optional, default #333333
+loyaltyStyle.secondaryColor = UIColor.blue // Optional, default #FFFFFF
+loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
+
+style.loyaltyStyle = loyaltyStyle
 ```   

@@ -11,23 +11,23 @@ permalink: /docs/ios/customisation/dark-mode
 
 {: .no_toc }
 
-The SDKs both support dark mode and by default it will be turned off. The SDKs provide you the option to turn on, off or follow the system settings. Apply the setting that fits your use case.
+The SDK supports dark mode, but it is disabled by default. It can be enabled or set to follow system settings. 
 
 ---
 
 ## Set up
 
-You can configure dark mode support in the SDK by setting the property <b>userInterfaceStyle</b> in the CTStyle class. By default, dark mode is off.
+You can configure dark mode support in the SDK by setting the property `userInterfaceStyle` in the `CTStyle` class. By default, dark mode is off.
 
 The following values are supported:
 
 ```java
-    .dark // Forces to be always dark mode
-    .light // Default - Forces to be always light mode
-    .system // Use user system settings to determine if is light/dark mode
+.dark // Forces to be always dark mode
+.light // Default - Forces to be always light mode
+.system // Use user system settings to determine if is light/dark mode
 ```
 
-Dark mode colors can be configured using CTStyle and dark mode properties:
+Dark mode colors can be configured using `CTStyle` and dark mode properties:
 
 ```java
 let style = CTStyle(theme: .dark,  // .dark or .light
@@ -41,7 +41,7 @@ style.dmSecondaryCtaColor = UIColor.black
 style.dmSecondaryCtaFontColor = UIColor.white
 ```
 
-After configuring the CTStyle object, pass it into the SDK during initialisation:
+After configuring the `CTStyle` object, pass it into the SDK during initialisation:
 
 ```java
 // In application(_:didFinishLaunchingWithOptions:)

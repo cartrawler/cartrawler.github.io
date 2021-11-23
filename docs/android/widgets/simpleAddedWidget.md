@@ -13,8 +13,4 @@ permalink: /docs/android/widgets/simple-added/
 
 ---
 
-<picture>
-  <source media="(max-width: 799px)" srcset="/uploads/Simple_Added_Generic_style.png">
-  <source media="(min-width: 800px)" srcset="/uploads/Simple_Added_Generic_style.png">
-  <img src="/uploads/Simple_Added_Generic_style.png">
-</picture>
+![](/uploads/Simple_Added_Generic_style.png)

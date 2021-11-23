@@ -48,4 +48,4 @@ use the following attributes:
 
 Note: 
 * If you provide both a <b>drawable</b> and a <b>url</b> the drawable will take priority, so your url will never be used.
-* If you don't provide any attributes for the logo, the component that shows the logo will be hidden (View.GONE) 
+* If you don't provide any attributes for the logo, the component that shows the logo will be hidden (`View.GONE`) 

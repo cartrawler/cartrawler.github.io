@@ -3,7 +3,7 @@ layout: default
 title: Reservation Retrieval
 parent: Standalone
 grand_parent: iOS
-nav_order: 2
+nav_order: 3
 permalink: /docs/ios/standalone/reservation-retrieval
 ---
 
@@ -12,20 +12,20 @@ permalink: /docs/ios/standalone/reservation-retrieval
 {: .no_toc }
 
 If a user booked a car during the standalone process, we will use the delegate to pass the callback information.
-The reservation object is accessed via the return delegate method didReceive(reservationDetails:)
+The reservation object is accessed via the return delegate method `didReceive(reservationDetails:)`
 
 ---
 
-CarTrawlerSDKDelegate method called after a user booked a vehicle:
+`CarTrawlerSDKDelegate` method called after a user booked a vehicle:
 
 ```java
-  func didReceive(_ reservationDetails: CTReservationDetails) {
-      // Reservation object
-      print("\(reservationDetails)")
-  }
+func didReceive(_ reservationDetails: CTReservationDetails) {
+    // Reservation object
+    print("\(reservationDetails)")
+}
 ```
 
-CTReservationDetails description objects:
+`CTReservationDetails` description objects:
 
 ```java
 class CTReservationDetails: NSObject {
@@ -107,5 +107,4 @@ class CTAddress: NSObject (
   let addressLine: String // Post address of location
   let countryNameCode: String // 2 letter country code.
 )
-
 ```

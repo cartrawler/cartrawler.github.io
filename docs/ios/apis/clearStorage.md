@@ -11,7 +11,7 @@ permalink: /docs/ios/apis/clear-storage
 
 {: .no_toc }
 
-The Recent Searches and Bookings shown on the Landing Page are stored within User Defaults. To remove this locally stored data, use the clearStorage function.
+The Recent Searches and Bookings shown on the Landing Page are stored within User Defaults. To remove this locally stored data, use the `clearStorage` function.
 
 ---
 
@@ -19,12 +19,12 @@ The Recent Searches and Bookings shown on the Landing Page are stored within Use
 
 #### Code sample
 ```java
-  // Clear local storage
-  CarTrawlerSDK.sharedInstance().clearStorage { (error) in
-    if let error = error {
-        print("Storage not cleared with error:" + error.localizedDescription)
-    } else {
-        print("Storage cleared with success")
-    }
+// Clear local storage
+CarTrawlerSDK.sharedInstance().clearStorage { (error) in
+  if let error = error {
+      print("Storage not cleared with error:" + error.localizedDescription)
+  } else {
+      print("Storage cleared with success")
   }
+}
 ```

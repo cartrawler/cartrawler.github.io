@@ -62,11 +62,11 @@ context.countryCode = "IE"
 context.currencyCode = "EUR"
 context.languageCode = "en"
 ````
-<b>Note: the countryCode property refers to the country of residency, and this is used when we make search requests.</b>
+<b>Note: the `countryCode` property refers to the country of residency, and this is used when we make search requests.</b>
 
 <br/>
 #### Pre populating driver details:
-- add a CTPassenger object
+- add a `CTPassenger` object
 
 ```java
 //Passenger object
@@ -86,7 +86,7 @@ let passenger = CTPassenger(firstName: "Ryan",
 context.passengers = [passenger]
 ```
 
-<b>Note: CTPassenger countryCode takes priority over CTContext's countryCode property when we make search requests.</b>
+<b>Note: `CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.</b>
 
 <br/>
 #### Navigation to the vehicle list

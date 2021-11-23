@@ -3,7 +3,7 @@ layout: default
 title: Reservation Retrieval
 parent: Standalone
 grand_parent: Android
-nav_order: 2
+nav_order: 3
 permalink: /docs/android/standalone/reservation-retrieval/
 ---
 
@@ -12,7 +12,7 @@ permalink: /docs/android/standalone/reservation-retrieval/
 {: .no_toc }
 
 If a user booked a car during the standalone process, we will use the delegate to pass the callback information.
-The reservation object is accessed via the return intent by onActivityForResult.
+The reservation object is accessed via the return intent by `onActivityForResult`.
 
 ---
 
@@ -21,9 +21,10 @@ returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
     
 override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
    if (resultCode == Activity.RESULT_OK) {
-       if (requestCode == 123) {
-            yourMethod(data!!.getStringExtra(CartrawlerSDK.RESERVATION))
-        }      
+      if (requestCode == 123) {
+         yourMethod(data!!.getStringExtra(CartrawlerSDK.RESERVATION))
+      }
+   }      
 }
 
 // The Reservation Object is defined as the following

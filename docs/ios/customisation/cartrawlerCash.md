@@ -23,28 +23,29 @@ CarTrawler Cash provides enhanced cash voucher merchandising throughout the book
 
 ## Applying the theme
 
-<b>Create a CTCashStyle object and set the theme properties:</b>
+Create a `CTCashStyle` object and set the theme properties:
 ```java
-   let cashStyle = CTCashStyle()
-   cashStyle.textColor = UIColor(hex: 0xffffff) // Cash Primary Text Color
-   cashStyle.bgColor = UIColor(hex: 0x4BA4B5) // Cash Background Start Color
-   cashStyle.secondaryBgColor = UIColor(hex: 0x004958) // Cash Background End Color
-   cashStyle.accentTextColor = UIColor(hex: 0x1DAF90) // Cash Secondary Text Color
-   
-   // Dark Mode colors
-   cashStyle.darkTextColor = UIColor(hex: 0x000000) // Cash Primary Text Color
-   cashStyle.darkBgColor = UIColor(hex: 0xffffff) // Cash Background Start Color
-   cashStyle.darkSecondaryBgColor = UIColor(hex: 0x002c52) // Cash Background End Color
-   cashStyle.darkAccentTextColor = UIColor(hex: 0x1DAF90) //  Cash Secondary Text Color
+let cashStyle = CTCashStyle()
 
-   style.cashStyle = cashStyle
+cashStyle.textColor = UIColor(hex: 0xffffff) // Cash Primary Text Color
+cashStyle.bgColor = UIColor(hex: 0x4BA4B5) // Cash Background Start Color
+cashStyle.secondaryBgColor = UIColor(hex: 0x004958) // Cash Background End Color
+cashStyle.accentTextColor = UIColor(hex: 0x1DAF90) // Cash Secondary Text Color
+
+// Dark Mode colors
+cashStyle.darkTextColor = UIColor(hex: 0x000000) // Cash Primary Text Color
+cashStyle.darkBgColor = UIColor(hex: 0xffffff) // Cash Background Start Color
+cashStyle.darkSecondaryBgColor = UIColor(hex: 0x002c52) // Cash Background End Color
+cashStyle.darkAccentTextColor = UIColor(hex: 0x1DAF90) //  Cash Secondary Text Color
+
+style.cashStyle = cashStyle
 ``` 
 Note: 
-* If dark colors are not set, default CTCashStyle colors will be used.
+* If dark colors are not set, default `CTCashStyle` colors will be used.
 
 --- 
 
-For every logo you can provide a UIImage or an NSURL. All you need is to
+For every logo you can provide a `UIImage` or an `NSURL`. All you need is to
 do is set the following properties:
 
 #### Cash Style sample code
@@ -63,14 +64,14 @@ cashStyle.darkSmallLogoURL = URL(string: "http://www.cartrawler.com/dark_small_l
 cashStyle.darkLogoURL = URL(string: "http://www.cartrawler.com/dark_logo.png") // Cash Logo
 ```
 Note: 
-* If logos are provided as UIImage, NSURL properties will be ignored.
-* If dark logos are not set, default CTCashStyle logos will be used.
+* If logos are provided as `UIImage`, `NSURL` properties will be ignored.
+* If dark logos are not set, default `CTCashStyle` logos will be used.
 * If you don't provide any attributes for the logo, the component that shows the logo will be hidden. 
 
 ---
 
 
-After CTStyle has been configured with your cashStyle, pass it into the SDK during initialisation:
+After `CTStyle` has been configured with your cashStyle, pass it into the SDK during initialisation:
 
 #### SDK Initialisation with CashStyle
 ```java

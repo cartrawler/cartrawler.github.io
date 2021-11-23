@@ -11,11 +11,11 @@ permalink: /docs/ios/apis/best-daily-rates
 
 {: .no_toc }
 
-The requestBestDailyRate function can be called to receive the cheapest vehicle's price for a given location based on the pick-up and drop-off dates. 
+The `requestBestDailyRate` function can be called to receive the cheapest vehicle's price for a given location based on the pick-up and drop-off dates. 
 
 ---
 
-The SDK must be initialised, and a CTAPIQueryParams object with the necessary parameters must be set before calling this method.
+The SDK must be initialised, and a `CTAPIQueryParams` object with the necessary parameters must be set before calling this method.
 
 #### Request best daily rates sample code
 ```java
@@ -34,7 +34,7 @@ params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
 CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
 ```
 ---
-The best daily rate (price and currency) will be returned in the CarTrawlerSDKDelegate function didReceiveBestDailyRate.
+The best daily rate (price and currency) will be returned in the `CarTrawlerSDKDelegate` function `didReceiveBestDailyRate`.
 
 #### Receive best daily rates sample code
 

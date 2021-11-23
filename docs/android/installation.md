@@ -18,13 +18,13 @@ To add the CarTrawlerSDK to your app, add our maven repository and enter your ar
 ```java
 // Add to root build.gradle
 repositories {
-   maven {
-       url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
-       credentials { 
-       username = "your_username_here" 
-       password = "your_password_here" 
-       }
-   }
+    maven {
+        url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
+        credentials { 
+            username = "your_username_here" 
+            password = "your_password_here" 
+        }
+    }
 }
 
 // CarTrawler dependency (Add to module build.gradle)
@@ -39,6 +39,6 @@ Create a theme that extends the ```CTDayNightTheme```. Please refer to the <a hr
 
 On the SDK’s Search Screen, we have added the option for users to search for vehicles using their current location upon tapping the pick-up location EditText.
 
-To make use of this feature, please ensure your Manifest has either the <b>ACCESS_COARSE_LOCATION</b> or <b>ACCESS_FINE_LOCATION</b> permission.
+To make use of this feature, please ensure your Manifest has either the `ACCESS_COARSE_LOCATION` or `ACCESS_FINE_LOCATION` permission.
 
 We will need to use this when asking for permission to use location services within your app if it has not already been granted.

@@ -57,9 +57,9 @@ val passenger = CartrawlerSDKPassenger(
 ### Retrieval of objects from the In Path Process
 
 
-If a user selected a car during the In Path process, the onActivityForResult will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
+If a user selected a car during the In Path process, the `onActivityForResult` will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
 
-These objects are accessed via the return intent by onActivityForResult
+These objects are accessed via the return intent by `onActivityForResult`
 
 ```java   
 getStringExtra(CartrawlerSDK.PAYLOAD) // Returns a JSON String
@@ -73,9 +73,10 @@ getParcelableExtra(CartrawlerSDK.TRIP_DETAILS) // Returns a Trip Object with ext
         
 override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
    if (resultCode == Activity.RESULT_OK) {
-       if (requestCode == 123) {
-            openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.PAYLOAD))
-        }      
+      if (requestCode == 123) {
+         openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.PAYLOAD))
+      }
+   }      
 }
 ```    
     
@@ -129,37 +130,37 @@ The total amount to be authorized against the customers credit card, is the auth
 ### Notes on other attributes:
 
 ##### Insurance
-* If insurance is selected, insuranceAmount will be non-zero.
-* The insuranceName will non-null when insuranceAmount is non-zero.
-* The insuranceName is the title of the insurance.
+* If insurance is selected, `insuranceAmount` will be non-zero.
+* The `insuranceName` will non-null when `insuranceAmount` is non-zero.
+* The `insuranceName` is the title of the insurance.
 
 ##### Extras
-* If the user has selected extras, the total amount of extra fees will set in payAtDeskAmount. <br>
+* If the user has selected extras, the total amount of extra fees will set in `payAtDeskAmount`. <br>
 
 ##### Extract Free Extras
 
-We expose a free extra with the IncludedInRate set to true. In order to display this in the UI you need to do the following logic:
+We expose a free extra with the `IncludedInRate` set to true. In order to display this in the UI you need to do the following logic:
 
 A free additional driver
 
 ```java  
 data class Extra (
-        var amount: Double? = 20.00,
-        var currencyCode: String? = "EUR",
-        var name: String? = "Additional Driver",
-        var description: String? = "Additional Driver",
-        var type: String? = "101.EQP",
-        var selected: Int? = 1, 
-        var includedInRate: Boolean? = true
+   var amount: Double? = 20.00,
+   var currencyCode: String? = "EUR",
+   var name: String? = "Additional Driver",
+   var description: String? = "Additional Driver",
+   var type: String? = "101.EQP",
+   var selected: Int? = 1, 
+   var includedInRate: Boolean? = true
 )
 ```
 
-To display this as a free additional driver in your UI, you can simple check the IncludedInRate returns true. 
+To display this as a free additional driver in your UI, you can simple check the `IncludedInRate` returns true. 
 
 There will be an improvement to extract free extras and standard extras in future releases.
 
 
 ##### Totals
-* payNowAmount is the total amount for only the car element (excludes extras,  bookingfee and insurance)
-* bookingFeeAmount is a cartrawler fee which is separate to the payNowAmount.
-* The authTotal is calculated by the cartrawler system by adding the payNowAmount, bookingFeeAmount (if present) and insuranceFee (if present).
+* `payNowAmount` is the total amount for only the car element (excludes extras,  booking fee and insurance)
+* `bookingFeeAmount` is a CarTrawler fee which is separate to the `payNowAmount`.
+* The authTotal is calculated by the CarTrawler system by adding the `payNowAmount`, `bookingFeeAmount` (if present) and `insuranceFee` (if present).

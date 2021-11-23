@@ -17,7 +17,7 @@ permalink: /docs/ios/widgets/best-price
 
 ## Setting the CTBestPriceWidget price
 
-When you make a best bestDailyRates request, the price is returned to you in the delegate callback didRecieveBestDailyRate. You can set the widget’s price in your function body: 
+When you make a `bestDailyRates` request, the price is returned to you in the delegate callback `didReceiveBestDailyRate`. You can set the widget’s price in your function body: 
 
 ```java
 func didReceiveBestDailyRate(_ price: NSNumber, currency: String) {
