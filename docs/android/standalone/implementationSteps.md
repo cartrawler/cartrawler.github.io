@@ -15,7 +15,6 @@ To implement the SDK's Standalone flow within your app, please use the following
 
 ---
 
-
 ### Initialise the SDK by implementing the SDK Builder <br/>
 <b>Note that the `production` parameter must be set to true when submitting your app to the AppStore.
 

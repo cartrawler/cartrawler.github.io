@@ -19,27 +19,28 @@ Calling the `requestReservationDetails` function will trigger a vehicles request
 
 #### request reservation details code sample
 
-  ```java
-    import CarTrawlerSDK
+```java
+import CarTrawlerSDK
   
-    // This will trigger a booking reservation fetch
-    // The SDK must be initialised, and a CTAPIQueryParams object with the necessary parameters must be set before calling this method
+// This will trigger a booking reservation fetch.
+// The SDK must be initialised, and a CTAPIQueryParams object with the necessary parameters 
+// must be set before calling this method.
 
-    let params = CTAPIQueryParams()  
-    params.delegate = self
-    params.clientID = "your clientID"
-    params.languageCode = "EN"
-    params.resId = "IE3453453"
-    params.resUid = "12424345446466464"
+let params = CTAPIQueryParams()  
+params.delegate = self
+params.clientID = "your clientID"
+params.languageCode = "EN"
+params.resId = "IE3453453"
+params.resUid = "12424345446466464"
 
-    CarTrawlerSDK.sharedInstance.requestReservationDetails(params { (reservation, error) in
-            if let reservation = reservation {
-                // reservation fetched successfully
-            } else if let error = error {
-                // error occured
-            }
-        }
-  ```
+CarTrawlerSDK.sharedInstance.requestReservationDetails(params { (reservation, error) in
+    if let reservation = reservation {
+        // reservation fetched successfully
+    } else if let error = error {
+        // error occured
+    }
+}
+```
 
 `CTReservationDetails` objects are also returned upon successful completion of the Standalone flow: 
 ```java

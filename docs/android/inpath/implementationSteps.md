@@ -15,7 +15,6 @@ To implement the SDK's In Path flow within your app, please use the following st
 
 ---
 
-
 ### Initialise the In Path flow with the SDK Builder <br/>
 Please make sure to set the following properties: 
 
@@ -55,7 +54,6 @@ val passenger = CartrawlerSDKPassenger(
 ---
 
 ### Retrieval of objects from the In Path Process
-
 
 If a user selected a car during the In Path process, the `onActivityForResult` will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
 

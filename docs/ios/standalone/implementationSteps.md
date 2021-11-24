@@ -15,19 +15,26 @@ To implement the SDK's Standalone flow within your app, please use the following
 
 ---
 
-
+## Step 1
 ### Initialise the SDK in your App Delegate <br/>
 <b>Note that the production parameter must be set to true when submitting your app to the AppStore.
 
 ```java
+import CarTrawlerSDK
+
 // In application(_:didFinishLaunchingWithOptions:)
 CarTrawlerSDK.sharedInstance().initialiseSDK(with: nil,
                                customParameters: nil,
                                production: false)
 ```
 
+For a full list of property descriptions, please click <a href="/docs/ios/standalone/property-descriptions">here</a>
+
 ---
+## Step 2
 ### Initialise the CTContext object with the parameters required
+
+This can be done in the view controller the SDK will be presented from.
 
 #### Object description
   
@@ -65,6 +72,76 @@ context.languageCode = "en"
 <b>Note: the `countryCode` property refers to the country of residency, and this is used when we make search requests.</b>
 
 <br/>
+#### Start Standalone flow on the vehicle list
+- Optional (bypasses the landing and search screens).
+
+As well as the required parameters mentioned above, you must provide pick-up and drop-off locations and dates. 
+
+```java
+// Create a context for the Standalone flow
+let context = CTContext(clientID: "your clientID", flow: .standAlone)
+
+// Set required properties
+context.countryCode = "IE"
+context.currencyCode = "EUR"
+context.languageCode = "EN"
+
+// Set pick-up and drop-off locations using location or IATA codes
+// Pick-up at Dublin Airport
+context.pickupLocationID = "11" // or context.pickupLocation = "DUB"
+// Drop-off at Cork Airport
+context.dropOffLocationID = "1316" // or context.dropOffLocation = "ORK"
+
+// Sample dates
+var dateComponent = DateComponents()
+dateComponent.month = 1
+let nextMonth = Calendar.current.date(byAdding: dateComponent, to: Date())
+dateComponent.day = 3
+let nextMonthPlusThreeDays = Calendar.current.date(byAdding: dateComponent, to: Date())
+
+// Set pick-up and drop-off dates
+context.pickupDate = nextMonth) // next month sample date
+context.dropOffDate = nextMonthPlusThreeDays) // next month + 3 days sample date
+
+// Set your viewController as the CarTrawlerSDK delegate 
+context.delegate = self
+```
+
+To pin a specific vehicle to the top of the list, add a vehicle RefID:
+
+```java
+context.pinnedVehicleID = "1892038" // Vehicle RefID
+```
+
+
+<br/>
+#### Start Standalone flow on the vehicle list <b>via recent search</b> 
+- Optional (bypasses the landing and search screens)
+
+```java
+// Create a context for the Standalone flow
+let context = CTContext(clientID: "your clientID", flow: .standAlone)
+context.countryCode = "IE"
+context.currencyCode = "EUR"
+context.languageCode = "EN"
+context.recentSearch = recentSearch // your recent search object fetched from the recent searches api. 
+context.delegate = self
+```
+<br/>
+#### Start Standalone flow on the search screen 
+- Optional (bypasses the landing screen)
+
+```java
+// Create a context for standAlone flow
+let context = CTContext(clientID: "your clientID", flow: .standAlone)
+context.countryCode = "IE"
+context.currencyCode = "EUR"
+context.languageCode = "EN"
+context.deeplink = .searchForm
+context.delegate = self
+```
+
+<br/>
 #### Pre populating driver details:
 - add a `CTPassenger` object
 
@@ -88,57 +165,11 @@ context.passengers = [passenger]
 
 <b>Note: `CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.</b>
 
-<br/>
-#### Navigation to the vehicle list
-- Optional (bypasses the landing and search screens)
-
-```java
-// Create a context for the Standalone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
-context.pickupLocationID = "11" // Dublin airport code
-context.dropOffLocationID = "1316" // Cork airport code
-context.pinnedVehicleID = "1892038" // Vehicle RefID
-context.pickupDate = Date(timeIntervalSinceNow: 2629746) // next month
-context.dropOffDate = Date(timeIntervalSinceNow: 2888946) // next month + 3 dayssz243
-context.delegate = self
-```
-<br/>
-#### Navigation to the vehicle list <b>via recent search</b> 
-- Optional (bypasses the landing and search screens)
-
-```java
-// Create a context for the Standalone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
-context.recentSearch = recentSearch // your recent search object fetched from the recent searches api. 
-context.delegate = self
-```
-<br/>
-#### Navigation to the search screen 
-- Optional (bypasses the landing screen)
-
-```java
-// Create a context for standAlone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
-context.deeplink = .searchForm
-context.delegate = self
-```
-
 ---
-### Present the SDK
+## Step 3
+### Present the SDK 
+In the view controller you wish to present the SDK from, add the following code after configuring your `CTContext`: 
 
 ```java
-import CarTrawlerSDK
-
-let viewController = UIViewController() // Your view controller from which the SDK will be presented.
-
-CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+CarTrawlerSDK.sharedInstance().present(from: self, context: context)
 ```

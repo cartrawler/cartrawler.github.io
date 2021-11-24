@@ -15,7 +15,7 @@ To implement the SDK's In Path flow within your app, please use the following st
 
 ---
 
-
+## Step 1
 ### Initialise the SDK in your App Delegate <br/>
 <b>Note that the `production` parameter must be set to true when submitting your app to the AppStore.</b>
 
@@ -26,7 +26,10 @@ To implement the SDK's In Path flow within your app, please use the following st
                                  production: false)
 ```
 
+For a full list of property descriptions, please click <a href="/docs/ios/inpath/property-descriptions">here</a>
+
 ---
+## Step 2
 ### Initialise the CTContext object with the parameters required
 
 #### Object description:
@@ -95,6 +98,7 @@ context.passengers = [passenger]
 
 
 ---
+## Step 3
 ### Set the In Path context on the SDK, to trigger the initial request
 ```java
   // This will automatically trigger a bestDailyRate request
@@ -102,6 +106,8 @@ context.passengers = [passenger]
 ```
 
 ---
+
+## Step 4
 ### Present the SDK
 
 After initialisation and setup of your `CTContext` object for In Path, you must use the following presentation method:
@@ -112,6 +118,8 @@ self.carTrawlerSDK.presentInPath(from: viewController)
 ```
 
 ---
+
+## Step 5
 ### Collect the booking data after flow completion
 
 After a user has gone through the entire In Path flow and selected a vehicle, the SDK will use a delegate callback to send all of the booking data:
