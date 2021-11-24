@@ -29,7 +29,7 @@ Flow
 : a set of CarTrawler UI screens, with a specific business objective. 
 
 ### Flows ###
-There are two main business flows implemented in the SDK, <a href="/docs/style-guide/user-flow#standalone-flow">Standalone</a> and <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a><br/>.
+There are two main business flows implemented in the SDK, <a href="/docs/style-guide/user-flow#standalone-flow">Standalone</a> and <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a>.<br/>
 Note: the In Path rental solution requires **additional backend development effort** and organisation between you and CarTrawler.
 
 Standalone
