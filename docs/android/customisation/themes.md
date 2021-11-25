@@ -58,9 +58,37 @@ CartrawlerSDK.Builder()
 .start***()
 ```
 
-### Optional colour overrides
+--- 
 
-You can override the following SDK attribute defaults if you need to.
+### Setting a Custom Font
+
+In order to set a custom font on your theme you need to add the fonts to the res/font directory along with a `my_custom_font_family.xml` file, see below for an example:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <font
+    app:fontStyle="normal"
+    app:fontWeight="400"
+    app:font="@font/my_normal_font" />
+  <font
+    app:fontStyle="italic"
+    app:fontWeight="400"
+    app:font="@font/my_italic_font" />
+</font-family>
+```
+Your font-family can then be added to your theme:
+```xml
+<item name="android:fontFamily">@font/my_custom_font_family</item>
+``` 
+
+---
+
+### Optional Colour Overrides
+
+You can override the following SDK attribute defaults if required:
 
 ```xml
 <!--Default Colours-->
