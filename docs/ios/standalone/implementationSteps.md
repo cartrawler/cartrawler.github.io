@@ -100,8 +100,8 @@ dateComponent.day = 3
 let nextMonthPlusThreeDays = Calendar.current.date(byAdding: dateComponent, to: Date())
 
 // Set pick-up and drop-off dates
-context.pickupDate = nextMonth) // next month sample date
-context.dropOffDate = nextMonthPlusThreeDays) // next month + 3 days sample date
+context.pickupDate = nextMonth! // next month sample date
+context.dropOffDate = nextMonthPlusThreeDays! // next month + 3 days sample date
 
 // Set your viewController as the CarTrawlerSDK delegate 
 context.delegate = self
