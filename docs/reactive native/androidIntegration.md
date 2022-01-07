@@ -185,7 +185,7 @@ eventEmitter.addListener("BookingEvent", (params) => {
 ```
 
 
-* To trigger the Cartrawler flow we created a activity in our android project called CTFlowActivity.kt that initiates the flow, and sends the resutl back to the Reactive Native side
+* To trigger the CarTrawler flow we created a activity in our android project called CTFlowActivity.kt that initiates the flow, and sends the result back to the Reactive Native side
 ```kotlin
 class CTFlowActivity : ReactActivity() {
 
