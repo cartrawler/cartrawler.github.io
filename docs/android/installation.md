@@ -15,7 +15,7 @@ To add the CarTrawlerSDK to your app, add our maven repository and enter your ar
 
 ### Add our maven repository and the artifactory credentials
 
-* Locate the file grade.properties in your pc under ~/.gradle/gradle.properties. 
+* Locate the file gradle.properties in your pc under ~/.gradle/gradle.properties. 
 * If the file does not exist create one and add the following credentials to it.
 
 ```groovy
