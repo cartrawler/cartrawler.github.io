@@ -20,22 +20,21 @@ To integrate the Android SDK's within your Reactive Native app, please use the f
 * And dependencies and Artifactory credentials as per
 <a href="/docs/android/installation/">android documentation.</a> <br/>   
 
+### Add our maven repository and the artifactory credentials
+
+* Locate the file grade.properties in your pc under ~/.gradle/gradle.properties. 
+* If the file does not exist create one and add the following credentials to it.
+
 ```groovy
-// Add to root build.gradle
-repositories {
-    maven {
-        url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
-        credentials {
-            username = "your_username_here"
-            password = "your_password_here"
-        }
-    }
-}
- 
-// CarTrawler dependency (Add to module build.gradle)
-             
-// Please use the version number sent to you by the CarTrawler team
-implementation "com.cartrawler.android:car-rental:$latestVersion"
+ nativeArtifactoryUsername=<artifactory-username>
+ nativeArtifactoryPassword=<artifactory-password>
+```
+Note: If you do not have these credentials contact you manager, IT or another developer in your team.
+
+* Next, add the CarTrawler dependency to build.gradle. Please use the version number sent to you by the CarTrawler team
+
+```groovy 
+implementation "com.cartrawler.android:car-rental:$latestVersion" 
 ```
 
 * If not migrated yet, it is recommended to migrate the project to Androidx.
