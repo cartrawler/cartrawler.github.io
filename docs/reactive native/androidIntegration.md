@@ -23,11 +23,11 @@ To integrate the Android SDK's within your Reactive Native app, please use the f
 ### Add our maven repository and the artifactory credentials
 
 * Locate the file gradle.properties in your pc under ~/.gradle/gradle.properties. 
-* If the file does not exist create one and add the following credentials to it.
+* If the file does not exist create one and add the following credentials to it replacing the placeholder with the right values.
 
 ```groovy
- nativeArtifactoryUsername=<artifactory-username>
- nativeArtifactoryPassword=<artifactory-password>
+nativeArtifactoryUsername=placeholder
+nativeArtifactoryPassword=placeholder
 ```
 Note: If you do not have these credentials contact you manager, IT or another developer in your team.
 
