@@ -16,9 +16,9 @@ To integrate the Android SDK's within your Reactive Native app, please use the f
 ---
 
 ## Steps
-* Open the android folder inside your React Native project using Android Studio.
-* And dependencies and Artifactory credentials as per
-<a href="/docs/android/installation/">android documentation.</a> <br/>   
+* Open the Android folder inside your React Native project using Android Studio.
+* Add dependencies and Artifactory credentials as per
+<a href="/docs/android/installation/">Android documentation.</a> <br/>   
 
 ### Add our maven repository and the artifactory credentials
 
@@ -40,7 +40,7 @@ implementation "com.cartrawler.android:car-rental:$latestVersion"
 * If not migrated yet, it is recommended to migrate the project to Androidx.
 <a href="https://developer.android.com/jetpack/androidx/migrate">Migration guide</a> <br/>   
 
-* Inside your android project, create a new class that extends ReactContextBaseJavaModule, this class will be the Module that we will expose methods to the Reactive Native side.
+* Inside your Android project, create a new class that extends ReactContextBaseJavaModule, this class will be the Module that we will expose methods to the Reactive Native side.
 
 ```kotlin
 /**
@@ -133,7 +133,7 @@ export default class CTSDKDemoComponent extends Component {
 ...
 ```
 
-* To send information back to Javascript as for example, booking result. On the android side we create a class that extends ReactContextBaseJavaModule.
+* To send information back to Javascript as for example, booking result. On the Android side we create a class that extends ReactContextBaseJavaModule.
 
 ```kotlin
 class EventEmitterModule(reactContext: ReactApplicationContext?) :
@@ -184,7 +184,7 @@ eventEmitter.addListener("BookingEvent", (params) => {
 ```
 
 
-* To trigger the CarTrawler flow we created a activity in our android project called CTFlowActivity.kt that initiates the flow, and sends the result back to the Reactive Native side
+* To trigger the CarTrawler flow we created a activity in our Android project called CTFlowActivity.kt that initiates the flow, and sends the result back to the Reactive Native side
 ```kotlin
 class CTFlowActivity : ReactActivity() {
 
