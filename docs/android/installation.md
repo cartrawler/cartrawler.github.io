@@ -13,24 +13,24 @@ To add the CarTrawlerSDK to your app, add our maven repository and enter your ar
 
 ## Maven & Artifactory
 
-### Add our maven repository and enter the artifactory credentials
+### Add our maven repository and the artifactory credentials
 
-```java
-// Add to root build.gradle
-repositories {
-    maven {
-        url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
-        credentials { 
-            username = "your_username_here" 
-            password = "your_password_here" 
-        }
-    }
-}
+* Locate the file gradle.properties in your pc under ~/.gradle/gradle.properties. 
+* If the file does not exist create one and add the following credentials to it replacing the placeholder with the right values.
 
-// CarTrawler dependency (Add to module build.gradle)
-            
-// Please use the version number sent to you by the CarTrawler team
+```groovy
+nativeArtifactoryUsername=placeholder
+nativeArtifactoryPassword=placeholder
+```
+
+Note: If you do not have these credentials contact you manager, IT or another developer in your team.
+
+* Next, add the CarTrawler dependency to build.gradle. Please use the version number sent to you by the CarTrawler team
+
+```groovy     
+
 implementation "com.cartrawler.android:car-rental:$latestVersion" 
+
 ```
 
 Create a theme that extends the ```CTDayNightTheme```. Please refer to the <a href="/docs/android/customisation/themes" target="_blank">theme section</a> for further details.
