@@ -177,6 +177,20 @@ For example if the user's country name code is empty/null on input, this will be
             "@URL": "9c537843-fbdc-4c86-910b-28b159c237c2.64"
         },
         "TPA_Extensions": {
+            "Benefits": {
+                "Benefit": [
+                    {
+                        "@xmlType": "AV",
+                        "@type": "CORPORATE_RATE",
+                        "@code": "X098765"
+                    },
+                    {
+                        "@xmlType": "BG",
+                        "@type": "CORPORATE_RATE",
+                        "@code": "Y123456"
+                    }
+                ]
+            },
             "Reference": {
                 "@Type": "16",
                 "@ID": "AXA.2317317.64",

@@ -16,7 +16,7 @@ The reservation object is accessed via the return intent by `onActivityForResult
 
 ---
 
-```java
+```kotlin
 returnIntent.getStringExtra(CartrawlerSDK.RESERVATION)
     
 override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -55,7 +55,9 @@ data class ReservationDetails (
    //Information on selected vehicle
    val vehicle: VehicleDetails,
    //Loyalty membership id and program name
-   var custLoyalty: CustLoyalty? = null) 
+   var custLoyalty: CustLoyalty? = null,
+   var supplierBenefitCodesApplied: Set<SupplierBenefitCodeApplied>? = null
+)
   
 data class LocationDetails (
    // Determines if the location is at airport
@@ -136,12 +138,21 @@ data class VehicleDetails(
    val sizeText: String
    val price: Double,
    val pricePerDay: Double,
-   val currencyCode: String) : Parcelabl
+   val currencyCode: String) : Parcelable
    
 @Parcelize
 data class CustLoyalty(
    val membershipID: String? = null, 
    val programID: String? = null,
    val pointsEarned: String? = null): Parcelable
-}
+
+@Parcelize
+data class SupplierBenefitCodeApplied(
+    val name: String,
+    val xmlType: String,
+    val codeType: String,
+    val codeTypeText: String,
+    val rentalCompanyName: String,
+    val code: String
+) : Parcelable
 ```    
