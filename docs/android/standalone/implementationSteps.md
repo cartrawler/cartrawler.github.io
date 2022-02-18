@@ -33,6 +33,16 @@ CartrawlerSDK.Builder()
        .setTheme(R.style.SampleTheme)
        .startRentalStandalone(activity, requestCode = REQUEST_CODE_STANDALONE)
 ```
+
+#### Optional Properties
+The SDK has some optional properties that can be passed in initialisation to use and/or display certain features
+
+```java
+       .enableCustomCashTreatment()
+       .setUSPDisplayType(USPDisplayType.CHECK_STYLE)
+       .addPromotionCode(PromotionCodeType.WithCodeType("your-promotion-code-here")
+```       
+
 ---
 ### Navigation to the Vehicle List
 

@@ -51,6 +51,15 @@ val passenger = CartrawlerSDKPassenger(
              membershipId = "123456") 
 ```
 
+#### Optional Builder Properties
+The SDK has some optional properties that can be passed in initialisation to use and/or display certain features
+
+```java
+       .enableCustomCashTreatment()
+       .setUSPDisplayType(USPDisplayType.CHECK_STYLE)
+       .addPromotionCode(PromotionCodeType.WithCodeType("your-promotion-code-here")
+```  
+
 ---
 
 ### Retrieval of objects from the In Path Process

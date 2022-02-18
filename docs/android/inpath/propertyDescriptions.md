@@ -28,4 +28,22 @@ permalink: /docs/android/inpath/property-descriptions/
 <dt>setPickupLocation</dt><dd>An optional IATA code.</dd>
 <dt>setPickupTime</dt><dd>pick-up date time for required service.</dd>
 <dt>setVisitorId</dt><dd>A String value that represents the Visitor ID.</dd>
-<dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd></dl>
+<dt>startRentalInPath</dt><dd>Start Rental InPath activity.</dd>
+<dt><span style="font-size:0.7em">enableCustomCashTreatment</span></dt><dd>This is used in the SDK in order to enable enhanced cash voucher merchandising throughout the booking flow. (Cash voucher banner, Cash voucher widgets etc)</dd>
+<dt>setUSPDisplayType</dt><dd>This allows Partners to choose which homepage USP style (icons (DEFAULT_STYLE) or checks (CHECK_STYlE)) they want to use in the app. Note: If you don't call this method DEFAULT_STYLE will be used. </dd>
+<dt>addPromotionCode</dt><dd>This allows Partners to pass a promotion code type to the SDK as the main toggle to display promotion code field on the search form or not.  </dd></dl>
+
+---
+
+### PromotionCode Types ###
+
+<dl>
+<dt>UseInAppInputType</dt><dd>This will display an input field that will allow the user to input/paste a promotion code that will be sent to Availability Request.
+</dd>
+<dt><span style="font-size:0.9em">WithCodeType("code")</span></dt><dd>This will send the promotion code provided in the Availability Request. The input field will also be shown to the user in the search form.
+</dd></dl>
+
+Note: If ```addPromotionCode``` method is not called with any of the options described above the promotion code field will not be shown in the search form screen.
+
+
+
