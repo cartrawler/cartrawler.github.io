@@ -11,20 +11,49 @@ To add the CarTrawlerSDK to your app, add our maven repository and enter your ar
 
 ---
 
-## Maven & Artifactory
+## Maven & Artifactory Repository
 
-### Add our maven repository and the artifactory credentials
+### Android Gradle Plugin (AGP) before 7.0
 
-* Locate the file gradle.properties in your pc under ~/.gradle/gradle.properties. 
-* If the file does not exist create one and add the following credentials to it replacing the placeholder with the right values.
+You should add the following repository into you root <b>build.gradle</b> file:
 
 ```groovy
-nativeArtifactoryUsername=placeholder
-nativeArtifactoryPassword=placeholder
+repositories {
+    maven {
+        url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
+        credentials { 
+            username = "your_username_here" 
+            password = "your_password_here" 
+        }
+    }
+}
 ```
+
+### Android Gradle Plugin (AGP) 7+
+
+You should add the following repository into you <b>settings.gradle</b> file:
+
+```groovy
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven {
+            url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
+            credentials {
+                username = "your_username_here"
+                password = "your_password_here"
+            }
+            allowInsecureProtocol = true
+        }
+    }
+}
+```
+
+## Getting Credentials
 
 Note: If you do not have these credentials contact you manager, IT or another developer in your team.
 
+## Adding dependency to your App
 * Next, add the CarTrawler dependency to build.gradle. Please use the version number sent to you by the CarTrawler team
 
 ```groovy     
