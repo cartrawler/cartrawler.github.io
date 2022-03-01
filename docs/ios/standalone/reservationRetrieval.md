@@ -39,10 +39,10 @@ class CTReservationDetails: NSObject {
   let pickUpLocation: CTLocationDetails // Location details of pick-up
   let returnLocation: CTLocationDetails // Location details of pick-up
   let insurance: CTInsuranceDetails? // Insurance, null if none attached
-  let rentalInfo: RentalInfo?) // Information on reservation costs
+  let rentalInfo: RentalInfo? // Information on reservation costs
   let vehicleDetails: CTVehicleDetails // Information on booked vehicle
-  let loyaltyProgramId: String // Loyalty program ID
-  let loyaltyNumber: String // Loyalty number
+  let loyalty: [CTLoyalty]? // An array of loyalty programs
+  let supplierBenefits: [CTSupplierBenefitDetails]? // Supplier benefit codes applied
 }
 
 class CTVehicleDetails: NSObject {
@@ -106,5 +106,20 @@ class CTRentalInfo: NSObject (
 class CTAddress: NSObject (
   let addressLine: String // Post address of location
   let countryNameCode: String // 2 letter country code.
+)
+
+class CTLoyalty: NSObject (
+  let programId: String // Loyalty program ID
+  let points: NSNumber // Loyalty points earned
+  let number: String // Loyalty number
+)
+
+class CTSupplierBenefitDetails: NSObject (
+  let name: String // Rental company code
+  let xmlType: String // Rental company type
+  let codeType: String // Supplier benefit code type
+  let codeTypeText: String // Supplier benefit name
+  let rentalCompanyName: String // Rental company name
+  let code: String // Supplier benefit code
 )
 ```

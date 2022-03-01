@@ -129,7 +129,23 @@ For example if the user's country name code is empty/null on input, this will be
                 "CustLoyalty": [{
 					"@ProgramID": "CARTRAWLER",
 					"@MembershipID": "12345"
-				}]
+				}],
+                "TPA_Extensions": {
+                    "Benefits": {
+                        "Benefit": [
+                            {
+                                "@xmlType": "AV",
+                                "@type": "CORPORATE_RATE",
+                                "@code": "X098765"
+                            },
+                            {
+                                "@xmlType": "BG",
+                                "@type": "CORPORATE_RATE",
+                                "@code": "Y123456"
+                            }
+                        ]
+                    }
+                }
             }
         },
         "DriverType": {

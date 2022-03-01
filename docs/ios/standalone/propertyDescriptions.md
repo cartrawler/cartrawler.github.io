@@ -43,11 +43,13 @@ Note:
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A code for setting the language. This defaults to "EN" if not provided.</dd>
+  <dt>flightNumber</dt><dd> A flight number string to pre populate the equivalent field on driver details screen.</dd>
   <dt>passengers</dt><dd> An array of passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression used to validate the loyalty number field.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used in the SDK as the main toggle for displaying the promotion code field on the search form or not. Use an empty string to show the field or a string with a promotion code to show the field and pre populate it.</dd>
+  <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
 </dl>
 
 ---
@@ -70,6 +72,7 @@ Note:
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD".</dd>
   <dd>The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>flightNumber</dt><dd> A flight number string to pre populate the equivalent field on driver details screen.</dd>
   <dt>pickupDate</dt><dd><b>[Required]</b> The pick-up Date.</dd>
   <dt>dropOffDate</dt><dd><b>[Required]</b> The Drop-off Date.</dd>
   <dt>pickupLocation</dt><dd> An IATA code for pick-up location.</dd>
@@ -82,6 +85,7 @@ Note:
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
+  <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
   <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a pre-populated code please provide an empty string.</b></dd>
 </dl>
 
