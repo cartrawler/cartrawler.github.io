@@ -41,7 +41,7 @@ class CTReservationDetails: NSObject {
   let insurance: CTInsuranceDetails? // Insurance, null if none attached
   let rentalInfo: RentalInfo? // Information on reservation costs
   let vehicleDetails: CTVehicleDetails // Information on booked vehicle
-  let loyalty: [CTLoyalty]? // An array of loyalty programs
+  let loyalty: CTLoyalty? // Loyalty program
   let supplierBenefits: [CTSupplierBenefitDetails]? // Supplier benefit codes applied
 }
 
