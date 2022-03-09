@@ -1,17 +1,17 @@
 ---
 layout: default
 title: Android Integration
-parent: Reactive Native
+parent: React Native
 nav_order: 1
 has_children: false
-permalink: docs/reactive-native/android-integration/
+permalink: docs/react-native/android-integration/
 ---
 
 # Android Integration
 
 {: .no_toc }
 
-To integrate the Android SDK's within your Reactive Native app, please use the following steps.
+To integrate the Android SDK's within your React Native app, please use the following steps.
 
 ---
 
@@ -37,10 +37,10 @@ Note: If you do not have these credentials contact you manager, IT or another de
 implementation "com.cartrawler.android:car-rental:$latestVersion" 
 ```
 
-* If not migrated yet, it is recommended to migrate the project to Androidx.
+* If not migrated yet, it is recommended to migrate the project to Android X.
 <a href="https://developer.android.com/jetpack/androidx/migrate">Migration guide</a> <br/>   
 
-* Inside your Android project, create a new class that extends ReactContextBaseJavaModule, this class will be the Module that we will expose methods to the Reactive Native side.
+* Inside your Android project, create a new class that extends ReactContextBaseJavaModule, this class will be the Module that we will expose methods to the React Native side.
 
 ```kotlin
 /**
@@ -184,7 +184,7 @@ eventEmitter.addListener("BookingEvent", (params) => {
 ```
 
 
-* To trigger the CarTrawler flow we created a activity in our Android project called CTFlowActivity.kt that initiates the flow, and sends the result back to the Reactive Native side
+* To trigger the CarTrawler flow we created a activity in our Android project called CTFlowActivity.kt that initiates the flow, and sends the result back to the React Native side
 ```kotlin
 class CTFlowActivity : ReactActivity() {
 
@@ -231,13 +231,8 @@ class CTFlowActivity : ReactActivity() {
     }
 ```
 
-* Now if you run the project, you ll be able to initiate the Cartrawler booking flow from your Reactive Native project and received the booking details back after the flow is complete
+* Now if you run the project, you ll be able to initiate the CarTrawler booking flow from your React Native project and received the booking details back after the flow is complete
 
 ## Resources
 * <a href="https://github.com/cartrawler/cartrawler-react-android-demo">Sample code</a> <br/>  
 * More details on <a href="https://reactnative.dev/docs/native-modules-intro">Native Modules</a> <br/> 
-
-
-
-
----
