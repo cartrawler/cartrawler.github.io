@@ -61,7 +61,7 @@ data class ReservationDetails (
 data class LocationDetails (
    val atAirport: Boolean, // Location at Airport? (boolean)
    val iataCode: String,  // IATA Code (if airport)
-   val code: Int,  // Unique Location Code (code type is internal to Cartrawler)
+   val code: Int,  // Unique Location Code (code type is internal to CarTrawler)
    val name: String, // Text description of location
    val address: Address, // Postal address of location
    val phoneNumber: String // Vendor contact number
