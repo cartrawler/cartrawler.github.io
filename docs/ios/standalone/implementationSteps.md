@@ -56,7 +56,8 @@ class CTContext: NSObject {
   let loyaltyRegex: String,
   let customCashTreatment: Bool,
   let promotionCode: String,
-  let recentSearch: CTRecentSearch
+  let recentSearch: CTRecentSearch,
+  let supplierBenefitAutoApplied: Bool
 }
 ```
 <br/>
