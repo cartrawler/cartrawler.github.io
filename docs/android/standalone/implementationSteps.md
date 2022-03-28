@@ -50,9 +50,11 @@ To support navigation to the car block screen you need to add pinned veh ref alo
 ```java
 CartrawlerSDK.Builder()
        .setPickupTime(pickupDateTime = GregorianCalendar())
-       .setDropOffTime(dropOffDateTime = GregorianCalendar()
+       .setDropOffTime(dropOffDateTime = GregorianCalendar())
        .setPickupLocation(iataAirportCode = "YXJ")
+       .setPinnedVehicle(abandonmentRefId = "123456789") 
        //.. Add your other config properties as normal
+       .startAvailabilityFlow(activity, YOUR_REQUEST_CODE)
 ```
 ---
 
