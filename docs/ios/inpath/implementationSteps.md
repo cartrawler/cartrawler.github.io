@@ -63,9 +63,9 @@ import CarTrawlerSDK
 
 // Create a context for in Path flow
 let context = CTContext(clientID: "12345", flow: .inPath)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
+context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+context.languageCode = "EN" // The language associated with the device’s system region is used by default.
 context.pickupLocation = "DUB"
 context.pickupDate = Date(timeIntervalSinceNow: 86400)
 context.flightNumber = "FL1234"

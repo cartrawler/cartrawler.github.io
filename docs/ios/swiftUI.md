@@ -36,24 +36,25 @@ extension SDKHostViewController: CarTrawlerSDKDelegate {
 
 ## Create a UIViewControllerRepresentable
 This is needed to use the host controller in our SwiftUI code. 
-  
+
 ```java
 struct SDKHostVCRepresentable: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
     }
-    
+
     func makeUIViewController(context: Context) -> some UIViewController {
       let hostingController = SDKHostViewController()
       let context = CTContext(clientID: "your clientID", flow: .standAlone)
       let defaults = UserDefaults.standard
       let language = "en"
-      let currency = "EUR"
 
-      context.languageCode = language == "no" ? "nb" : language
-      context.currencyCode = currency
+      context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+      context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+      context.languageCode = language == "no" ? "nb" : language // The language associated with the device’s system region is used by default.
+
       context.delegate = hostingController
       CarTrawlerSDK.sharedInstance().present(from: hostingController, context: context)
-        
+
       return hostingController
   }
 }

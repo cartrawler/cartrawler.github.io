@@ -23,9 +23,9 @@ import CarTrawlerSDK
 let params = CTAPIQueryParams()  
 params.delegate = self
 params.clientID = "your clientID"
-params.countryCode = "IE"
-params.currencyCode = "EUR"
-params.languageCode = "EN"
+params.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+params.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+params.languageCode = "EN" // The language associated with the device’s system region is used by default.
 params.iataCode = "DUB"
 params.pickupDate = Date(timeIntervalSinceNow: 86400) // next day
 params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
@@ -45,7 +45,7 @@ params.sortType = .recommended
 <dt>currencyCode</dt>
 <dd>An optional currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
 <dt>languageCode</dt>
-<dd>A language code. Default is "EN" if not provided.</dd>
+<dd>A language code. The language associated with the device’s system region is used by default.</dd>
 <dt>pickupDate</dt>
 <dd><b>[Required]</b> A pick-up Date.</dd>
 <dt>dropOffDate</dt>

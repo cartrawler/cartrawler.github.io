@@ -42,7 +42,7 @@ Note:
   <dt>flow</dt><dd><b>[Required]</b> The flow to be launched. Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
-  <dt>languageCode</dt><dd> A code for setting the language. This defaults to "EN" if not provided.</dd>
+  <dt>languageCode</dt><dd> A code for setting the language. The language associated with the device’s system region is used by default.</dd>
   <dt>flightNumber</dt><dd> A flight number string to pre populate the equivalent field on driver details screen.</dd>
   <dt>passengers</dt><dd> An array of passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
@@ -71,7 +71,7 @@ Note:
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD".</dd>
   <dd>The currency associated with the device’s system region is used by default.</dd>
-  <dt>languageCode</dt><dd> A language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>languageCode</dt><dd> A language code to switch between languages. The language associated with the device’s system region is used by default.</dd>
   <dt>flightNumber</dt><dd> A flight number string to pre populate the equivalent field on driver details screen.</dd>
   <dt>pickupDate</dt><dd><b>[Required]</b> The pick-up Date.</dd>
   <dt>dropOffDate</dt><dd><b>[Required]</b> The Drop-off Date.</dd>
@@ -105,7 +105,7 @@ Note:
   <dt>flow</dt><dd><b>[Required]</b> The flow to be launched. Must be <b>.standAlone</b>.</dd>
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
-  <dt>languageCode</dt><dd> A language code to switch between languages. Default is "EN" if not provided.</dd>
+  <dt>languageCode</dt><dd> A language code to switch between languages. The language associated with the device’s system region is used by default.</dd>
   <dt>passengers</dt><dd> An array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
