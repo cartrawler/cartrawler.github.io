@@ -66,9 +66,9 @@ class CTContext: NSObject {
 ```java
 import CarTrawlerSDK
 let context = CTContext(clientID: "your client ID", flow: .standAlone)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "en"
+context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+context.languageCode = "EN" // The language associated with the device’s system region is used by default.
 ````
 <b>Note: the `countryCode` property refers to the country of residency, and this is used when we make search requests.</b>
 
@@ -83,9 +83,9 @@ As well as the required parameters mentioned above, you must provide pick-up and
 let context = CTContext(clientID: "your clientID", flow: .standAlone)
 
 // Set required properties
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
+context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+context.languageCode = "EN" // The language associated with the device’s system region is used by default.
 
 // Set pick-up and drop-off locations using location or IATA codes
 // Pick-up at Dublin Airport
@@ -122,9 +122,9 @@ context.pinnedVehicleID = "1892038" // Vehicle RefID
 ```java
 // Create a context for the Standalone flow
 let context = CTContext(clientID: "your clientID", flow: .standAlone)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
+context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+context.languageCode = "EN" // The language associated with the device’s system region is used by default.
 context.recentSearch = recentSearch // your recent search object fetched from the recent searches api. 
 context.delegate = self
 ```
@@ -135,9 +135,9 @@ context.delegate = self
 ```java
 // Create a context for standAlone flow
 let context = CTContext(clientID: "your clientID", flow: .standAlone)
-context.countryCode = "IE"
-context.currencyCode = "EUR"
-context.languageCode = "EN"
+context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+context.languageCode = "EN" // The language associated with the device’s system region is used by default.
 context.deeplink = .searchForm
 context.delegate = self
 ```

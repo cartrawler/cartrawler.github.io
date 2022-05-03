@@ -29,7 +29,7 @@ import CarTrawlerSDK
 let params = CTAPIQueryParams()  
 params.delegate = self
 params.clientID = "your clientID"
-params.languageCode = "EN"
+params.languageCode = "EN" // The language associated with the device’s system region is used by default.
 params.resId = "IE3453453"
 params.resUid = "12424345446466464"
 
