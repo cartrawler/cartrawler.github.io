@@ -63,8 +63,7 @@ This can be changed to large as follows:
     //..
     <item name="ctLoyaltyChipSize">regular</item> // Either "regular" or "large" Default is "regular"
 </style>
-```   
-
+```
 
 ### Applying the Theme
 Override the following properties in your SDK theme
