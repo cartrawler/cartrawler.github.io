@@ -74,7 +74,11 @@ style.loyaltyStyle = loyaltyStyle
 ```   
 
 #### Loyalty Chip Size
-The default size of the chip is regular, this can be changed to large as follows: 
+The default size of the chip is regular.
+
+![](/uploads/loyalty_chip.png)
+
+ This can be changed to large as follows: 
 
 ```java
 let style = CTStyle(theme: .dark,  // Main app style
