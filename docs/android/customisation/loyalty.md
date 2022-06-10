@@ -53,6 +53,18 @@ Apply ```light``` to apply a dark logo for the light theme.
 #### Dark Theme
 Apply ```dark``` to apply a light (white) logo for the dark theme
 
+#### Loyalty Chip Size
+The chip’s height can also be increased if your logo requires more padding. The default size of the chip is regular.
+<img src="/uploads/loyalty_chip.png">
+
+This can be changed to large as follows:
+```xml
+<style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
+    //..
+    <item name="ctLoyaltyChipSize">regular</item> // Either "regular" or "large" Default is "regular"
+</style>
+```
+
 ### Applying the Theme
 Override the following properties in your SDK theme
 
@@ -65,5 +77,7 @@ Override the following properties in your SDK theme
     <item name="ctLoyaltySecondaryColor">@color/loyaltySecondaryColor</item>
     <item name="ctLoyaltySecondaryColorText">@color/loyaltySecondaryColorText</item>
     <item name="ctLoyaltyTheme">dark</item> // Either "dark" or "light" Default is "light"
+    <item name="ctLoyaltyChipSize">regular</item> // Either "regular" or "large" Default is "regular"
 </style>
 ```   
+

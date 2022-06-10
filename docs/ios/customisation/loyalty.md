@@ -11,7 +11,7 @@ permalink: /docs/ios/customisation/loyalty
 
 {: .no_toc }
 
-The colour of the background, text, and icon on our loyalty components can be changed to fit in with your app’s loyalty program branding. Loyalty components include banners as well as specific loyalty chips. See more on the components section of our style guide.
+The colour of the background, text, and icon on our loyalty components can be changed to fit in with your app’s loyalty program branding. Loyalty components include banners as well as specific loyalty chips. The chip's height can also be increased if your logo requires more padding. See more on the components section of our style guide. 
 
 ---
 
@@ -69,6 +69,24 @@ loyaltyStyle.primaryColor = UIColor.lightGray // Optional, default #e5ebed
 loyaltyStyle.primaryTextColor = UIColor.darkGray // Optional, default #333333
 loyaltyStyle.secondaryColor = UIColor.blue // Optional, default #FFFFFF
 loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
+
+style.loyaltyStyle = loyaltyStyle
+```   
+
+#### Loyalty Chip Size
+The default size of the chip is regular.
+
+![](/uploads/loyalty_chip.png)
+
+ This can be changed to large as follows: 
+
+```java
+let style = CTStyle(theme: .dark,  // Main app style
+          primaryColor: UIColor.gray)
+
+let loyaltyStyle = CTLoyaltyStyle(theme: .light) // Loyalty style Either .light (default) or .dark
+
+loyaltyStyle.chipSize = .large // Optional, default .regular
 
 style.loyaltyStyle = loyaltyStyle
 ```   
