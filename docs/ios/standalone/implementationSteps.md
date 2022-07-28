@@ -168,9 +168,18 @@ context.passengers = [passenger]
 
 ---
 ## Step 3
-### Present the SDK 
+### Present the SDK via Modal 
 In the view controller you wish to present the SDK from, add the following code after configuring your `CTContext`: 
 
 ```java
-CarTrawlerSDK.sharedInstance().present(from: self, context: context)
+let viewController = UIViewController()
+CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+```
+
+### Present the SDK via Push Presentation
+In the navigation controller you wish to push the SDK from, add the following code after configuring your `CTContext`: 
+
+```java
+let navigationController = UINavigationController()
+CarTrawlerSDK.sharedInstance().push(fromNavigationViewController: navigationController, context: context)
 ```
