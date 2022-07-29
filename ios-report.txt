@@ -1,155 +1,155 @@
 
 App Thinning Size Report for All Variants of CarTrawlerSDKIntegration
 
-Variant: CarTrawlerSDKIntegration-1805E6D8-EDCF-45EB-AA71-06DE1067A7A6.ipa
-Supported variant descriptors: [device: iPad7,2, os-version: 15.0], [device: iPhone10,1, os-version: 15.0], [device: iPad7,4, os-version: 15.0], [device: MacFamily20,1, os-version: 15.0], [device: iPad11,4, os-version: 15.0], [device: iPad13,6, os-version: 15.0], [device: iPad8,11, os-version: 15.0], [device: iPad11,1, os-version: 15.0], [device: iPad7,3, os-version: 15.0], [device: iPad8,9, os-version: 15.0], [device: iPad14,1, os-version: 15.0], [device: iPad13,4, os-version: 15.0], [device: iPad14,2, os-version: 15.0], [device: iPad13,1, os-version: 15.0], [device: iPad8,7, os-version: 15.0], [device: iPad13,10, os-version: 15.0], [device: iPad11,3, os-version: 15.0], [device: iPad7,1, os-version: 15.0], [device: iPhone9,1, os-version: 15.0], [device: iPad13,17, os-version: 15.0], [device: iPad13,11, os-version: 15.0], [device: iPad8,2, os-version: 15.0], [device: iPhone11,8, os-version: 15.0], [device: iPad13,16, os-version: 15.0], [device: iPad8,8, os-version: 15.0], [device: iPhone9,3, os-version: 15.0], [device: iPhone10,4, os-version: 15.0], [device: iPad8,4, os-version: 15.0], [device: iPhone14,6, os-version: 15.0], [device: iPad8,12, os-version: 15.0], [device: iPad11,2, os-version: 15.0], [device: iPad8,5, os-version: 15.0], [device: iPad8,10, os-version: 15.0], [device: iPad13,7, os-version: 15.0], [device: iPad6,3, os-version: 15.0], [device: iPad13,9, os-version: 15.0], [device: iPad6,4, os-version: 15.0], [device: iPad8,1, os-version: 15.0], [device: iPad13,5, os-version: 15.0], [device: iPad13,2, os-version: 15.0], [device: iPad8,3, os-version: 15.0], [device: iPad8,6, os-version: 15.0], [device: iPad13,8, os-version: 15.0], [device: iPhone12,1, os-version: 15.0], and [device: iPhone12,8, os-version: 15.0]
-App + On Demand Resources size: 5 MB compressed, 12.1 MB uncompressed
-App size: 5 MB compressed, 12.1 MB uncompressed
+Variant: CarTrawlerSDKIntegration-0C5847AB-C921-49F6-B6CE-DB1FC2D6CEED.ipa
+Supported variant descriptors: [device: iPhone14,5, os-version: 15.0], [device: iPhone13,3, os-version: 15.0], [device: iPhone12,5, os-version: 15.0], [device: iPhone10,6, os-version: 15.0], [device: iPhone10,5, os-version: 15.0], [device: iPhone11,4, os-version: 15.0], [device: iPhone14,4, os-version: 15.0], [device: iPhone14,2, os-version: 15.0], [device: iPhone12,3, os-version: 15.0], [device: iPhone9,2, os-version: 15.0], [device: iPhone11,2, os-version: 15.0], [device: iPhone9,4, os-version: 15.0], [device: iPhone14,3, os-version: 15.0], [device: iPhone10,3, os-version: 15.0], [device: iPhone10,2, os-version: 15.0], [device: iPhone11,6, os-version: 15.0], [device: iPhone13,4, os-version: 15.0], [device: iPhone13,1, os-version: 15.0], and [device: iPhone13,2, os-version: 15.0]
+App + On Demand Resources size: 5.5 MB compressed, 12.7 MB uncompressed
+App size: 5.5 MB compressed, 12.7 MB uncompressed
 On Demand Resources size: Zero KB compressed, Zero KB uncompressed
 
 
-Variant: CarTrawlerSDKIntegration-1C4F8243-8A17-43EA-9455-35E910131EBC.ipa
-Supported variant descriptors: [device: iPhone8,2, os-version: 15.0]
-App + On Demand Resources size: 5.4 MB compressed, 12.5 MB uncompressed
-App size: 5.4 MB compressed, 12.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-263B4037-F302-49F1-9A8D-1B0D49149612.ipa
-Supported variant descriptors: [device: iPhone10,1, os-version: 11.0], [device: iPad6,3, os-version: 10.0], [device: iPad7,1, os-version: 10.0], [device: iPad7,4, os-version: 10.0], [device: iPhone9,3, os-version: 10.0], [device: iPad7,2, os-version: 10.0], [device: iPhone9,1, os-version: 10.0], [device: iPad6,4, os-version: 10.0], [device: iPad7,3, os-version: 10.0], and [device: iPhone10,4, os-version: 11.0]
-App + On Demand Resources size: 7.9 MB compressed, 19.7 MB uncompressed
-App size: 7.9 MB compressed, 19.7 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-2B867047-31F2-46EC-8226-99E1A4882B7A.ipa
-Supported variant descriptors: [device: iPhone11,2, os-version: 12.2], [device: iPhone10,6, os-version: 12.2], [device: iPhone10,2, os-version: 12.2], [device: iPhone11,6, os-version: 12.2], [device: iPhone10,5, os-version: 12.2], [device: iPhone9,4, os-version: 12.2], [device: iPhone10,3, os-version: 12.2], [device: iPhone11,4, os-version: 12.2], and [device: iPhone9,2, os-version: 12.2]
-App + On Demand Resources size: 5.4 MB compressed, 12.5 MB uncompressed
-App size: 5.4 MB compressed, 12.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-3346680A-2B76-4E37-B140-E660BBD68404.ipa
-Supported variant descriptors: [device: iPhone13,3, os-version: 14.0], [device: iPhone11,2, os-version: 13.0], [device: iPhone9,2, os-version: 14.0], [device: iPhone10,6, os-version: 14.0], [device: iPhone9,2, os-version: 13.0], [device: iPhone10,3, os-version: 14.0], [device: iPhone12,5, os-version: 14.0], [device: iPhone10,2, os-version: 14.0], [device: iPhone12,3, os-version: 13.0], [device: iPhone10,6, os-version: 13.0], [device: iPhone13,4, os-version: 14.0], [device: iPhone11,4, os-version: 14.0], [device: iPhone12,5, os-version: 13.0], [device: iPhone9,4, os-version: 14.0], [device: iPhone10,3, os-version: 13.0], [device: iPhone13,2, os-version: 14.0], [device: iPhone11,2, os-version: 14.0], [device: iPhone12,3, os-version: 14.0], [device: iPhone13,1, os-version: 14.0], [device: iPhone11,6, os-version: 13.0], [device: iPhone9,4, os-version: 13.0], [device: iPhone11,4, os-version: 13.0], [device: iPhone10,5, os-version: 14.0], [device: iPhone11,6, os-version: 14.0], [device: iPhone10,2, os-version: 13.0], and [device: iPhone10,5, os-version: 13.0]
-App + On Demand Resources size: 5.4 MB compressed, 12.5 MB uncompressed
-App size: 5.4 MB compressed, 12.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-36707BE0-E67C-4DB4-AE2E-B93127D19C18.ipa
-Supported variant descriptors: [device: iPad5,2, os-version: 12.2], [device: iPad5,3, os-version: 12.2], [device: iPod9,1, os-version: 12.2], [device: iPhone6,2, os-version: 12.2], [device: iPad4,6, os-version: 12.2], [device: iPhone7,2, os-version: 12.2], [device: iPad5,4, os-version: 12.2], [device: iPad6,11, os-version: 12.2], [device: iPhone6,1, os-version: 12.2], [device: iPad6,8, os-version: 12.2], [device: iPad4,7, os-version: 12.2], [device: iPad5,1, os-version: 12.2], [device: iPad4,5, os-version: 12.2], [device: iPad6,7, os-version: 12.2], [device: iPad4,4, os-version: 12.2], [device: iPad7,5, os-version: 12.2], [device: iPad4,9, os-version: 12.2], [device: iPad4,3, os-version: 12.2], [device: iPhone8,1, os-version: 12.2], [device: iPad6,12, os-version: 12.2], [device: iPad4,1, os-version: 12.2], [device: iPhone8,4, os-version: 12.2], [device: iPad4,8, os-version: 12.2], [device: iPod7,1, os-version: 12.2], [device: iPad7,6, os-version: 12.2], and [device: iPad4,2, os-version: 12.2]
-App + On Demand Resources size: 5 MB compressed, 12.2 MB uncompressed
-App size: 5 MB compressed, 12.2 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-4434FBED-B59D-4D8B-AC2E-1E1679B4B6D2.ipa
-Supported variant descriptors: [device: iPhone7,1, os-version: 12.2] and [device: iPhone8,2, os-version: 12.2]
-App + On Demand Resources size: 5.4 MB compressed, 12.5 MB uncompressed
-App size: 5.4 MB compressed, 12.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-503A25D8-7C14-4613-8156-05AAE2D25E0D.ipa
-Supported variant descriptors: [device: iPad6,3, os-version: 12.0], [device: iPad6,4, os-version: 12.0], [device: iPhone9,3, os-version: 12.0], [device: iPhone10,1, os-version: 12.0], [device: iPad8,8, os-version: 12.0], [device: iPad8,6, os-version: 12.0], [device: iPhone10,4, os-version: 12.0], [device: iPad8,7, os-version: 12.0], [device: iPad8,3, os-version: 12.0], [device: iPad7,4, os-version: 12.0], [device: iPad8,1, os-version: 12.0], [device: iPad7,3, os-version: 12.0], [device: iPad7,1, os-version: 12.0], [device: iPhone11,8, os-version: 12.0], [device: iPad8,2, os-version: 12.0], [device: iPad8,5, os-version: 12.0], [device: iPhone9,1, os-version: 12.0], [device: iPad7,2, os-version: 12.0], and [device: iPad8,4, os-version: 12.0]
-App + On Demand Resources size: 7.4 MB compressed, 19.2 MB uncompressed
-App size: 7.4 MB compressed, 19.2 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-5341C6DA-42F2-4243-875A-688C46E98E82.ipa
-Supported variant descriptors: [device: iPad8,1, os-version: 13.0], [device: iPad8,9, os-version: 14.0], [device: iPad8,5, os-version: 14.0], [device: iPad8,12, os-version: 14.0], [device: iPad11,1, os-version: 13.0], [device: iPhone9,3, os-version: 13.0], [device: iPad11,3, os-version: 14.0], [device: iPad7,2, os-version: 14.0], [device: iPad8,3, os-version: 14.0], [device: iPhone9,1, os-version: 14.0], [device: iPad8,10, os-version: 14.0], [device: iPad7,2, os-version: 13.0], [device: iPad11,2, os-version: 13.0], [device: iPad8,7, os-version: 13.0], [device: iPhone10,4, os-version: 13.0], [device: iPhone9,3, os-version: 14.0], [device: iPad8,9, os-version: 13.0], [device: iPad11,2, os-version: 14.0], [device: iPhone12,8, os-version: 13.0], [device: iPhone12,1, os-version: 13.0], [device: iPad13,7, os-version: 14.0], [device: iPhone10,1, os-version: 14.0], [device: MacFamily20,1, os-version: 14.0], [device: iPad6,4, os-version: 14.0], [device: iPad11,3, os-version: 13.0], [device: iPad7,1, os-version: 14.0], [device: iPad8,11, os-version: 13.0], [device: iPad13,5, os-version: 14.0], [device: iPad8,2, os-version: 14.0], [device: iPad11,1, os-version: 14.0], [device: iPhone10,4, os-version: 14.0], [device: iPhone10,1, os-version: 13.0], [device: iPhone9,1, os-version: 13.0], [device: iPad13,11, os-version: 14.0], [device: iPad7,3, os-version: 14.0], [device: iPad11,4, os-version: 13.0], [device: iPad8,4, os-version: 13.0], [device: iPad8,1, os-version: 14.0], [device: iPhone11,8, os-version: 14.0], [device: iPad8,8, os-version: 13.0], [device: iPad8,7, os-version: 14.0], [device: iPad8,12, os-version: 13.0], [device: iPad8,5, os-version: 13.0], [device: iPad7,3, os-version: 13.0], [device: iPad8,6, os-version: 13.0], [device: iPad8,10, os-version: 13.0], [device: iPad11,4, os-version: 14.0], [device: iPad13,4, os-version: 14.0], [device: iPad8,2, os-version: 13.0], [device: iPhone12,8, os-version: 14.0], [device: iPhone12,1, os-version: 14.0], [device: iPad7,4, os-version: 13.0], [device: iPad7,4, os-version: 14.0], [device: iPhone11,8, os-version: 13.0], [device: iPad13,6, os-version: 14.0], [device: iPad6,3, os-version: 14.0], [device: iPad8,6, os-version: 14.0], [device: iPad13,8, os-version: 14.0], [device: iPad8,3, os-version: 13.0], [device: iPad6,3, os-version: 13.0], [device: iPad13,1, os-version: 14.0], [device: iPad8,4, os-version: 14.0], [device: iPad6,4, os-version: 13.0], [device: iPad8,11, os-version: 14.0], [device: iPad7,1, os-version: 13.0], [device: iPad8,8, os-version: 14.0], [device: iPad13,10, os-version: 14.0], [device: iPad13,9, os-version: 14.0], and [device: iPad13,2, os-version: 14.0]
-App + On Demand Resources size: 5 MB compressed, 12.1 MB uncompressed
-App size: 5 MB compressed, 12.1 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-5E7B39D8-41EA-4C85-847F-54D314299847.ipa
-Supported variant descriptors: [device: iPad3,5, os-version: 10.0], [device: iPhone5,2, os-version: 10.0], [device: iPad3,6, os-version: 10.0], [device: iPhone5,1, os-version: 10.0], [device: iPad3,4, os-version: 10.0], [device: iPhone5,3, os-version: 10.0], and [device: iPhone5,4, os-version: 10.0]
-App + On Demand Resources size: 8.2 MB compressed, 17.9 MB uncompressed
-App size: 8.2 MB compressed, 17.9 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-7F2F105A-822E-47E2-9B57-0496EB17A0D9.ipa
-Supported variant descriptors: [device: iPhone8,2, os-version: 10.0] and [device: iPhone7,1, os-version: 10.0]
-App + On Demand Resources size: 8.6 MB compressed, 20.3 MB uncompressed
-App size: 8.6 MB compressed, 20.3 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-8DD19786-DF52-4C60-9054-EBDDF02AD4C9.ipa
-Supported variant descriptors: [device: iPhone10,6, os-version: 12.0], [device: iPhone9,4, os-version: 12.0], [device: iPhone11,6, os-version: 12.0], [device: iPhone10,2, os-version: 12.0], [device: iPhone10,3, os-version: 12.0], [device: iPhone11,2, os-version: 12.0], [device: iPhone9,2, os-version: 12.0], [device: iPhone11,4, os-version: 12.0], and [device: iPhone10,5, os-version: 12.0]
-App + On Demand Resources size: 7.8 MB compressed, 19.5 MB uncompressed
-App size: 7.8 MB compressed, 19.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-93814737-EE91-4E33-8379-D72D20363EAA.ipa
-Supported variant descriptors: [device: iPhone8,2, os-version: 13.0] and [device: iPhone8,2, os-version: 14.0]
-App + On Demand Resources size: 5.4 MB compressed, 12.5 MB uncompressed
-App size: 5.4 MB compressed, 12.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-9526BB52-67FB-4F5C-877F-953AE6129C63.ipa
-Supported variant descriptors: [device: iPhone8,1, os-version: 10.0], [device: iPad5,1, os-version: 10.0], [device: iPad7,5, os-version: 11.0], [device: iPad4,6, os-version: 10.0], [device: iPad4,1, os-version: 10.0], [device: iPad5,3, os-version: 10.0], [device: iPad5,4, os-version: 10.0], [device: iPad4,8, os-version: 10.0], [device: iPad4,7, os-version: 10.0], [device: iPhone6,2, os-version: 10.0], [device: iPad4,9, os-version: 10.0], [device: iPad4,5, os-version: 10.0], [device: iPad4,3, os-version: 10.0], [device: iPad4,4, os-version: 10.0], [device: iPad6,12, os-version: 10.0], [device: iPad7,6, os-version: 11.0], [device: iPad6,8, os-version: 10.0], [device: iPad6,11, os-version: 10.0], [device: iPod7,1, os-version: 10.0], [device: iPhone6,1, os-version: 10.0], [device: iPhone8,4, os-version: 10.0], [device: iPad5,2, os-version: 10.0], [device: iPad4,2, os-version: 10.0], [device: iPad6,7, os-version: 10.0], and [device: iPhone7,2, os-version: 10.0]
-App + On Demand Resources size: 7.9 MB compressed, 19.7 MB uncompressed
-App size: 7.9 MB compressed, 19.7 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-B3044D61-4B92-4F28-8E90-3BC639B5ACC9.ipa
-Supported variant descriptors: [device: iPhone6,2, os-version: 12.0], [device: iPhone8,4, os-version: 12.0], [device: iPad4,2, os-version: 12.0], [device: iPad4,5, os-version: 12.0], [device: iPad5,2, os-version: 12.0], [device: iPad4,3, os-version: 12.0], [device: iPad7,6, os-version: 12.0], [device: iPad5,1, os-version: 12.0], [device: iPad6,12, os-version: 12.0], [device: iPad4,1, os-version: 12.0], [device: iPad5,3, os-version: 12.0], [device: iPad7,5, os-version: 12.0], [device: iPod7,1, os-version: 12.0], [device: iPad6,11, os-version: 12.0], [device: iPad4,9, os-version: 12.0], [device: iPad4,7, os-version: 12.0], [device: iPhone6,1, os-version: 12.0], [device: iPhone7,2, os-version: 12.0], [device: iPad4,6, os-version: 12.0], [device: iPad4,4, os-version: 12.0], [device: iPad5,4, os-version: 12.0], [device: iPad4,8, os-version: 12.0], [device: iPad6,7, os-version: 12.0], [device: iPhone8,1, os-version: 12.0], and [device: iPad6,8, os-version: 12.0]
-App + On Demand Resources size: 7.4 MB compressed, 19.2 MB uncompressed
-App size: 7.4 MB compressed, 19.2 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-B773E7A9-0439-42ED-AAAA-7BC7BD0C7184.ipa
-Supported variant descriptors: [device: iPad8,7, os-version: 12.2], [device: iPad8,2, os-version: 12.2], [device: iPad11,4, os-version: 12.2], [device: iPad8,8, os-version: 12.2], [device: iPad6,3, os-version: 12.2], [device: iPad11,1, os-version: 12.2], [device: iPad8,6, os-version: 12.2], [device: iPhone10,1, os-version: 12.2], [device: iPad8,1, os-version: 12.2], [device: iPad8,4, os-version: 12.2], [device: iPhone11,8, os-version: 12.2], [device: iPad8,3, os-version: 12.2], [device: iPhone9,1, os-version: 12.2], [device: iPhone10,4, os-version: 12.2], [device: iPad11,3, os-version: 12.2], [device: iPhone9,3, os-version: 12.2], [device: iPad7,1, os-version: 12.2], [device: iPad7,4, os-version: 12.2], [device: iPad6,4, os-version: 12.2], [device: iPad7,2, os-version: 12.2], [device: iPad11,2, os-version: 12.2], [device: iPad7,3, os-version: 12.2], and [device: iPad8,5, os-version: 12.2]
-App + On Demand Resources size: 5 MB compressed, 12.2 MB uncompressed
-App size: 5 MB compressed, 12.2 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-BD3B5454-965E-4AE5-8193-9C6E9C529AD3.ipa
-Supported variant descriptors: [device: iPhone11,6, os-version: 15.0], [device: iPhone12,3, os-version: 15.0], [device: iPhone14,5, os-version: 15.0], [device: iPhone13,1, os-version: 15.0], [device: iPhone13,2, os-version: 15.0], [device: iPhone10,5, os-version: 15.0], [device: iPhone14,2, os-version: 15.0], [device: iPhone13,4, os-version: 15.0], [device: iPhone9,2, os-version: 15.0], [device: iPhone10,2, os-version: 15.0], [device: iPhone10,3, os-version: 15.0], [device: iPhone11,4, os-version: 15.0], [device: iPhone10,6, os-version: 15.0], [device: iPhone13,3, os-version: 15.0], [device: iPhone14,3, os-version: 15.0], [device: iPhone14,4, os-version: 15.0], [device: iPhone11,2, os-version: 15.0], [device: iPhone12,5, os-version: 15.0], and [device: iPhone9,4, os-version: 15.0]
-App + On Demand Resources size: 5.4 MB compressed, 12.5 MB uncompressed
-App size: 5.4 MB compressed, 12.5 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-C6DCC92F-3F71-4F4A-B014-1D70ED9C367F.ipa
-Supported variant descriptors: [device: iPhone10,3, os-version: 11.0], [device: iPhone10,6, os-version: 11.0], [device: iPhone9,2, os-version: 10.0], [device: iPhone10,2, os-version: 11.0], [device: iPhone10,5, os-version: 11.0], and [device: iPhone9,4, os-version: 10.0]
-App + On Demand Resources size: 8.6 MB compressed, 20.4 MB uncompressed
-App size: 8.6 MB compressed, 20.4 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-C99D8060-EEED-4C69-A713-ECF9A62733B8.ipa
-Supported variant descriptors: [device: iPad7,11, os-version: 15.0], [device: iPad12,2, os-version: 15.0], [device: iPad11,6, os-version: 15.0], [device: iPad5,3, os-version: 15.0], [device: iPad12,1, os-version: 15.0], [device: iPad6,8, os-version: 15.0], [device: iPad6,12, os-version: 15.0], [device: iPad7,6, os-version: 15.0], [device: iPhone8,4, os-version: 15.0], [device: iPhone8,1, os-version: 15.0], [device: iPad7,12, os-version: 15.0], [device: iPod9,1, os-version: 15.0], [device: iPad6,11, os-version: 15.0], [device: iPad5,2, os-version: 15.0], [device: iPad5,1, os-version: 15.0], [device: iPad11,7, os-version: 15.0], [device: iPad6,7, os-version: 15.0], [device: iPad7,5, os-version: 15.0], and [device: iPad5,4, os-version: 15.0]
-App + On Demand Resources size: 5 MB compressed, 12.1 MB uncompressed
-App size: 5 MB compressed, 12.1 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-E1A275E9-3526-4C6E-9065-54060F472479.ipa
-Supported variant descriptors: [device: iPod9,1, os-version: 13.0], [device: iPad7,6, os-version: 13.0], [device: iPad6,12, os-version: 14.0], [device: iPad6,11, os-version: 14.0], [device: iPad6,8, os-version: 13.0], [device: iPad6,11, os-version: 13.0], [device: iPad5,3, os-version: 13.0], [device: iPad11,7, os-version: 14.0], [device: iPhone8,1, os-version: 13.0], [device: iPad6,7, os-version: 14.0], [device: iPad5,2, os-version: 14.0], [device: iPad7,5, os-version: 14.0], [device: iPod9,1, os-version: 14.0], [device: iPad5,4, os-version: 14.0], [device: iPad5,4, os-version: 13.0], [device: iPad5,3, os-version: 14.0], [device: iPad7,11, os-version: 14.0], [device: iPhone8,1, os-version: 14.0], [device: iPad6,8, os-version: 14.0], [device: iPad5,1, os-version: 14.0], [device: iPad5,1, os-version: 13.0], [device: iPad11,6, os-version: 14.0], [device: iPad7,12, os-version: 13.0], [device: iPad6,7, os-version: 13.0], [device: iPad5,2, os-version: 13.0], [device: iPhone8,4, os-version: 13.0], [device: iPad6,12, os-version: 13.0], [device: iPhone8,4, os-version: 14.0], [device: iPad7,6, os-version: 14.0], [device: iPad7,12, os-version: 14.0], [device: iPad7,11, os-version: 13.0], and [device: iPad7,5, os-version: 13.0]
-App + On Demand Resources size: 5 MB compressed, 12.1 MB uncompressed
-App size: 5 MB compressed, 12.1 MB uncompressed
-On Demand Resources size: Zero KB compressed, Zero KB uncompressed
-
-
-Variant: CarTrawlerSDKIntegration-E262B633-D087-42E9-9521-533A9F00C041.ipa
+Variant: CarTrawlerSDKIntegration-1DC9F95E-C3F2-4737-90AB-A2765E32D2E3.ipa
 Supported variant descriptors: [device: iPhone7,1, os-version: 12.0] and [device: iPhone8,2, os-version: 12.0]
-App + On Demand Resources size: 7.8 MB compressed, 19.5 MB uncompressed
-App size: 7.8 MB compressed, 19.5 MB uncompressed
+App + On Demand Resources size: 7.8 MB compressed, 19.8 MB uncompressed
+App size: 7.8 MB compressed, 19.8 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-2290EB84-82C3-4719-9144-86C1D0D66850.ipa
+Supported variant descriptors: [device: iPad8,10, os-version: 14.0], [device: iPad11,4, os-version: 14.0], [device: iPad7,4, os-version: 13.0], [device: iPad11,1, os-version: 14.0], [device: iPad13,5, os-version: 14.0], [device: iPad6,3, os-version: 13.0], [device: iPad8,9, os-version: 13.0], [device: iPad7,2, os-version: 13.0], [device: iPhone12,1, os-version: 13.0], [device: iPhone12,8, os-version: 14.0], [device: iPad13,8, os-version: 14.0], [device: iPad8,9, os-version: 14.0], [device: iPad6,3, os-version: 14.0], [device: iPhone9,1, os-version: 13.0], [device: iPhone11,8, os-version: 13.0], [device: iPad13,7, os-version: 14.0], [device: iPhone12,8, os-version: 13.0], [device: iPad8,5, os-version: 13.0], [device: iPad7,1, os-version: 13.0], [device: iPad13,1, os-version: 14.0], [device: iPhone9,3, os-version: 14.0], [device: iPad8,8, os-version: 13.0], [device: iPad8,1, os-version: 14.0], [device: iPad8,3, os-version: 14.0], [device: iPad8,11, os-version: 14.0], [device: iPad8,8, os-version: 14.0], [device: iPad8,1, os-version: 13.0], [device: MacFamily20,1, os-version: 14.0], [device: iPad13,11, os-version: 14.0], [device: iPhone10,4, os-version: 14.0], [device: iPad11,4, os-version: 13.0], [device: iPhone10,1, os-version: 13.0], [device: iPad8,5, os-version: 14.0], [device: iPad7,3, os-version: 13.0], [device: iPad7,3, os-version: 14.0], [device: iPad13,6, os-version: 14.0], [device: iPad8,4, os-version: 13.0], [device: iPad8,11, os-version: 13.0], [device: iPad8,4, os-version: 14.0], [device: iPad8,6, os-version: 14.0], [device: iPad6,4, os-version: 14.0], [device: iPad8,2, os-version: 13.0], [device: iPad6,4, os-version: 13.0], [device: iPad11,3, os-version: 14.0], [device: iPhone10,4, os-version: 13.0], [device: iPad8,3, os-version: 13.0], [device: iPhone9,3, os-version: 13.0], [device: iPad11,3, os-version: 13.0], [device: iPad8,6, os-version: 13.0], [device: iPad8,7, os-version: 14.0], [device: iPad13,10, os-version: 14.0], [device: iPad8,12, os-version: 14.0], [device: iPad7,4, os-version: 14.0], [device: iPad8,10, os-version: 13.0], [device: iPad11,2, os-version: 13.0], [device: iPad8,2, os-version: 14.0], [device: iPad13,9, os-version: 14.0], [device: iPhone10,1, os-version: 14.0], [device: iPad8,7, os-version: 13.0], [device: iPad11,1, os-version: 13.0], [device: iPhone9,1, os-version: 14.0], [device: iPad13,2, os-version: 14.0], [device: iPad8,12, os-version: 13.0], [device: iPad13,4, os-version: 14.0], [device: iPad7,1, os-version: 14.0], [device: iPhone12,1, os-version: 14.0], [device: iPad7,2, os-version: 14.0], [device: iPhone11,8, os-version: 14.0], and [device: iPad11,2, os-version: 14.0]
+App + On Demand Resources size: 5.1 MB compressed, 12.4 MB uncompressed
+App size: 5.1 MB compressed, 12.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-2E12E9F2-A84E-462F-9205-798B89C1C68D.ipa
+Supported variant descriptors: [device: iPad8,1, os-version: 12.0], [device: iPad7,2, os-version: 12.0], [device: iPad8,3, os-version: 12.0], [device: iPad7,4, os-version: 12.0], [device: iPad6,3, os-version: 12.0], [device: iPhone9,3, os-version: 12.0], [device: iPad8,8, os-version: 12.0], [device: iPhone9,1, os-version: 12.0], [device: iPad6,4, os-version: 12.0], [device: iPad7,3, os-version: 12.0], [device: iPad8,6, os-version: 12.0], [device: iPhone11,8, os-version: 12.0], [device: iPad8,4, os-version: 12.0], [device: iPad8,2, os-version: 12.0], [device: iPad7,1, os-version: 12.0], [device: iPad8,5, os-version: 12.0], [device: iPad8,7, os-version: 12.0], [device: iPhone10,4, os-version: 12.0], and [device: iPhone10,1, os-version: 12.0]
+App + On Demand Resources size: 7.5 MB compressed, 19.4 MB uncompressed
+App size: 7.5 MB compressed, 19.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-2EE5D3BA-976C-40B2-B460-26233A6934C6.ipa
+Supported variant descriptors: [device: iPad5,3, os-version: 15.0], [device: iPad11,7, os-version: 15.0], [device: iPad12,2, os-version: 15.0], [device: iPad7,11, os-version: 15.0], [device: iPad5,1, os-version: 15.0], [device: iPad5,2, os-version: 15.0], [device: iPad11,6, os-version: 15.0], [device: iPad7,5, os-version: 15.0], [device: iPod9,1, os-version: 15.0], [device: iPad6,8, os-version: 15.0], [device: iPad5,4, os-version: 15.0], [device: iPad6,11, os-version: 15.0], [device: iPhone8,1, os-version: 15.0], [device: iPhone8,4, os-version: 15.0], [device: iPad12,1, os-version: 15.0], [device: iPad6,7, os-version: 15.0], [device: iPad6,12, os-version: 15.0], [device: iPad7,6, os-version: 15.0], and [device: iPad7,12, os-version: 15.0]
+App + On Demand Resources size: 5.1 MB compressed, 12.4 MB uncompressed
+App size: 5.1 MB compressed, 12.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-31B540BC-4696-4657-AA66-C6EE63033A96.ipa
+Supported variant descriptors: [device: iPad7,6, os-version: 13.0], [device: iPad7,5, os-version: 14.0], [device: iPad5,1, os-version: 14.0], [device: iPad7,12, os-version: 13.0], [device: iPad6,11, os-version: 14.0], [device: iPad11,7, os-version: 14.0], [device: iPhone8,4, os-version: 13.0], [device: iPad6,12, os-version: 13.0], [device: iPad6,8, os-version: 14.0], [device: iPad7,5, os-version: 13.0], [device: iPad11,6, os-version: 14.0], [device: iPad6,7, os-version: 13.0], [device: iPod9,1, os-version: 14.0], [device: iPad5,4, os-version: 13.0], [device: iPad6,12, os-version: 14.0], [device: iPad5,1, os-version: 13.0], [device: iPhone8,1, os-version: 13.0], [device: iPad6,7, os-version: 14.0], [device: iPad5,2, os-version: 13.0], [device: iPad6,11, os-version: 13.0], [device: iPad7,6, os-version: 14.0], [device: iPhone8,4, os-version: 14.0], [device: iPad5,4, os-version: 14.0], [device: iPad5,3, os-version: 13.0], [device: iPod9,1, os-version: 13.0], [device: iPad6,8, os-version: 13.0], [device: iPad7,11, os-version: 14.0], [device: iPad7,12, os-version: 14.0], [device: iPhone8,1, os-version: 14.0], [device: iPad5,2, os-version: 14.0], [device: iPad7,11, os-version: 13.0], and [device: iPad5,3, os-version: 14.0]
+App + On Demand Resources size: 5.1 MB compressed, 12.4 MB uncompressed
+App size: 5.1 MB compressed, 12.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-38F88482-1CA1-44FB-AA6F-1CE9045FA976.ipa
+Supported variant descriptors: [device: iPhone8,2, os-version: 13.0] and [device: iPhone8,2, os-version: 14.0]
+App + On Demand Resources size: 5.5 MB compressed, 12.7 MB uncompressed
+App size: 5.5 MB compressed, 12.7 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-3ADA38AF-25A0-4802-99F6-759184142D77.ipa
+Supported variant descriptors: [device: iPhone10,3, os-version: 13.0], [device: iPhone13,4, os-version: 14.0], [device: iPhone9,4, os-version: 13.0], [device: iPhone12,5, os-version: 13.0], [device: iPhone10,5, os-version: 14.0], [device: iPhone13,1, os-version: 14.0], [device: iPhone13,2, os-version: 14.0], [device: iPhone13,3, os-version: 14.0], [device: iPhone11,2, os-version: 13.0], [device: iPhone10,3, os-version: 14.0], [device: iPhone9,4, os-version: 14.0], [device: iPhone9,2, os-version: 14.0], [device: iPhone11,4, os-version: 13.0], [device: iPhone10,6, os-version: 13.0], [device: iPhone10,6, os-version: 14.0], [device: iPhone11,2, os-version: 14.0], [device: iPhone12,3, os-version: 14.0], [device: iPhone12,5, os-version: 14.0], [device: iPhone12,3, os-version: 13.0], [device: iPhone11,6, os-version: 14.0], [device: iPhone11,6, os-version: 13.0], [device: iPhone11,4, os-version: 14.0], [device: iPhone10,2, os-version: 13.0], [device: iPhone10,5, os-version: 13.0], [device: iPhone10,2, os-version: 14.0], and [device: iPhone9,2, os-version: 13.0]
+App + On Demand Resources size: 5.5 MB compressed, 12.7 MB uncompressed
+App size: 5.5 MB compressed, 12.7 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-5FC759D2-31F0-414E-81F1-B80388976220.ipa
+Supported variant descriptors: [device: iPad6,7, os-version: 10.0], [device: iPhone8,1, os-version: 10.0], [device: iPad7,6, os-version: 11.0], [device: iPad4,2, os-version: 10.0], [device: iPhone7,2, os-version: 10.0], [device: iPad4,5, os-version: 10.0], [device: iPhone8,4, os-version: 10.0], [device: iPod7,1, os-version: 10.0], [device: iPad5,1, os-version: 10.0], [device: iPad4,6, os-version: 10.0], [device: iPad5,2, os-version: 10.0], [device: iPad4,4, os-version: 10.0], [device: iPad6,11, os-version: 10.0], [device: iPad4,9, os-version: 10.0], [device: iPad6,8, os-version: 10.0], [device: iPad4,7, os-version: 10.0], [device: iPad5,3, os-version: 10.0], [device: iPhone6,1, os-version: 10.0], [device: iPhone6,2, os-version: 10.0], [device: iPad4,1, os-version: 10.0], [device: iPad5,4, os-version: 10.0], [device: iPad6,12, os-version: 10.0], [device: iPad4,8, os-version: 10.0], [device: iPad7,5, os-version: 11.0], and [device: iPad4,3, os-version: 10.0]
+App + On Demand Resources size: 7.9 MB compressed, 19.9 MB uncompressed
+App size: 7.9 MB compressed, 19.9 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-63C63715-901D-41FD-99D9-01829A1D2299.ipa
+Supported variant descriptors: [device: iPad11,2, os-version: 12.2], [device: iPhone11,8, os-version: 12.2], [device: iPad7,3, os-version: 12.2], [device: iPad8,1, os-version: 12.2], [device: iPhone10,4, os-version: 12.2], [device: iPad8,3, os-version: 12.2], [device: iPad6,4, os-version: 12.2], [device: iPad8,8, os-version: 12.2], [device: iPad11,4, os-version: 12.2], [device: iPad8,5, os-version: 12.2], [device: iPad7,2, os-version: 12.2], [device: iPad8,4, os-version: 12.2], [device: iPad7,4, os-version: 12.2], [device: iPhone9,1, os-version: 12.2], [device: iPhone9,3, os-version: 12.2], [device: iPad11,1, os-version: 12.2], [device: iPad8,6, os-version: 12.2], [device: iPad8,2, os-version: 12.2], [device: iPad11,3, os-version: 12.2], [device: iPad7,1, os-version: 12.2], [device: iPad8,7, os-version: 12.2], [device: iPad6,3, os-version: 12.2], and [device: iPhone10,1, os-version: 12.2]
+App + On Demand Resources size: 5.1 MB compressed, 12.4 MB uncompressed
+App size: 5.1 MB compressed, 12.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-7AB947E0-FD0C-4C89-988C-9ACCB2D6C0F9.ipa
+Supported variant descriptors: [device: iPhone10,2, os-version: 12.0], [device: iPhone10,3, os-version: 12.0], [device: iPhone10,6, os-version: 12.0], [device: iPhone11,2, os-version: 12.0], [device: iPhone10,5, os-version: 12.0], [device: iPhone9,2, os-version: 12.0], [device: iPhone11,4, os-version: 12.0], [device: iPhone11,6, os-version: 12.0], and [device: iPhone9,4, os-version: 12.0]
+App + On Demand Resources size: 7.8 MB compressed, 19.8 MB uncompressed
+App size: 7.8 MB compressed, 19.8 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-8D9CF38B-62B5-45E8-983D-7998D3DFA502.ipa
+Supported variant descriptors: [device: iPad8,12, os-version: 15.0], [device: iPhone11,8, os-version: 15.0], [device: iPad13,17, os-version: 15.0], [device: iPad8,4, os-version: 15.0], [device: iPad8,6, os-version: 15.0], [device: iPad8,10, os-version: 15.0], [device: iPad8,1, os-version: 15.0], [device: iPad8,9, os-version: 15.0], [device: iPad11,4, os-version: 15.0], [device: iPad8,2, os-version: 15.0], [device: iPad6,3, os-version: 15.0], [device: iPad7,2, os-version: 15.0], [device: iPad13,4, os-version: 15.0], [device: iPad8,5, os-version: 15.0], [device: iPad8,7, os-version: 15.0], [device: iPad7,4, os-version: 15.0], [device: iPad13,6, os-version: 15.0], [device: iPad14,1, os-version: 15.0], [device: iPad13,11, os-version: 15.0], [device: iPad11,1, os-version: 15.0], [device: iPhone12,1, os-version: 15.0], [device: iPad7,3, os-version: 15.0], [device: iPad8,3, os-version: 15.0], [device: iPhone9,1, os-version: 15.0], [device: iPhone9,3, os-version: 15.0], [device: iPhone10,1, os-version: 15.0], [device: iPhone14,6, os-version: 15.0], [device: iPhone12,8, os-version: 15.0], [device: iPad13,10, os-version: 15.0], [device: iPad13,8, os-version: 15.0], [device: iPhone10,4, os-version: 15.0], [device: iPad11,3, os-version: 15.0], [device: iPad13,2, os-version: 15.0], [device: iPad13,9, os-version: 15.0], [device: iPad6,4, os-version: 15.0], [device: iPad11,2, os-version: 15.0], [device: iPad13,1, os-version: 15.0], [device: iPad7,1, os-version: 15.0], [device: MacFamily20,1, os-version: 15.0], [device: iPad13,16, os-version: 15.0], [device: iPad13,7, os-version: 15.0], [device: iPad8,11, os-version: 15.0], [device: iPad13,5, os-version: 15.0], [device: iPad14,2, os-version: 15.0], and [device: iPad8,8, os-version: 15.0]
+App + On Demand Resources size: 5.1 MB compressed, 12.4 MB uncompressed
+App size: 5.1 MB compressed, 12.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-9124FD5B-E255-4B5C-8B54-27EB8D5DF85C.ipa
+Supported variant descriptors: [device: iPhone10,6, os-version: 12.2], [device: iPhone11,2, os-version: 12.2], [device: iPhone11,6, os-version: 12.2], [device: iPhone10,2, os-version: 12.2], [device: iPhone10,3, os-version: 12.2], [device: iPhone9,2, os-version: 12.2], [device: iPhone11,4, os-version: 12.2], [device: iPhone10,5, os-version: 12.2], and [device: iPhone9,4, os-version: 12.2]
+App + On Demand Resources size: 5.5 MB compressed, 12.8 MB uncompressed
+App size: 5.5 MB compressed, 12.8 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-940B40CA-9199-4F34-A065-86F9667B6BFD.ipa
+Supported variant descriptors: [device: iPad6,4, os-version: 10.0], [device: iPhone10,1, os-version: 11.0], [device: iPhone10,4, os-version: 11.0], [device: iPad7,3, os-version: 10.0], [device: iPad7,2, os-version: 10.0], [device: iPad6,3, os-version: 10.0], [device: iPhone9,3, os-version: 10.0], [device: iPad7,4, os-version: 10.0], [device: iPhone9,1, os-version: 10.0], and [device: iPad7,1, os-version: 10.0]
+App + On Demand Resources size: 7.9 MB compressed, 19.9 MB uncompressed
+App size: 7.9 MB compressed, 19.9 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-956C35DB-2B52-4950-9190-70793782832A.ipa
+Supported variant descriptors: [device: iPhone7,2, os-version: 12.2], [device: iPad4,1, os-version: 12.2], [device: iPad5,2, os-version: 12.2], [device: iPad5,3, os-version: 12.2], [device: iPad4,5, os-version: 12.2], [device: iPad5,4, os-version: 12.2], [device: iPad6,8, os-version: 12.2], [device: iPad7,6, os-version: 12.2], [device: iPad4,6, os-version: 12.2], [device: iPhone6,2, os-version: 12.2], [device: iPhone8,1, os-version: 12.2], [device: iPhone6,1, os-version: 12.2], [device: iPad4,8, os-version: 12.2], [device: iPad4,2, os-version: 12.2], [device: iPad4,3, os-version: 12.2], [device: iPad4,7, os-version: 12.2], [device: iPod9,1, os-version: 12.2], [device: iPad6,7, os-version: 12.2], [device: iPad6,11, os-version: 12.2], [device: iPad4,9, os-version: 12.2], [device: iPhone8,4, os-version: 12.2], [device: iPod7,1, os-version: 12.2], [device: iPad4,4, os-version: 12.2], [device: iPad7,5, os-version: 12.2], [device: iPad6,12, os-version: 12.2], and [device: iPad5,1, os-version: 12.2]
+App + On Demand Resources size: 5.1 MB compressed, 12.4 MB uncompressed
+App size: 5.1 MB compressed, 12.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-AF05EBB6-8930-43E6-899C-90AF3ED68C7E.ipa
+Supported variant descriptors: [device: iPad5,2, os-version: 12.0], [device: iPad7,6, os-version: 12.0], [device: iPad6,11, os-version: 12.0], [device: iPad6,12, os-version: 12.0], [device: iPad6,7, os-version: 12.0], [device: iPad4,6, os-version: 12.0], [device: iPad4,9, os-version: 12.0], [device: iPad4,2, os-version: 12.0], [device: iPad7,5, os-version: 12.0], [device: iPad4,5, os-version: 12.0], [device: iPhone6,1, os-version: 12.0], [device: iPhone8,4, os-version: 12.0], [device: iPad6,8, os-version: 12.0], [device: iPhone6,2, os-version: 12.0], [device: iPad4,3, os-version: 12.0], [device: iPad5,4, os-version: 12.0], [device: iPad4,1, os-version: 12.0], [device: iPad4,7, os-version: 12.0], [device: iPad4,8, os-version: 12.0], [device: iPad5,1, os-version: 12.0], [device: iPad5,3, os-version: 12.0], [device: iPhone8,1, os-version: 12.0], [device: iPhone7,2, os-version: 12.0], [device: iPod7,1, os-version: 12.0], and [device: iPad4,4, os-version: 12.0]
+App + On Demand Resources size: 7.5 MB compressed, 19.4 MB uncompressed
+App size: 7.5 MB compressed, 19.4 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-C1AC9CDD-143E-4B7E-AB9A-C3629F5AC85A.ipa
+Supported variant descriptors: [device: iPhone10,2, os-version: 11.0], [device: iPhone9,4, os-version: 10.0], [device: iPhone10,5, os-version: 11.0], [device: iPhone9,2, os-version: 10.0], [device: iPhone10,3, os-version: 11.0], and [device: iPhone10,6, os-version: 11.0]
+App + On Demand Resources size: 8.6 MB compressed, 20.5 MB uncompressed
+App size: 8.6 MB compressed, 20.5 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-CEE053D1-2F14-448B-8FF2-1297B65D310B.ipa
+Supported variant descriptors: [device: iPhone7,1, os-version: 10.0] and [device: iPhone8,2, os-version: 10.0]
+App + On Demand Resources size: 8.6 MB compressed, 20.5 MB uncompressed
+App size: 8.6 MB compressed, 20.5 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-D1875651-A3A7-4AA7-85D4-7EDC36839D3A.ipa
+Supported variant descriptors: [device: iPad3,6, os-version: 10.0], [device: iPad3,4, os-version: 10.0], [device: iPhone5,2, os-version: 10.0], [device: iPhone5,3, os-version: 10.0], [device: iPhone5,4, os-version: 10.0], [device: iPad3,5, os-version: 10.0], and [device: iPhone5,1, os-version: 10.0]
+App + On Demand Resources size: 8.2 MB compressed, 18.1 MB uncompressed
+App size: 8.2 MB compressed, 18.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-D2C325DB-A164-4E64-A77E-FA3E748471FC.ipa
+Supported variant descriptors: [device: iPhone8,2, os-version: 15.0]
+App + On Demand Resources size: 5.5 MB compressed, 12.7 MB uncompressed
+App size: 5.5 MB compressed, 12.7 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: CarTrawlerSDKIntegration-DD030488-E836-49AE-B73E-12ECDFCAA807.ipa
+Supported variant descriptors: [device: iPhone8,2, os-version: 12.2] and [device: iPhone7,1, os-version: 12.2]
+App + On Demand Resources size: 5.5 MB compressed, 12.8 MB uncompressed
+App size: 5.5 MB compressed, 12.8 MB uncompressed
 On Demand Resources size: Zero KB compressed, Zero KB uncompressed
 
 
 Variant: CarTrawlerSDKIntegration.ipa
 Supported variant descriptors: Universal
-App + On Demand Resources size: 17.3 MB compressed, 35.2 MB uncompressed
-App size: 17.3 MB compressed, 35.2 MB uncompressed
+App + On Demand Resources size: 17.3 MB compressed, 35.4 MB uncompressed
+App size: 17.3 MB compressed, 35.4 MB uncompressed
 On Demand Resources size: Zero KB compressed, Zero KB uncompressed
