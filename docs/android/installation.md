@@ -62,6 +62,8 @@ implementation "com.cartrawler.android:car-rental:$latestVersion"
 
 ```
 
+Note: We use semantic versioning to define the SDK version number, so the version number would always follow the pattern major.minor.patch, eg: 1.0.0
+
 Create a theme that extends the ```CTDayNightTheme```. Please refer to the <a href="/docs/android/customisation/themes" target="_blank">theme section</a> for further details.
 
 ## App Permissions
