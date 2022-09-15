@@ -32,6 +32,7 @@ permalink: /docs/android/inpath/property-descriptions/
 <dt><span style="font-size:0.7em">enableCustomCashTreatment</span></dt><dd>This is used in the SDK in order to enable enhanced cash voucher merchandising throughout the booking flow. (Cash voucher banner, Cash voucher widgets etc)</dd>
 <dt>setUSPDisplayType</dt><dd>This allows Partners to choose which homepage USP style (icons (DEFAULT_STYLE) or checks (CHECK_STYlE)) they want to use in the app. Note: If you don't call this method DEFAULT_STYLE will be used. </dd>
 <dt>addPromotionCode</dt><dd>This allows Partners to pass a promotion code type to the SDK as the main toggle to display promotion code field on the search form or not.  </dd></dl>
+<dt>setClientUserIdentifier</dt><dd>A string token of a logged user that allows the SDK to fetch the user loyalty details and points.</dd>
 
 ---
 
