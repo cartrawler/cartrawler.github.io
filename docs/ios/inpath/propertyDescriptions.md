@@ -51,4 +51,5 @@ See code snippet above for available methods and callbacks for In Path.
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a prepopulated code please provide an empty string.</b></dd>
+  <dt>clientUserIdentifier</dt><dd>A string token of a logged in user that allows the SDK to fetch the user loyalty details and points.</dd>
 </dl>

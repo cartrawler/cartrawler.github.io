@@ -41,6 +41,7 @@ The SDK has some optional properties that can be passed in initialisation to use
        .enableCustomCashTreatment()
        .setUSPDisplayType(USPDisplayType.CHECK_STYLE)
        .addPromotionCode(PromotionCodeType.WithCodeType("your-promotion-code-here")
+       .setClientUserIdentifier("your-client-user-identifier-here")
 ```       
 
 ---

@@ -53,11 +53,12 @@ class CTContext: NSObject {
   let dropOffLocationID: String
   let pinnedVehicleID: String
   let passengers: [CTPassenger]
-  let loyaltyRegex: String,
-  let customCashTreatment: Bool,
-  let promotionCode: String,
-  let recentSearch: CTRecentSearch,
+  let loyaltyRegex: String
+  let customCashTreatment: Bool
+  let promotionCode: String
+  let recentSearch: CTRecentSearch
   let supplierBenefitAutoApplied: Bool
+  let clientUserIdentifier: String
 }
 ```
 <br/>

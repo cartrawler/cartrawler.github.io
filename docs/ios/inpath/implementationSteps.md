@@ -34,7 +34,7 @@ For a full list of property descriptions, please click <a href="/docs/ios/inpath
 
 #### Object description:
 
-```java
+```swift
 class CTContext: NSObject {
     let clientID: String
     let flowType: CTFlowType
@@ -49,9 +49,12 @@ class CTContext: NSObject {
     let dropOffLocationID: String
     let pinnedVehicleID: String
     let passengers: [CTPassenger]
-    let loyaltyRegex: String,
-    let customCashTreatment: Bool,
+    let loyaltyRegex: String
+    let customCashTreatment: Bool
     let promotionCode: String
+    let recentSearch: CTRecentSearch
+    let supplierBenefitAutoApplied: Bool
+    let clientUserIdentifier: String
 }
 ```
 
