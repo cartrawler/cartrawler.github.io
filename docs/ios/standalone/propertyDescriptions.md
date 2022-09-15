@@ -50,6 +50,7 @@ Note:
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used in the SDK as the main toggle for displaying the promotion code field on the search form or not. Use an empty string to show the field or a string with a promotion code to show the field and pre populate it.</dd>
   <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
+  <dt>clientUserIdentifier</dt><dd>A string token of a logged user that allows the SDK to fetch the user loyalty details and points.</dd>
 </dl>
 
 ---
@@ -87,6 +88,7 @@ Note:
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
   <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a pre-populated code please provide an empty string.</b></dd>
+  <dt>clientUserIdentifier</dt><dd>A string token of a logged user that allows the SDK to fetch the user loyalty details and points.</dd>
 </dl>
 
 
