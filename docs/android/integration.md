@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Installation
+title: Integration
 parent: Android
 nav_order: 1
 ---
 
-# Installation
+# Integration
 
 To add the CarTrawlerSDK to your app, add our maven repository and enter your artifactory credentials.
 

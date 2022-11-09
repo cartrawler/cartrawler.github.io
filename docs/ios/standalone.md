@@ -4,6 +4,7 @@ title: Standalone
 parent: iOS
 nav_order: 2
 has_children: true
+permalink: /docs/ios/standalone/
 ---
 
 # Standalone

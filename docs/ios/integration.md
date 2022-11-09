@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Installation
+title: Integration
 parent: iOS
 nav_order: 1
 ---
 
-# Installation
+# Integration
 
 
 To add the CarTrawlerSDK to your app, you will need Cocoapods. 

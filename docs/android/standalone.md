@@ -4,6 +4,8 @@ title: Standalone
 parent: Android
 nav_order: 2
 has_children: true
+permalink: /docs/android/standalone/
+
 ---
 
 # Standalone
