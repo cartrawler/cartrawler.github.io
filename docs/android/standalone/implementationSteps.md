@@ -59,6 +59,17 @@ CartrawlerSDK.Builder()
 ```
 ---
 
+### Navigation to Vehicle List <b>with recent search</b>
+Optional (bypasses the landing and search screens)
+
+```java
+CartrawlerSDK.Builder()
+       //...
+       .withRecentSearch(recentSearch) // the recent search object fetched from the recent searches api. 
+       .startAvailabilityFlow(activity, YOUR_REQUEST_CODE)
+```
+---
+
 ### Navigation to search screen 
 
 ```java
