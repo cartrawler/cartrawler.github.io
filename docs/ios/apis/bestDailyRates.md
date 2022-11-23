@@ -15,9 +15,10 @@ The `requestBestDailyRate` function can be called to receive the cheapest vehicl
 
 ---
 
+## Request Best Daily Rates
+
 The SDK must be initialised, and a `CTAPIQueryParams` object with the necessary parameters must be set before calling this method.
 
-#### Request best daily rates sample code
 ```java
 import CarTrawlerSDK
 
@@ -34,9 +35,10 @@ params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
 CarTrawlerSDK.sharedInstance().requestBestDailyRate(params)
 ```
 ---
-The best daily rate (price and currency) will be returned in the `CarTrawlerSDKDelegate` function `didReceiveBestDailyRate`.
 
-#### Receive best daily rates sample code
+## Receive Best Daily Rates 
+
+The best daily rate (price and currency) will be returned in the `CarTrawlerSDKDelegate` function `didReceiveBestDailyRate`.
 
 ```java
 // Called when best daily rate received

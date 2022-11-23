@@ -8,11 +8,19 @@ permalink: /docs/ios/customisation/supplier-benefits/
 ---
 
 # Supplier Benefits
-
 {: .no_toc }
 
 On the vehicles list a banner may be shown to the user to allow them to apply some promo/discount
 codes. This banner can be customized as you wish as described below:
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -39,12 +47,13 @@ supplierBenefitsStyle.darkButtonTextColor = UIColor(hex: 0x1DAF90) // Banner dar
 
 style.supplierBenefitsStyle = supplierBenefitsStyle
 ```
-Note: 
-* If dark colors are not set, default `CTSupplierBenefitsStyle` colors will be used.
+
+{: .note}
+If dark colors are not set, default `CTSupplierBenefitsStyle` colors will be used.
 
 --- 
 
-#### Supplier Benift Banner logo
+## Supplier Benefit Banner logo
 
 For the logo url you can provide an URL. All you need to do is use the following attributes:
 
@@ -54,9 +63,10 @@ supplierBenefitsStyle.logoURL = URL(string: "http://www.cartrawler.com/logo.png"
  // Dark Mode logo
 supplierBenefitsStyle.darkLogoURL = URL(string: "http://www.cartrawler.com/dark_logo.png") // Supplier benefit dark mode banner logo
 ```
-Note:
-* If dark logo is not set, default `CTSupplierBenefitsStyle` logo will be used.
-* If you don't provide any attributes for the logo, the component that shows the logo will be hidden.
+
+{: .note}
+If dark logo is not set, default `CTSupplierBenefitsStyle` logo will be used. <br/>
+If you don't provide any attributes for the logo, the component that shows the logo will be hidden.
 
 ---
 
@@ -73,9 +83,9 @@ supplierBenefitsStyle.buttonTextColor -> CTSTyle.ctaFontColor // CTStyle CTA fon
 
 ---
 
+## SDK Initialisation with CTSupplierBenefitsStyle
 After `CTStyle` has been configured with your supplierBenefitsStyle, pass it into the SDK during initialisation:
 
-#### SDK Initialisation with CTSupplierBenefitsStyle
 ```java
    style.supplierBenefitsStyle = supplierBenefitsStyle
 
@@ -86,12 +96,9 @@ After `CTStyle` has been configured with your supplierBenefitsStyle, pass it int
 
 ---
 
-## Enabling optional flag in SDK initialisation
+## Autoenabling Supplier Benefits During SDK initialisation
 
-<br/>
-<h4><b>supplierBenefitAutoApplied</b></h4>
-This allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be
-applied for suppliers.
+The `supplierBenefitAutoApplied` property of the `CTContext` class allows Partners to opt in to apply ALL automatic codes that can be applied for suppliers during initialisation the SDK. It is optional. 
 
 ```java
 let context = CTContext(clientID: "your clientID", flow: .standAlone)

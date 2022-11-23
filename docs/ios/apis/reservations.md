@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Reservations
+title: Booking Reservations
 parent: iOS SDK APIs
 grand_parent: iOS
 nav_order: 5
 permalink: /docs/ios/apis/reservations
 ---
 
-# Reservations
+# Booking Reservations
 
 {: .no_toc }
 
@@ -16,8 +16,6 @@ Car rental booking reservations can be fetched using the `requestReservationDeta
 ---
 
 Calling the `requestReservationDetails` function will trigger a vehicles request based on a `resID` and email (hashed) or `resUid`. This will return a `CTReservationDetails` object, or an error if the reservation does not exist. 
-
-#### request reservation details code sample
 
 ```java
 import CarTrawlerSDK

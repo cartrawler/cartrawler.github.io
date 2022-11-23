@@ -8,10 +8,18 @@ permalink: /docs/ios/apis/recent-searches
 ---
 
 # Recent Searches
-
 {: .no_toc }
 
 We expose recent searches made within the SDK via the `requestRecentSearches` function. Recent Searches can also be cleared or removed individually, and this will be reflected in the SDK as well.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -19,7 +27,6 @@ We expose recent searches made within the SDK via the `requestRecentSearches` fu
 
 Call the `requestRecentSearches` function to fetch the three most recent searches a user has made within the SDK.<br/> These will be exposed outside the SDK in a callback as an array of `CTRecentSearch` objects as shown below: 
 
-#### Request Recent Searches Code sample
 ```java
 CarTrawlerSDK.sharedInstance().requestRecentSearches { searches, error in
     if let recentSearches: [CTRecentSearch] = searches {
@@ -36,8 +43,6 @@ CarTrawlerSDK.sharedInstance().requestRecentSearches { searches, error in
 
 To remove a recent search, pass it into the remove function: 
 
-#### Remove recent search code sample
-
 ```java
 CarTrawlerSDK.sharedInstance().remove(search) { (success, error) in
     if success {
@@ -53,24 +58,17 @@ CarTrawlerSDK.sharedInstance().remove(search) { (success, error) in
 
 To remove all recent searches at once, use the removeAllRecentSearchesFunction:
 
-#### Clear all recent searches code sample
-
 ```java
 CarTrawlerSDK.sharedInstance().removeAllRecentSearches()
 ```
 ---
 
-### Building a Recent Searches UI
+## Building a Recent Searches UI
 
-To build a UI similar to what is shown on the SDK landing page, we suggest displaying the searches in a table view using the following properties of the CTRecentSearch class: 
+To build a UI similar to what is shown on the SDK landing page, we suggest displaying the searches in a table view using the following properties of the CTRecentSearch class: <br />
+`pickupLocationName`, `derivedPickupDate`, and `derivedDropoffDate`.
 
-```java
-pickupLocationName
-derivedPickupDate
-derivedDropoffDate
-```
-
-#### Code Sample
+For example: 
 
 ```java
 let dateFormatter = DateFormatter()

@@ -8,12 +8,21 @@ permalink: /docs/ios/widgets/vehicle
 ---
 
 # Vehicle Widget
-
 {: .no_toc }
+
+The Vehicle Widget provides a UI for displaying a CTVehicleDetails object. It can be used after a user has completed the In Path flow. 
 
 ---
 
 ![](/uploads/Pricing_Added_Generic_iOS.png)
+
+```java
+let widgetStyle = CTWidgetStyle()
+let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .vehicle,
+                                                                   style: widgetStyle,
+                                                                   delegate: self)
+self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
+```
 
 ## Setting the CTVehicleWidget vehicle
 

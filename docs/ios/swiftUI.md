@@ -6,10 +6,18 @@ nav_order: 7
 ---
 
 # SwiftUI
-
 {: .no_toc }
 
 The SDK can be integrated into a SwiftUI project with the following steps. 
+
+<details open markdown="block">
+  <summary>
+    Steps
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 --- 
 

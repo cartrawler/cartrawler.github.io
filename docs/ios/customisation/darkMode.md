@@ -17,7 +17,10 @@ The SDK supports dark mode, but it is disabled by default. It can be enabled or 
 
 ## Set up
 
-You can configure dark mode support in the SDK by setting the property `userInterfaceStyle` in the `CTStyle` class. By default, dark mode is off.
+You can configure dark mode support in the SDK by setting the property `userInterfaceStyle` in the `CTStyle` class. 
+
+{: .note}
+By default, dark mode is off.
 
 The following values are supported:
 

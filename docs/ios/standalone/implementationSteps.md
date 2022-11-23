@@ -49,6 +49,8 @@ CarTrawlerSDK.sharedInstance().initialiseSDK(with: nil,
 The production parameter must be set to true when submitting your app to the AppStore.
 
 {: .note }
+`style`: An optional <a href="/docs/ios/customisation/themes#creating-a-ctstyle">CTStyle</a> object, used to set the fonts as well as the primary, secondary, and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle. <br/><br/>
+`customParameters`: A dictionary of parameters, custom to a particular partner, see below for options.<br/> <small>- orderID: A String value that represents the Order ID for a Flight PNR or Booking Reference, example: IE1234 <br/> - flightNumberRequired: A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</small><br/><br/>
 For a full list of property descriptions, please click <a href="/docs/ios/standalone/property-descriptions">here</a>
 
 ---
@@ -68,7 +70,7 @@ context.languageCode = "EN" // The language associated with the device’s syste
 ````
 
 {: .note }
-The above properties are required, and the `countryCode` property refers to the country of residency. This is used when we make search requests.
+The above properties are required, and the `countryCode` property refers to the country of residency. This is used to make search requests.
 
 ### Object Description
 {: .no_toc }
@@ -96,6 +98,7 @@ class CTContext: NSObject {
   let clientUserIdentifier: String
 }
 ```
+<small>Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone">here</a> for an in depth explanation of CTContext's properties.</small>
 
 ---
 ## Present the SDK via Modal or Push Presentation
@@ -116,7 +119,7 @@ CarTrawlerSDK.sharedInstance().push(fromNavigationViewController: navigationCont
 
 ---
 
-### Start the Standalone Flow on Another Screen
+## Start the Standalone Flow on Another Screen
 {: .no_toc }
 
 When launching the Standalone flow, it is possible to bypass the landing and search screens by setting certain properties of your CTContext object.    
@@ -180,7 +183,7 @@ A vehicle can be pinned to the top of the list by setting `pinnedVehicleID` (add
 ```java
 context.pinnedVehicleID = "1892038" // Vehicle RefID
 ```
-
+<small>Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-the-standalone-flow-with-deep-linking">here</a> for an in depth explanation of the relevant CTContext properties</small>
 
 <br/>
 ### Start Standalone Flow on the Vehicle List <b>via Recent Search</b> (bypass the landing and search screens)
@@ -201,11 +204,13 @@ context.delegate = self
 
 {: .note}
 To get a recent search, you can use our <a href="/docs/ios/apis/recent-searches">Recent Searches API</a>.
+
+<small> Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone-with-a-recent-search">here</a> for an in depth explanation of the relevant CTContext properties </small>
 <br/>
 
 
-<br/>
-### Prepopulate Driver Details:
+--- 
+## Prepopulate Driver Details:
 {: .no_toc }
 
 The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passengers` property on your `CTContext`. 

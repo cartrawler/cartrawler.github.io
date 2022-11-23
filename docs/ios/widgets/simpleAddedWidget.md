@@ -8,14 +8,14 @@ permalink: /docs/ios/widgets/simple-added
 ---
 
 # Simple Added Widget
-
 {: .no_toc }
+
+This widget shows that a car has been added, and provides a button to remove the car. 
 
 ---
 
 ![](/uploads/Simple_Added_Generic_iOS.png)
 
-#### Simple Added Widget
 ```java
 let widgetStyle = CTWidgetStyle()
 let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .simpleAdded,

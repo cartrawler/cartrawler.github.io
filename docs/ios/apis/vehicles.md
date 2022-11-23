@@ -8,22 +8,26 @@ permalink: /docs/ios/apis/vehicles
 ---
 
 # Vehicles
-
 {: .no_toc }
 
-The Vehicles API is responsible for returning a wrapper response object of the list of vehicles returned from our backend. 
+The Vehicles API is responsible for returning a wrapper response object of the list of vehicles returned from our backend.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
+## Request Vehicles
+
 We expose a method to retrieve the vehicle list based on a sort type and limit you specify.
 
-Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, pick-up and drop-off date, also we limit the list returned to a set number of vehicles you specify.
-
-For the sort type can be either:
-- `.bestPrice`, which returns the cheapest cars in the list
-- `.recommended`, which returns the CarTrawler recommended cars.
-
-#### Code sample
+Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, as well as the pick-up and drop-off dates. 
 
 ```java
 import CarTrawlerSDK
@@ -44,10 +48,16 @@ params.sortType = .recommended // .recommended (Default) or .bestPrice
 
 CarTrawlerSDK.sharedInstance().requestVehicles(params)
 ```
+
+{: .note }
+The number of vehicles returned can be limited by setting the `numberOfVehicles` property. <br /><br />
+The sort type can be either: <br /> `.bestPrice`, which returns the cheapest cars in the list <br /> or `.recommended`, which returns the CarTrawler recommended cars.
+
 ---
 
-A list of vehicle objects (`CTVehicleDetails`) will be returned in the `CarTrawlerSDKDelegate` function `didReceiveVehicles`.
-#### Delegate functions
+## Delegate Functions
+
+A list of vehicle objects (`CTVehicleDetails`) will be returned in the `CarTrawlerSDKDelegate` function `didReceiveVehicles`. If an error occurs, this will be returned via the `didFailToReceiveVehicles` function. 
 
 ```java
 // Called when best daily rate received
@@ -60,7 +70,9 @@ func didFailToReceiveVehicles(error: Error) {
 
 ---
 
-#### Vehicle Details class
+### Vehicle Details class
+{: .no_toc }
+
 ```java
 class CTVehicleDetails: NSObject {
   let referenceId: String // vehicle reference ID 

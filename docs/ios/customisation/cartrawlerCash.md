@@ -8,10 +8,18 @@ permalink: /docs/ios/customisation/cartrawler-cash
 ---
 
 # CarTrawler Cash
-
 {: .no_toc }
 
 CarTrawler Cash provides enhanced cash voucher merchandising throughout the booking flow.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -37,18 +45,25 @@ cashStyle.darkTextColor = UIColor(hex: 0x000000) // Cash Primary Text Color
 cashStyle.darkBgColor = UIColor(hex: 0xffffff) // Cash Background Start Color
 cashStyle.darkSecondaryBgColor = UIColor(hex: 0x002c52) // Cash Background End Color
 cashStyle.darkAccentTextColor = UIColor(hex: 0x1DAF90) //  Cash Secondary Text Color
+``` 
 
+Then, set this cashStyle as your `CTStyle` object's `cashStyle` property: 
+
+
+```java
 style.cashStyle = cashStyle
 ``` 
-Note: 
-* If dark colors are not set, default `CTCashStyle` colors will be used.
+<small>(For CTStyle sample code, click<a href="/docs/ios/customisation/themes#creating-a-ctstyle"> here</a>)</small>
+
+
+{: .note}
+If dark colors are not set, default `CTCashStyle` colors will be used.
 
 --- 
 
 For every logo you can provide a `UIImage` or an `NSURL`. All you need is to
 do is set the following properties:
 
-#### Cash Style sample code
 ```java
 cashStyle.smallLogoImage = UIImage(named: "small_logo") // Cash Small Logo
 cashStyle.logoImage = UIImage(named: "logo") // Cash Logo
@@ -63,17 +78,18 @@ cashStyle.darkLogoImage = UIImage(named: "dark_logo") // Cash Logo
 cashStyle.darkSmallLogoURL = URL(string: "http://www.cartrawler.com/dark_small_logo.png") // Cash Small Logo
 cashStyle.darkLogoURL = URL(string: "http://www.cartrawler.com/dark_logo.png") // Cash Logo
 ```
-Note: 
-* If logos are provided as `UIImage`, `NSURL` properties will be ignored.
-* If dark logos are not set, default `CTCashStyle` logos will be used.
-* If you don't provide any attributes for the logo, the component that shows the logo will be hidden. 
+
+{: .note}
+If logos are provided as `UIImage`, `NSURL` properties will be ignored.<br/>
+If dark logos are not set, default `CTCashStyle` logos will be used.<br/>
+If you don't provide any attributes for the logo, the component that shows the logo will be hidden. 
 
 ---
 
+## SDK Initialisation with CashStyle
 
 After `CTStyle` has been configured with your cashStyle, pass it into the SDK during initialisation:
 
-#### SDK Initialisation with CashStyle
 ```java
    style.cashStyle = cashStyle
 

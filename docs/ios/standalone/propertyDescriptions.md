@@ -8,34 +8,40 @@ permalink: /docs/ios/standalone/property-descriptions
 ---
 
 # Property Descriptions
-
 {: .no_toc }
 
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+
 ---
+## SDK Initialisation Parameters
 
 <dl>
-<dt>style</dt><dd>An optional <a href="/docs/ios/customisation/themes#creating-a-ctstyle">CTStyle</a> object, used to set the fonts and primary, secondary and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle.</dd>
-<dt>customParameters</dt><dd>A dictionary of parameters, custom to a particular partner, see below for options.</dd>
-<dt>production</dt><dd>A boolean to switch between endpoints, true is production, false is test.</dd>
+<dt><b>style</b></dt><dd>An optional <a href="/docs/ios/customisation/themes#creating-a-ctstyle">CTStyle</a> object, used to set the fonts as well as the primary, secondary, and accent colors in the SDK. </dd>
+<dt><b>customParameters</b></dt><dd>A dictionary of custom parameters, it may contain:</dd>
+<dd><b>orderID</b>: A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234</dd>
+<dd><b>flightNumberRequired</b>: A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</dd>
+<dt><b>production</b></dt><dd>A boolean for switching between endpoints. Set to true for production and false for dev.</dd>
 </dl>
 
----
-### Custom Parameters
+{: .important}
+Please ensure any custom fonts used are included in your main bundle.
 
-<dl>
-  <dt>orderID</dt>
-  <dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, example: IE1234</dd>
-  <dt>flightNumberRequired</dt>
-  <dd>A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</dd>
-</dl>
 ---
 
-#### Initialising CTContext for Standalone 
+## Initialising CTContext for Standalone 
 <br />
 To initialise the standalone flow, it is necessary to instantiate a CTContext object and set the context in the SDK.
 
-Note: 
-* the countryCode property refers to the country of residency, and this is used when we make search requests.
+{: .note } 
+The `countryCode` property refers to the country of residency, and this is used when we make search requests.
 
 <dl>
   <dt>clientID</dt><dd><b>[Required]</b> Your client ID, required to use the CarTrawler API.</dd>
@@ -48,23 +54,28 @@ Note:
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression used to validate the loyalty number field.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
-  <dt>promotionCode</dt><dd> A string used in the SDK as the main toggle for displaying the promotion code field on the search form or not. Use an empty string to show the field or a string with a promotion code to show the field and pre populate it.</dd>
+  <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
   <dt>clientUserIdentifier</dt><dd>A string token of a logged in user that allows the SDK to fetch the user loyalty details and points.</dd>
 </dl>
 
+{: .note } 
+For the `promotionCode` property: To display the field and prepopulate it, please provide a string. To display the field without a prepopulated code please provide an empty string.
+
 ---
-#### Initialising CTContext for the Standalone flow with Deep Linking
+### Initialising CTContext for the Standalone flow with Deep Linking
+{: .no_toc }
+
 <br />
 This is a variant on the standalone flow whereby the vehicle list is shown based on the pick-up and drop-off properties, rather than the regular initial search screen.
 Optionally, if a vehicle refId is provided, the vehicle it belongs to will be pinned to the top of the vehicle list.
 If the user navigates back from the vehicle list in this flow variant, they will be brought to the search screen.
 
-Note:
-* If the pick-up and drop-off dates are invalid, out-of-date, or not present the SDK will fallback to regular standalone search.
-* If the vehicle refId is invalid or out-of-date, the list will be shown without the vehicle being pinned.
-* If the pick-up and drop-off properties are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
-* The countryCode property refers to the country of residency, and this is used when we make search requests.
+{: .note } 
+<small>If the pick-up and drop-off dates are invalid, out-of-date, or not present the SDK will fallback to regular standalone search.
+<br/>If the vehicle refId is invalid or out-of-date, the list will be shown without the vehicle being pinned.
+<br/>If the pick-up and drop-off properties are valid but no search results are returned by the CarTrawler system, the SDK will fallback to the regular standalone search.
+<br/>The countryCode property refers to the country of residency, and this is used when we make search requests.</small>
 
 <dl>
   <dt>clientID</dt><dd><b>[Required]</b> Your client ID, required to use the CarTrawler API.</dd>
@@ -78,7 +89,7 @@ Note:
   <dt>dropOffDate</dt><dd><b>[Required]</b> The Drop-off Date.</dd>
   <dt>pickupLocation</dt><dd> An IATA code for pick-up location.</dd>
   <dd><b>Note: If this is set, the pickupLocationID and dropOffLocationID properties will not be used.</b></dd>
-  <dt>pickupLocationID</dt><dd>[Required (if pickupLocation is not set)]</b> An OTA Location ID for pick-up location.</dd>
+  <dt>pickupLocationID</dt><dd><b>[Required (if pickupLocation is not set)]</b> An OTA Location ID for pick-up location.</dd>
   <dt>dropOffLocationID</dt><dd> An OTA Location ID for drop-off location.</dd>
   <dt>pinnedVehicleID</dt><dd> A refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deep link.</dd>
   <dt>passengers</dt><dd> An Array of Passengers, the first one will be the main passenger.</dd>
@@ -91,16 +102,17 @@ Note:
   <dt>clientUserIdentifier</dt><dd>A string token of a logged in user that allows the SDK to fetch the user loyalty details and points.</dd>
 </dl>
 
-
 ---
-#### Initialising CTContext for Standalone with a Recent Search
+### Initialising CTContext for Standalone with a Recent Search
+{: .no_toc }
+
 <br />
 This is a variant on the standalone flow whereby the vehicle list is shown based on the recent search parameter, rather than the regular initial search screen.
 If a user backs out of the list, it will exit the standalone flow.
 
-Note: 
-* If the recent search is unavailable or invalid, the SDK will fallback to the regular standalone search.
-* The countryCode property refers to the country of residency, and this is used when we make search requests.
+{: .note } 
+If the recent search is unavailable or invalid, the SDK will fallback to the regular standalone search.<br/>
+The `countryCode` property refers to the country of residency, and this is used when we make search requests.
 
 <dl>
   <dt>clientID</dt><dd><b>[Required]</b> Your client ID, required to use the CarTrawler API.</dd>

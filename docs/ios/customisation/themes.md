@@ -8,10 +8,18 @@ permalink: /docs/ios/customisation/themes
 ---
 
 # Themes
-
 {: .no_toc }
 
 ---
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 By default, the colour for text and icons on colour backgrounds are white. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
 <picture>
@@ -23,6 +31,8 @@ By default, the colour for text and icons on colour backgrounds are white. If yo
 If you do not wish to set the four optional properties manually, the CarTrawler SDK will create the colours for you (Note: this is currently only an iOS feature within the SDK)
 
 ---
+
+## Creating a CTStyle 
 
 Theming is achieved by creating a `CTStyle` object and initialising the SDK with it.
 
@@ -37,7 +47,6 @@ Theming is achieved by creating a `CTStyle` object and initialising the SDK with
 * `secondaryCtaColor`
 * `secondaryCtaFontColor` 
 
-#### Creating a CTStyle 
 ```java
 let style = CTStyle(theme: .dark,  // .dark or .light
            primaryColor: UIColor.gray)
@@ -48,16 +57,21 @@ style.ctaFontColor = UIColor.white  // Optional, default white or dark based on 
 style.secondaryCtaColor = UIColor.black // Optional, default primary color
 style.secondaryCtaFontColor = UIColor.white // Optional, default white or dark based on theme
 ```
-#### Setting a Custom Font
+### Setting a Custom Font
+{: .no_toc }
+
 ```java
-style.regularFont = UIFont(name: "easyJetRoundedBook", size: 14)!
-style.boldFont = UIFont(name: "easyJetRoundedDemi", size: 14)!
-style.italicFont = UIFont(name: "easyJetRoundedBook", size: 14)!
+style.regularFont = UIFont(name: "myCustomFont", size: 14)!
+style.boldFont = UIFont(name: "myCustomFont", size: 14)!
+style.italicFont = UIFont(name: "myCustomFont", size: 14)!
 ```
+
+{: .important}
+Please ensure any custom fonts used are included in your main bundle.
 
 ---
 
-#### SDK Initialisation
+## SDK Initialisation
 After CTStyle is configured, it must be passed into the SDK during initialisation in your AppDelegate:
 
 ```java

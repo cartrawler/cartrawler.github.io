@@ -8,12 +8,21 @@ permalink: /docs/ios/widgets/best-price
 ---
 
 # Best Price Widget
-
 {: .no_toc }
+
+The Best Price Widget is used to display the cheapest available vehicle price for a given location based on the pick up and drop off dates. To get this price, use our <a href="/docs/ios/apis/best-daily-rates#best-daily-rates">Best Daily Rates API</a>
 
 ---
 
 ![](/uploads/Pricing_Loaded_Generic_iOS.png)
+
+```java
+let widgetStyle = CTWidgetStyle()
+let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .bestPrice,
+                                                                   style: widgetStyle,
+                                                                   delegate: self)
+self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
+```
 
 ## Setting the CTBestPriceWidget price
 
