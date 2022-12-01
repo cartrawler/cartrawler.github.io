@@ -8,19 +8,37 @@ permalink: docs/react-native/android-integration/
 ---
 
 # Android Integration
-
 {: .no_toc }
 
 To integrate the Android SDK's within your React Native app, please use the following steps.
 
+<details open markdown="block">
+  <summary>
+    Steps
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<details markdown="block">
+  <summary>
+    Optional Extras
+  </summary>
+  {: .text-delta }
+1. <a href="/docs/react-native/android-integration/#resources">Resources</a>
+</details>
+
 ---
 
-## Steps
+## Add Dependencies
 * Open the Android folder inside your React Native project using Android Studio.
 * Add dependencies and Artifactory credentials as per
-<a href="/docs/android/installation/">Android documentation.</a> <br/>   
+<a href="/docs/android/installation/">Android documentation.</a> 
 
-### Add our maven repository and the artifactory credentials
+---
+
+## Add our Maven Repository and the Artifactory Credentials
 
 * Locate the file gradle.properties in your pc under ~/.gradle/gradle.properties. 
 * If the file does not exist create one and add the following credentials to it replacing the placeholder with the right values.
@@ -29,18 +47,25 @@ To integrate the Android SDK's within your React Native app, please use the foll
 nativeArtifactoryUsername=placeholder
 nativeArtifactoryPassword=placeholder
 ```
-Note: If you do not have these credentials contact you manager, IT or another developer in your team.
 
-* Next, add the CarTrawler dependency to build.gradle. Please use the version number sent to you by the CarTrawler team
+{: .note}
+If you do not have these credentials contact you manager, IT or another developer in your team.
+
+--- 
+## Add the CarTrawler Dependency to build.gradle
+Please use the version number sent to you by the CarTrawler team
 
 ```groovy 
 implementation "com.cartrawler.android:car-rental:$latestVersion" 
 ```
 
-* If not migrated yet, it is recommended to migrate the project to Android X.
-<a href="https://developer.android.com/jetpack/androidx/migrate">Migration guide</a> <br/>   
+If not migrated yet, it is recommended to migrate the project to Android X: 
+<a href="https://developer.android.com/jetpack/androidx/migrate">Migration guide</a> 
 
-* Inside your Android project, create a new class that extends ReactContextBaseJavaModule, this class will be the Module that we will expose methods to the React Native side.
+---
+
+## Expose Methods to React Native
+Inside your Android project, create a new class that extends ReactContextBaseJavaModule, this class will be the Module that we will expose methods to the React Native side.
 
 ```kotlin
 /**
@@ -69,7 +94,7 @@ class CTSDKStarterModule(reactContext: ReactApplicationContext?) :
 }
 
 ```
-* Create a class that implements ReactPackage and overrides the 'createNativeModules' method, so we can add our new module to the modules list.
+Create a class that implements ReactPackage and overrides the 'createNativeModules' method, so we can add our new module to the modules list.
 
 ```kotlin
 /**
@@ -90,7 +115,7 @@ internal class CTSDKStarterReactPackage : ReactPackage {
 }
 ```
 
-* Update MainApplication to include the new package. The one created above.
+Update MainApplication to include the new package. The one created above.
 
 ```kotlin
 @Override
@@ -103,7 +128,12 @@ protected List<ReactPackage> getPackages() {
 ```
 
 * Save, clean and rebuild project.
-* And now on the Javascript side we access the function created inside the Module.
+
+---
+
+## Access Functions in JavaScript
+
+We should now be able to access the function created inside the Module, on the Javascript side.
 
 ```javascript
 ...
@@ -133,7 +163,11 @@ export default class CTSDKDemoComponent extends Component {
 ...
 ```
 
-* To send information back to Javascript as for example, booking result. On the Android side we create a class that extends ReactContextBaseJavaModule.
+---
+
+## Receive Events from the SDK in JavaScript
+
+To send information back to Javascript such as a booking result, we create another class that extends ReactContextBaseJavaModule on the Android side. 
 
 ```kotlin
 class EventEmitterModule(reactContext: ReactApplicationContext?) :
@@ -173,8 +207,7 @@ class EventEmitterModule(reactContext: ReactApplicationContext?) :
 }
 ```
 
-* And on the Javascript side we can subscribe to this event 
-
+On the Javascript side we can then subscribe to this event:
 
 ```javascript
 const eventEmitter = new NativeEventEmitter(eventEmitterModule);
@@ -183,8 +216,11 @@ eventEmitter.addListener("BookingEvent", (params) => {
 });
 ```
 
+---
 
-* To trigger the CarTrawler flow we created a activity in our Android project called CTFlowActivity.kt that initiates the flow, and sends the result back to the React Native side
+## Initiate the Flow 
+To trigger the CarTrawler flow and send the result back to the React Native side, create an activity in your Android project called CTFlowActivity.kt.
+
 ```kotlin
 class CTFlowActivity : ReactActivity() {
 
@@ -231,8 +267,12 @@ class CTFlowActivity : ReactActivity() {
     }
 ```
 
-* Now if you run the project, you ll be able to initiate the CarTrawler booking flow from your React Native project and received the booking details back after the flow is complete
+After completing the above steps and running your project, you will be able to initiate the CarTrawler booking flow from your React Native project and receive booking details once the flow is complete.
+
+---
 
 ## Resources
+{: .no_toc}
+
 * <a href="https://github.com/cartrawler/cartrawler-react-android-demo">Sample code</a> <br/>  
 * More details on <a href="https://reactnative.dev/docs/native-modules-intro">Native Modules</a> <br/> 

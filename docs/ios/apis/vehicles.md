@@ -27,7 +27,7 @@ The Vehicles API is responsible for returning a wrapper response object of the l
 
 We expose a method to retrieve the vehicle list based on a sort type and limit you specify.
 
-Calling the requestVehicles function will trigger a vehicles request based on the provided IATA or PickupLocationCode, as well as the pick-up and drop-off dates. 
+Calling the `requestVehicles` function will trigger a vehicles request based on the provided IATA or PickupLocationCode, as well as the pick-up and drop-off dates. 
 
 ```java
 import CarTrawlerSDK

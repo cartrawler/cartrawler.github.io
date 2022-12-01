@@ -8,16 +8,27 @@ permalink: /docs/android/customisation/dark-mode/
 ---
 
 # Dark Mode
-
 {: .no_toc }
 
 The SDK supports dark mode, but it is disabled by default. It can be enabled or set to follow system settings. 
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
 ## Set up
 
-You can configure dark mode support in the SDK by sending the constants from the `AppCompatDelegate` class. By default, dark mode is off.
+You can configure dark mode support in the SDK by sending the constants from the `AppCompatDelegate` class. 
+
+{: .note}
+By default, dark mode is off.
 
 The following constants are supported:
 
@@ -27,7 +38,7 @@ AppCompatDelegate.MODE_NIGHT_YES
 AppCompatDelegate.MODE_NIGHT_NO
 ```
 
-Then initialise the SDK with the preferred setting:
+Initialise the SDK with the preferred setting:
 
 ```java
 CartrawlerSDK.Builder()

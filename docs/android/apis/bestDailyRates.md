@@ -15,11 +15,12 @@ We expose a method on the builder to retrieve the best rate for the products use
 
 ---
 
+## Request & Receive Best Daily Rates
+
 A `BestDailyRatesListener` is passed into the `getBestDailyRates` method and will call the required methods once the relevant events have occurred. 
  
 A flag parameter is used to specify which products are required.
 
-#### Get best daily rates sample code
 ```java      
 CartrawlerSDK.Builder()
   //..

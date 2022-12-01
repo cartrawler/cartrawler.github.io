@@ -37,7 +37,7 @@ Allows the user to reserve a car rental product independently of a flight.
 
 ### In Path
 {: .no_toc}
-Allows the user to reserve a car rental product to accompany their flight, this product forms part of the user's flight itinerary. 
+Allows the user to reserve a car rental product to accompany their flight. This product forms part of the user's flight itinerary. 
 
 {: .note}
 The In Path rental solution requires **additional backend development effort** and organisation between you and CarTrawler.
@@ -48,11 +48,10 @@ The In Path rental solution requires **additional backend development effort** a
 
 Please ensure that you have received the following from a CarTrawler representative:
 
-* Relevant Client ID(s) to use with SDK (these will be provided by your Partner Manager)
+* Relevant Client ID(s) to use with the SDK (these will be provided by your Partner Manager)
 * CarTrawler repository credentials
 * Artifactory credentials (Android)
 * Dedicated Slack support channel for integrating the SDK into your apps. 
-
 
 {: .note}
 Prior to go live we advise that you link back in with CarTrawler to test and verify that bookings are pointed to our production environment.

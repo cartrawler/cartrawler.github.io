@@ -1,11 +1,4 @@
----
-layout: default
-title: Theme Migration
-parent: Customisation
-grand_parent: Android
-nav_order: 2
-permalink: /docs/android/customisation/theme-migration/
----
+
 
 # Theme Migration
 

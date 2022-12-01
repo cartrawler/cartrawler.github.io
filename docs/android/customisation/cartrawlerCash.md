@@ -8,7 +8,6 @@ permalink: /docs/android/customisation/cartrawler-cash/
 ---
 
 # CarTrawler Cash
-
 {: .no_toc }
 
 CarTrawler Cash provides enhanced cash voucher merchandising throughout the booking flow.
@@ -46,6 +45,7 @@ use the following attributes:
 </style>
 ```
 
-Note: 
-* If you provide both a <b>drawable</b> and a <b>url</b> the drawable will take priority, so your url will never be used.
-* If you don't provide any attributes for the logo, the component that shows the logo will be hidden (`View.GONE`) 
+
+{: .note}
+<small>If you provide both a <b>drawable</b> and a <b>url</b> the drawable will take priority, so your url will never be used.<br/>
+If you don't provide any attributes for the logo, the component that shows the logo will be hidden (`View.GONE`)</small>

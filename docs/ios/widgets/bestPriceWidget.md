@@ -24,7 +24,7 @@ let widgetContainer = CarTrawlerSDK.sharedInstance().getWidget(status: .bestPric
 self.stackWidgetView.insertArrangedSubview(widgetContainer, at: 0)
 ```
 
-## Setting the CTBestPriceWidget price
+## Setting the CTBestPriceWidget Price
 
 When you make a `bestDailyRates` request, the price is returned to you in the delegate callback `didReceiveBestDailyRate`. You can set the widget’s price in your function body: 
 

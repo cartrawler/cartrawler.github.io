@@ -8,8 +8,11 @@ permalink: /docs/android/widgets/simple/
 ---
 
 # Simple Widget
-
 {: .no_toc }
+<small>cartrawler.core.ui.views.partner.CTSimpleWidget</small>
+
+This widget shows a list of suppliers and can act as an entry point into one of our flows by conforming to the CTWidgetContainerDelegate and overriding the didTapView function.<br/>
+
 
 ---
 

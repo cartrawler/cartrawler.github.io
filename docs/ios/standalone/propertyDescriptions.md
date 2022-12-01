@@ -63,7 +63,7 @@ The `countryCode` property refers to the country of residency, and this is used 
 For the `promotionCode` property: To display the field and prepopulate it, please provide a string. To display the field without a prepopulated code please provide an empty string.
 
 ---
-### Initialising CTContext for the Standalone flow with Deep Linking
+### Initialising CTContext for the Standalone flow with Pickup & Drop Off
 {: .no_toc }
 
 <br />
@@ -124,6 +124,6 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
-  <dt>promotionCode</dt><dd> A string used in the SDK as the main toggle to display promotion code field on the search form or not. Use empty string to show the field or a promotion code string to show the field and pre populate it.</dd>
+  <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dt>recentSearch</dt><dd> A CTRecentSearch object used to open the SDK on the vehicle list page and bypass the search screen.</dd>
 </dl>

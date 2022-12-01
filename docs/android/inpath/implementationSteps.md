@@ -8,15 +8,36 @@ permalink: /docs/android/inpath/implementation-steps/
 ---
 
 # Implementation Steps
-
 {: .no_toc }
 
 To implement the SDK's In Path flow within your app, please use the following steps:
 
+<details open markdown="block">
+  <summary>
+    Steps
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<details markdown="block">
+  <summary>
+    Notes
+  </summary>
+  {: .text-delta }
+1. <a href="/docs/android/inpath/implementation-steps/#insurance">Insurance</a>
+2. <a href="/docs/android/inpath/implementation-steps/#insurance">Extras</a>
+3. <a href="/docs/android/inpath/implementation-steps/#insurance">Totals</a>
+</details>
+
 ---
 
-### Initialise the In Path flow with the SDK Builder <br/>
+## Initialise the In Path flow with the SDK Builder <br/>
 Please make sure to set the following properties: 
+
+{: .note}
+.setEnvironment(CartrawlerSDK.Environment.PRODUCTION) must be set when submitting your app to the Play Store.
 
 ```java
 CartrawlerSDK.Builder()
@@ -51,8 +72,8 @@ val passenger = CartrawlerSDKPassenger(
              membershipId = "123456") 
 ```
 
-#### Optional Builder Properties
-The SDK has some optional properties that can be passed in initialisation to use and/or display certain features
+{: .note}
+The SDK builder also has some optional properties that can be passed in during initialisation to use and/or display certain features:
 
 ```java
        .enableCustomCashTreatment()
@@ -61,9 +82,11 @@ The SDK has some optional properties that can be passed in initialisation to use
        .setClientUserIdentifier("your-client-user-identifier-here")
 ```  
 
+<small>Click <a href="/docs/android/inpath/property-descriptions">here</a> for an in depth explanation of the SDK builder's properties.</small>
+
 ---
 
-### Retrieval of objects from the In Path Process
+## Retrieval of objects from the In Path Process
 
 If a user selected a car during the In Path process, the `onActivityForResult` will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
 
@@ -88,8 +111,8 @@ override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent
 }
 ```    
     
-The JSON payload object is returned so that the partner can process the payment/reservation with a CarTrawler payment end point at a different time and point in the partners basket flow. This JSON payload object is passed to this endpoint. 
-Further details can be found in our OTA developer docs. (Also see In Path reservation section)
+The JSON payload object is returned so that the partner can process the payment/reservation with a CarTrawler payment end point at a different time and put it in the partners basket flow. This JSON payload object is passed to this endpoint. 
+<!-- Further details can be found in our OTA developer docs. (Also see In Path reservation section) -->
     
 The ``CartrawlerSDK.TRIP_DETAILS`` object:
 
@@ -134,22 +157,26 @@ class Loyalty(
 ```
           
 The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calculated by CarTrawler using pay now, insurance, and booking fee amounts when applicable.
- 
-### Notes on other attributes:
 
-##### Insurance
+---
+ 
+## Notes on other attributes:
+{: .no_toc}
+
+### Insurance
+{: .no_toc}
+
 * If insurance is selected, `insuranceAmount` will be non-zero.
-* The `insuranceName` will non-null when `insuranceAmount` is non-zero.
+* The `insuranceName` will be non-null when `insuranceAmount` is non-zero.
 * The `insuranceName` is the title of the insurance.
 
-##### Extras
+### Extras
+{: .no_toc}
+
 * If the user has selected extras, the total amount of extra fees will set in `payAtDeskAmount`. <br>
 
-##### Extract Free Extras
-
-We expose a free extra with the `IncludedInRate` set to true. In order to display this in the UI you need to do the following logic:
-
-A free additional driver
+Some extras are free. 
+We expose a free extra with the `IncludedInRate` set to true. Here is an example of a free additional driver:
 
 ```java  
 data class Extra (
@@ -163,12 +190,11 @@ data class Extra (
 )
 ```
 
-To display this as a free additional driver in your UI, you can simple check the `IncludedInRate` returns true. 
+To display this as a free additional driver in your UI, you can simply check that `includedInRate` is true. 
 
-There will be an improvement to extract free extras and standard extras in future releases.
+### Totals
+{: .no_toc}
 
-
-##### Totals
 * `payNowAmount` is the total amount for only the car element (excludes extras,  booking fee and insurance)
 * `bookingFeeAmount` is a CarTrawler fee which is separate to the `payNowAmount`.
 * The authTotal is calculated by the CarTrawler system by adding the `payNowAmount`, `bookingFeeAmount` (if present) and `insuranceFee` (if present).

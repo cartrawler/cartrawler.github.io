@@ -17,11 +17,7 @@ The Vehicles API is responsible for returning a wrapper response object of the l
 
 We expose a method on the builder to retrieve the vehicle list based on a sort type and limit you specify.
 
-Calling the `requestVehicles` function will trigger a vehicles request based on the provided pick-up and drop-off dates, and an IATA or pick-up location code. The number of vehicles returned can be specified.
-
-The sort type can be either:
-- `FLAG_BEST_PRICE`, which returns the cheapest cars in the list
-- `FLAG_RECOMMENDED`, which returns the CarTrawler recommended cars.
+Calling the `getVehicles` function will trigger a vehicles request based on the provided pick-up and drop-off dates, and an IATA or pick-up location code. 
 
 A `VehiclesListener` is passed into the `getVehicleDetails` method and the SDK will call the required methods once the relevant events have occurred.
 
@@ -46,7 +42,13 @@ CartrawlerSDK.Builder()
                 }
 ```
 
-The vehicle object takes the following form:
+{: .note }
+The number of vehicles returned can be limited by setting the `numberOfVehicles` parameter. <br /><br />
+The sort type can be either: <br /> `FLAG_BEST_PRICE`, which returns the cheapest cars in the list <br /> or `FLAG_RECOMMENDED`, which returns the CarTrawler recommended cars.
+
+---
+
+### VehicleDetails Class
 
 ```java
 @Parcelize

@@ -15,21 +15,22 @@ When the SDK booking flow finishes it gives the control back to its consumer, so
 consuming the SDK should override the method `onActivityResult` in order to get the data related
 to the reservation details.
 
+---
+
 The process is pretty simple as it follows the Android development standards to get results back
-from one activity to another and will be described down below.
+from one activity to another.
 
 Remember when we called the method `startRentalStandalone` in the <a href="/docs/android/standalone/implementation-steps/" target="_blank">implementation steps</a>?
 The second argument is called `requestCode` and we'll need it in two different places:
 
 <ol>
-  <li>When starting the standalone flow;</li>
-  <li>To get the reservation details data when finish the booking flow;</li>
+  <li>When starting the Standalone flow;</li>
+  <li>Getting the reservation details data after finishing the booking flow;</li>
 </ol>
 
 `RESERVATION_CALLBACK_REQUEST_CODE` is an Integer <b>user-defined</b> constant used in two places as follows:
 
-* Starting standalone flow
-
+Starting the Standalone flow:
 ```kotlin
 CartrawlerSDK
     .Builder()
@@ -37,8 +38,7 @@ CartrawlerSDK
     .startRentalStandalone(activity, requestCode = RESERVATION_CALLBACK_REQUEST_CODE)
 ```
 
-* Getting the reservation details
-
+Getting the reservation details:
 ```kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     if (resultCode == Activity.RESULT_OK) {
@@ -51,7 +51,8 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
 ```
 ---
 
-## The Reservation Details Object and its dependencies is defined as following:
+### The `ReservationDetails` Object and its dependencies are defined as following:
+{: .no_toc}
 
 ```kotlin
 @Parcelize

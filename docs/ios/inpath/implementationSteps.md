@@ -10,6 +10,8 @@ permalink: /docs/ios/inpath/implementation-steps
 # Implementation Steps
 {: .no_toc }
 
+To implement the SDK’s In Path flow within your app, please use the following steps:
+
 <details open markdown="block">
   <summary>
     Steps

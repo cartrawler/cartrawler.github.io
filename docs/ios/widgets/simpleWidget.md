@@ -14,7 +14,7 @@ This widget shows a list of suppliers and can act as an entry point into one of 
 
 ---
 
-![](/uploads/Simple_Loaded_State_Generic.png)
+![](/uploads/Simple_Loaded_Generic_style.png)
 
 ```java
 let widgetStyle = CTWidgetStyle()

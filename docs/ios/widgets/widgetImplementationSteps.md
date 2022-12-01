@@ -12,7 +12,7 @@ permalink: /docs/ios/widgets/widget-implementation-steps
 
 Each widget is independent of the Standalone and In Path flows, and can be used to launch either of them via your implementation of the `CTWidgetContainerDelegate`’s `didTapView` function.<br />
 
-To implement the SDK's Standalone flow within your app, please use the following steps:
+To implement the SDK's widgets within your app, please use the following steps:
 
 <details open markdown="block">
   <summary>

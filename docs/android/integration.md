@@ -6,8 +6,18 @@ nav_order: 1
 ---
 
 # Integration
+{: .no_toc}
 
 To add the CarTrawlerSDK to your app, add our maven repository and enter your artifactory credentials.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -49,22 +59,27 @@ dependencyResolutionManagement {
 }
 ```
 
+---
+
 ## Getting Credentials
 
-Note: If you do not have these credentials contact you manager, IT or another developer in your team.
+If you do not have these credentials contact your manager, IT, or another developer in your team.
 
-## Adding dependency to your App
-* Next, add the CarTrawler dependency to build.gradle. Please use the version number sent to you by the CarTrawler team
+---
+
+## Adding the Dependency to your App
+Add the CarTrawler dependency to build.gradle. Please use the version number sent to you by CarTrawler.
 
 ```groovy     
-
 implementation "com.cartrawler.android:car-rental:$latestVersion" 
-
 ```
 
-Note: We use semantic versioning to define the SDK version number, so the version number would always follow the pattern major.minor.patch, eg: 1.0.0
+{: .note}
+We use semantic versioning to define the SDK version number, so the version number will always follow the pattern major.minor.patch, eg: 1.0.0
 
 Create a theme that extends the ```CTDayNightTheme```. Please refer to the <a href="/docs/android/customisation/themes" target="_blank">theme section</a> for further details.
+
+---
 
 ## App Permissions
 

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Reservations
+title: Booking Reservations
 parent: Android SDK APIs
 grand_parent: Android
 nav_order: 5
 permalink: /docs/android/apis/reservations/
 ---
 
-# Reservations
+# Booking Reservations
 
 {: .no_toc }
 

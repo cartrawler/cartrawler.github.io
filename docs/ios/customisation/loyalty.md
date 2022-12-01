@@ -31,6 +31,8 @@ Similar to SDK theming, if you are changing the background colour to a dark back
   <img src="/uploads/loyalty-theming.png">
 </picture>
 
+---
+
 ## Theme Defaults 
 
 The default is ```light``` and theme values are as follows:
@@ -43,6 +45,7 @@ The default is ```light``` and theme values are as follows:
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-purple-000"></span> 
 
+---
 
 ## Dark mode defaults
 
@@ -55,6 +58,8 @@ The default is ```dark``` and theme values are as follows:
 | Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 
+---
+
 ## CTLoyaltyTheme
 
 ### Light Theme
@@ -64,6 +69,8 @@ Apply ```light``` to apply a dark logo for the light theme.
 ### Dark Theme
 {: .no_toc}
 Apply ```dark``` to apply a light (white) logo for the dark theme
+
+---
 
 ## Applying the Theme 
 Override the following properties in your SDK style
@@ -81,6 +88,8 @@ loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
 
 style.loyaltyStyle = loyaltyStyle
 ```   
+
+---
 
 ## Loyalty Chip Size
 The default size of the chip is regular.

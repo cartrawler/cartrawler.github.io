@@ -11,7 +11,7 @@ permalink: /docs/ios/customisation/supplier-benefits/
 {: .no_toc }
 
 On the vehicles list a banner may be shown to the user to allow them to apply some promo/discount
-codes. This banner can be customized as you wish as described below:
+codes. This banner can be customized as you wish as described below.
 
 <details open markdown="block">
   <summary>

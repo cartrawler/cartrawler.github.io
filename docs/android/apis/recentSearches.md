@@ -8,10 +8,18 @@ permalink: /docs/android/apis/recent-searches/
 ---
 
 # Recent Searches
-
 {: .no_toc }
 
 We expose recent searches made within the SDK via our recentSearches API. Recent searches can also be cleared or removed individually, and this will be reflected in the SDK as well.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -26,6 +34,7 @@ val carTrawlerDatabase = CarTrawlerDatabase.build(applicationContext)
 val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
 ````
 ---
+
 ## Fetching Recent Searches 
 To fetch the top 3 recent searches we will expose the result in a callback as follows:
 

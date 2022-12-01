@@ -10,8 +10,6 @@ permalink: /docs/ios/customisation/themes
 # Themes
 {: .no_toc }
 
----
-
 <details open markdown="block">
   <summary>
     Table of Contents
@@ -20,6 +18,8 @@ permalink: /docs/ios/customisation/themes
 1. TOC
 {:toc}
 </details>
+
+---
 
 By default, the colour for text and icons on colour backgrounds are white. If your brand colours are a bright colour (high luminosity), it's recommended you change to a dark text theme for legibility of text and colours.
 <picture>
