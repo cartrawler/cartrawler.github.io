@@ -122,5 +122,3 @@ CartrawlerSDK.Builder()
 
 {: .note}
 To get a recent search, you can use our <a href="/docs/android/apis/recent-searches">Recent Searches API</a>.
-
----
