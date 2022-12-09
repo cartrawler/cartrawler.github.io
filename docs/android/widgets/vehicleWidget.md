@@ -10,7 +10,7 @@ permalink: /docs/android/widgets/vehicle/
 # Vehicle Widget
 {: .no_toc }
 
-<small>cartrawler.core.ui.views.partner.CTVehicleWidget</small>
+<b>cartrawler.core.ui.views.partner.CTVehicleWidget</b>
 
 The Vehicle Widget provides a UI for displaying a CTVehicleDetails object. It can be used after a user has completed the In Path flow.
 

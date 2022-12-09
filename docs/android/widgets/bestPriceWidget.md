@@ -10,7 +10,7 @@ permalink: /docs/android/widgets/best-price/
 # Best Price Widget
 {: .no_toc }
 
-<small>cartrawler.core.ui.views.partner.CTBestPriceWidget</small>
+<b>cartrawler.core.ui.views.partner.CTBestPriceWidget</b>
 
 The Best Price Widget is used to display the cheapest available vehicle price for a given location based on the pick up and drop off dates. To get this price, use our <a href="/docs/android/apis/best-daily-rates#best-daily-rates">Best Daily Rates API</a>
 

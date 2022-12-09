@@ -14,15 +14,6 @@ Each widget is independent of the Standalone and In Path flows, and can be used 
 
 To implement the SDK's widgets within your app, please use the following steps:
 
-<details open markdown="block">
-  <summary>
-    Steps
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 ---
 
 ## Theming 

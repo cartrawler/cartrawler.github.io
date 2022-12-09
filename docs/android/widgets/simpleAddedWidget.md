@@ -9,7 +9,7 @@ permalink: /docs/android/widgets/simple-added/
 
 # Simple Added Widget
 {: .no_toc }
-<small>cartrawler.core.ui.views.partner.CTSimpleAddedWidget</small>
+<b>cartrawler.core.ui.views.partner.CTSimpleAddedWidget</b>
 
 This widget shows that a car has been added, and provides a button to remove the car.
 

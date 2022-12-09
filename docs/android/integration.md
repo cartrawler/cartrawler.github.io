@@ -88,3 +88,35 @@ On the SDK’s Search Screen, we have added the option for users to search for v
 To make use of this feature, please ensure your Manifest has either the `ACCESS_COARSE_LOCATION` or `ACCESS_FINE_LOCATION` permission.
 
 We will need to use this when asking for permission to use location services within your app if it has not already been granted.
+
+---
+
+## Java 8+ API desugaring support
+
+On the SDK we make use of the `java.time` APIs to deal with date and time, if your app `minSdkVersion` is set to a version lower than 26 you'll need to enable
+Java 8+ API desugaring support.
+
+To do that just add the code into your project level `build.gradle` file as follows:
+
+```groovy
+android {
+    defaultConfig {
+        // Required when setting minSdkVersion to 20 or lower
+        multiDexEnabled true
+    }
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        // Sets Java compatibility to Java 8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // For Kotlin projects
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.6'
+}
+```

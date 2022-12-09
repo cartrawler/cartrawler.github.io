@@ -10,7 +10,7 @@ permalink: docs/react-native/android-integration/
 # Android Integration
 {: .no_toc }
 
-To integrate the Android SDK's within your React Native app, please use the following steps.
+To integrate the Android SDK's within your React Native app, open the Android folder inside your React Native project using Android Studio and follow the steps listed below.
 
 <details open markdown="block">
   <summary>
@@ -28,13 +28,6 @@ To integrate the Android SDK's within your React Native app, please use the foll
   {: .text-delta }
 1. <a href="/docs/react-native/android-integration/#resources">Resources</a>
 </details>
-
----
-
-## Add Dependencies
-* Open the Android folder inside your React Native project using Android Studio.
-* Add dependencies and Artifactory credentials as per
-<a href="/docs/android/installation/">Android documentation.</a> 
 
 ---
 
