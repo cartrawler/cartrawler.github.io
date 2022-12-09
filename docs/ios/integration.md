@@ -22,12 +22,12 @@ To add the CarTrawlerSDK to your app, you will need Cocoapods.
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/cartrawler/cartrawler-ios-pods'
   
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 inhibit_all_warnings!
   
 target 'CarTrawlerPartner' do
-  pod 'CarTrawlerSDK', '~> 12.7.1'
+  pod 'CarTrawlerSDK', '~> 13.0.0'
 end
 ```
 

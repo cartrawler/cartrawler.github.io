@@ -104,6 +104,7 @@ android {
         // Required when setting minSdkVersion to 20 or lower
         multiDexEnabled true
     }
+    
     compileOptions {
         // Flag to enable support for the new language APIs
         coreLibraryDesugaringEnabled true
@@ -111,11 +112,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     // For Kotlin projects
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
+
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.6'
 }
