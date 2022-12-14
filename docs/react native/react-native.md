@@ -1,7 +1,7 @@
 ---
 layout: default
 title: React Native
-nav_order: 4
+nav_order: 7
 has_children: true
 permalink: docs/react-native
 ---
@@ -9,6 +9,6 @@ permalink: docs/react-native
 # React Native
 {: .no_toc }
 
-Our iOS and android SDK can be easily integrated into a React Native project
+Our iOS and Android SDKs can easily be integrated into a React Native project
 {: .fs-6 .fw-300 }
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Android
+title: Android Integration
 nav_order: 3
 has_children: true
 permalink: docs/android

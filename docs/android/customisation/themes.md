@@ -2,14 +2,22 @@
 layout: default
 title: Themes
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 1
 permalink: /docs/android/customisation/themes
 ---
 
 # Themes
-
 {: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -23,9 +31,11 @@ By default, the colour for text and icons on colour backgrounds are white for na
 
 ---
 
+## Styling the SDK and Initialising your Theme
+
 The Android SDK uses the Material Day Night theme ```Theme.MaterialComponents.DayNight```
 
-Before proceeding, if you were using version 10.x.x and below we recommend you read the <a href="/docs/android/customisation/theme-migration" target="_blank">theme migration guide</a> on how to migrate your existing theme.
+<!-- Before proceeding, if you were using version 10.x.x and below we recommend you read the <a href="/docs/android/customisation/theme-migration" target="_blank">theme migration guide</a> on how to migrate your existing theme. -->
 
 The following code snippet will show you how to style the app to suit your brand guidelines.
 
@@ -49,7 +59,7 @@ The following code snippet will show you how to style the app to suit your brand
 </style>
 ```
 
-Once you completed styling your theme you can initialise the theme in the SDK builder as follows:
+Once you have completed styling your theme, you can initialise the theme in the SDK builder as follows:
 
 ```java
 CartrawlerSDK.Builder()
@@ -60,7 +70,7 @@ CartrawlerSDK.Builder()
 
 --- 
 
-### Setting a Custom Font
+## Setting a Custom Font
 
 In order to set a custom font on your theme you need to add the fonts to the res/font directory along with a `my_custom_font_family.xml` file, see below for an example:
 
@@ -86,7 +96,7 @@ Your font-family can then be added to your theme:
 
 ---
 
-### Optional Colour Overrides
+## Optional Colour Overrides
 
 You can override the following SDK attribute defaults if required:
 
@@ -112,5 +122,3 @@ You can override the following SDK attribute defaults if required:
 <!-- This is the attribute for the car illustrations on landing and booking confirmation screens -->
 <item name="ctIllustrationColor">?colorPrimaryVariant</item>
 ```
-
-<br/>

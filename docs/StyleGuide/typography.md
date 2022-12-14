@@ -7,8 +7,16 @@ permalink: docs/style-guide/typography
 ---
 
 # Typography
-
 {: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -17,16 +25,24 @@ permalink: docs/style-guide/typography
 The type scale for the native SDK is using the system font based on device. For Android, the system font is Roboto and for iOS, the system font is San Francisco.
 
 ### Android SDK system font type scale
+{: .no_toc}
+
 ![](/uploads/Android Type Scale.png)
 
 ### iOS SDK system font type scale
+{: .no_toc}
+
 ![](/uploads/iOS Type Scale.png)
+
+---
 
 ## Font Colours on Light Backgrounds
 
 Colour is applied sparingly to text in the Native SDK to ensure WCAG AA Level standard for accessibility. Dark text is used for main blocks of text in the interface and in cases where text is overlaying light colour components. 
 
 ![](/uploads/Font Colours on Light BG.png)
+
+---
 
 ## Font Colours on Colour Backgrounds
 
@@ -35,6 +51,8 @@ By default, light or dark text should be used on colour backgrounds. Light text 
 ![](/uploads/Font Colours on Colour BG.png)
 
 Light and Dark text colours and sample custom text colour on colour backgrounds that pass AA level accessibility standards.
+
+---
 
 ## Theming Examples
 

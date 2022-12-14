@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Standalone
-parent: Android
+parent: Android Integration
 nav_order: 2
 has_children: true
+permalink: /docs/android/standalone/
+
 ---
 
 # Standalone

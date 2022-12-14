@@ -2,7 +2,7 @@
 layout: default
 title: Reservation Retrieval
 parent: Standalone
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 3
 permalink: /docs/ios/standalone/reservation-retrieval
 ---
@@ -11,17 +11,35 @@ permalink: /docs/ios/standalone/reservation-retrieval
 
 {: .no_toc }
 
-If a user booked a car during the standalone process, we will use the delegate to pass the callback information.
-The reservation object is accessed via the return delegate method `didReceive(reservationDetails:)`
+When a vehicle is booked using the Standalone flow, the reservation object will be accessible via the delegate method `didReceive(reservationDetails:)`.
 
 ---
 
-`CarTrawlerSDKDelegate` method called after a user booked a vehicle:
+Sample implementation of the `CarTrawlerSDKDelegate` method called after a user booked a vehicle:
 
 ```java
-func didReceive(_ reservationDetails: CTReservationDetails) {
+import CarTrawlerSDK
+
+class MyViewController: UIViewController, CarTrawlerSDKDelegate {
+
+  func viewDidLoad() {
+    launchStandalone()
+  }
+
+  func launchStandalone() {
+    let context = CTContext(clientID: "your client ID", flow: .standAlone)
+    context.countryCode = "IE" 
+    context.currencyCode = "EUR" 
+    context.languageCode = "EN" 
+    context.delgate = self;
+    self.carTrawlerSDK?.present(from: self, context: context)
+  }
+
+  func didReceive(_ reservationDetails: CTReservationDetails) {
     // Reservation object
     print("\(reservationDetails)")
+  }
+
 }
 ```
 

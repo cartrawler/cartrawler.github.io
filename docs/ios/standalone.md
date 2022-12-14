@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Standalone
-parent: iOS
+parent: iOS Integration
 nav_order: 2
 has_children: true
+permalink: /docs/ios/standalone/
 ---
 
 # Standalone

@@ -2,7 +2,7 @@
 layout: default
 title: Reservation Process
 parent: In Path
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 3
 permalink: /docs/ios/inpath/reservation-process
 ---
@@ -15,11 +15,12 @@ Following the In Path process, a payload is returned in JSON Format which can la
 
 ---
 
-
 The OTA message will contain a list of placeholder fields which are preset to default values.
 It is expected that these fields are overridden with meaningful booking data and the message is processed directly with our OTA_VehResRQ endpoint. 
 
 Full details on using the OTA_VehResRQ endpoint and our API in general can be found in our <a href="http://docs.cartrawler.com/docs/xml/">API Docs</a>.
+
+--- 
 
 ## Payload Structure
 

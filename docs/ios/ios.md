@@ -1,7 +1,7 @@
 ---
 layout: default
-title: iOS
-nav_order: 2
+title: iOS Integration
+nav_order: 4
 has_children: true
 permalink: docs/ios
 ---

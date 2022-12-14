@@ -7,44 +7,66 @@ permalink: docs/style-guide/sdk-theming
 ---
 
 # SDK Theming
-
 {: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
 ## Colour Theming
 
 ### Primary Color
+{: .no_toc}
+
 The primary color is the color displayed most frequently across the SDK’s screens and components. 
 
 ### Primary Light & Primary Dark Colours
+{: .no_toc}
+
 We recommend using a light and dark variant of your primary colour for the product. This is useful for creating contrast between UI elements, such as distinguishing a header bar from a secondary panel bar.
 
 ![](/uploads/Primary Colours.png)
 
 ### CTA Colours
+{: .no_toc}
+
 The CTA color provides another way to distinguish the product and highlights the primary actions in the UI. Having a secondary CTA color is optional, and it is applied sparingly to highlight secondary actions in the UI.
 
 ![](/uploads/CTA.png)
 
-### Colour Hierarchy
+---
+
+## Colour Hierarchy
 Having a colour theme creates a hierarchy in the UI. Too much colour will distract the user and take them away from the most important information and actions in the UI. Colour is used with intention and it is only used for certain components and elements.  
 
 ![](/uploads/Colour Hierarchy.png)
 
-### Theming Examples
+---
 
-Below are a few examples of applying a palette to the SDK’s Search and Car Results screens.
+## Theming Examples
+
+Below are examples of applying a palette to the SDK’s Search and Car Results screens.
 
 ![](/uploads/Theming Examples.png)
 
-### Dark vs. Light Styling
+---
+
+## Dark vs. Light Styling
 
 By default, the colour for text and icons on colour backgrounds are white. If your brand colours are a bright colour (high luminosity), it is recommended you change to a light theme for legibility of text and icons.
 
 ![](/uploads/Dark vs Light.png)
 
-### Accessibility
+---
+
+## Accessibility
 
 We recommend meeting WCAG AA Level for background colours, text and icons. For colours used on backgrounds of components, a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text is recommended.
 
@@ -52,13 +74,13 @@ The SDK components with colour use white as the default overlay text colour. If 
 
 ![](/uploads/Accessibility.png)
 
-### Loyalty Program Theming (Optional)
+---
+
+## Loyalty Program Theming (Optional)
 
 This section is only relevant for partners with a loyalty program. By Default, your loyalty program logo and details will sit on a light background (Light Grey or White).  
 
 ![](/uploads/Loyalty Colours.png)
-
-### Loyalty Theming Examples
 
 It is not required, but you can change the background colour and the text/icon colour of loyalty components to fit in with your app’s loyalty program branding. Loyalty components include a general messaging banner and more car and specific loyalty chips. See more on the components section of this style guide.
 

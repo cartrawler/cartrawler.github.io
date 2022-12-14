@@ -1,7 +1,7 @@
 ---
 layout: default
 title: In Path
-parent: iOS
+parent: iOS Integration
 nav_order: 3
 has_children: true
 ---

@@ -7,8 +7,16 @@ permalink: docs/style-guide/components
 ---
 
 # Components
-
 {: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 

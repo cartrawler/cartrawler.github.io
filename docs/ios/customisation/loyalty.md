@@ -2,16 +2,24 @@
 layout: default
 title: Loyalty
 parent: Customisation
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 5
 permalink: /docs/ios/customisation/loyalty
 ---
 
 # Loyalty
-
 {: .no_toc }
 
 The colour of the background, text, and icon on our loyalty components can be changed to fit in with your app’s loyalty program branding. Loyalty components include banners as well as specific loyalty chips. The chip's height can also be increased if your logo requires more padding. See more on the components section of our style guide. 
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -22,6 +30,8 @@ Similar to SDK theming, if you are changing the background colour to a dark back
   <source media="(min-width: 920px)" srcset="/uploads/loyalty-theming.png">
   <img src="/uploads/loyalty-theming.png">
 </picture>
+
+---
 
 ## Theme Defaults 
 
@@ -35,6 +45,7 @@ The default is ```light``` and theme values are as follows:
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-purple-000"></span> 
 
+---
 
 ## Dark mode defaults
 
@@ -47,18 +58,23 @@ The default is ```dark``` and theme values are as follows:
 | Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 
-### CTLoyaltyTheme
+---
 
-#### Light Theme
+## CTLoyaltyTheme
+
+### Light Theme
+{: .no_toc}
 Apply ```light``` to apply a dark logo for the light theme.
 
-#### Dark Theme
+### Dark Theme
+{: .no_toc}
 Apply ```dark``` to apply a light (white) logo for the dark theme
 
-### Applying the Theme - iOS
+---
+
+## Applying the Theme 
 Override the following properties in your SDK style
 
-#### Loyalty theming sample code
 ```java
 let style = CTStyle(theme: .dark,  // Main app style
           primaryColor: UIColor.gray)
@@ -73,7 +89,9 @@ loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
 style.loyaltyStyle = loyaltyStyle
 ```   
 
-#### Loyalty Chip Size
+---
+
+## Loyalty Chip Size
 The default size of the chip is regular.
 
 ![](/uploads/loyalty_chip.png)

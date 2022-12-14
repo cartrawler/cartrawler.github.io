@@ -2,22 +2,42 @@
 layout: default
 title: Implementation Steps
 parent: Standalone
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 1
 permalink: /docs/ios/standalone/implementation-steps
 ---
 
 # Implementation Steps
-
 {: .no_toc }
+
+{: .important}
+The SDK must be initialised in your AppDelegate
 
 To implement the SDK's Standalone flow within your app, please use the following steps:
 
+<details open markdown="block">
+  <summary>
+    Steps
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<details markdown="block">
+  <summary>
+    Optional Extras
+  </summary>
+  {: .text-delta }
+1. <a href="/docs/ios/standalone/implementation-steps#start-the-standalone-flow-on-another-screen">Start the Standalone Flow on Another Screen</a>
+- <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-search-screen-bypass-landing-screen">Start Standalone flow on the Search Screen (bypass Landing Screen)</a>
+- <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-pickup--drop-off-bypass-the-landing-and-search-screens">Start Standalone flow on the Vehicle List via Pickup & Drop Off (bypass the landing and search screens)</a>
+- <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens">Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens)</a>
+2. <a href="/docs/ios/standalone/implementation-steps#prepopulate-driver-details">Prepopulate Driver Details</a>
+</details>
 ---
 
-## Step 1
-### Initialise the SDK in your App Delegate <br/>
-<b>Note that the production parameter must be set to true when submitting your app to the AppStore.
+## Initialise the SDK in your App Delegate <br/>
 
 ```java
 import CarTrawlerSDK
@@ -28,15 +48,35 @@ CarTrawlerSDK.sharedInstance().initialiseSDK(with: nil,
                                production: false)
 ```
 
+{: .important }
+The production parameter must be set to true when submitting your app to the AppStore.
+
+{: .note }
+`style`: An optional <a href="/docs/ios/customisation/themes#creating-a-ctstyle">CTStyle</a> object, used to set the fonts as well as the primary, secondary, and accent colors in the SDK. Please ensure any custom fonts used are included in your main bundle. <br/><br/>
+`customParameters`: A dictionary of parameters, custom to a particular partner, see below for options.<br/> <small>- orderID: A String value that represents the Order ID for a Flight PNR or Booking Reference, example: IE1234 <br/> - flightNumberRequired: A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</small><br/><br/>
 For a full list of property descriptions, please click <a href="/docs/ios/standalone/property-descriptions">here</a>
 
 ---
-## Step 2
-### Initialise the CTContext object with the parameters required
+## Initialise the CTContext object with the required parameters 
 
 This can be done in the view controller the SDK will be presented from.
 
-#### Object description
+<!-- ### Required parameters for Initialisation:
+{: .no_toc } -->
+
+```java
+import CarTrawlerSDK
+let context = CTContext(clientID: "your client ID", flow: .standAlone)
+context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+context.languageCode = "EN" // The language associated with the device’s system region is used by default.
+````
+
+{: .note }
+The above properties are required, and the `countryCode` property refers to the country of residency. This is used to make search requests.
+
+### Object Description
+{: .no_toc }
   
 ```swift
 class CTContext: NSObject {
@@ -61,23 +101,53 @@ class CTContext: NSObject {
   let clientUserIdentifier: String
 }
 ```
-<br/>
-#### Required parameters for initialisation:
+<small>Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone">here</a> for an in depth explanation of CTContext's properties.</small>
+
+---
+## Present the SDK via Modal or Push Presentation
+
+In the view controller you wish to present the SDK from, add the following code after configuring your `CTContext`: 
 
 ```java
-import CarTrawlerSDK
-let context = CTContext(clientID: "your client ID", flow: .standAlone)
+let viewController = UIViewController()
+CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
+```
+
+Alternatively, in the navigation controller you wish to push the SDK from, add the following code after configuring your `CTContext`: 
+
+```java
+let navigationController = UINavigationController()
+CarTrawlerSDK.sharedInstance().push(fromNavigationViewController: navigationController, context: context)
+```
+
+---
+
+## Start the Standalone Flow on Another Screen
+{: .no_toc }
+
+When launching the Standalone flow, it is possible to bypass the landing and search screens by setting certain properties of your CTContext object.    
+This is entirely optional. 
+<br/>
+
+### Start Standalone flow on the Search Screen (bypass Landing Screen)
+{: .no_toc }
+
+```java
+// Create a context for standAlone flow
+let context = CTContext(clientID: "your clientID", flow: .standAlone)
 context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
 context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
 context.languageCode = "EN" // The language associated with the device’s system region is used by default.
-````
-<b>Note: the `countryCode` property refers to the country of residency, and this is used when we make search requests.</b>
+context.deeplink = .searchForm
+context.delegate = self
+```
 
-<br/>
-#### Start Standalone flow on the vehicle list
-- Optional (bypasses the landing and search screens).
+<br />
+### Start Standalone flow on the vehicle list <b>via Pickup & Drop Off</b> (bypass the landing and search screens)
+{: .no_toc }
 
-As well as the required parameters mentioned above, you must provide pick-up and drop-off locations and dates. 
+{: .important }
+For this alternate starting point in the flow, pick-up and drop-off locations and dates must be provided.
 
 ```java
 // Create a context for the Standalone flow
@@ -109,16 +179,21 @@ context.dropOffDate = nextMonthPlusThreeDays! // next month + 3 days sample date
 context.delegate = self
 ```
 
-To pin a specific vehicle to the top of the list, add a vehicle RefID:
+{: .note }
+A vehicle can be pinned to the top of the list by setting `pinnedVehicleID` (adding a vehicle reference ID). To get a reference ID, you can use our <a href="/docs/ios/apis/vehicles">Vehicles API</a>.
+
 
 ```java
 context.pinnedVehicleID = "1892038" // Vehicle RefID
 ```
-
+<small>Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-the-standalone-flow-with-deep-linking">here</a> for an in depth explanation of the relevant CTContext properties</small>
 
 <br/>
-#### Start Standalone flow on the vehicle list <b>via recent search</b> 
-- Optional (bypasses the landing and search screens)
+### Start Standalone Flow on the Vehicle List <b>via Recent Search</b> (bypass the landing and search screens)
+{: .no_toc }
+
+{: .important }
+For this alternate starting point in the flow, a recent search (`CTRecentSearch` object) must be provided.
 
 ```java
 // Create a context for the Standalone flow
@@ -129,23 +204,19 @@ context.languageCode = "EN" // The language associated with the device’s syste
 context.recentSearch = recentSearch // your recent search object fetched from the recent searches api. 
 context.delegate = self
 ```
-<br/>
-#### Start Standalone flow on the search screen 
-- Optional (bypasses the landing screen)
 
-```java
-// Create a context for standAlone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
-context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
-context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
-context.languageCode = "EN" // The language associated with the device’s system region is used by default.
-context.deeplink = .searchForm
-context.delegate = self
-```
+{: .note}
+To get a recent search, you can use our <a href="/docs/ios/apis/recent-searches">Recent Searches API</a>.
 
+<small> Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone-with-a-recent-search">here</a> for an in depth explanation of the relevant CTContext properties </small>
 <br/>
-#### Pre populating driver details:
-- add a `CTPassenger` object
+
+
+--- 
+## Prepopulate Driver Details:
+{: .no_toc }
+
+The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passengers` property on your `CTContext`. 
 
 ```java
 //Passenger object
@@ -165,22 +236,5 @@ let passenger = CTPassenger(firstName: "Ryan",
 context.passengers = [passenger]
 ```
 
-<b>Note: `CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.</b>
-
----
-## Step 3
-### Present the SDK via Modal 
-In the view controller you wish to present the SDK from, add the following code after configuring your `CTContext`: 
-
-```java
-let viewController = UIViewController()
-CarTrawlerSDK.sharedInstance().present(from: viewController, context: context)
-```
-
-### Present the SDK via Push Presentation
-In the navigation controller you wish to push the SDK from, add the following code after configuring your `CTContext`: 
-
-```java
-let navigationController = UINavigationController()
-CarTrawlerSDK.sharedInstance().push(fromNavigationViewController: navigationController, context: context)
-```
+{: .note }
+`CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.

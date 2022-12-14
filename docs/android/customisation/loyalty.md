@@ -2,16 +2,24 @@
 layout: default
 title: Loyalty
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 6
 permalink: /docs/android/customisation/loyalty/
 ---
 
 # Loyalty
-
 {: .no_toc }
 
 The colour of the background, text, and icon on our loyalty components can be changed to fit in with your app’s loyalty program branding. Loyalty components include banners as well as specific loyalty chips. See more on the components section of our style guide.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -22,6 +30,8 @@ Similar to SDK theming, if you are changing the background colour to a dark back
   <source media="(min-width: 920px)" srcset="/uploads/loyalty-theming.png">
   <img src="/uploads/loyalty-theming.png">
 </picture>
+
+---
 
 ## Theme Defaults 
 
@@ -34,6 +44,8 @@ The default is ```light``` and theme values are as follows:
 | Secondary Color     	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
 
+---
+
 ## Dark mode defaults
 
 The default is ```dark``` and theme values are as follows:
@@ -45,30 +57,25 @@ The default is ```dark``` and theme values are as follows:
 | Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
 | Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 
-### CTLoyaltyTheme
+---
 
-#### Light Theme
+## CTLoyaltyTheme
+
+### Light Theme
+{: .no_toc}
+
 Apply ```light``` to apply a dark logo for the light theme.
 
-#### Dark Theme
+### Dark Theme
+{: .no_toc}
+
 Apply ```dark``` to apply a light (white) logo for the dark theme
 
-#### Loyalty Chip Size
-The chip’s height can also be increased if your logo requires more padding. The default size of the chip is regular.
-<img src="/uploads/loyalty_chip.png">
+---
 
-This can be changed to large as follows:
-```xml
-<style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
-    //..
-    <item name="ctLoyaltyChipSize">regular</item> // Either "regular" or "large" Default is "regular"
-</style>
-```
-
-### Applying the Theme
+## Applying the Theme
 Override the following properties in your SDK theme
 
-#### Loyalty theming sample code
 ```xml
 <style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
     //..
@@ -81,3 +88,16 @@ Override the following properties in your SDK theme
 </style>
 ```   
 
+---
+
+## Loyalty Chip Size
+The chip’s height can also be increased if your logo requires more padding. The default size of the chip is regular.
+<img src="/uploads/loyalty_chip.png">
+
+This can be changed to large as follows:
+```xml
+<style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
+    //..
+    <item name="ctLoyaltyChipSize">regular</item> // Either "regular" or "large" Default is "regular"
+</style>
+```

@@ -2,14 +2,22 @@
 layout: default
 title: Themes
 parent: Customisation
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 1
 permalink: /docs/ios/customisation/themes
 ---
 
 # Themes
-
 {: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -24,6 +32,8 @@ If you do not wish to set the four optional properties manually, the CarTrawler 
 
 ---
 
+## Creating a CTStyle 
+
 Theming is achieved by creating a `CTStyle` object and initialising the SDK with it.
 
 `CTStyle` has the following properties:
@@ -37,7 +47,6 @@ Theming is achieved by creating a `CTStyle` object and initialising the SDK with
 * `secondaryCtaColor`
 * `secondaryCtaFontColor` 
 
-#### Creating a CTStyle 
 ```java
 let style = CTStyle(theme: .dark,  // .dark or .light
            primaryColor: UIColor.gray)
@@ -48,16 +57,21 @@ style.ctaFontColor = UIColor.white  // Optional, default white or dark based on 
 style.secondaryCtaColor = UIColor.black // Optional, default primary color
 style.secondaryCtaFontColor = UIColor.white // Optional, default white or dark based on theme
 ```
-#### Setting a Custom Font
+### Setting a Custom Font
+{: .no_toc }
+
 ```java
-style.regularFont = UIFont(name: "easyJetRoundedBook", size: 14)!
-style.boldFont = UIFont(name: "easyJetRoundedDemi", size: 14)!
-style.italicFont = UIFont(name: "easyJetRoundedBook", size: 14)!
+style.regularFont = UIFont(name: "myCustomFont", size: 14)!
+style.boldFont = UIFont(name: "myCustomFont", size: 14)!
+style.italicFont = UIFont(name: "myCustomFont", size: 14)!
 ```
+
+{: .important}
+Please ensure any custom fonts used are included in your main bundle.
 
 ---
 
-#### SDK Initialisation
+## SDK Initialisation
 After CTStyle is configured, it must be passed into the SDK during initialisation in your AppDelegate:
 
 ```java

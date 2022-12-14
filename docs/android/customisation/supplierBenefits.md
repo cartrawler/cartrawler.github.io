@@ -2,17 +2,25 @@
 layout: default
 title: Supplier Benefits
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 7
 permalink: /docs/android/customisation/supplier-benefits/
 ---
 
 # Supplier Benefits
-
 {: .no_toc }
 
 On the vehicles list a banner may be shown to the user to allow them to apply some promo/discount
-codes. This banner can be customized as you wish as described below:
+codes. This banner can be customized as you wish as described below.
+
+<details open markdown="block">
+  <summary>
+    Table of Contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ---
 
@@ -43,9 +51,11 @@ use the following attributes:
 </style>
 ```
 
-Note: 
-* If you provide both a <b>drawable</b> and a <b>url</b> the drawable will take priority, so your url will never be used.
-* If you don't provide any attributes for the logo, the component that shows the logo will be hidden (`View.GONE`)
+{: .note}
+<small>If you provide both a <b>drawable</b> and a <b>url</b> the drawable will take priority, so your url will never be used.<br />
+If you don't provide any attributes for the logo, the component that shows the logo will be hidden (`View.GONE`)</small>
+
+---
 
 ## Fallback Colors
 
@@ -60,12 +70,11 @@ By default our CTDayNightTheme will use the following colors if partner doesn't 
 </style>
 ```
 
-## Enabling optional flag in SDK initialisation
+---
 
-<br/>
-<h4><b>enableSupplierBenefitAutoApplyCodes</b></h4>
-This allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be
-applied for suppliers.
+## Autoenabling Supplier Benefits During SDK initialisation
+
+The SDK builder's `enableSupplierBenefitAutoApplyCodes` allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers. It is optional. 
 
 ```kotlin
 CartrawlerSDK
