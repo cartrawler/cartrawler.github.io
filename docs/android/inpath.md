@@ -1,7 +1,7 @@
 ---
 layout: default
 title: In Path
-parent: Android
+parent: Android Integration
 nav_order: 3
 has_children: true
 ---

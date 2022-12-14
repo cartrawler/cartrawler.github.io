@@ -2,7 +2,7 @@
 layout: default
 title: Supplier Benefits
 parent: Customisation
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 7
 permalink: /docs/ios/customisation/supplier-benefits/
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Implementation Steps
 parent: Standalone
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 1
 permalink: /docs/android/standalone/implementation-steps/
 ---

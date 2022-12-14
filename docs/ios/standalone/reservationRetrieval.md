@@ -2,7 +2,7 @@
 layout: default
 title: Reservation Retrieval
 parent: Standalone
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 3
 permalink: /docs/ios/standalone/reservation-retrieval
 ---

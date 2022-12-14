@@ -2,7 +2,7 @@
 layout: default
 title: Property Descriptions
 parent: In Path
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 2
 permalink: /docs/ios/inpath/property-descriptions
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Integration
-parent: Android
+parent: Android Integration
 nav_order: 1
 ---
 

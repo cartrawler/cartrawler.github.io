@@ -2,7 +2,7 @@
 layout: default
 title: Dark Mode
 parent: Customisation
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 2
 permalink: /docs/ios/customisation/dark-mode
 ---

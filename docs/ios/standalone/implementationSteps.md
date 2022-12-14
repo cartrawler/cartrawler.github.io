@@ -2,7 +2,7 @@
 layout: default
 title: Implementation Steps
 parent: Standalone
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 1
 permalink: /docs/ios/standalone/implementation-steps
 ---

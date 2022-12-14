@@ -2,7 +2,7 @@
 layout: default
 title: USPs (Unique Selling Point)
 parent: Customisation
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 4
 permalink: /docs/ios/customisation/usp
 ---

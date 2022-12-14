@@ -2,7 +2,7 @@
 layout: default
 title: CarTrawler Cash
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 4
 permalink: /docs/android/customisation/cartrawler-cash/
 ---

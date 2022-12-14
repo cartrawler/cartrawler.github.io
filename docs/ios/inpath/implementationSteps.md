@@ -2,7 +2,7 @@
 layout: default
 title: Implementation Steps
 parent: In Path
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 1
 permalink: /docs/ios/inpath/implementation-steps
 ---

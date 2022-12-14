@@ -2,7 +2,7 @@
 layout: default
 title: Reservation Process
 parent: In Path
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 3
 permalink: /docs/ios/inpath/reservation-process
 ---

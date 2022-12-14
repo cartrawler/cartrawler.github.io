@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Customisation
-parent: iOS
+parent: iOS Integration
 nav_order: 6
 has_children: true
 ---

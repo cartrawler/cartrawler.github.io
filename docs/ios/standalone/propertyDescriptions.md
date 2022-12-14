@@ -2,7 +2,7 @@
 layout: default
 title: Property Descriptions
 parent: Standalone
-grand_parent: iOS
+grand_parent: iOS Integration
 nav_order: 2
 permalink: /docs/ios/standalone/property-descriptions
 ---

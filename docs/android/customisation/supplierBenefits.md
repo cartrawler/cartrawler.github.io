@@ -2,7 +2,7 @@
 layout: default
 title: Supplier Benefits
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 7
 permalink: /docs/android/customisation/supplier-benefits/
 ---

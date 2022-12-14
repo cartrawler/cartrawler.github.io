@@ -2,7 +2,7 @@
 layout: default
 title: Dark Mode
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 3
 permalink: /docs/android/customisation/dark-mode/
 ---

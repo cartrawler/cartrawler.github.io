@@ -2,7 +2,7 @@
 layout: default
 title: Themes
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 1
 permalink: /docs/android/customisation/themes
 ---

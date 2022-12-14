@@ -2,7 +2,7 @@
 layout: default
 title: Property Descriptions
 parent: Standalone
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 2
 permalink: /docs/android/standalone/property-descriptions/
 ---

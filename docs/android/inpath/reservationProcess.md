@@ -2,7 +2,7 @@
 layout: default
 title: Reservation Process
 parent: In Path
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 3
 permalink: /docs/android/inpath/reservation-process/
 ---

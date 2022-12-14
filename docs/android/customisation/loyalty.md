@@ -2,7 +2,7 @@
 layout: default
 title: Loyalty
 parent: Customisation
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 6
 permalink: /docs/android/customisation/loyalty/
 ---

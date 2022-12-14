@@ -2,7 +2,7 @@
 layout: default
 title: Property Descriptions
 parent: In Path
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 2
 permalink: /docs/android/inpath/property-descriptions/
 ---

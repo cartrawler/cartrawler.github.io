@@ -2,7 +2,7 @@
 layout: default
 title: Reservation Retrieval
 parent: Standalone
-grand_parent: Android
+grand_parent: Android Integration
 nav_order: 3
 permalink: /docs/android/standalone/reservation-retrieval/
 ---
