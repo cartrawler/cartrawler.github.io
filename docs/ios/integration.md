@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Integration
-parent: iOS
+parent: iOS Integration
 nav_order: 1
 ---
 
