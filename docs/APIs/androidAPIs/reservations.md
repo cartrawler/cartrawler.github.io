@@ -2,9 +2,9 @@
 layout: default
 title: Booking Reservations
 parent: Android SDK APIs
-grand_parent: Android
-nav_order: 5
-permalink: /docs/android/apis/reservations/
+grand_parent: APIs
+nav_order: 6
+permalink: /docs/api/android/reservations/
 ---
 
 # Booking Reservations

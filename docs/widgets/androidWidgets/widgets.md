@@ -1,17 +1,15 @@
 ---
 layout: default
 title: Android SDK Widgets
-parent: Android
-nav_order: 5
+parent: Widgets
+nav_order: 1
 has_children: true
 ---
 
-# Widgets
-
+# Android Widgets
 {: .no_toc }
 
-The CarTrawler Android SDK comes prepackaged with four widgets<br/>
-They can be added to your layouts dynamically or directly via in XML as per standard Android guidelines.
+Our Android widgets can be added to your layouts dynamically or directly via in XML as per standard Android guidelines.
 
 ---
 

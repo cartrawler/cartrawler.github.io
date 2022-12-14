@@ -1,9 +1,8 @@
 ---
 layout: default
 title: User Flow
-parent: Style Guide
-nav_order: 1
-permalink: docs/style-guide/user-flow
+nav_order: 2
+permalink: docs/user-flow
 ---
 
 # User Flow

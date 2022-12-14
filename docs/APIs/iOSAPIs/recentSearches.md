@@ -2,9 +2,9 @@
 layout: default
 title: Recent Searches
 parent: iOS SDK APIs
-grand_parent: iOS
+grand_parent: APIs
 nav_order: 4
-permalink: /docs/ios/apis/recent-searches
+permalink: /docs/api/ios/recent-searches
 ---
 
 # Recent Searches

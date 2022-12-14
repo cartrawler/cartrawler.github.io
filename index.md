@@ -6,7 +6,7 @@ description: "CarTrawler Native SDK Documentation"
 permalink: /
 ---
 
-# CarTrawler Native
+# CarTrawler Car Rental SDK
 {: .no_toc}
 
 Welcome to the CarTrawler iOS and Android Native SDK documentation.
@@ -29,7 +29,7 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 
 ## Flows 
 A Flow is a set of CarTrawler UI screens, with a specific business objective. <br/>
-There are two main business flows implemented in the SDK, <a href="/docs/style-guide/user-flow#standalone-flow">Standalone</a> and <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a>.<br/> 
+There are two main business flows implemented in the SDK, <a href="/docs/user-flow#standalone-flow">Standalone</a> and <a href="/docs/user-flow#in-path-flow">In Path</a>.<br/> 
 
 ### Standalone 
 {: .no_toc}
@@ -40,7 +40,7 @@ Allows the user to reserve a car rental product independently of a flight.
 Allows the user to reserve a car rental product to accompany their flight. This product forms part of the user's flight itinerary. 
 
 {: .note}
-The In Path rental solution requires **additional backend development effort** and organisation between you and CarTrawler.
+The In Path rental solution requires **additional backend development effort** and coordination between you and CarTrawler.
 
 ---
 
@@ -49,7 +49,10 @@ The In Path rental solution requires **additional backend development effort** a
 Please ensure that you have received the following from a CarTrawler representative:
 
 * Relevant Client ID(s) to use with the SDK (these will be provided by your Partner Manager)
-* CarTrawler repository credentials
+
+{: .important}
+You <b>MUST</b> use the correct clientID with our SDK in order for everything to work as expected, such as brand specific configurations. 
+
 * Artifactory credentials (Android)
 * Dedicated Slack support channel for integrating the SDK into your apps. 
 

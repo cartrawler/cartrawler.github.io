@@ -2,9 +2,9 @@
 layout: default
 title: Simple 
 parent: Android SDK Widgets
-grand_parent: Android
+grand_parent: Widgets
 nav_order: 1
-permalink: /docs/android/widgets/simple/
+permalink: /docs/widgets/androidWidgets/simple/
 ---
 
 # Simple Widget

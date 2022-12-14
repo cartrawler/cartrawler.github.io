@@ -2,9 +2,9 @@
 layout: default
 title: API Query Params
 parent: iOS SDK APIs
-grand_parent: iOS
+grand_parent: APIs
 nav_order: 1
-permalink: /docs/ios/apis/api-query-params
+permalink: /docs/api/ios/api-query-params
 ---
 
 # API Query Params

@@ -2,9 +2,9 @@
 layout: default
 title: Simple Added
 parent: iOS SDK Widgets
-grand_parent: iOS
+grand_parent: Widgets
 nav_order: 2
-permalink: /docs/ios/widgets/simple-added
+permalink: /docs/widgets/iOSWidgets/simple-added
 ---
 
 # Simple Added Widget

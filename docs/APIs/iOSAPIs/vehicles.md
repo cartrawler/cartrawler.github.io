@@ -2,9 +2,9 @@
 layout: default
 title: Vehicles
 parent: iOS SDK APIs
-grand_parent: iOS
+grand_parent: APIs
 nav_order: 2
-permalink: /docs/ios/apis/vehicles
+permalink: /docs/api/ios/vehicles
 ---
 
 # Vehicles

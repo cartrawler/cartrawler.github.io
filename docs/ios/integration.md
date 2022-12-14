@@ -27,7 +27,7 @@ use_frameworks!
 inhibit_all_warnings!
   
 target 'CarTrawlerPartner' do
-  pod 'CarTrawlerSDK', '~> 13.0.0'
+  pod 'CarTrawlerSDK', '~> (add latest version here from Release Notes section)'
 end
 ```
 
@@ -35,6 +35,6 @@ end
 
 On the SDK’s Search Screen, we have added the option for users to search for vehicles using their current location upon tapping the pick-up location text field.
 
-To make use of this feature, please ensure your plist file has the `NSLocationWhenInUseUsageDescription` (or `NSLocationAlwaysUsageDescription` for iOS10) key.
+To make use of this feature, please ensure your plist file has the `NSLocationWhenInUseUsageDescription` key.
 
 We will need to use this when asking for permission to use location services within your app if it has not already been granted.

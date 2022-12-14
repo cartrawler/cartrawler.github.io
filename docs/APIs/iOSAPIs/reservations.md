@@ -2,9 +2,9 @@
 layout: default
 title: Booking Reservations
 parent: iOS SDK APIs
-grand_parent: iOS
-nav_order: 5
-permalink: /docs/ios/apis/reservations
+grand_parent: APIs
+nav_order: 6
+permalink: /docs/api/ios/reservations
 ---
 
 # Booking Reservations

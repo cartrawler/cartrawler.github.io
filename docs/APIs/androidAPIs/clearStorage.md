@@ -2,9 +2,9 @@
 layout: default
 title: Clear Storage
 parent: Android SDK APIs
-grand_parent: Android
+grand_parent: APIs
 nav_order: 3
-permalink: /docs/android/apis/clear-storage/
+permalink: /docs/api/android/clear-storage/
 ---
 
 # Clear Storage

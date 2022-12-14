@@ -2,15 +2,15 @@
 layout: default
 title: Best Price
 parent: iOS SDK Widgets
-grand_parent: iOS
+grand_parent: Widgets
 nav_order: 1
-permalink: /docs/ios/widgets/best-price
+permalink: /docs/widgets/iOSWidgets/best-price
 ---
 
 # Best Price Widget
 {: .no_toc }
 
-The Best Price Widget is used to display the cheapest available vehicle price for a given location based on the pick up and drop off dates. To get this price, use our <a href="/docs/ios/apis/best-daily-rates#best-daily-rates">Best Daily Rates API</a>
+The Best Price Widget is used to display the cheapest available vehicle price for a given location based on the pick up and drop off dates. To get this price, use our <a href="/docs/api/ios/best-daily-rates#best-daily-rates">Best Daily Rates API</a>
 
 ---
 

@@ -2,9 +2,9 @@
 layout: default
 title: Best Daily Rates
 parent: Android SDK APIs
-grand_parent: Android
+grand_parent: APIs
 nav_order: 5
-permalink: /docs/android/apis/best-daily-rates
+permalink: /docs/api/android/best-daily-rates
 ---
 
 # Best Daily Rates

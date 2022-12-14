@@ -2,9 +2,9 @@
 layout: default
 title: Vehicle
 parent: iOS SDK Widgets
-grand_parent: iOS
+grand_parent: Widgets
 nav_order: 4
-permalink: /docs/ios/widgets/vehicle
+permalink: /docs/widgets/iOSWidgets/vehicle
 ---
 
 # Vehicle Widget

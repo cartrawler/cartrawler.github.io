@@ -52,7 +52,7 @@ Having a colour theme creates a hierarchy in the UI. Too much colour will distra
 
 ## Theming Examples
 
-Below are a few examples of applying a palette to the SDK’s Search and Car Results screens.
+Below are examples of applying a palette to the SDK’s Search and Car Results screens.
 
 ![](/uploads/Theming Examples.png)
 
@@ -81,10 +81,6 @@ The SDK components with colour use white as the default overlay text colour. If 
 This section is only relevant for partners with a loyalty program. By Default, your loyalty program logo and details will sit on a light background (Light Grey or White).  
 
 ![](/uploads/Loyalty Colours.png)
-
---- 
-
-## Loyalty Theming Examples
 
 It is not required, but you can change the background colour and the text/icon colour of loyalty components to fit in with your app’s loyalty program branding. Loyalty components include a general messaging banner and more car and specific loyalty chips. See more on the components section of this style guide.
 

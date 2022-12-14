@@ -2,9 +2,9 @@
 layout: default
 title: Best Daily Rates
 parent: iOS SDK APIs
-grand_parent: iOS
+grand_parent: APIs
 nav_order: 5
-permalink: /docs/ios/apis/best-daily-rates
+permalink: /docs/api/ios/best-daily-rates
 ---
 
 # Best Daily Rates

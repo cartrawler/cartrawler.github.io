@@ -2,9 +2,9 @@
 layout: default
 title: Recent Searches
 parent: Android SDK APIs
-grand_parent: Android
+grand_parent: APIs
 nav_order: 4
-permalink: /docs/android/apis/recent-searches/
+permalink: /docs/api/android/recent-searches/
 ---
 
 # Recent Searches

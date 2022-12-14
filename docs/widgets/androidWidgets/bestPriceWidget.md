@@ -2,9 +2,9 @@
 layout: default
 title: Best Price
 parent: Android SDK Widgets
-grand_parent: Android
+grand_parent: Widgets
 nav_order: 3
-permalink: /docs/android/widgets/best-price/
+permalink: /docs/widgets/androidWidgets/best-price/
 ---
 
 # Best Price Widget
@@ -12,7 +12,7 @@ permalink: /docs/android/widgets/best-price/
 
 <b>cartrawler.core.ui.views.partner.CTBestPriceWidget</b>
 
-The Best Price Widget is used to display the cheapest available vehicle price for a given location based on the pick up and drop off dates. To get this price, use our <a href="/docs/android/apis/best-daily-rates#best-daily-rates">Best Daily Rates API</a>
+The Best Price Widget is used to display the cheapest available vehicle price for a given location based on the pick up and drop off dates. To get this price, use our <a href="/docs/api/android/best-daily-rates#best-daily-rates">Best Daily Rates API</a>
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Android SDK APIs
-parent: Android
+parent: APIs
 nav_order: 4
 has_children: true
 ---

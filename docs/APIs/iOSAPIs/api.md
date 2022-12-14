@@ -1,7 +1,7 @@
 ---
 layout: default
 title: iOS SDK APIs
-parent: iOS
+parent: APIs
 nav_order: 4
 has_children: true
 ---

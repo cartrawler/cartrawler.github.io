@@ -2,9 +2,9 @@
 layout: default
 title: Vehicles
 parent: Android SDK APIs
-grand_parent: Android
+grand_parent: APIs
 nav_order: 2
-permalink: /docs/android/apis/vehicles/
+permalink: /docs/api/android/vehicles/
 ---
 
 # Vehicles

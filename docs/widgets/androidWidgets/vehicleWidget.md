@@ -2,9 +2,9 @@
 layout: default
 title: Vehicle
 parent: Android SDK Widgets
-grand_parent: Android
+grand_parent: Widgets
 nav_order: 4
-permalink: /docs/android/widgets/vehicle/
+permalink: /docs/widgets/androidWidgets/vehicle/
 ---
 
 # Vehicle Widget

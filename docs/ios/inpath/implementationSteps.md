@@ -10,6 +10,9 @@ permalink: /docs/ios/inpath/implementation-steps
 # Implementation Steps
 {: .no_toc }
 
+{: .important}
+The SDK must be initialised in your AppDelegate
+
 To implement the SDK’s In Path flow within your app, please use the following steps:
 
 <details open markdown="block">

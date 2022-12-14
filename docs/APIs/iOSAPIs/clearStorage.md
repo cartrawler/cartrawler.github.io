@@ -2,9 +2,9 @@
 layout: default
 title: Clear Storage
 parent: iOS SDK APIs
-grand_parent: iOS
+grand_parent: APIs
 nav_order: 3
-permalink: /docs/ios/apis/clear-storage
+permalink: /docs/sdk/ios/clear-storage
 ---
 
 # Clear Storage

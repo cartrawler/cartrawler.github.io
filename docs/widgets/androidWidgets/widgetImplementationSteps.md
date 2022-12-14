@@ -2,9 +2,9 @@
 layout: default
 title: Implementation Steps
 parent: Android SDK Widgets
-grand_parent: Android
+grand_parent: Widgets
 nav_order: 0
-permalink: /docs/android/widgets/widget-implementation-steps
+permalink: /docs/widgets/androidWidgets/widget-implementation-steps
 ---
 
 # Implementation Steps

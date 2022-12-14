@@ -10,6 +10,9 @@ permalink: /docs/ios/standalone/implementation-steps
 # Implementation Steps
 {: .no_toc }
 
+{: .important}
+The SDK must be initialised in your AppDelegate
+
 To implement the SDK's Standalone flow within your app, please use the following steps:
 
 <details open markdown="block">
