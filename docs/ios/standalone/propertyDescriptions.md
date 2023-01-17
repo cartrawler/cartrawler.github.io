@@ -57,6 +57,7 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
   <dt>clientUserIdentifier</dt><dd>A string token of a logged in user that allows the SDK to fetch the user loyalty details and points.</dd>
+  <dt>settingsIconType</dt><dd>An enum used to set the icon used for the landing and search page settings buttons.</dd>
 </dl>
 
 {: .note } 
@@ -100,6 +101,7 @@ If the user navigates back from the vehicle list in this flow variant, they will
   <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
   <dd><b>Note: To display the field and prepopulate it, please provide a string. To display the field without a pre-populated code please provide an empty string.</b></dd>
   <dt>clientUserIdentifier</dt><dd>A string token of a logged in user that allows the SDK to fetch the user loyalty details and points.</dd>
+  <dt>settingsIconType</dt><dd>An enum used to set the icon used for the landing and search page settings buttons.</dd>
 </dl>
 
 ---
