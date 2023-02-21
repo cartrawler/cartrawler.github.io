@@ -99,6 +99,7 @@ class CTContext: NSObject {
   let recentSearch: CTRecentSearch
   let supplierBenefitAutoApplied: Bool
   let clientUserIdentifier: String
+  let settingsIconType: CTSettingsIconType 
 }
 ```
 <small>Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone">here</a> for an in depth explanation of CTContext's properties.</small>
