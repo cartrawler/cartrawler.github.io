@@ -4,7 +4,7 @@ title: Simple
 parent: Android SDK Widgets
 grand_parent: Widgets
 nav_order: 1
-permalink: /docs/widgets/androidWidgets/simple/
+# permalink: /docs/widgets/androidWidgets/simple/
 ---
 
 # Simple Widget

@@ -4,7 +4,7 @@ title: Vehicle
 parent: iOS SDK Widgets
 grand_parent: Widgets
 nav_order: 4
-permalink: /docs/widgets/iOSWidgets/vehicle
+# permalink: /docs/widgets/iOSWidgets/vehicle
 ---
 
 # Vehicle Widget

@@ -4,7 +4,7 @@ title: Implementation Steps
 parent: iOS SDK Widgets
 grand_parent: Widgets
 nav_order: 0
-permalink: /docs/widgets/iOSWidgets//widget-implementation-steps
+# permalink: /docs/widgets/iOSWidgets//widget-implementation-steps
 ---
 
 # Implementation Steps

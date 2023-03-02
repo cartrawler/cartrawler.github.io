@@ -4,7 +4,7 @@ title: Simple
 parent: iOS SDK Widgets
 grand_parent: Widgets
 nav_order: 3
-permalink: /docs/widgets/iOSWidgets/simple
+# permalink: /docs/widgets/iOSWidgets/simple
 ---
 
 # Simple Widget

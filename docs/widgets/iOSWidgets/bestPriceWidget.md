@@ -4,7 +4,7 @@ title: Best Price
 parent: iOS SDK Widgets
 grand_parent: Widgets
 nav_order: 1
-permalink: /docs/widgets/iOSWidgets/best-price
+# permalink: /docs/widgets/iOSWidgets/best-price
 ---
 
 # Best Price Widget

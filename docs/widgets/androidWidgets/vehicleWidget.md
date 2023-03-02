@@ -4,7 +4,7 @@ title: Vehicle
 parent: Android SDK Widgets
 grand_parent: Widgets
 nav_order: 4
-permalink: /docs/widgets/androidWidgets/vehicle/
+# permalink: /docs/widgets/androidWidgets/vehicle/
 ---
 
 # Vehicle Widget
