@@ -4,7 +4,7 @@ title: Implementation Steps
 parent: Android SDK Widgets
 grand_parent: Widgets
 nav_order: 0
-permalink: /docs/widgets/androidWidgets/widget-implementation-steps
+# permalink: /docs/widgets/androidWidgets/widget-implementation-steps
 ---
 
 # Implementation Steps

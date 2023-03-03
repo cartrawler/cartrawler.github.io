@@ -4,7 +4,7 @@ title: Best Price
 parent: Android SDK Widgets
 grand_parent: Widgets
 nav_order: 3
-permalink: /docs/widgets/androidWidgets/best-price/
+# permalink: /docs/widgets/androidWidgets/best-price/
 ---
 
 # Best Price Widget
