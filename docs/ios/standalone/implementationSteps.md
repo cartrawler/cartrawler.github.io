@@ -207,7 +207,7 @@ context.delegate = self
 ```
 
 {: .note}
-To get a recent search, you can use our <a href="/docs/ios/apis/recent-searches">Recent Searches API</a>.
+To get a recent search, you can use our <a href="/docs/api/ios/recent-searches">Recent Searches API</a>.
 
 <small> Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone-with-a-recent-search">here</a> for an in depth explanation of the relevant CTContext properties </small>
 <br/>
