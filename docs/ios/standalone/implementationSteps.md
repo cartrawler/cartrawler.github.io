@@ -181,7 +181,7 @@ context.delegate = self
 ```
 
 {: .note }
-A vehicle can be pinned to the top of the list by setting `pinnedVehicleID` (adding a vehicle reference ID). To get a reference ID, you can use our <a href="/docs/ios/apis/vehicles">Vehicles API</a>.
+A vehicle can be pinned to the top of the list by setting `pinnedVehicleID` (adding a vehicle reference ID). To get a reference ID, you can use our <a href="/docs/api/ios/vehicles">Vehicles API</a>.
 
 
 ```java

@@ -94,7 +94,7 @@ CartrawlerSDK.Builder()
 For this alternate starting point in the flow, pick-up and drop-off locations and dates must be provided.
 
 {: .note }
-A vehicle can be pinned to the top of the list by setting a pinned vehicle (adding a vehicle reference ID). To get a reference ID, you can use our <a href="/docs/android/apis/vehicles">Vehicles API</a>.
+A vehicle can be pinned to the top of the list by setting a pinned vehicle (adding a vehicle reference ID). To get a reference ID, you can use our <a href="/docs/api/android/vehicles">Vehicles API</a>.
 
 <!-- To support navigation to the car block screen you need to add pinned veh ref along with the drop-off time, pick-up time and the pick-up and drop-off locations as follows: --> 
 ```java
