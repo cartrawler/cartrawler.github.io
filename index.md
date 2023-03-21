@@ -23,7 +23,7 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 {:toc}
 </details>
 
-[Get Started iOS](/docs/ios){: .btn .btn-primary .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get Started Android](/docs/android){: .btn .btn-primary .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 } [Style Guide](/docs/style-guide){: .btn .btn-primary .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get Started iOS](/docs/ios){: .btn .btn-primary .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get Started Android](/docs/android){: .btn .btn-primary .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 } [Style Guide](/docs/style-guide){: .btn .btn-primary .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 } [Migrate to 14.0.0 iOS](/docs/ios/migrate){: .btn .btn-primary .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 } [Migrate to 14.0.0 Android](/docs/android/migrate){: .btn .btn-primary .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
