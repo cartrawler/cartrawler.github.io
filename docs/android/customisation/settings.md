@@ -22,7 +22,6 @@ To set your preferred icon, please use the `SettingsMenuIcon` enum class.
 It contain the values `HAMBURGER`, `USER`, `COG`. 
 
 ```kotlin
-CartrawlerSDK
-    .Builder()
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
     .withSettingsMenuIconType(SettingsMenuIcon.`CHOSEN_ICON`)
 ``` 

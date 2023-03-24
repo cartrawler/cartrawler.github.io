@@ -40,12 +40,10 @@ AppCompatDelegate.MODE_NIGHT_NO
 
 Initialise the SDK with the preferred setting:
 
-```java
-CartrawlerSDK.Builder()
-    //..
-    .setDarkModeConfig(AppCompatDelegate.NIGHT_FOLLOW_SYSTEM)
-    .setTheme(R.style.SampleTheme)
-    .start***
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .theme(R.style.SampleTheme)
+    .darkModeConfig(AppCompatDelegate.NIGHT_FOLLOW_SYSTEM)
 ```
 ## How to Style your Dark Mode Theme
 

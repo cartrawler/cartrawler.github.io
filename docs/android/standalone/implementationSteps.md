@@ -23,102 +23,155 @@ To implement the SDK's Standalone flow within your app, please use the following
 
 <details markdown="block">
   <summary>
-    Optional Extras
+    Alternatives Standalone flows
   </summary>
   {: .text-delta }
-1. <a href="/docs/ios/standalone/implementation-steps#start-the-standalone-flow-on-another-screen">Start the Standalone Flow on Another Screen</a>
-- <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-search-screen-bypass-landing-screen">Start Standalone flow on the Search Screen (bypass Landing Screen)</a>
-- <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-pickup--drop-off-bypass-the-landing-and-search-screens">Start Standalone flow on the Vehicle List via Pickup & Drop Off (bypass the landing and search screens)</a>
-<!-- - <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens">Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens)</a> -->
+- <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-search-screen-bypass-the-landing-screen-">Start Standalone Flow in the Search screen</a>
+- <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-vehicle-list-screen-bypass-the-landing-and-search-screens-">Start Standalone Flow in the vehicle list screen</a>
+- <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens-">Start Standalone Flow on the Vehicle List via Recent Search</a>
+- <a href="/docs/android/standalone/implementation-steps#start-with-a-vehicle-pinned-to-the-top-of-the-list-bypass-the-landing-and-search-screens-">Start with a vehicle pinned to the top of the list</a>
 </details>
 
 ---
 
-### Initialise the SDK by implementing the SDK Builder <br/>
+### Initialise the SDK <br/>
 
-{: .note}
-.setEnvironment(CartrawlerSDK.Environment.PRODUCTION) must be set when submitting your app to the Play Store.
+First we need to initialise the SDK by calling the init method in the CartrawlerSDK class as follow:
 
-```java
-CartrawlerSDK.Builder()
-       .setRentalStandAloneClientId(clientId = "your clientID") // Ask your partner manager for your client id
-       .setAccountId("CZ638817950")
-       .setCountry(countryISO)
-       .setCurrency(currency)
-       .setEnvironment(environment)
-       .setFlightNumberRequired(true)
-       .setLogging(true)
-       .setOrderId("123")
-       .setPassenger(passenger(countryISO))
-       .setVisitorId("123")
-       .setTheme(R.style.SampleTheme)
-       .startRentalStandalone(activity, requestCode = REQUEST_CODE_STANDALONE)
+```kotlin
+val partnerImplementationID = "your-implementation-id-here"
+val environment = CTSdkEnvironment.DEVELOPMENT // CTSdkEnvironment.PRODUCTION
+
+CartrawlerSDK.init(partnerImplementationID, environment)
 ```
 
-{: .note}
-The SDK builder also has some optional properties that can be passed in during initialisation to use and/or display certain features:
-
-```java
-       .enableCustomCashTreatment()
-       .setUSPDisplayType(USPDisplayType.CHECK_STYLE)
-       .addPromotionCode(PromotionCodeType.WithCodeType("your-promotion-code-here")
-       .setClientUserIdentifier("your-client-user-identifier-here")
-```       
-
-<small>Click <a href="/docs/android/standalone/property-descriptions">here</a> for an in depth explanation of the SDK builder's properties.</small>
-
+{: .important }
+The `implementationID` is needed by the SDK since it's used to fetch some configuration, it's good to call `CartrawlerSDK.init` in your application class;<br/>
+Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to the Play Store;
 
 ---
 
-## Start the Standalone Flow on Another Screen
-{: .no_toc }
+### Initialise the CTSdkData <br/>
 
-When launching the Standalone flow, it is possible to bypass the landing and search screens by setting certain properties of the SDK builder.   
-This is entirely optional. 
-<br/>
-
-### Start Standalone flow on the Search Screen (bypass Landing Screen)
-{: .no_toc }
-
-```java
-CartrawlerSDK.Builder()
-       //... 
-       .setRentalStandAloneClientId(clientId)
-       .startSearchFlow(activity, requestCode)
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+//.<any other options you need to initialise the builder here>
 ```
 
-### Start Standalone flow on the vehicle list <b>via Pickup & Drop Off</b> (bypass the landing and search screens)
-{: .no_toc }
+{: .note-title }
+> Optional properties
+>
+> The `CTSdkData` builder also has some optional properties that can be passed in during initialisation to use and/or display certain features, you can check
+<a href="/docs/android/standalone/property-descriptions/" target="_blank">Property Descriptions</a> section for all properties available.
+
+---
+
+### Starting the flow <br/>
+
+```kotlin
+CartrawlerSDK.start(
+    activity = this, 
+    requestCode = YOUR_REQUEST_CODE_HERE, 
+    ctSdkData = sdkDataClientIdXYZ.build(), 
+    flow = Standalone()
+)
+``` 
+
+{: .note-title }
+> Standalone Navigation types
+> 
+> Standalone flow accepts a parameter `navigateTo` of type `CTStandaloneNavigation`. If you're using Kotlin you can omit it since its default value is `CTStandaloneNavigation.CTNavigateToLanding`.
+> 
+> The following types are allowed:
+>
+> `CTStandaloneNavigation.CTNavigateToAvailability`<br/>
+> `CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_if_here>")`<br/>
+> `CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch("<ct_recent_search_data_here>")`<br/>
+> `CTStandaloneNavigation.CTNavigateToLanding`<br/>
+> `CTStandaloneNavigation.CTNavigateToSearch`
 
 {: .important }
-For this alternate starting point in the flow, pick-up and drop-off locations and dates must be provided.
+The `requestCode` is defined by the consumer app, since it will need to use it inside its `onActivityResult` conditional to capture the booking payload that the SDK sends it back to the consumer app.
 
-{: .note }
-A vehicle can be pinned to the top of the list by setting a pinned vehicle (adding a vehicle reference ID). To get a reference ID, you can use our <a href="/docs/api/android/vehicles">Vehicles API</a>.
+---
 
-<!-- To support navigation to the car block screen you need to add pinned veh ref along with the drop-off time, pick-up time and the pick-up and drop-off locations as follows: --> 
-```java
-CartrawlerSDK.Builder()
-       .setPickupTime(pickupDateTime = GregorianCalendar())
-       .setDropOffTime(dropOffDateTime = GregorianCalendar())
-       .setPickupLocation(iataAirportCode = "YXJ")
-       .setPinnedVehicle(abandonmentRefId = "123456789") 
-       //.. Add your other config properties as normal
-       .startAvailabilityFlow(activity, YOUR_REQUEST_CODE)
-```
-
-### Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens)
+### Start Standalone Flow in the Search screen (bypass the landing screen) <br/>
 {: .no_toc }
 
-{: .important }
-For this alternate starting point in the flow, a recent search (`RecentSearch` object) must be provided.
+This flow will bypass the landing screen and set the start screen as Search, you only need to set the `flow` in CartrawlerSDK.start to:
 
-```java
-CartrawlerSDK.Builder()
-       //...
-       .withRecentSearch(recentSearch) // the recent search object fetched from the recent searches api. 
-       .startAvailabilityFlow(activity, YOUR_REQUEST_CODE)
+```kotlin
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToSearch)
+)
 ```
 
-{: .note}
-To get a recent search, you can use our <a href="/docs/api/android/recent-searches">Recent Searches API</a>.
+---
+
+### Start Standalone Flow in the vehicle list screen (bypass the landing and search screens) <br/>
+{: .no_toc }
+
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .pickupDateTime(LocalDateTime.of(2023, 5, 10, 10, 0))
+    .dropOffDateTime(LocalDateTime.of(2023, 5, 15, 10, 0))
+    .pickupLocationIATA("DUB")
+
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToAvailability)
+)
+```
+
+---
+
+### Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens) <br/>
+{: .no_toc }
+
+For this alternate starting point in the flow, a recent search (CTRecentSearchData object) must be provided. To get a CTRecentSearchData, you can use our <a href="/docs/api/android/recent-searches">Recent Searches API</a>.
+
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = Standalone(
+        navigateTo = CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch(/*<ct_recent_search_data_here>*/)
+))
+```
+
+---
+
+### Start with a vehicle pinned to the top of the list (bypass the landing and search screens) <br/>
+{: .no_toc }
+
+A vehicle can be pinned to the top of the list by passing a vehicle reference ID. To get a vehicle reference ID, you can use our <a href="/docs/api/android/vehicles">Vehicles API</a>
+
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+    .pickupDateTime(LocalDateTime.of(2023, 5, 10, 10, 0))
+    .dropOffDateTime(LocalDateTime.of(2023, 5, 15, 10, 0))
+    .pickupLocationIATA("DUB")
+
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = Standalone(
+        navigateTo = CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle(vehicleRefId = "vehicle_ref_if_here")
+    )
+)
+```

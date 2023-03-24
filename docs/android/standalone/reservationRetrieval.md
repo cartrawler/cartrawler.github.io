@@ -20,7 +20,7 @@ to the reservation details.
 The process is pretty simple as it follows the Android development standards to get results back
 from one activity to another.
 
-Remember when we called the method `startRentalStandalone` in the <a href="/docs/android/standalone/implementation-steps/" target="_blank">implementation steps</a>?
+Remember when we called the method `CartrawlerSDK.start` in the <a href="/docs/android/standalone/implementation-steps/" target="_blank">implementation steps</a>?
 The second argument is called `requestCode` and we'll need it in two different places:
 
 <ol>
@@ -28,21 +28,23 @@ The second argument is called `requestCode` and we'll need it in two different p
   <li>Getting the reservation details data after finishing the booking flow;</li>
 </ol>
 
-`RESERVATION_CALLBACK_REQUEST_CODE` is an Integer <b>user-defined</b> constant used in two places as follows:
+`YOUR_REQUEST_CODE_HERE` is an Integer <b>user-defined</b> constant used in two places as follows:
 
 Starting the Standalone flow:
 ```kotlin
-CartrawlerSDK
-    .Builder()
-    // <other methods here>
-    .startRentalStandalone(activity, requestCode = RESERVATION_CALLBACK_REQUEST_CODE)
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = Standalone()
+)
 ```
 
 Getting the reservation details:
 ```kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     if (resultCode == Activity.RESULT_OK) {
-        if (requestCode == RESERVATION_CALLBACK_REQUEST_CODE) {
+        if (requestCode == YOUR_REQUEST_CODE_HERE) {
             val reservationData = data?.getParcelableExtra<ReservationDetails>(CartrawlerSDK.RESERVATION_DETAILS)
             // do what you need with the ReservationDetails object
         }
@@ -55,7 +57,6 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
 {: .no_toc}
 
 ```kotlin
-@Parcelize
 data class ReservationDetails (
    // In this scenario it will be CONFIRMED
    val status: String,
@@ -76,9 +77,8 @@ data class ReservationDetails (
    // Loyalty membership id and program name
    var custLoyalty: CustLoyalty? = null,
    var supplierBenefitCodesApplied: Set<SupplierBenefitCodeApplied>? = null
-) : Parcelable
+)
 
-@Parcelize
 data class LocationDetails (
    // Determines if the location is at airport
    val atAirport: Boolean, 
@@ -92,9 +92,8 @@ data class LocationDetails (
    val address: Address, 
    // Vendor contact number
    val phoneNumber: String
-) : Parcelable
+)
 
-@Parcelize
 data class Insurance (
    // Insurance company name
    val company: String, 
@@ -116,9 +115,8 @@ data class Insurance (
    val companyPolicyURL: String, 
    // A marketing description of the insurance (markup)
    val text: String
-) : Parcelable
+)
 
-@Parcelize
 data class RentalInfo (
    // Base cost
    val cost: Double, 
@@ -128,17 +126,15 @@ data class RentalInfo (
    val customerCost: Double, 
    // The presented currency to the customer
    val customerCurrency: String 
-) : Parcelable
+)
 
-@Parcelize
 data class Address (
    // Post address of location
    val addressLine: String, 
    // 2 letter country code.
    val countryNameCode: String
-) : Parcelable
+)
 
-@Parcelize
 data class VehicleDetails(
    val referenceId: String,
    val name: String,
@@ -166,16 +162,14 @@ data class VehicleDetails(
    val price: Double,
    val pricePerDay: Double,
    val currencyCode: String
-) : Parcelable
-   
-@Parcelize
+)
+
 data class CustLoyalty(
    val membershipID: String? = null, 
    val programID: String? = null,
    val pointsEarned: String? = null
-): Parcelable
+)
 
-@Parcelize
 data class SupplierBenefitCodeApplied(
     val name: String,
     val xmlType: String,
@@ -183,5 +177,5 @@ data class SupplierBenefitCodeApplied(
     val codeTypeText: String,
     val rentalCompanyName: String,
     val code: String
-) : Parcelable
+)
 ```    

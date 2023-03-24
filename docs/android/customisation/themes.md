@@ -61,11 +61,9 @@ The following code snippet will show you how to style the app to suit your brand
 
 Once you have completed styling your theme, you can initialise the theme in the SDK builder as follows:
 
-```java
-CartrawlerSDK.Builder()
-//..
-.setTheme(R.style.SampleTheme)
-.start***()
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .theme(R.style.SampleTheme)
 ```
 
 --- 

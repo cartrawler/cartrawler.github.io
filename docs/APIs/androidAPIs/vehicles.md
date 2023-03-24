@@ -11,47 +11,66 @@ permalink: /docs/api/android/vehicles/
 
 {: .no_toc }
 
-The Vehicles API is responsible for returning a wrapper response object of the list of vehicles returned from our backend. 
+The Vehicles API is responsible for returning a wrapper response object of the list of vehicles returned from our backend.
 
 ---
 
 We expose a method on the builder to retrieve the vehicle list based on a sort type and limit you specify.
 
-Calling the `getVehicles` function will trigger a vehicles request based on the provided pick-up and drop-off dates, and an IATA or pick-up location code. 
+Calling `CartrawlerSDK.requestVehicles` method will trigger a vehicles request, the following parameters should be provided to the function:
+- Context
+- CTAvailabilityRequestData
+- Limit (integer)
+- CTVehicleAPISort (BEST_PRICE or RECOMMENDED)
+- CTVehiclesListener
 
-A `VehiclesListener` is passed into the `getVehicleDetails` method and the SDK will call the required methods once the relevant events have occurred.
+A `CTVehiclesListener` is passed into the `CartrawlerSDK.requestVehicles` method and the SDK will call the required methods once the relevant events have occurred.
 
-```java
-CartrawlerSDK.Builder()
-    //..
-    .getVehicles(
-        context = this,
-        numberOfVehicles = 10, //Range from 1 to 10
-        sortType = CartrawlerSDK.Builder.FLAG_BEST_PRICE, // OR CartrawlerSDK.Builder.FLAG_RECOMMENDED
-            vehiclesListener = object: CartrawlerSDK.VehiclesListener {
-                override fun onReceiveVehicleDetails(vehicleDetails: List<VehicleDetails>) {
-                 //Handle success result
-                }
+```kotlin
+val requestData = CTAvailabilityRequestData(
+    clientId = "<your_client_id>",
+    country = Locale.getDefault().country,
+    currency = Currency.getInstance(Locale.getDefault()).currencyCode,
+    iataCode = "DUB",
+    pickupDateTime = LocalDateTime.of(2023, 5, 10, 10, 0),
+    dropOffDateTime = LocalDateTime.of(2023, 5, 15, 10, 0),
+    ctSdkEnvironment = CTSdkEnvironment.DEVELOPMENT, // or CTSdkEnvironment.PRODUCTION
+    logging = false // true if you want to log the errors in logcat
+)
 
-                override fun onError(type: Int, connectionError: CartrawlerSDK.ConnectionError) {
-                 //Handle error result
-                }
+CartrawlerSDK.requestVehicles(
+    context = this,
+    paramsData = requestData,
+    numberOfVehicles = 5,
+    sortType = CTVehicleAPISort.BEST_PRICE,
+    listener = object : CTVehiclesListener { 
+        override fun onNoResults() {
+            /* do what you need here */
+        }
 
-                override fun onNoResults(type: Int) {
-                 //Handle no results
-                }
+        override fun onError(connectionError: CartrawlerSDK.ConnectionError) {
+            /* do what you need here */
+        }
+
+        override fun onReceiveVehiclesDetails(vehicleDetails: List<VehicleDetails>) {
+            /* do what you need here */
+        }
+    }
+)
 ```
 
 {: .note }
-The number of vehicles returned can be limited by setting the `numberOfVehicles` parameter. <br /><br />
-The sort type can be either: <br /> `FLAG_BEST_PRICE`, which returns the cheapest cars in the list <br /> or `FLAG_RECOMMENDED`, which returns the CarTrawler recommended cars.
+> The number of vehicles returned can be limited by setting the `numberOfVehicles` parameter.
+> 
+> The sort type can be either:  
+> `CTVehicleAPISort.BEST_PRICE` - returns the cheapest cars in the list<br/>
+> `CTVehicleAPISort.RECOMMENDED` - returns the CarTrawler recommended cars.
 
 ---
 
 ### VehicleDetails Class
 
-```java
-@Parcelize
+```kotlin
 data class VehicleDetails(
     //OTA
     val referenceId: String,
@@ -86,5 +105,5 @@ data class VehicleDetails(
     val price: Double,
     val pricePerDay: Double,
     val currencyCode: String
-) : Parcelable
+)
 ```
