@@ -75,7 +75,7 @@ CartrawlerSDK.start(
     activity = this, 
     requestCode = YOUR_REQUEST_CODE_HERE, 
     ctSdkData = sdkDataClientIdXYZ.build(), 
-    flow = Standalone()
+    flow = CTSdkFlow.Standalone()
 )
 ``` 
 
@@ -87,7 +87,7 @@ CartrawlerSDK.start(
 > The following types are allowed:
 >
 > `CTStandaloneNavigation.CTNavigateToAvailability`<br/>
-> `CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_if_here>")`<br/>
+> `CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_id_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch("<ct_recent_search_data_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToLanding`<br/>
 > `CTStandaloneNavigation.CTNavigateToSearch`
@@ -107,7 +107,7 @@ CartrawlerSDK.start(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
     ctSdkData = sdkDataClientIdXYZ.build(),
-    flow = Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToSearch)
+    flow = CTSdkFlow.Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToSearch)
 )
 ```
 
@@ -126,7 +126,7 @@ CartrawlerSDK.start(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
     ctSdkData = sdkDataClientIdXYZ.build(),
-    flow = Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToAvailability)
+    flow = CTSdkFlow.Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToAvailability)
 )
 ```
 
@@ -146,7 +146,7 @@ CartrawlerSDK.start(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
     ctSdkData = sdkDataClientIdXYZ.build(),
-    flow = Standalone(
+    flow = CTSdkFlow.Standalone(
         navigateTo = CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch(/*<ct_recent_search_data_here>*/)
 ))
 ```
@@ -170,8 +170,8 @@ CartrawlerSDK.start(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
     ctSdkData = sdkDataClientIdXYZ.build(),
-    flow = Standalone(
-        navigateTo = CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle(vehicleRefId = "vehicle_ref_if_here")
+    flow = CTSdkFlow.Standalone(
+        navigateTo = CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle(vehicleRefId = "vehicle_ref_id_here")
     )
 )
 ```

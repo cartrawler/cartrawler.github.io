@@ -107,7 +107,7 @@ CartrawlerSDK.start(
 > The following types are allowed:<br/>
 >
 > `CTInPathNavigation.CTNavigateToAvailability`
-> `CTInPathNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_if_here>")`
+> `CTInPathNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_id_here>")`
 
 ---
 
@@ -128,9 +128,9 @@ CartrawlerSDK.start(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
     ctSdkData = sdkDataClientIdXYZ.build(),
-    flow = Standalone(navigateTo = 
+    flow = CTSdkFlow.InPath(navigateTo = 
         CTInPathNavigation.CTNavigateToAvailabilityWithPinnedVehicle(
-            vehicleRefId = "vehicle_ref_if_here"
+            vehicleRefId = "vehicle_ref_id_here"
         )
     )
 )
