@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Migrate to 14.0.0
+title: Migrate to 14.0.1
 parent: Android Integration
 nav_order: 5
+permalink: /docs/android/migrate/
 ---
 
-# Migrate from 13.x.x to 14.0.0
+# Migrate from 13.2 and below to 14.0.1
 {: .no_toc }
 
 <details open markdown="block">
@@ -26,7 +27,7 @@ broken down into 2 main components:
 * CTSdkData
 
 We need to call `CartrawlerSDK.init` passing an implementationID and the environment you want to initialise the SDK, we recommend adding
-this into your application since this won't change much;<br/>
+this into your Application class since it won't change often.<br/>
 
 ```kotlin
 val partnerImplementationID = "your-implementation-id-here"
@@ -35,7 +36,10 @@ val environment = CTSdkEnvironment.DEVELOPMENT // CTSdkEnvironment.PRODUCTION
 CartrawlerSDK.init(partnerImplementationID, environment)
 ```
 
-We then need to setup some data needed to start the sdk using `CTSdkData.Builder` it requires a clientId to be passed;<br/>
+{: .warning }
+Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to the Play Store.
+
+We then need to setup some data needed to start the sdk using `CTSdkData.Builder` it requires a clientId to be passed.<br/>
 
 ```kotlin
 val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
@@ -47,39 +51,30 @@ val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
     .orderId("123")
     .visitorId("123")
     .theme(R.style.SampleTheme)
-//.<any other options you need to initialise the builder here>
+    // check Property Descriptions link down below to see all available properties
 ```
 
-## Start Standalone
-
-### 13.x.x or less
-
-```kotlin
-CartrawlerSDK.Builder()
-    .setRentalStandAloneClientId(clientId = "your clientID") // Ask your partner manager for your client id
-    .setAccountId("CZ638817950")
-    .setCountry(countryISO)
-    .setCurrency(currency)
-    .setEnvironment(environment)
-    .setFlightNumberRequired(true)
-    .setLogging(true)
-    .setOrderId("123")
-    .setPassenger(passenger(countryISO))
-    .setVisitorId("123")
-    .setTheme(R.style.SampleTheme)
-    .startRentalStandalone(activity, requestCode = REQUEST_CODE_STANDALONE)
-```
+{: .note-title }
+> Optional properties
+>
+> The `CTSdkData` builder also has some optional properties that can be passed in during initialisation to use and/or display certain features, you can check the following for all properties available:
+> 
+> <a href="/docs/android/standalone/property-descriptions/" target="_blank">Property Descriptions (Standalone)</a>
+> 
+> <a href="/docs/android/inpath/property-descriptions/" target="_blank">Property Descriptions (In Path)</a>
 
 ---
 
-### 14.0.0
+## Start Standalone
 
-To present the SDK we need to call `CartrawlerSDK.start` passing the following parameters:<br/>
-
-* `activity` - this is used to start our SDK internal activity using `startActivityForResult`;<br/>
-* `requestCode` - also used to start our SDK internal activity using `startActivityForResult` and later on by the consumer app in the `onActivityResult` method;<br/>
-* `ctSdkData` - builder with some data to initialise the SDK like clientID, currency and country;<br/>
-* `flow` - for standalone flow is Standalone();<br/>
+On SDK 13.2 and below we used to initialise some properties using `CartrawlerSDK.Builder()` and then call one of its start methods like `startRentalStandalone` to
+start the SDK flow and present its screen.
+Now to present the SDK we only need to call `CartrawlerSDK.start` passing the following parameters:<br/>
+> {: .new }
+> > <b>activity</b><br/>Used to start our SDK's internal activity using `startActivityForResult`;<br/><br/>
+> > <b>requestCode</b><br/>Used to start our SDK's internal activity using `startActivityForResult` and later on by the consumer app in the `onActivityResult` method;<br/><br/>
+> > <b>ctSdkData</b><br/>Builder with some data to initialise the SDK like clientID, currency and country;<br/><br/>
+> > <b>flow</b><br/>For standalone flow is CTSdkFlow.Standalone();
 
 ```kotlin
 CartrawlerSDK.start(
@@ -97,36 +92,16 @@ for more details and learn how to change the first screen being shown in the SDK
 
 ## Start In Path
 
-### 13.x.x or less
-
-```kotlin
-CartrawlerSDK.Builder()
-    .setRentalInPathClientId(clientId = "your clientID")
-    .setEnvironment(environment)
-    .setCurrency(currency)
-    .setCountry(countryISO)
-    .setFlightNumberRequired(true)
-    .setPassenger(passenger)
-    .setAccountId("123")
-    .setLogging(true)
-    .setPickupTime(getPickUpDate())
-    .setPickupLocation("DUB")
-    .setDropOffLocationId(11)
-    .setDropOffTime(getDropOffDate())
-    .setTheme(getSelectedTheme(palette))
-    .startRentalInPath(activity, REQUEST_CODE_IN_PATH)
-```
+On SDK 13.2 and below we used to initialise some properties using `CartrawlerSDK.Builder()` and then call one of its start methods like `startRentalInPath` to
+start the SDK flow and present its screen.
+Now to present the SDK we only need to call `CartrawlerSDK.start` passing the following parameters:<br/>
+> {: .new }
+> > <b>activity</b><br/>Used to start our SDK's internal activity using `startActivityForResult`;<br/><br/>
+> > <b>requestCode</b><br/>Used to start our SDK's internal activity using `startActivityForResult` and later on by the consumer app in the `onActivityResult` method;<br/><br/>
+> > <b>ctSdkData</b><br/>Builder with some data to initialise the SDK like clientID, currency and country;<br/><br/>
+> > <b>flow</b><br/>For In Path flow is CTSdkFlow.InPath();
 
 ---
-
-### 14.0.0
-
-To present the SDK we need to call `CartrawlerSDK.start` passing the following parameters:<br/>
-
-* `activity` - this is used to start our SDK internal activity using `startActivityForResult`;<br/>
-* `requestCode` - also used to start our SDK internal activity using `startActivityForResult` and later on by the consumer app in the `onActivityResult` method;<br/>
-* `ctSdkData` - builder with some data to initialise the SDK like clientID, currency and country;<br/>
-* `flow` - for standalone flow is Standalone();<br/>
 
 ```kotlin
 // updating object previously defined in the Common section

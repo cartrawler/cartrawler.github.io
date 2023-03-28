@@ -35,7 +35,7 @@ To implement the SDK's In Path flow within your app, please use the following st
 
 ### Initialise the SDK <br/>
 
-First we need to initialise the SDK by calling the init method in the CartrawlerSDK class as follow:
+Initialise the SDK by calling the init method in the CartrawlerSDK class as follow:
 
 ```kotlin
 val partnerImplementationID = "your-implementation-id-here"
@@ -45,12 +45,14 @@ CartrawlerSDK.init(partnerImplementationID, environment)
 ```
 
 {: .important }
-The `implementationID` is needed by the SDK since it's used to fetch some configuration, it's good to call `CartrawlerSDK.init` in your application class;<br/>
-Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to the Play Store;
+The `implementationID` is needed by the SDK since it's used to fetch some configuration. It's recommended to call CartrawlerSDK.init in your application class.<br/>
+
+{: .warning }
+Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to the Play Store.
 
 ---
 
-### Initialise the CTSdkData <br/>
+### Initialise CTSdkData <br/>
 
 ```kotlin
 // CTSdkPassenger is optional
@@ -77,7 +79,7 @@ val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
     .dropOffDateTime(LocalDateTime.of(2023, 5, 15, 10, 0))
     .pickupLocationIATA("DUB")
     .passenger(optionalPassenger) // you can omit this, it's optional 
-    //.<any other options you need to initialise the builder here>
+    // check Property Descriptions link down below to see all available properties
 ```
 
 {: .note-title }
