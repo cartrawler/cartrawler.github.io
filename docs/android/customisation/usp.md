@@ -4,7 +4,7 @@ title: USPs (Unique Selling Point)
 parent: Customisation
 grand_parent: Android Integration
 nav_order: 5
-permalink: /docs/Android/customisation/usp/
+permalink: /docs/Android/customisation/usp
 ---
 
 # USPs

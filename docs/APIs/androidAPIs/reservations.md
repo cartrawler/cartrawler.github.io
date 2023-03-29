@@ -11,31 +11,40 @@ permalink: /docs/api/android/reservations/
 
 {: .no_toc }
 
-Car rental booking reservations can be fetched using the `requestReservationDetails` function. 
+Car rental booking reservations can be fetched using the `CartrawlerSDK.requestReservationDetails` function. 
 
 ---
 
-Calling the `requestReservationDetails` function will trigger a vehicles request based on a resID and email (hashed) or resUid. 
+Calling `CartrawlerSDK.requestReservationDetails` method will trigger a request to get the booking reservation, the following parameters should be provided to the function: 
 
-```java
-CartrawlerSDK.Builder()
-//..
-builder.requestReservationDetails(
-   context = this,
-   resId = resid,
-   resuid = resuid,
-   email = null,
-   requestReservationDetailsListener = object: CartrawlerSDK.RequestReservationDetailsListener {
-      override fun onNoResults() {
-         //Handle no results
-      }
-      override fun onError(connectionError: CartrawlerSDK.ConnectionError) {
-        //Handle error result
-      }
-      override fun onReceiveReservationDetails(reservationDetails: ReservationDetails) {
-        //Handle success result
-      }
-   }
+- Context,
+- CTReservationRequestData,
+- CTRequestReservationListener
+
+```kotlin
+val requestData = CTReservationRequestData(
+    clientId = "<your_client_id>",
+    reservationId = "IE123456789", 
+    reservationUserId = "user@email.com", // resUid (reservation user id) can be used instead
+)
+
+CartrawlerSDK.requestReservationDetails(
+    context = this,
+    paramsData = requestData,
+    requestReservationListener = object : CTRequestReservationListener {
+
+        override fun onNoResults() {
+            /* do what you need here */
+        }
+
+        override fun onError(connectionError: CartrawlerSDK.ConnectionError) {
+            /* do what you need here */
+        }
+
+        override fun onReceiveReservationDetails(reservationDetails: ReservationDetails) {
+            /* do what you need here */
+        }
+    }
 )
 ```
 
@@ -50,13 +59,14 @@ data class ReservationDetails (
    val surname: String, // Surname
    val resId: String, // Reservation ID
    val resuid: String, // resuid, use this along with the resId to retrieve the booking later
-   val pickUpDateTime: GregorianCalendar, //The date & time of pick-up
-   val returnDateTime: GregorianCalendar,  //The date & time of pick-up 
+   val pickUpDateTime: String, //The date & time of pick-up
+   val returnDateTime: String,  //The date & time of pick-up 
    val pickupLocation: LocationDetails, //Location details of pick-up
    val returnLocation: LocationDetails, //Location details of pick-up
    val insurance: Insurance, // Insurance, null if none attached
    val rentalInfo: RentalInfo, // Information on reservation costs
-   val vehicle: VehicleDetails) // Information on the selected vehicle
+   val vehicle: VehicleDetails
+) // Information on the selected vehicle
   
 data class LocationDetails (
    val atAirport: Boolean, // Location at Airport? (boolean)

@@ -25,43 +25,39 @@ We expose recent searches made within the SDK via our recentSearches API. Recent
 
 ## Setup
 
-Initialise our ``CarTrawlerDatabaseRepository`` class as follows:
+Initialise our `CTRecentSearchRepository` class as follows:
 
-```java
-// You can use whatever thread you want for your use case
-val executorService = Executors.newSingleThreadExecutor() 
-val carTrawlerDatabase = CarTrawlerDatabase.build(applicationContext)
-val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
-````
+```kotlin
+val context = this.applicationContext
+val executor = Executors.newSingleThreadExecutor()
+val repository = CTRecentSearchRepository(context, executor)
+```
+
 ---
 
 ## Fetching Recent Searches 
 To fetch the top 3 recent searches we will expose the result in a callback as follows:
 
-```java
-val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
-
-repository.recentSearches(object : RecentSearchesCallback {
-    override fun onSuccess(list: List<RecentSearch>) {
-        //..
+```kotlin
+repository.recentSearches(object : CTRecentSearchListener {
+    override fun onSuccess(list: List<CTRecentSearchData>) {
+        /* do what you need here */
     }
 
     override fun onError(message: String) {
-        //..
+        /* do what you need here */
     }
 })
-````
+```
 ---
 
 ## Removing Recent Searches
 
 To remove a recent search you must pass in the created date of the recent search item
 
-```java
-val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
-
-repository.removeRecentSearch(recentSearch.createdDate)
-````
+```kotlin
+repository.removeRecentSearch(createdAt = <created_date_here>)
+```
 
 ---
 
@@ -69,8 +65,6 @@ repository.removeRecentSearch(recentSearch.createdDate)
 
 To remove all recent searches call the function as follows:
 
-```java
-val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
-
-repository.removeAllRecentSearches()
-````
+```kotlin
+repository.clearRecentSearches()
+```

@@ -33,56 +33,110 @@ To implement the SDK's In Path flow within your app, please use the following st
 
 ---
 
-## Initialise the In Path flow with the SDK Builder <br/>
-Please make sure to set the following properties: 
+### Initialise the SDK <br/>
 
-{: .note}
-.setEnvironment(CartrawlerSDK.Environment.PRODUCTION) must be set when submitting your app to the Play Store.
+Initialise the SDK by calling the init method in the CartrawlerSDK class as follow:
 
-```java
-CartrawlerSDK.Builder()
-           .setRentalInPathClientId(clientId(activity, palette))
-           .setEnvironment(environment)
-           .setCurrency(currency)
-           .setCountry(countryISO)
-           .setFlightNumberRequired(true)
-           .setPassenger(passenger)
-           .setAccountId("123")
-           .setLogging(true)
-           .setPickupTime(getPickUpDate())
-           .setPickupLocation("DUB")
-           .setDropOffLocationId(11)
-           .setDropOffTime(getDropOffDate())
-           .setTheme(getSelectedTheme(palette))
-           .startRentalInPath(activity, REQUEST_CODE_IN_PATH)
-           
-//Setup your lead passenger object
-val passenger = CartrawlerSDKPassenger(
-             firstName = "John",
-             lastName = "Smith",
-             email = "john@example.com",
-             phoneCountryCode = "353",
-             phoneNumber = "81234567",
-             address = "Dundrum Business Park",
-             city = "Dublin",
-             postcode = "D14 R7V2",
-             country = "IE", 
-             flightNumber = "EZY130",
-             age = "26", //Default age is 30
-             membershipId = "123456") 
+```kotlin
+val partnerImplementationID = "your-implementation-id-here"
+val environment = CTSdkEnvironment.DEVELOPMENT // CTSdkEnvironment.PRODUCTION
+
+CartrawlerSDK.init(partnerImplementationID, environment)
 ```
 
-{: .note}
-The SDK builder also has some optional properties that can be passed in during initialisation to use and/or display certain features:
+{: .important }
+The `implementationID` is needed by the SDK since it's used to fetch some configuration. It's recommended to call CartrawlerSDK.init in your application class.<br/>
 
-```java
-       .enableCustomCashTreatment()
-       .setUSPDisplayType(USPDisplayType.CHECK_STYLE)
-       .addPromotionCode(PromotionCodeType.WithCodeType("your-promotion-code-here")
-       .setClientUserIdentifier("your-client-user-identifier-here")
-```  
+{: .warning }
+Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to the Play Store.
 
-<small>Click <a href="/docs/android/inpath/property-descriptions">here</a> for an in depth explanation of the SDK builder's properties.</small>
+---
+
+### Initialise CTSdkData <br/>
+
+```kotlin
+// CTSdkPassenger is optional
+val optionalPassenger = CTSdkPassenger(
+    firstName = "John",
+    lastName = "Smith",
+    email = "john@example.com",
+    phoneCountryCode = "353",
+    phoneNumber = "81234567",
+    address = "Dundrum Business Park",
+    city = "Dublin",
+    postcode = "D14 R7V2",
+    country = "IE",
+    flightNumber = "EZY130",
+    age = "26", //Default age is 30
+    membershipId = "123456"
+)
+
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+    .logging(isLogEnabled = true) // disable/remove this when publishing to Play Store
+    .pickupDateTime(LocalDateTime.of(2023, 5, 10, 10, 0))
+    .dropOffDateTime(LocalDateTime.of(2023, 5, 15, 10, 0))
+    .pickupLocationIATA("DUB")
+    .passenger(optionalPassenger) // you can omit this, it's optional 
+    // check Property Descriptions link down below to see all available properties
+```
+
+{: .note-title }
+> Optional properties
+>
+> The `CTSdkData` builder also has some optional properties that can be passed in during initialisation to use and/or display certain features, you can check
+<a href="/docs/android/inpath/property-descriptions/" target="_blank">Property Descriptions</a> section for all properties available.
+
+---
+
+### Starting the flow<br/>
+
+```kotlin
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = CTSdkFlow.InPath()
+)
+```
+
+{: .note-title }
+> In Path Navigation types
+>
+> InPath flow accepts a parameter `navigateTo` of type `CTInPathNavigation`. If you're using Kotlin you can omit it since its default value is `CTInPathNavigation.CTNavigateToAvailability`.
+>
+> The following types are allowed:<br/>
+>
+> `CTInPathNavigation.CTNavigateToAvailability`
+> `CTInPathNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_id_here>")`
+
+---
+
+### Start with a vehicle pinned to the top of the list<br/>
+
+{: .important }
+A vehicle can be pinned to the top of the list by passing a vehicle reference ID. To get a vehicle reference ID, you can use our <a href="/docs/api/android/vehicles">Vehicles API</a>
+
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+    .pickupDateTime(LocalDateTime.of(2023, 5, 10, 10, 0))
+    .dropOffDateTime(LocalDateTime.of(2023, 5, 15, 10, 0))
+    .pickupLocationIATA("DUB")
+
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = CTSdkFlow.InPath(navigateTo = 
+        CTInPathNavigation.CTNavigateToAvailabilityWithPinnedVehicle(
+            vehicleRefId = "vehicle_ref_id_here"
+        )
+    )
+)
+```
 
 ---
 
@@ -92,23 +146,22 @@ If a user selected a car during the In Path process, the `onActivityForResult` w
 
 These objects are accessed via the return intent by `onActivityForResult`
 
-```java   
-getStringExtra(CartrawlerSDK.PAYLOAD) // Returns a JSON String
-    
-getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS) // Returns a VehicleDetails Object
-    
-getSerializableExtra(CartrawlerSDK.FEES) // Returns a Payment Object
-    
-getParcelableExtra(CartrawlerSDK.TRIP_DETAILS) // Returns a Trip Object with extras included
-        
-        
-override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
-   if (resultCode == Activity.RESULT_OK) {
-      if (requestCode == 123) {
-         openCreditCardProcessor(data!!.getStringExtra(CartrawlerSDK.PAYLOAD))
-      }
-   }      
-}
+```kotlin
+
+    override fun onActivityForResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == YOUR_REQUEST_CODE_HERE) {
+                /*
+                get json or objects returned by the SDK to your activity
+                
+                getStringExtra(CartrawlerSDK.PAYLOAD) // Returns a JSON String  
+                getParcelableExtra(CartrawlerSDK.VEHICLE_DETAILS) // Returns a VehicleDetails Object
+                getSerializableExtra(CartrawlerSDK.FEES) // Returns a Payment Object
+                getParcelableExtra(CartrawlerSDK.TRIP_DETAILS) // Returns a Trip Object with extras included
+                 */
+            }
+        }
+    }  
 ```    
     
 The JSON payload object is returned so that the partner can process the payment/reservation with a CarTrawler payment end point at a different time and put it in the partners basket flow. This JSON payload object is passed to this endpoint. 
@@ -116,19 +169,18 @@ The JSON payload object is returned so that the partner can process the payment/
     
 The ``CartrawlerSDK.TRIP_DETAILS`` object:
 
-```java
-@Parcelize
+```kotlin
 data class TripDetails(
    val pickUpDateTime: String? = null,
    val returnDateTime: String? = null,
-   val pickupLocation: @RawValue LocationDetails? = null,
-   val returnLocation: @RawValue LocationDetails? = null,
+   val pickupLocation: LocationDetails? = null,
+   val returnLocation: LocationDetails? = null,
    val vehicleCharges: List<VehicleCharge>, // The list of Vehicle Charges
    val extras: List<Extra>, // The list of extras
    val isPrePaidExtra: Boolean? = null //Determines if the extra requires payment
-   val loyalty: Loyalty? = null): Parceable 
-        
-@Parcelize
+   val loyalty: Loyalty? = null
+) 
+
 data class Extra (
    var amount: Double? = null,
    var currencyCode: String? = null,
@@ -137,9 +189,8 @@ data class Extra (
    var type: String? = null, // the CT Code we use
    var selected: Int? = null, // the number of selected extras or qty
    var includedInRate: Boolean? = null // Is this an extra selected by the user or already part of rate
-): Parcelable
+)
 
-@Parcelize
  class VehicleCharge (
    var chargeDescription: String? = null, // The localized description
    var taxInclusive: String? = null, // Is tax included?
@@ -148,12 +199,12 @@ data class Extra (
    var calculation: String? = null, // Reserved as "BeforePickup"
    var amount: Double? = null, // The amount of charge
    var currencyCode: String? = null // The currencyCode of the charge
-)  : Parcelable
-@Parcelize
+)
+
 class Loyalty(
    val programID: String? = null,
    val points: Int? = 0
-)  : Parcelable
+)
 ```
           
 The total amount to be authorized against the customers credit card, is the authTotal attribute above. This is calculated by CarTrawler using pay now, insurance, and booking fee amounts when applicable.

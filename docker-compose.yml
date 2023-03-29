@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  cartrawler-sdk-documentation:
+    image: rockstorm/jekyll:4.3.2
+    command: jekyll serve --watch --force_polling --verbose
+    ports:
+      - 4000:4000
+    volumes:
+      - $PWD:/srv/jekyll
+      - $PWD/vendor/bundle:/usr/local/bundle

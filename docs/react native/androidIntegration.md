@@ -224,17 +224,25 @@ class CTFlowActivity : ReactActivity() {
         init()
     }
 
-    private fun init(){
-        CartrawlerSDK.Builder()
-            .setRentalStandAloneClientId(CLIENT_ID)
-            .setEnvironment(ENVIRONMENT)
-            .setFlightNumberRequired(false)
-            .setLogging(BuildConfig.DEBUG)
-            .setTheme(R.style.AppTheme)
-            .setDarkModeConfig(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-            .startRentalStandalone(this@CTFlowActivity, REQUEST_CODE_STANDALONE)
-       
-     findViewById<View>(R.id.go_back_button).setOnClickListener { onBackPressed() }
+    private fun init() {
+        val partnerImplementationID = "your-implementation-id-here"
+        val environment = CTSdkEnvironment.DEVELOPMENT // CTSdkEnvironment.PRODUCTION
+
+        CartrawlerSDK.init(partnerImplementationID, environment)
+        
+        val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+            .country(twoLetterISOCountry = "IE")
+            .currency(currency = "EUR")
+            //.<any other options you need to initialise the builder here>
+
+        CartrawlerSDK.start(
+            activity = this,
+            requestCode = YOUR_REQUEST_CODE_HERE,
+            ctSdkData = sdkDataClientIdXYZ.build(),
+            flow = Standalone()
+        )
+
+        findViewById<View>(R.id.go_back_button).setOnClickListener { onBackPressed() }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -242,7 +250,7 @@ class CTFlowActivity : ReactActivity() {
 
         val gson = GsonBuilder().setPrettyPrinting().create()
 
-        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE_STANDALONE) {
+        if (resultCode == RESULT_OK && requestCode == YOUR_REQUEST_CODE_HERE) {
             val reservationExtra =
                 data?.getParcelableExtra<ReservationDetails>(CartrawlerSDK.RESERVATION_DETAILS)
             if (reservationExtra != null) {
@@ -250,14 +258,15 @@ class CTFlowActivity : ReactActivity() {
                 sendBookingResult()
             }
 
-        }else if(resultCode == RESULT_CANCELED){
+        } else if (resultCode == RESULT_CANCELED) {
             this@CTFlowActivity.finish()
         }
     }
 
-    private fun sendBookingResult(){
+    private fun sendBookingResult() {
         EventEmitterModule.emitEvent(reservation)
     }
+}
 ```
 
 After completing the above steps and running your project, you will be able to initiate the CarTrawler booking flow from your React Native project and receive booking details once the flow is complete.
