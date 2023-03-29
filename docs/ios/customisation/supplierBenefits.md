@@ -101,7 +101,9 @@ After `CTStyle` has been configured with your supplierBenefitsStyle, pass it int
 The `supplierBenefitAutoApplied` property of the `CTContext` class allows Partners to opt in to apply ALL automatic codes that can be applied for suppliers during initialisation the SDK. It is optional. 
 
 ```java
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
+let context = CTContext(implementationID: "your implementation ID", 
+                              clientID: "your client ID", 
+                              flow: .standAlone)
 context.supplierBenefitAutoApplied = true
 CarTrawlerSDK.sharedInstance().present(from: self, context: context)
 ```

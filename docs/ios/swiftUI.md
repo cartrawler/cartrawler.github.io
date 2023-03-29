@@ -52,7 +52,9 @@ struct SDKHostVCRepresentable: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> some UIViewController {
       let hostingController = SDKHostViewController()
-      let context = CTContext(clientID: "your clientID", flow: .standAlone)
+      let context = CTContext(implementationID: "your implementation ID", 
+                              clientID: "your client ID", 
+                              flow: .standAlone)
       let defaults = UserDefaults.standard
       let language = "en"
 

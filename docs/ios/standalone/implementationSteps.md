@@ -61,12 +61,17 @@ For a full list of property descriptions, please click <a href="/docs/ios/standa
 
 This can be done in the view controller the SDK will be presented from.
 
+{: .important }
+The `implementationID` is needed by the SDK since it's used to fetch some configuration.<br/>
+
 <!-- ### Required parameters for Initialisation:
 {: .no_toc } -->
 
 ```java
 import CarTrawlerSDK
-let context = CTContext(clientID: "your client ID", flow: .standAlone)
+let context = CTContext(implementationID: "your implementation ID", 
+                        clientID: "your client ID", 
+                        flow: .standAlone)
 context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
 context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
 context.languageCode = "EN" // The language associated with the device’s system region is used by default.
@@ -80,6 +85,7 @@ The above properties are required, and the `countryCode` property refers to the 
   
 ```swift
 class CTContext: NSObject {
+  let implementationID: String
   let clientID: String
   let flowType: CTFlowType
   let countryCode: String
@@ -135,7 +141,9 @@ This is entirely optional.
 
 ```java
 // Create a context for standAlone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
+let context = CTContext(implementationID: "your implementation ID", 
+                        clientID: "your client ID", 
+                        flow: .standAlone)
 context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
 context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
 context.languageCode = "EN" // The language associated with the device’s system region is used by default.
@@ -152,7 +160,9 @@ For this alternate starting point in the flow, pick-up and drop-off locations an
 
 ```java
 // Create a context for the Standalone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
+let context = CTContext(implementationID: "your implementation ID", 
+                        clientID: "your client ID", 
+                        flow: .standAlone)
 
 // Set required properties
 context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
@@ -198,7 +208,9 @@ For this alternate starting point in the flow, a recent search (`CTRecentSearch`
 
 ```java
 // Create a context for the Standalone flow
-let context = CTContext(clientID: "your clientID", flow: .standAlone)
+let context = CTContext(implementationID: "your implementation ID", 
+                        clientID: "your client ID", 
+                        flow: .standAlone)
 context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
 context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
 context.languageCode = "EN" // The language associated with the device’s system region is used by default.

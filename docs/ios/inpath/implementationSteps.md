@@ -55,11 +55,16 @@ For a full list of property descriptions, please click <a href="/docs/ios/inpath
 ## Initialise the CTContext Object with the Required Parameters
 This can be done in the view controller the SDK will be presented from.
 
+{: .important }
+The `implementationID` is needed by the SDK since it's used to fetch some configuration.<br/>
+
 ```java
 import CarTrawlerSDK
 
 // Create a context for in Path flow
-let context = CTContext(clientID: "12345", flow: .inPath)
+let context = CTContext(implementationID: "your implementation ID", 
+                              clientID: "your client ID", 
+                              flow: .inPath)
 context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
 context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
 context.languageCode = "EN" // The language associated with the device’s system region is used by default.
@@ -77,6 +82,7 @@ The above properties are required, and the `countryCode` property refers to the 
 
 ```swift
 class CTContext: NSObject {
+    let implementationID: String
     let clientID: String
     let flowType: CTFlowType
     let countryCode: String
