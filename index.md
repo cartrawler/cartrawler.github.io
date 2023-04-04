@@ -21,9 +21,9 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 > 
 > To learn how to migrate from version 13.2 or below to the new 14 or higher check the documentation for the desired platform:
 > 
-> <a href="/docs/android/migrate" target="_blank">Migrate to 14.0.1 Android</a>
+> <a href="/docs/android/migrate" target="_blank">Migrate to 14.0.2 Android</a>
 > 
-> <a href="/docs/ios/migrate" target="_blank">Migrate to 14.0.0 iOS</a> 
+> <a href="/docs/ios/migrate" target="_blank">Migrate to 14.0.2 iOS</a> 
 
 ---
 

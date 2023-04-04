@@ -10,6 +10,6 @@ has_children: true
 
 {: .no_toc }
 
-The <a href="/docs/style-guide/user-flow#in-path-flow">In Path</a> flow allows the user to reserve a car rental product while booking a flight. This product forms part of the user's flight itinerary.  
+The <a href="/docs/user-flow#in-path-flow">In Path</a> flow allows the user to reserve a car rental product while booking a flight. This product forms part of the user's flight itinerary.  
 
 

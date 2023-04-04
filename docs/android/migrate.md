@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Migrate to 14.0.1
+title: Migrate to 14.0.2
 parent: Android Integration
 nav_order: 5
 permalink: /docs/android/migrate/
 ---
 
-# Migrate from 13.2 and below to 14.0.1
+# Migrate from 13.2 and below to 14.0.2
 {: .no_toc }
 
 <details open markdown="block">
