@@ -14,9 +14,9 @@ permalink: /docs/ios/migrate/
 {: .important }
 The `implementationID` is needed by the SDK to fetch partner specific configuration.<br/>
 
-On SDK 13.2 and below we used to initialise the `CTContext` object with the method `CTContext(clientID:flow:)` this method has been marked as unavailable and it's not possible to use it on version 14.0.2.
+On version 13.2.0 of the SDK and below, the `CTContext` object was initialised with a `clientID` using the method `CTContext(clientID:flow:)`. This method has been marked unavailable, it is no longer possible to use it with version 14.0.0.
 
-Now to present the SDK we need to add the parameter `implementationID` to the `CTContext` initialisation using the method `CTContext(implementationID:clientID:flow:)`:<br/>
+To present the SDK now, the `CTContext` object must be initialised with an `implementationID`, as well as a `clientID`, using the method `CTContext(implementationID:clientID:flow:)`:<br/>
 
 ## Previous CTContext initialisation 
 CTContext initialisation on versions below 14.0.2:

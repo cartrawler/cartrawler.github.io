@@ -16,14 +16,14 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 
 [Get Started iOS](/docs/ios){: .btn .btn-primary .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get Started Android](/docs/android){: .btn .btn-primary .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 } [Style Guide](/docs/style-guide){: .btn .btn-primary .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 } 
 
-{: .note-title }
-> Migrate to 14
-> 
-> To learn how to migrate from version 13.2 or below to the new 14 or higher check the documentation for the desired platform:
-> 
-> <a href="/docs/android/migrate" target="_blank">Migrate to 14.0.2 Android</a>
-> 
-> <a href="/docs/ios/migrate" target="_blank">Migrate to 14.0.2 iOS</a> 
+{: .important-title }
+>Migrate to version 14
+>
+>To migrate from version 13.2.0 or below to version 14.0.0 or higher, check the documentation for the desired platform:
+>
+><a href="/docs/android/migrate" target="_blank">Migrate to Android SDK 14.0.1 </a>
+>
+><a href="/docs/ios/migrate" target="_blank">Migrate to iOS SDK 14.0.0</a> 
 
 ---
 
