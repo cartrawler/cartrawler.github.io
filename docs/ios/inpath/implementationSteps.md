@@ -56,7 +56,7 @@ For a full list of property descriptions, please click <a href="/docs/ios/inpath
 This can be done in the view controller the SDK will be presented from.
 
 {: .important }
-The `implementationID` is needed by the SDK since it's used to fetch some configuration.<br/>
+The `implementationID` is needed by the SDK to fetch partner specific configuration.<br/>
 
 ```java
 import CarTrawlerSDK

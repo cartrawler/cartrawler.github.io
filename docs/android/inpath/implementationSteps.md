@@ -45,7 +45,7 @@ CartrawlerSDK.init(partnerImplementationID, environment)
 ```
 
 {: .important }
-The `implementationID` is needed by the SDK since it's used to fetch some configuration. It's recommended to call CartrawlerSDK.init in your application class.<br/>
+The `implementationID` is needed by the SDK to fetch partner specific configuration. It's recommended to call CartrawlerSDK.init in your application class.<br/>
 
 {: .warning }
 Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to the Play Store.

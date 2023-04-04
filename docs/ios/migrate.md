@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Migrate to 14.0.0
+title: Migrate to 14.0.2
 parent: iOS Integration
 nav_order: 8
 permalink: /docs/ios/migrate/
 ---
 
-# Migrate from 13.2 and below to 14.0.0
+# Migrate from 13.2 and below to 14.0.2
 {: .no_toc }
 
 ## Common 
@@ -19,7 +19,7 @@ On version 13.2.0 of the SDK and below, the `CTContext` object was initialised w
 To present the SDK now, the `CTContext` object must be initialised with an `implementationID`, as well as a `clientID`, using the method `CTContext(implementationID:clientID:flow:)`:<br/>
 
 ## Previous CTContext initialisation 
-CTContext initialisation on versions below 14.0.0:
+CTContext initialisation on versions below 14.0.2:
 {: .warning }
 ```swift
 let context = CTContext(clientID: "your client ID", 
@@ -27,7 +27,7 @@ let context = CTContext(clientID: "your client ID",
 ```
 
 ## New CTContext initialisation 
-CTContext initialisation from version 14.0.0:
+CTContext initialisation from version 14.0.2:
 {: .new }
 ```swift
 let context = CTContext(implementationID: "your implementation ID", 
