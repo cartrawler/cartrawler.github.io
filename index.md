@@ -14,6 +14,19 @@ Welcome to the CarTrawler iOS and Android Native SDK documentation.
 
 Here you'll find everything you need to integrate the SDKs and start accepting car rental bookings in your mobile apps.
 
+[Get Started iOS](/docs/ios){: .btn .btn-primary .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get Started Android](/docs/android){: .btn .btn-primary .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 } [Style Guide](/docs/style-guide){: .btn .btn-primary .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 } 
+
+{: .important-title }
+>Migrate to version 14
+>
+>To migrate from version 13.2.0 or below to version 14.0.0 or higher, check the documentation for the desired platform:
+>
+><a href="/docs/android/migrate" target="_blank">Migrate to Android SDK 14.0.1 </a>
+>
+><a href="/docs/ios/migrate" target="_blank">Migrate to iOS SDK 14.0.0</a> 
+
+---
+
 <details markdown="block">
   <summary>
     Table of Contents
@@ -22,10 +35,6 @@ Here you'll find everything you need to integrate the SDKs and start accepting c
 - TOC
 {:toc}
 </details>
-
-[Get Started iOS](/docs/ios){: .btn .btn-primary .btn-blue .fs-5 .mb-4 .mb-md-0 .mr-2 } [Get Started Android](/docs/android){: .btn .btn-primary .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 } [Style Guide](/docs/style-guide){: .btn .btn-primary .btn-purple .fs-5 .mb-4 .mb-md-0 .mr-2 }
-
----
 
 ## Flows 
 A Flow is a set of CarTrawler UI screens, with a specific business objective. <br/>
@@ -48,13 +57,17 @@ The In Path rental solution requires **additional backend development effort** a
 
 Please ensure that you have received the following from a CarTrawler representative:
 
-* Relevant Client ID(s) to use with the SDK (these will be provided by your Partner Manager)
+* Relevant Client ID(s) to use with the SDK;
+* Relevant Implementation ID(s) to initialise the SDK;
+* Artifactory credentials (Android);
+* Dedicated Slack support channel for integrating the SDK into your apps;
 
-{: .important}
-You <b>MUST</b> use the correct clientID with our SDK in order for everything to work as expected, such as brand specific configurations. 
+{: .note-title }
+> SDK required ID
+>
+> Both client Client ID(s) and Implementation ID(s) will be provided by your Partner Manager.
+> 
+> You <b>MUST</b> use the correct clientID and implementationID with our SDK in order for everything to work as expected, such as brand specific configurations.
 
-* Artifactory credentials (Android)
-* Dedicated Slack support channel for integrating the SDK into your apps. 
-
-{: .note}
-Prior to go live we advise that you link back in with CarTrawler to test and verify that bookings are pointed to our production environment.
+{: .warning }
+> Prior to <b>Go Live</b> we advise that you link back in with CarTrawler to test and verify that bookings are pointed to our production environment.

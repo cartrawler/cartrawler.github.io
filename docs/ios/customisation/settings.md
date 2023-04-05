@@ -20,9 +20,14 @@ We have provided three icons to chose from: <br />
 
 To set your preferred icon, please use the `CTContext` class's `settingsIconType` property:
 
+{: .important }
+The `implementationID` is needed by the SDK to fetch partner specific configuration.<br/>
+
 ```java
 import CarTrawlerSDK
-let context = CTContext(clientID: "your client ID", flow: .standAlone)
+let context = CTContext(implementationID: "your implementation ID", 
+                        clientID: "your client ID", 
+                        flow: .standAlone)
 context.countryCode = "IE" 
 context.currencyCode = "EUR" 
 context.languageCode = "EN"

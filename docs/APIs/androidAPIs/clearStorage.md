@@ -15,22 +15,18 @@ The Recent Searches and Bookings shown on the Landing Page are stored are stored
 
 ---
 
-Initialise our ``CarTrawlerDatabaseRepository`` class as follows:
+Initialise our `CTRecentSearchRepository` class as follows:
 
-```java
-// You can use whatever thread you want for your use case
-val executorService = Executors.newSingleThreadExecutor() 
-val carTrawlerDatabase = CarTrawlerDatabase.build(applicationContext)
-val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
-````
+```kotlin
+val context = this.applicationContext
+val executor = Executors.newSingleThreadExecutor()
+val repository = CTRecentSearchRepository(context, executor)
+```
 
 Call the `clearStorage` function as follows:
-```java
-// You can use whatever thread you want for your use case
-val repository = CarTrawlerDatabaseRepository(carTrawlerDatabase, executorService)
-
+```kotlin
 repository.clearStorage()
-````
+```
 
 {: .note}
 It's not possible to clear the storage while the SDK is being presented on screen.

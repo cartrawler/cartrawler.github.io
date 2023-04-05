@@ -72,12 +72,11 @@ By default our CTDayNightTheme will use the following colors if partner doesn't 
 
 ---
 
-## Autoenabling Supplier Benefits During SDK initialisation
+## Auto enabling Supplier Benefits During SDK initialisation
 
-The SDK builder's `enableSupplierBenefitAutoApplyCodes` allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers. It is optional. 
+The CTSdkData builder's `enableSupplierBenefitAutoApplyCodes` allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers. It is optional. 
 
 ```kotlin
-CartrawlerSDK
-    .Builder()
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
     .enableSupplierBenefitAutoApplyCodes()
 ```

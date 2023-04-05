@@ -43,6 +43,7 @@ To initialise the In Path flow, it is necessary to instantiate a CTContext objec
 The `countryCode` property refers to the country of residency, and this is used when we make search requests.
 
 <dl>
+  <dt>implementationID</dt><dd><b>[Required]</b> An implementation ID, provided by CarTrawler and required to fetch the partner configuration.</dd>
   <dt>clientID</dt><dd><b>[Required]</b> A client ID, required to use the CarTrawler API.</dd>
   <dt>flow</dt><dd><b>[Required]</b> The flow to be launched. Must be <b>.inPath</b>.</dd>
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>

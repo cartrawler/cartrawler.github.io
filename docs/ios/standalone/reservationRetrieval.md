@@ -27,7 +27,9 @@ class MyViewController: UIViewController, CarTrawlerSDKDelegate {
   }
 
   func launchStandalone() {
-    let context = CTContext(clientID: "your client ID", flow: .standAlone)
+    let context = CTContext(implementationID: "your implementation ID", 
+                            clientID: "your client ID", 
+                            flow: .standAlone)
     context.countryCode = "IE" 
     context.currencyCode = "EUR" 
     context.languageCode = "EN" 
