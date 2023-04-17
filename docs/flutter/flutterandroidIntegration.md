@@ -94,25 +94,46 @@ class MainActivity: FlutterActivity() {
 
     //This matches the definition in your Dart code
     private val METHOD_CHANNEL = "com.cartrawler.rental/carTrawlerSDK"
-    private val result: MethodChannel.Result? = null
+    //Local variable to listen to the method result
+    private lateinit var result: MethodChannel.Result
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
             METHOD_CHANNEL
-        ).setMethodCallHandler { call, result ->
+        ).setMethodCallHandler { call, reservationResult ->
             if (call.method == "carTrawlerSDK") {
-                CartrawlerSDK.Builder()
-                    .
-                    .
-                    .
-                    .startRentalStandalone(this, requestCode = 123)
+                //set local result variable to our method result variable
+                 result = reservationResult
+                //Sample call to start SDK flow in standalone mode
+                CartrawlerSDK.start(
+                activity = this,
+                requestCode = REQUEST_CODE,
+                ctSdkData = sdkData,
+                flow = CTSdkFlow.Standalone()
+                )
             } else {
                 //other call methods can be defined
             }
         }
     }
+
+    //Wait for the result that is returned by SDK 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    if (resultCode == Activity.RESULT_OK) {
+        if (requestCode == REQUEST_CODE) {
+            val reservationData = data?.getParcelableExtra<ReservationDetails>(CartrawlerSDK.RESERVATION_DETAILS)
+            //Send the reservation number back to Dart code
+            result.success(reservationData)
+          }
+       }
+    }
+
+     companion object{
+        const  val REQUEST_CODE = 567
+    }
+
 }
 ```
 
