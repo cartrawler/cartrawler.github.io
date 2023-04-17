@@ -42,7 +42,7 @@ nativeArtifactoryPassword=placeholder
 ```
 
 {: .note}
-If you do not have these credentials contact you manager, IT or another developer in your team.
+If you do not have these credentials yet then get in touch with CarTrawler.
 
 --- 
 ## Add the CarTrawler Dependency to build.gradle
