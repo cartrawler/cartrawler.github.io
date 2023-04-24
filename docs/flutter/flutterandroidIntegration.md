@@ -21,14 +21,6 @@ To integrate the CarTrawler SDK with your Flutter app, please follow these steps
 {:toc}
 </details>
 
-<details markdown="block">
-  <summary>
-    Optional Extras
-  </summary>
-  {: .text-delta }
-1. <a href="/docs/react-native/android-integration/#resources">Resources</a>
-</details>
-
 ---
 
 ## Add the CarTrawler Maven Repository and the Artifactory Credentials
