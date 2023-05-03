@@ -26,7 +26,7 @@ To integrate the Android SDK's within your React Native app, open the Android fo
     Resources
   </summary>
   {: .text-delta }
-1. <a href="/docs/react-native/android-integration/#resources">Sample Code & Resources</a>
+1. <a href="/docs/react-native/android-integration#sample-code-and-resources">Sample Code and Resources</a>
 </details>
 
 ---
@@ -273,8 +273,8 @@ After completing the above steps and running your project, you will be able to i
 
 ---
 
-## Sample Code & Resources
+## Sample Code and Resources
 {: .no_toc}
-
-* <a href="https://github.com/cartrawler/cartrawler-react-android-demo">Sample code</a> <br/>  
+* <a href="https://github.com/cartrawler/cartrawler-react-android-demo">Sample code</a> <br/>
 * More details on <a href="https://reactnative.dev/docs/native-modules-intro">Native Modules</a> <br/> 
+* <a href="/docs/android/migrate/">SDK Migration guide to 14.0.2</a><br/>   
