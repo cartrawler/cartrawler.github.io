@@ -23,10 +23,10 @@ To integrate the Android SDK's within your React Native app, open the Android fo
 
 <details markdown="block">
   <summary>
-    Optional Extras
+    Resources
   </summary>
   {: .text-delta }
-1. <a href="/docs/react-native/android-integration/#resources">Resources</a>
+1. <a href="/docs/react-native/android-integration/#resources">Sample Code & Resources</a>
 </details>
 
 ---
@@ -273,7 +273,7 @@ After completing the above steps and running your project, you will be able to i
 
 ---
 
-## Resources
+## Sample Code & Resources
 {: .no_toc}
 
 * <a href="https://github.com/cartrawler/cartrawler-react-android-demo">Sample code</a> <br/>  
