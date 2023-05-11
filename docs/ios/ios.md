@@ -9,5 +9,5 @@ permalink: docs/ios
 # iOS
 {: .no_toc }
 
-Our SDK supports iOS 10 and above. 
+Our SDK supports iOS 11 and above. 
 {: .fs-6 .fw-300 }
