@@ -86,6 +86,7 @@ import CarTrawlerSDK
   CTContext *context = [[CTContext alloc] initWithImplementationID:@"your implementation ID" 
                                                           clientID:@"your client ID" 
                                                               flow:CTFlowTypeStandalone];
+  context.delegate = self;
   [CarTrawlerSDK.sharedInstance presentFromViewController:self context:context];
 }
 
@@ -98,6 +99,7 @@ import CarTrawlerSDK
   context.languageCode = @"EN";
   context.pickupLocation = @"DUB";
   context.pickupDate = [NSDate dateWithTimeIntervalSinceNow:86400];
+  context.delegate = self;
   [CarTrawlerSDK.sharedInstance setContext:context];
   [CarTrawlerSDK.sharedInstance presentInPathFromViewController:self];
 }
@@ -159,6 +161,118 @@ RCT_EXPORT_MODULE();
 
 @end
 
+```
+
+---
+
+## Receive Events from the SDK in JavaScript
+
+To send information back to Javascript such as a booking result, we create another class that extends RCTEventEmitter on the iOS side.
+
+```java
+/**
+ * EventEmitterModule.h
+ */
+
+#import <React/RCTEventEmitter.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface EventEmitterModule : RCTEventEmitter <RCTBridgeModule>
+
+- (void)sendEventName:(NSString *)eventName body:(id)body;
+- (bool)hasListeners;
+
+@end
+
+NS_ASSUME_NONNULL_END
+```
+
+```java
+/**
+ * EventEmitterModule.m
+ */
+
+@implementation EventEmitterModule
+{
+  bool hasListeners;
+}
+
+RCT_EXPORT_MODULE(EventEmitterModule);
+
++ (id)allocWithZone:(NSZone *)zone {
+  static EventEmitterModule *sharedInstance = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    sharedInstance = [super allocWithZone:zone];
+  });
+  return sharedInstance;
+}
+
+- (NSArray<NSString *> *)supportedEvents {
+    NSArray<NSString *> *arrayOfEvents = [[NSArray alloc]initWithObjects:@"BookingEvent", nil];
+    return arrayOfEvents;
+}
+
+// Will be called when this module's first listener is added.
+- (void)startObserving {
+  hasListeners = YES;
+  // Set up any upstream listeners or background tasks as necessary
+}
+
+// Will be called when this module's last listener is removed, or on dealloc.
+- (void)stopObserving {
+  hasListeners = NO;
+  // Remove upstream listeners, stop unnecessary background tasks
+}
+
+- (bool)hasListeners {
+  return hasListeners;
+}
+
+- (void)sendEventName:(NSString *)eventName body:(id)body {
+  if (hasListeners) {
+    [self sendEventWithName:eventName body:body];
+  }
+}
+
+@end
+```
+
+We also have to implement the CarTrawlerSDK didReceiveReservationDetails delegate method in our SDKViewController: 
+
+```java 
+// In SDKViewController.m
+
+// #import ... 
+
+@interface SDKViewController ()<CarTrawlerSDKDelegate>
+@end
+
+@implementation SDKViewController
+
+// - (void)... 
+
+- (void)didReceiveReservationDetails:(CTReservationDetails *)reservationDetails {
+  EventEmitterModule *eventModule = [EventEmitterModule allocWithZone:nil];
+  NSString *bookingIDString = [NSString stringWithFormat:@"BookingID: %@", reservationDetails.resId];
+  [eventModule sendEventName:@"BookingEvent" body:bookingIDString];
+}
+
+@end
+```
+
+{: .note }
+Make sure to set the CTContext delegate to self(the view controller): <br />
+context.delegate = self;
+
+On the Javascript side we can then subscribe to this event:
+
+```javascript
+const eventEmitter = new NativeEventEmitter(eventEmitterModule);
+eventEmitter.addListener("BookingEvent", (params) => {
+  alert("Hello from React Native side, the booking details were received"+ "\n\n" + params);
+});
 ```
 
 ---
