@@ -2,7 +2,7 @@
 layout: default
 title: Migrate to 14.0.2
 parent: Android Integration
-nav_order: 5
+nav_order: 7
 permalink: /docs/android/migrate/
 ---
 
