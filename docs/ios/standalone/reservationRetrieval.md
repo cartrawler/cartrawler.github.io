@@ -49,6 +49,7 @@ class MyViewController: UIViewController, CarTrawlerSDKDelegate {
 
 ```java
 class CTReservationDetails: NSObject {
+  let clientID: String // The clientID the SDK was initialised with
   let status: String // In this scenario it will be confirmed
   let customerGivenName: String // first name
   let customerSurname: String // Surname
