@@ -64,6 +64,7 @@ data class ReservationDetails (
    val surname: String,
    val resId: String,
    val resuid: String,
+   val clientId: String,
    val pickUpDateTime: GregorianCalendar,
    val returnDateTime: GregorianCalendar,
    val pickupLocation: LocationDetails,
