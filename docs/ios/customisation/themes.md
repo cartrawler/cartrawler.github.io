@@ -82,6 +82,8 @@ style.landingTopBarImage = UIImage(named: "the_logo_for_the_tool_action_bar") //
 style.landingTopBarImageDark = UIImage(named: "the_logo_for_the_tool_action_bar_dark") // Optional, will default to landingTopBarImage if not set
 ```
 
+![](/uploads/AirlineNav.png)
+
 
 ## SDK Initialisation
 After CTStyle is configured, it must be passed into the SDK during initialisation in your AppDelegate:
