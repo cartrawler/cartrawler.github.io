@@ -106,7 +106,7 @@ This can be changed to large as follows:
 ```
 
 ## Loyalty Banner Landing Screen
-The template of the loyalty banner on the landing screen can be modified. There are two templates available "Default" and "Logo & Text". The later is a full width text with a central logo and an optional gradient background.
+The template of the loyalty banner on the landing screen can be modified. There are two templates available "Default" and "Logo & Text". The latter is a full width text with a central logo and an optional gradient background.
 
 <img src="/uploads/loyalty_banner_templates.png">
 
@@ -118,8 +118,8 @@ Create a style for the banner:
         <item name="ctBannerTemplate">logoAndTextBanner</item> // Either "defaultBanner" or "logoAndText". Default is "defaultBanner"
         <item name="ctBannerBackgroundColor">?colorPrimary</item> // Defaults to the theme's colorPrimary
         <item name="ctBannerSecondaryBackgroundColor">?colorSecondary</item> // Defaults to the theme's colorSecondary
-        <item name="ctBannerTextColor">@android:color/white</item> // Defaults to the Android's color white 
-        <item name="ctBannerInfoButtonColor">@android:color/white</item> // Defaults to the Android's color white 
+        <item name="ctBannerTextColor">@android:color/white</item> // Defaults to Android's white color
+        <item name="ctBannerInfoButtonColor">@android:color/white</item> // Defaults to Android's white color
         <item name="ctBannerImageDrawable">@drawable/your_logo</item> // If not set, it retrieves it from the Loyalty API
         <item name="ctBannerFont"> // Optional custom font
     </style>
