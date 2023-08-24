@@ -68,6 +68,24 @@ val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
 
 --- 
 
+### Setting an Image as the Landing Page Toolbar
+The Car Hire title in the toolbar on the landing screen can be replaced with a drawable.
+The recommended height for this image is 44dp.
+
+To make use of this feature, please set the `ctLandingTopBarImage` properties on your theme:
+
+```xml
+<style name="SampleTheme" parent="CTDayNightTheme">
+    <!-- other configuration style items -->
+    <item name="ctLandingTopBarImage">@drawable/your-drawable-here</item>
+</style>
+```
+
+![](/uploads/AndroidAirlineToolbar.png)
+
+---
+
+
 ## Setting a Custom Font
 
 In order to set a custom font on your theme you need to add the fonts to the res/font directory along with a `my_custom_font_family.xml` file, see below for an example:
