@@ -96,7 +96,7 @@ A string regex that if passed will be used to validate the loyalty membership id
 
 ---
 ### orderId
-A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234
+A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234 (limited to 32 characters)
 
 ---
 ### passenger
