@@ -40,10 +40,10 @@ The default is ```light``` and theme values are as follows:
 | Attribute                   	| Color                                                                   	|
 |-----------------------------	|-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#eeeef3](https://via.placeholder.com/10/eeeef3/000000?text=+) #e5ebed 	|
-| Primary Text Color    	      | ![#333333](https://via.placeholder.com/10/333333/000000?text=+) #333333 	|
+| Primary Text Color    	       | ![#333333](https://via.placeholder.com/10/333333/000000?text=+) #333333 	|
 | Secondary Color     	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
-| Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
-| SecondaryVariant TextColor 	 | 	Defaults to Secondary Color attribute                                   |
+| Secondary Text Color 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
+| Secondary Variant Color 	     | 	Defaults to Secondary Color attribute                                   |
 
 ---
 
@@ -54,10 +54,10 @@ The default is ```dark``` and theme values are as follows:
 | Attribute                   	| Color                                                                   	|
 |-----------------------------	|-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#000000](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
-| Primary Text Color    	      | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Primary Text Color    	       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 | Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
-| Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
-| SecondaryVariant TextColor 	 | 	Defaults to Secondary Color attribute                                   |
+| Secondary Text Color 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Secondary Variant Color 	     | 	Defaults to Secondary Color attribute                                   |
 
 
 ---

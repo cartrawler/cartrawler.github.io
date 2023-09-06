@@ -37,13 +37,13 @@ Similar to SDK theming, if you are changing the background colour to a dark back
 
 The default is ```light``` and theme values are as follows:
 
-| Attribute                   	| Color                                                                   	|
-|-----------------------------	|-------------------------------------------------------------------------	|
+| Attribute                   	 | Color                                                                   	|
+|-----------------------------	 |-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#eeeef3](https://via.placeholder.com/10/eeeef3/000000?text=+) #e5ebed 	|
-| Primary Text Color    	      | ![#333333](https://via.placeholder.com/10/333333/000000?text=+) #333333 	|
+| Primary Text Color    	       | ![#333333](https://via.placeholder.com/10/333333/000000?text=+) #333333 	|
 | Secondary Color     	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
-| Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
-| <span class="d-inline-block p-2 mr-1 v-align-middle bg-purple-000"></span> 
+| Secondary Text Color 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
+| Secondary Variant Color 	     | 	Defaults to Secondary Color attribute                                   |
 
 ---
 
@@ -51,12 +51,14 @@ The default is ```light``` and theme values are as follows:
 
 The default is ```dark``` and theme values are as follows:
 
-| Attribute                   	| Color                                                                   	|
-|-----------------------------	|-------------------------------------------------------------------------	|
+| Attribute                   	 | Color                                                                   	|
+|-----------------------------	 |-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#000000](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
-| Primary Text Color    	      | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Primary Text Color    	       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 | Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
-| Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Secondary Text Color 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Secondary Variant Color 	     | 	Defaults to Secondary Color attribute                                   |
+
 
 ---
 
@@ -84,6 +86,7 @@ let loyaltyStyle = CTLoyaltyStyle(theme: .light) // Loyalty style Either .light 
 loyaltyStyle.primaryColor = UIColor.lightGray // Optional, default #e5ebed
 loyaltyStyle.primaryTextColor = UIColor.darkGray // Optional, default #333333
 loyaltyStyle.secondaryColor = UIColor.blue // Optional, default #FFFFFF
+loyaltyStyle.secondaryVariantColor = UIColor.gray // Optional, defaults to Secondary Color attribute
 loyaltyStyle.secondaryTextColor = UIColor.white // Optional, default #000000
 
 style.loyaltyStyle = loyaltyStyle
@@ -107,4 +110,45 @@ let loyaltyStyle = CTLoyaltyStyle(theme: .light) // Loyalty style Either .light 
 loyaltyStyle.chipSize = .large // Optional, default .regular
 
 style.loyaltyStyle = loyaltyStyle
-```   
+```
+
+## Loyalty Banner Landing Screen
+The template of the loyalty banner on the landing screen can be modified. There are two templates available "Default" and "Logo & Text". The latter is a full width text with a central logo and an optional gradient background.
+
+<img src="/uploads/loyalty_banner_templates.png">
+
+The Logo & Text template can be styled as follows:
+
+Create a style for the banner:
+```java
+let bannerStyle = CTBannerStyle(type: .landingLoyalty,
+                                template: .logoAndText) // Either .default or .logoAndText. Default is .default
+bannerStyle.textFont = UIFont(name: "P22JohnstonUnderground", size: 20) // Optional custom font
+
+bannerStyle.textColor = UIColor.white // Defaults to iOS's black color
+bannerStyle.bgColor = UIColor.gray // Defaults to the theme's primary colour
+bannerStyle.secondaryBgColor = UIColor.black // Defaults to the bgColor
+bannerStyle.logoImage = UIImage(named: "logo-white") // If not set, it retrieves it from the Loyalty API
+bannerStyle.infoButtonColor = UIColor.white // Defaults to iOS's black color
+
+bannerStyle.darkTextColor = UIColor.black // If not set, defaults to textColor
+bannerStyle.darkBgColor = UIColor.white // If not set, defaults to bgColor
+bannerStyle.darkSecondaryBgColor = UIColor.lightGray // If not set, defaults to secondaryBgColor
+bannerStyle.darkLogoImage = UIImage(named: "logo") // If not set, defaults to logoImage
+bannerStyle.darkInfoButtonColor = UIColor.black // If not set, defaults to infoButtonColor
+```
+
+Add the new style to the main style:
+```java
+var style = CTStyle(theme: .dark, primaryColor: UIColor.white)
+style.add(bannerStyle)
+```
+
+Initialise the SDK with the style created:
+```java
+import CarTrawlerSDK
+
+CarTrawlerSDK.sharedInstance().initialiseSDK(with: style,
+                               customParameters: nil,
+                               production: false)
+```
