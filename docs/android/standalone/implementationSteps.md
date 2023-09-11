@@ -30,6 +30,7 @@ To implement the SDK's Standalone flow within your app, please use the following
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-vehicle-list-screen-bypass-the-landing-and-search-screens-">Start Standalone Flow in the vehicle list screen</a>
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens-">Start Standalone Flow on the Vehicle List via Recent Search</a>
 - <a href="/docs/android/standalone/implementation-steps#start-with-a-vehicle-pinned-to-the-top-of-the-list-bypass-the-landing-and-search-screens-">Start with a vehicle pinned to the top of the list</a>
+- <a href="/docs/android/standalone/implementation-steps#start-with-deep-link">Start by Deep Link</a>
 </details>
 
 ---
@@ -93,6 +94,7 @@ CartrawlerSDK.start(
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch("<ct_recent_search_data_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToLanding`<br/>
 > `CTStandaloneNavigation.CTNavigateToSearch`
+> `CTStandaloneNavigation.CTNavigateWithDeepLink`
 
 {: .important }
 The `requestCode` is defined by the consumer app, since it will need to use it inside its `onActivityResult` conditional to capture the booking payload that the SDK sends it back to the consumer app.
@@ -177,3 +179,84 @@ CartrawlerSDK.start(
     )
 )
 ```
+
+---
+
+### Start with Deep Link
+{: .no_toc }
+
+It is possible to launch the Car Rental SDK by using a url, it is up to you to decide where this url 
+will come from: a push notification or a native deep link.
+
+The url is pretty standard and should have the following pattern:
+
+```java
+schema://host?param1=123&param2=abcd&paramN=xyz
+
+// Example deep linking to the Search Results screen        
+yourschema://ct-car-rental?type=search-result&client_id=your-client-id&pt=2023-08-18T10:00:00Z&dt=2023-08-20T10:00:00Z&pkIATA=DUB&doIATA=ORK
+```
+
+Once you have the url you can call the following method to launch the SDK:
+
+```kotlin
+
+val deepLinkURL = "myschema://ct-car-rental?type=landing&client_id=your-client-id"
+val isLoggingHttpRequests = BuildConfig.DEBUG
+val ctSdkData = CTSdkData.Builder("")
+    .theme(R.style.your-theme-here)
+    .darkModeConfig(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+    .logging(isLoggingHttpRequests)
+        
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = ctSdkData.build(),
+    CTStandaloneNavigation.CTNavigateWithDeepLink(deepLinkURL)
+)
+```
+---
+
+It is possible to launch the SDK in the following screens:
+
+- Landing (type=landing)
+- Search Results (type=search-result)
+
+Down below you can check what query parameters have to be in the url in order to launch the flow
+you need.
+
+{: .important }
+The Car Rental SDK will always go to the landing screen if ANY of the required parameters is 
+missing. Also `client_id` MUST be set in any of the flows (landing, search-result), if not the
+SDK won't work.
+
+
+### Landing
+{: .no_toc }
+
+| Parameter           | Example | Required | 
+|:--------------------|:--------|:---------|
+| type                | landing | yes      |
+| client_id           | 123456  | yes      |
+| ctyCode (residency) | IE      | no       |
+| ccy (currency)      | EUR     | no       |
+
+---
+
+### Search Results
+{: .no_toc }
+
+| Parameter                 | Example              | Required                | 
+|:--------------------------|:---------------------|:------------------------|
+| type                      | search-result        | yes                     |
+| client_id                 | 123456               | yes                     |
+| pt (pickup time)          | 2023-08-18T10:00:00Z | yes                     |
+| dt (drop off time)        | 2023-08-20T10:00:00Z | yes                     |
+| pkIATA (pickup IATA)      | DUB                  | yes (if pl not set)     |
+| doIATA (drop off IATA)    | DUB                  | no                      |
+| pl (pickup location ID)   | 11                   | yes (if pkIATA not set) |
+| dl (drop off location ID) | 11                   | no                      |
+| age                       | 30                   | no                      |
+| ctyCode (residency)       | IE                   | no                      |
+| ccy (currency)            | EUR                  | no                      |
+| pinVeh (pinned vehicle)   | 123456789            | no                      |
