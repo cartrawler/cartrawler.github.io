@@ -30,12 +30,12 @@ To implement the SDK's Standalone flow within your app, please use the following
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-vehicle-list-screen-bypass-the-landing-and-search-screens-">Start Standalone Flow in the vehicle list screen</a>
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens-">Start Standalone Flow on the Vehicle List via Recent Search</a>
 - <a href="/docs/android/standalone/implementation-steps#start-with-a-vehicle-pinned-to-the-top-of-the-list-bypass-the-landing-and-search-screens-">Start with a vehicle pinned to the top of the list</a>
-- <a href="/docs/android/standalone/implementation-steps#start-with-deep-link">Start by Deep Link</a>
+- <a href="/docs/android/standalone/implementation-steps#start-the-standalone-flow-via-url-deeplink">Start the Standalone Flow via URL Deeplink</a>
 </details>
 
 ---
 
-### Initialise the SDK <br/>
+## Initialise the SDK <br/>
 
 Initialise the SDK by calling the init method in the CartrawlerSDK class as follow:
 
@@ -54,7 +54,7 @@ Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to th
 
 ---
 
-### Initialise CTSdkData <br/>
+## Initialise CTSdkData <br/>
 
 ```kotlin
 val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
@@ -71,7 +71,7 @@ val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
 
 ---
 
-### Starting the flow <br/>
+## Starting the flow <br/>
 
 ```kotlin
 CartrawlerSDK.start(
@@ -93,15 +93,15 @@ CartrawlerSDK.start(
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_id_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch("<ct_recent_search_data_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToLanding`<br/>
-> `CTStandaloneNavigation.CTNavigateToSearch`
-> `CTStandaloneNavigation.CTNavigateWithDeepLink`
+> `CTStandaloneNavigation.CTNavigateToSearch`<br/>
+> `CTStandaloneNavigation.CTNavigateWithDeepLink`<br/>
 
 {: .important }
 The `requestCode` is defined by the consumer app, since it will need to use it inside its `onActivityResult` conditional to capture the booking payload that the SDK sends it back to the consumer app.
 
 ---
 
-### Start Standalone Flow in the Search screen (bypass the landing screen) <br/>
+## Start Standalone Flow in the Search screen (bypass the landing screen) <br/>
 {: .no_toc }
 
 This flow will bypass the landing screen and set the start screen as Search, you only need to set the `flow` in CartrawlerSDK.start to:
@@ -117,7 +117,7 @@ CartrawlerSDK.start(
 
 ---
 
-### Start Standalone Flow in the vehicle list screen (bypass the landing and search screens) <br/>
+## Start Standalone Flow in the vehicle list screen (bypass the landing and search screens) <br/>
 {: .no_toc }
 
 ```kotlin
@@ -136,7 +136,7 @@ CartrawlerSDK.start(
 
 ---
 
-### Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens) <br/>
+## Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens) <br/>
 {: .no_toc }
 
 For this alternate starting point in the flow, a recent search (CTRecentSearchData object) must be provided. To get a CTRecentSearchData, you can use our <a href="/docs/api/android/recent-searches">Recent Searches API</a>.
@@ -157,7 +157,7 @@ CartrawlerSDK.start(
 
 ---
 
-### Start with a vehicle pinned to the top of the list (bypass the landing and search screens) <br/>
+## Start with a vehicle pinned to the top of the list (bypass the landing and search screens) <br/>
 {: .no_toc }
 
 A vehicle can be pinned to the top of the list by passing a vehicle reference ID. To get a vehicle reference ID, you can use our <a href="/docs/api/android/vehicles">Vehicles API</a>
@@ -182,26 +182,27 @@ CartrawlerSDK.start(
 
 ---
 
-### Start with Deep Link
+## Start the Standalone Flow via URL Deeplink
 {: .no_toc }
 
-It is possible to launch the Car Rental SDK by using a url, it is up to you to decide where this url 
-will come from: a push notification or a native deep link.
+It is possible to launch the Standalone flow using an URL, which may come from a push notification or native app deep link for example.
+This is entirely optional.
 
-The url is pretty standard and should have the following pattern:
+{: .note}
+The URL should have the following pattern: <br/>
+`schema://ct-car-rental?param1=123&param2=abcd&paramN=xyz`<br/>
 
-```java
-schema://host?param1=123&param2=abcd&paramN=xyz
+This example will open the vehicle list / search results screen: <br />
+`schema://ct-car-rental?type=search-result&client_id=your-client-id&pt=2023-08-18T10:00:00Z&dt=2023-08-20T10:00:00Z&pkIATA=DUB&doIATA=ORK`
 
-// Example deep linking to the Search Results screen        
-yourschema://ct-car-rental?type=search-result&client_id=your-client-id&pt=2023-08-18T10:00:00Z&dt=2023-08-20T10:00:00Z&pkIATA=DUB&doIATA=ORK
-```
+{: .warning}
+A client ID <small>(client_id)</small> <b>must</b> be provided as part of your URL in order for the SDK to function properly.<br/>
 
-Once you have the url you can call the following method to launch the SDK:
+Once you have the URL you can call the following method to launch the SDK:
 
 ```kotlin
 
-val deepLinkURL = "myschema://ct-car-rental?type=landing&client_id=your-client-id"
+val deepLinkURL = "schema://ct-car-rental?type=landing&client_id=your-client-id"
 val isLoggingHttpRequests = BuildConfig.DEBUG
 val ctSdkData = CTSdkData.Builder("")
     .theme(R.style.your-theme-here)
@@ -215,23 +216,23 @@ CartrawlerSDK.start(
     CTStandaloneNavigation.CTNavigateWithDeepLink(deepLinkURL)
 )
 ```
----
 
-It is possible to launch the SDK in the following screens:
+### Start Standalone flow on the Landing screen
+{: .no_toc }
 
-- Landing (type=landing)
-- Search Results (type=search-result)
+To open the SDK on the landing screen, simply set the type to landing: `type=landing`
 
-Down below you can check what query parameters have to be in the url in order to launch the flow
-you need.
+### Start Standalone flow on the Vehicle List (bypass Landing and Search screens)
+{: .no_toc }
 
-{: .important }
-The Car Rental SDK will always go to the landing screen if ANY of the required parameters is 
-missing. Also `client_id` MUST be set in any of the flows (landing, search-result), if not the
-SDK won't work.
+To open the SDK on the vehicle list screen, simply set the type to search-result: `type=search-result`, make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page.
 
+### List of Parameters
+{: .no_toc }
 
-### Landing
+Below are all the available parameters for use in the URL. As you will see, some of them are required in order to deep link to the vehicle list. If these are missing, the SDK will open on the landing screen.
+
+##### Landing
 {: .no_toc }
 
 | Parameter           | Example | Required | 
@@ -241,9 +242,7 @@ SDK won't work.
 | ctyCode (residency) | IE      | no       |
 | ccy (currency)      | EUR     | no       |
 
----
-
-### Search Results
+##### Search Results
 {: .no_toc }
 
 | Parameter                 | Example              | Required                | 
