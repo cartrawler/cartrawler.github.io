@@ -33,7 +33,8 @@ To implement the SDK's Standalone flow within your app, please use the following
 - <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-search-screen-bypass-landing-screen">Start Standalone flow on the Search Screen (bypass Landing Screen)</a>
 - <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-pickup--drop-off-bypass-the-landing-and-search-screens">Start Standalone flow on the Vehicle List via Pickup & Drop Off (bypass the landing and search screens)</a>
 - <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens">Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens)</a>
-2. <a href="/docs/ios/standalone/implementation-steps#prepopulate-driver-details">Prepopulate Driver Details</a>
+2. <a href="/docs/ios/standalone/implementation-steps#start-the-standalone-flow-via-url-deeplink">Start the Standalone Flow via URL Deeplink</a>
+3. <a href="/docs/ios/standalone/implementation-steps#prepopulate-driver-details">Prepopulate Driver Details</a>
 </details>
 ---
 
@@ -224,6 +225,83 @@ To get a recent search, you can use our <a href="/docs/api/ios/recent-searches">
 <small> Click <a href="/docs/ios/standalone/property-descriptions#initialising-ctcontext-for-standalone-with-a-recent-search">here</a> for an in depth explanation of the relevant CTContext properties </small>
 <br/>
 
+---
+## Start the Standalone Flow via URL Deeplink
+{: .no_toc }
+
+It is possible to launch the Standalone flow using a URL, which may come from a push notification or native app deep link for example.
+This is entirely optional. 
+
+{: .note}
+The URL should have the following pattern: <br/>
+`schema://host?param1=123&param2=abcd&paramN=xyz`
+
+This example will open the vehicle list / search results page: <br />
+`schema://ct-car-rental?type=search-result&client_id=123456&pt=2023-09-08T09:44:35+0100&dt=2023-09-10T10:44:35+0100&pkIATA=DUB`
+
+{: .warning}
+A client ID <small>(client_id)</small> <b>must</b> be provided as part of your URL in order for the SDK to function properly. 
+
+Similar to the methods listed previously for launching the Standalone flow, the URL is used by CTContext. A separate initialiser exists for this purpose: 
+
+```java
+let url = "airline://ct-car-rental?type=search-result&client_id=123456&pt=2023-09-08T09:44:35+0100&dt=2023-09-10T10:44:35+0100&pkIATA=DUB"
+let context = CTContext(implementationID: "your implementation ID", appDeeplinkURL: url)
+```
+
+You can then present the SDK:
+
+```java
+CarTrawlerSDK.sharedInstance().present(from: self, context: context)
+```
+<small> See <a href="#present-the-sdk-via-modal-or-push-presentation">here</a> for more details</small>
+
+<br/>
+
+### Start Standalone flow on the Landing Page
+
+To open the SDK on the landing page, simply set the type to landing: `type=landing`
+
+### Start Standalone flow on the Vehicle List (bypass Landing Screen and Search Screens)
+
+To open the SDK on the vehicle list page, set the type to search-result: `type=search-result` 
+
+{: .note}
+Make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page. 
+
+### List of Parameters
+
+Below are all the available parameters for use in the URL. 
+
+
+
+##### Landing
+{: .no_toc }
+
+| Parameter           | Example | Required | 
+|:--------------------|:--------|:---------|
+| type                | landing | yes      |
+| client_id           | 123456  | yes      |
+| ctyCode (residency) | IE      | no       |
+| ccy (currency)      | EUR     | no       |
+
+##### Search Results
+{: .no_toc }
+
+| Parameter                 | Example              | Required                | 
+|:--------------------------|:---------------------|:------------------------|
+| type                      | search-result        | yes                     |
+| client_id                 | 123456               | yes                     |
+| pt (pickup time)          | 2023-08-18T10:00:00Z | yes                     |
+| dt (drop off time)        | 2023-08-20T10:00:00Z | yes                     |
+| pkIATA (pickup IATA)      | DUB                  | yes (if pl not set)     |
+| doIATA (drop off IATA)    | DUB                  | no                      |
+| pl (pickup location ID)   | 11                   | yes (if pkIATA not set) |
+| dl (drop off location ID) | 11                   | no                      |
+| age                       | 30                   | no                      |
+| ctyCode (residency)       | IE                   | no                      |
+| ccy (currency)            | EUR                  | no                      |
+| pinVeh (pinned vehicle)   | 123456789            | no                      |
 
 --- 
 ## Prepopulate Driver Details:
