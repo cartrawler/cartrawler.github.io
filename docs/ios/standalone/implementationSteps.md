@@ -229,22 +229,23 @@ To get a recent search, you can use our <a href="/docs/api/ios/recent-searches">
 ## Start the Standalone Flow via URL Deeplink
 {: .no_toc }
 
-It is possible to launch the Standalone flow using a url, which may come from a push notification or native app deep link for example.
+It is possible to launch the Standalone flow using a URL, which may come from a push notification or native app deep link for example.
 This is entirely optional. 
 
 {: .note}
-The url should have the following pattern: <br/>
+The URL should have the following pattern: <br/>
 `schema://host?param1=123&param2=abcd&paramN=xyz`
 
 This example will open the vehicle list / search results page: <br />
 `schema://ct-car-rental?type=search-result&client_id=123456&pt=2023-09-08T09:44:35+0100&dt=2023-09-10T10:44:35+0100&pkIATA=DUB`
 
 {: .warning}
-A client ID <small>(client_id)</small> <b>must</b> be provided as part of your url in order for the SDK to function properly. 
+A client ID <small>(client_id)</small> <b>must</b> be provided as part of your URL in order for the SDK to function properly. 
 
-Similar to the methods listed previously for launching the Standalone flow, the url is used by CTContext. A separate initialiser exists for this purpose: 
+Similar to the methods listed previously for launching the Standalone flow, the URL is used by CTContext. A separate initialiser exists for this purpose: 
 
 ```java
+let url = "airline://ct-car-rental?type=search-result&client_id=123456&pt=2023-09-08T09:44:35+0100&dt=2023-09-10T10:44:35+0100&pkIATA=DUB"
 let context = CTContext(implementationID: "your implementation ID", appDeeplinkURL: url)
 ```
 
@@ -263,11 +264,16 @@ To open the SDK on the landing page, simply set the type to landing: `type=landi
 
 ### Start Standalone flow on the Vehicle List (bypass Landing Screen and Search Screens)
 
-To open the SDK on the vehicle list page, simply set the type to search-result: `type=search-result`, make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page. 
+To open the SDK on the vehicle list page, set the type to search-result: `type=search-result` 
+
+{: .note}
+Make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page. 
 
 ### List of Parameters
 
-Below are all the available parameters for use in the URL. As you will see, some of them are required in order to deep link to the vehicle list. If these are missing, the SDK will open on the landing page. 
+Below are all the available parameters for use in the URL. 
+
+
 
 ##### Landing
 {: .no_toc }
