@@ -30,11 +30,12 @@ To implement the SDK's Standalone flow within your app, please use the following
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-vehicle-list-screen-bypass-the-landing-and-search-screens-">Start Standalone Flow in the vehicle list screen</a>
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens-">Start Standalone Flow on the Vehicle List via Recent Search</a>
 - <a href="/docs/android/standalone/implementation-steps#start-with-a-vehicle-pinned-to-the-top-of-the-list-bypass-the-landing-and-search-screens-">Start with a vehicle pinned to the top of the list</a>
+- <a href="/docs/android/standalone/implementation-steps#start-the-standalone-flow-via-url-deeplink">Start the Standalone Flow via URL Deeplink</a>
 </details>
 
 ---
 
-### Initialise the SDK <br/>
+## Initialise the SDK <br/>
 
 Initialise the SDK by calling the init method in the CartrawlerSDK class as follow:
 
@@ -53,7 +54,7 @@ Don't forget to use `CTSdkEnvironment.PRODUCTION` when submitting your app to th
 
 ---
 
-### Initialise CTSdkData <br/>
+## Initialise CTSdkData <br/>
 
 ```kotlin
 val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
@@ -70,7 +71,7 @@ val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
 
 ---
 
-### Starting the flow <br/>
+## Starting the flow <br/>
 
 ```kotlin
 CartrawlerSDK.start(
@@ -92,14 +93,15 @@ CartrawlerSDK.start(
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_id_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch("<ct_recent_search_data_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToLanding`<br/>
-> `CTStandaloneNavigation.CTNavigateToSearch`
+> `CTStandaloneNavigation.CTNavigateToSearch`<br/>
+> `CTStandaloneNavigation.CTNavigateWithDeepLink`<br/>
 
 {: .important }
 The `requestCode` is defined by the consumer app, since it will need to use it inside its `onActivityResult` conditional to capture the booking payload that the SDK sends it back to the consumer app.
 
 ---
 
-### Start Standalone Flow in the Search screen (bypass the landing screen) <br/>
+## Start Standalone Flow in the Search screen (bypass the landing screen) <br/>
 {: .no_toc }
 
 This flow will bypass the landing screen and set the start screen as Search, you only need to set the `flow` in CartrawlerSDK.start to:
@@ -115,7 +117,7 @@ CartrawlerSDK.start(
 
 ---
 
-### Start Standalone Flow in the vehicle list screen (bypass the landing and search screens) <br/>
+## Start Standalone Flow in the vehicle list screen (bypass the landing and search screens) <br/>
 {: .no_toc }
 
 ```kotlin
@@ -134,7 +136,7 @@ CartrawlerSDK.start(
 
 ---
 
-### Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens) <br/>
+## Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens) <br/>
 {: .no_toc }
 
 For this alternate starting point in the flow, a recent search (CTRecentSearchData object) must be provided. To get a CTRecentSearchData, you can use our <a href="/docs/api/android/recent-searches">Recent Searches API</a>.
@@ -155,7 +157,7 @@ CartrawlerSDK.start(
 
 ---
 
-### Start with a vehicle pinned to the top of the list (bypass the landing and search screens) <br/>
+## Start with a vehicle pinned to the top of the list (bypass the landing and search screens) <br/>
 {: .no_toc }
 
 A vehicle can be pinned to the top of the list by passing a vehicle reference ID. To get a vehicle reference ID, you can use our <a href="/docs/api/android/vehicles">Vehicles API</a>
@@ -177,3 +179,83 @@ CartrawlerSDK.start(
     )
 )
 ```
+
+---
+
+## Start the Standalone Flow via URL Deeplink
+{: .no_toc }
+
+It is possible to launch the Standalone flow using an URL, which may come from a push notification or native app deep link for example.
+This is entirely optional.
+
+{: .note}
+The URL should have the following pattern: <br/>
+`schema://ct-car-rental?param1=123&param2=abcd&paramN=xyz`<br/>
+
+This example will open the vehicle list / search results screen: <br />
+`schema://ct-car-rental?type=search-result&client_id=your-client-id&pt=2023-08-18T10:00:00Z&dt=2023-08-20T10:00:00Z&pkIATA=DUB&doIATA=ORK`
+
+{: .warning}
+A client ID <small>(client_id)</small> <b>must</b> be provided as part of your URL in order for the SDK to function properly.<br/>
+
+Once you have the URL you can call the following method to launch the SDK:
+
+```kotlin
+
+val deepLinkURL = "schema://ct-car-rental?type=landing&client_id=your-client-id"
+val isLoggingHttpRequests = BuildConfig.DEBUG
+val ctSdkData = CTSdkData.Builder("")
+    .theme(R.style.your-theme-here)
+    .darkModeConfig(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+    .logging(isLoggingHttpRequests)
+        
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = ctSdkData.build(),
+    CTStandaloneNavigation.CTNavigateWithDeepLink(deepLinkURL)
+)
+```
+
+### Start Standalone flow on the Landing screen
+{: .no_toc }
+
+To open the SDK on the landing screen, simply set the type to landing: `type=landing`
+
+### Start Standalone flow on the Vehicle List (bypass Landing and Search screens)
+{: .no_toc }
+
+To open the SDK on the vehicle list screen, simply set the type to search-result: `type=search-result`, make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page.
+
+### List of Parameters
+{: .no_toc }
+
+Below are all the available parameters for use in the URL. As you will see, some of them are required in order to deep link to the vehicle list. If these are missing, the SDK will open on the landing screen.
+
+##### Landing
+{: .no_toc }
+
+| Parameter           | Example | Required | 
+|:--------------------|:--------|:---------|
+| type                | landing | yes      |
+| client_id           | 123456  | yes      |
+| ctyCode (residency) | IE      | no       |
+| ccy (currency)      | EUR     | no       |
+
+##### Search Results
+{: .no_toc }
+
+| Parameter                 | Example              | Required                | 
+|:--------------------------|:---------------------|:------------------------|
+| type                      | search-result        | yes                     |
+| client_id                 | 123456               | yes                     |
+| pt (pickup time)          | 2023-08-18T10:00:00Z | yes                     |
+| dt (drop off time)        | 2023-08-20T10:00:00Z | yes                     |
+| pkIATA (pickup IATA)      | DUB                  | yes (if pl not set)     |
+| doIATA (drop off IATA)    | DUB                  | no                      |
+| pl (pickup location ID)   | 11                   | yes (if pkIATA not set) |
+| dl (drop off location ID) | 11                   | no                      |
+| age                       | 30                   | no                      |
+| ctyCode (residency)       | IE                   | no                      |
+| ccy (currency)            | EUR                  | no                      |
+| pinVeh (pinned vehicle)   | 123456789            | no                      |
