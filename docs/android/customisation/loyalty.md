@@ -40,9 +40,10 @@ The default is ```light``` and theme values are as follows:
 | Attribute                   	| Color                                                                   	|
 |-----------------------------	|-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#eeeef3](https://via.placeholder.com/10/eeeef3/000000?text=+) #e5ebed 	|
-| Primary Text Color    	      | ![#333333](https://via.placeholder.com/10/333333/000000?text=+) #333333 	|
+| Primary Text Color    	       | ![#333333](https://via.placeholder.com/10/333333/000000?text=+) #333333 	|
 | Secondary Color     	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
-| Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
+| Secondary Text Color 	         | ![#FFFFFF](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
+| Secondary Variant Color 	     | 	Defaults to Secondary Color attribute                                   |
 
 ---
 
@@ -53,9 +54,11 @@ The default is ```dark``` and theme values are as follows:
 | Attribute                   	| Color                                                                   	|
 |-----------------------------	|-------------------------------------------------------------------------	|
 | Primary Color       	         | ![#000000](https://via.placeholder.com/10/000000/000000?text=+) #000000 	|
-| Primary Text Color    	      | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Primary Text Color    	       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
 | Secondary Color     	         | ![#1E1E1E](https://via.placeholder.com/10/1E1E1E/000000?text=+) #1E1E1E 	|
-| Secondary TextColor 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Secondary Text Color 	         | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF/000000?text=+) #FFFFFF 	|
+| Secondary Variant Color 	     | 	Defaults to Secondary Color attribute                                   |
+
 
 ---
 
@@ -99,5 +102,32 @@ This can be changed to large as follows:
 <style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
     //..
     <item name="ctLoyaltyChipSize">regular</item> // Either "regular" or "large" Default is "regular"
+</style>
+```
+
+## Loyalty Banner Landing Screen
+The template of the loyalty banner on the landing screen can be modified. There are two templates available "Default" and "Logo & Text". The latter is a full width text with a central logo and an optional gradient background.
+
+<img src="/uploads/loyalty_banner_templates.png">
+
+The Logo & Text template can be styled as follows:
+
+Create a style for the banner:
+```xml
+    <style name="ctLoyaltyLandingBannerStyle">
+        <item name="ctBannerTemplate">logoAndTextBanner</item> // Either "defaultBanner" or "logoAndText". Default is "defaultBanner"
+        <item name="ctBannerBackgroundColor">?colorPrimary</item> // Defaults to the theme's colorPrimary
+        <item name="ctBannerSecondaryBackgroundColor">?colorSecondary</item> // Defaults to the theme's colorSecondary
+        <item name="ctBannerTextColor">@android:color/white</item> // Defaults to Android's white color
+        <item name="ctBannerInfoButtonColor">@android:color/white</item> // Defaults to Android's white color
+        <item name="ctBannerImageDrawable">@drawable/your_logo</item> // If not set, it retrieves it from the Loyalty API
+        <item name="ctBannerFont"> // Optional custom font
+    </style>
+```
+Add the new style to the theme:
+```xml
+<style name="CarTrawlerSDKTheme" parent="CTDayNightTheme" >
+    //..
+    <item name="ctLoyaltyLandingBannerStyle">@style/ctLoyaltyLandingBannerStyle</item> 
 </style>
 ```

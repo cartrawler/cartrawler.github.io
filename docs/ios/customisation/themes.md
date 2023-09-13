@@ -71,6 +71,20 @@ Please ensure any custom fonts used are included in your main bundle.
 
 ---
 
+### Setting an Image as the Landing Page Navigation Title
+The Car Hire title in the Navigation Bar on the landing page can be replaced with an image. 
+The recommended height for this image is 44px. 
+
+To make use of this feature, please set the `landingTopBarImage` and `landingTopBarImageDark` properties on your CTStyle object: 
+
+```java
+style.landingTopBarImage = UIImage(named: "the_logo_for_the_tool_action_bar") // Optional. A text title will be used if this is not set. 
+style.landingTopBarImageDark = UIImage(named: "the_logo_for_the_tool_action_bar_dark") // Optional, will default to landingTopBarImage if not set
+```
+
+![](/uploads/AirlineNav.png)
+
+
 ## SDK Initialisation
 After CTStyle is configured, it must be passed into the SDK during initialisation in your AppDelegate:
 
