@@ -16,6 +16,7 @@ The following languages are supported by the SDK
 <dt>English</dt><dd>en</dd>
 <dt>English (US)</dt><dd>en-us</dd>
 <dt>French</dt><dd>fr</dd>
+<dt>French - Canada</dt><dd>fr-CA</dd>
 <dt>German</dt><dd>de</dd>
 <dt>Polish</dt><dd>pl</dd>
 <dt>Italian</dt><dd>it</dd>
