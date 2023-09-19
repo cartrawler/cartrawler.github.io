@@ -47,7 +47,7 @@ The following languages are supported by the SDK
 <dt>Norwegian</dt><dd>nb</dd>
 <dt>Romanian</dt><dd>ro</dd>
 <dt>Russian</dt><dd>ru</dd>
-<dt>Serbian</dt><dd>sr</dd>
+<!-- <dt>Serbian</dt><dd>sr</dd> -->
 <dt>Spanish - Mexico</dt><dd>es-MX</dd>
 <dt>Spanish - Argentina</dt><dd>es-AR</dd>
 <dt>Swedish</dt><dd>sv</dd>
