@@ -329,7 +329,7 @@ A new CTFlightDetails object is added with the following parameters.
 | pnr                      | Flight PNR                                                                                                  | CT123456                                                                 | String    |
 | sessionID                | Current user session identifier                                                                             | 0idfw78jsnkoo                                                            | String    |
 | sportsEquipment          | Total number of sports equipment items a customer is travelling with                                        |                                                                          | Integer   |
-| sportsEquipmentBreakdown | A breakdown of the individual equipment a customer is travelling with                                       | ["golf": (1), "ski": (1), "surf": (1)]                                   | Map       |
+| sportsEquipmentBreakdown | A breakdown of the individual equipment a customer is travelling with                                       | ["golf": (1), "ski": (1), "surf": (1)]                                   | Dictionary       |
 | tripDuration             | Total length of trip in days                                                                                | 4                                                                        | Integer   |
 | tripType                 | An identification of whether the trip type is business, leisure or other                                    | Business                                                                 | String    |
 
