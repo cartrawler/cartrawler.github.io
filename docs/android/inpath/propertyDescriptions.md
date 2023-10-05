@@ -83,6 +83,9 @@ An optional LocalDateTime that indicates the rental drop off date.
 > Note
 >
 > If this is not called the drop off date will be set to the same value set in the pickupDateTime + 3 days
+---
+### dropOffLocationIATA
+A string IATA code for drop off location, e.g "DUB" for Dublin.
 
 ---
 ### dropOffLocationId
