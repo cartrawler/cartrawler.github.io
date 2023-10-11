@@ -120,27 +120,27 @@ For enhanced reporting partners can optionally add flight data when initialising
 
 A new CTFlightDetails object is added with the following parameters.
 
-| Parameter                | Description                                                                                                 | Example                                                                  | Type      | 
-|:-------------------------|:------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|-----------|
-| age                      | Customer age                                                                                                | 29                                                                       | Integer   |
-| bags                     | Total number of bags. Both Cabin and Hold should be included                                                | 3                                                                        | Integer   |
-| basketAmount             | Total basket amount including bags, seats, etc.                                                             | 130.99                                                                   | Float     |
-| campaignID               | Unique identifier associated with a specific marketing campaign.                                            | Google-EN-Destination-France                                             | String    |
-| context                  | Where in the flow the SDK is loaded                                                                         | Confirmation Screen                                                      | String    |
-| fareClass                | Type of fare                                                                                                | Economy                                                                  | String    |
-| flightFare               | Price of flight(s) only                                                                                     | 101.99                                                                   | Float     |
-| loyaltyNumber            | Customer loyalty number                                                                                     | 123222121                                                                | String    |
-| loyaltyTier              | Customer loyalty tier                                                                                       | Platinum                                                                 | String    |
-| marketingPreference      | Flag to indicate if the current user has opted in for third-party marketing i.e car rental                  | true                                                                     | Boolean   |
-| marketingSegment         | The customers segment as determined by the airline marketing team.                                          | Weekend Breaker                                                          | String    |
-| membershipID             | Only required if different from loyaltyNumber. This value represents the logged in users unique identifier. | String                                                                   | 789       |
-| passengerBreakdown       | Breakdown of Adults, Teens, Children and Infants                                                            | CTFlightPassengerBreakdown(adults: 2, teens: 0, children: 0, infants: 0) | CT Object |
-| pnr                      | Flight PNR                                                                                                  | CT123456                                                                 | String    |
-| sessionID                | Current user session identifier                                                                             | 0idfw78jsnkoo                                                            | String    |
-| sportsEquipment          | Total number of sports equipment items a customer is travelling with                                        |                                                                          | Integer   |
-| sportsEquipmentBreakdown | A breakdown of the individual equipment a customer is travelling with                                       | ["golf": (1), "ski": (1), "surf": (1)]                                   | Map       |
-| tripDuration             | Total length of trip in days                                                                                | 4                                                                        | Integer   |
-| tripType                 | An identification of whether the trip type is business, leisure or other                                    | Business                                                                 | String    |
+| Parameter                | Description                                                                                                 | Example                                                                  | Type       | 
+|:-------------------------|:------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|------------|
+| age                      | Customer age                                                                                                | 29                                                                       | Integer    |
+| bags                     | Total number of bags. Both Cabin and Hold should be included                                                | 3                                                                        | Integer    |
+| basketAmount             | Total basket amount including bags, seats, etc.                                                             | 130.99                                                                   | Float      |
+| campaignID               | Unique identifier associated with a specific marketing campaign.                                            | Google-EN-Destination-France                                             | String     |
+| context                  | Where in the flow the SDK is loaded                                                                         | Confirmation Screen                                                      | String     |
+| fareClass                | Type of fare                                                                                                | Economy                                                                  | String     |
+| flightFare               | Price of flight(s) only                                                                                     | 101.99                                                                   | Float      |
+| loyaltyNumber            | Customer loyalty number                                                                                     | 123222121                                                                | String     |
+| loyaltyTier              | Customer loyalty tier                                                                                       | Platinum                                                                 | String     |
+| marketingPreference      | Flag to indicate if the current user has opted in for third-party marketing i.e car rental                  | true                                                                     | Boolean    |
+| marketingSegment         | The customers segment as determined by the airline marketing team.                                          | Weekend Breaker                                                          | String     |
+| membershipID             | Only required if different from loyaltyNumber. This value represents the logged in users unique identifier. | String                                                                   | 789        |
+| passengerBreakdown       | Breakdown of Adults, Teens, Children and Infants                                                            | CTFlightPassengerBreakdown(adults: 2, teens: 0, children: 0, infants: 0) | CT Object  |
+| pnr                      | Flight PNR                                                                                                  | CT123456                                                                 | String     |
+| sessionID                | Current user session identifier                                                                             | 0idfw78jsnkoo                                                            | String     |
+| sportsEquipment          | Total number of sports equipment items a customer is travelling with                                        |                                                                          | Integer    |
+| sportsEquipmentBreakdown | A breakdown of the individual equipment a customer is travelling with                                       | ["golf": (1), "ski": (1), "surf": (1)]                                   | Dictionary |
+| tripDuration             | Total length of trip in days                                                                                | 4                                                                        | Integer    |
+| tripType                 | An identification of whether the trip type is business, leisure or other                                    | Business                                                                 | String     |
 
 ```java
 //Example CTFLightDetails initialisation
