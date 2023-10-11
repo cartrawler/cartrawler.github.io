@@ -146,25 +146,25 @@ A new CTFlightDetails object is added with the following parameters.
 //Example CTFLightDetails initialisation
 
 let flightDetails = CTFlightDetails()
-flightDetails.passengerBreakdown = CTFlightPassengerBreakdown(adults: 2, teens: 0, children: 0, infants: 0)
-flightDetails.marketingPreference = true
-flightDetails.marketingSegment = "Budget Conscious"
+flightDetails.age = 32
+flightDetails.bags = 2
+flightDetails.basketAmount = 130.99
+flightDetails.campaignID = "Google-EN-Destination-France"
+flightDetails.context = "confirmation"
 flightDetails.fareClass = "regular"
 flightDetails.flightFare = 101.99
-flightDetails.basketAmount = 130.99
-flightDetails.bags = 2
-flightDetails.sportsEquipment = 2
-flightDetails.sportsEquipmentBreakdown = ["golf": (1), "ski": (1), "surf": (1)]
 flightDetails.loyaltyNumber = "WZ123456789"
 flightDetails.loyaltyTier = "platinum"
+flightDetails.marketingPreference = true
+flightDetails.marketingSegment = "Budget Conscious"
 flightDetails.membershipID = "123222121"
-flightDetails.age = 32
-flightDetails.tripType = "business"
-flightDetails.tripDuration = 4
-flightDetails.context = "confirmation"
+flightDetails.passengerBreakdown = CTFlightPassengerBreakdown(adults: 2, teens: 0, children: 0, infants: 0)
 flightDetails.pnr = "TEYI89"
 flightDetails.sessionID = "0idfw78jsnkoo"
-flightDetails.campaignID = "Google-EN-Destination-France"
+flightDetails.sportsEquipment = 2
+flightDetails.sportsEquipmentBreakdown = ["golf": (1), "ski": (1), "surf": (1)]
+flightDetails.tripDuration = 4
+flightDetails.tripType = "business"
 
 //Use CTFLightDetails as part of the context
 let context = CTContext(implementationID: "your implementation ID",
