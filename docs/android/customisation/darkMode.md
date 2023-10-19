@@ -27,9 +27,6 @@ The SDK supports dark mode, but it is disabled by default. It can be enabled or 
 
 You can configure dark mode support in the SDK by sending the constants from the `AppCompatDelegate` class. 
 
-{: .note}
-By default, dark mode is off.
-
 The following constants are supported:
 
 ```java
@@ -37,6 +34,9 @@ AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 AppCompatDelegate.MODE_NIGHT_YES
 AppCompatDelegate.MODE_NIGHT_NO
 ```
+
+{: .note}
+By default CarTrawler SDK follows the system settings (AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM).
 
 Initialise the SDK with the preferred setting:
 
