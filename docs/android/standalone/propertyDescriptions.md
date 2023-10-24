@@ -190,3 +190,21 @@ val sdkData = CTSdkData.Builder(clientId = clientId).flightDetails(flightDetails
 
 ```        
 ---
+## Adding UTM tracking data
+{: .no_toc }
+For enhanced reporting partners can optionally add tracking data in the form of UTM parameters. The meaning and usage of these parameters are <a href="https://en.wikipedia.org/wiki/UTM_parameters">as standard</a>.
+
+A new CTUTMParameters object is added with the following parameters.
+
+```java
+//Example CTUTMParameters usage
+val utmParameters = CTUTMParameters(
+    .utmSource = "partner_utm_source"
+    .utmMedium = "partner_utm_medium"
+    .utmCampaign = "partner_utm_campaign"
+    .utmTerm = "partner_utm_term"
+    .utmContent = "partner_utm_content"
+
+//Use CTUTMParameters when initialising CTSdkBuilder
+val sdkData = CTSdkData.Builder(clientId = clientId).utmParameters(utmParameters).build()
+```
