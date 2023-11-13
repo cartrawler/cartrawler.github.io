@@ -169,13 +169,28 @@ flightDetails.tripType = "business"
 //Use CTFLightDetails as part of the context
 let context = CTContext(implementationID: "your implementation ID",
 clientID: "your client ID",
-flow: .standAlone)
+flow: .inPath)
     
 context.flightDetails = flightDetails
-
-```   
-
+```
 ---
+## Adding UTM tracking data
+{: .no_toc }
+For enhanced reporting partners can optionally add tracking data in the form of UTM parameters. The meaning and usage of these parameters are <a href="https://en.wikipedia.org/wiki/UTM_parameters">as standard</a>.
+
+A new CTUTMParameters object is added with the following parameters.
+
+```java
+//Example CTUTMParameters initialisation
+let utmParameters = CTUTMParameters()
+utmParameters.source = "partner_utm_source"
+utmParameters.medium = "partner_utm_medium"
+utmParameters.campaign = "partner_utm_campaign"
+utmParameters.term = "partner_utm_term"
+utmParameters.content = "partner_utm_content"
+        
+context.utmParameters = utmParameters
+```
 
 ## Present the SDK
 
