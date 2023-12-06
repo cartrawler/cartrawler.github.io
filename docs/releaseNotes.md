@@ -7,6 +7,7 @@ permalink: docs/release-notes
 ---
 
 # Release Notes
+
 {: .no_toc }
 
 <!-- Supports iOS versions 10 to 15. -->
