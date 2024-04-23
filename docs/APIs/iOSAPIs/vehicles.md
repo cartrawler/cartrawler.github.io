@@ -114,5 +114,6 @@ class CTCashDetails: NSObject {
   let originalPrice: NSNumber // The original price of the vehicle
   let discountedPrice: NSNumber // The discounted price of the vehicle
   let discountAmount: NSNumber // The discount amount 
+  let discountPercentage: String // The percentage discount
 }
 ```
