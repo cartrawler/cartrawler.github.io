@@ -63,3 +63,47 @@ The `countryCode` property refers to the country of residency, and this is used 
 
 {: .note } 
 For the `promotionCode` property: To display the field and prepopulate it, please provide a string. To display the field without a prepopulated code please provide an empty string.
+
+---
+### CTPassenger
+{: .no_toc }
+
+The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passengers` property on your `CTContext`.
+
+<dl>
+  <dt>firstName</dt><dd> The customer's first name. </dd>
+  <dt>lastName</dt><dd> The customer's surname.</dd>
+  <dt>addressLine1</dt><dd> The customer's first line of address.</dd>
+  <dt>addressLine2</dt><dd> The customer's second line of address.</dd>
+  <dt>city</dt><dd> The customer's city.</dd>
+  <dt>postCode</dt><dd> The customer's postcode.</dd>
+  <dt>countryCode</dt><dd> The customer's countryCode.</dd>
+  <dt>age</dt><dd> The customer's age.</dd>
+  <dt>email</dt><dd> The customer's email.</dd>
+  <dt>phone</dt><dd> The customer's phone number.</dd>
+  <dt>phoneCountryPrefix</dt><dd> The customer's country phone prefix.</dd>
+  <dt><small>loyaltyProgramNumber</small></dt><dd> The customer's loyalty program number.</dd>
+  <dt>isPrimaryDriver</dt><dd> A bool indicating if the customer is the lead driver.</dd>
+
+</dl>
+
+```java
+//Passenger object
+let passenger = CTPassenger(firstName: "Ryan",
+                            lastName: "O'Connor",
+                            addressLine1: "DunDrum",
+                            addressLine2: "Dublin 14",
+                            city: "Dublin",
+                            postcode: "Dublin 14",
+                            countryCode: "IE",
+                            age: 25,
+                            email: "ryan.oconnor@cartrawler.com",
+                            phone: "0838880000",
+                            phoneCountryPrefix: "353",
+                            loyaltyProgramNumber: "1234",
+                            isPrimaryDriver: true)
+context.passengers = [passenger]
+```
+
+{: .note }
+`CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.
