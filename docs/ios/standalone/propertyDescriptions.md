@@ -153,7 +153,6 @@ The Driver Details screen can by prepopulated by creating a `CTPassenger` object
   <dt>phoneCountryPrefix</dt><dd> The customer's country phone prefix.</dd>
   <dt><small>loyaltyProgramNumber</small></dt><dd> The customer's loyalty program number.</dd>
   <dt>isPrimaryDriver</dt><dd> A bool indicating if the customer is the lead driver.</dd>
-
 </dl>
 
 ```java
