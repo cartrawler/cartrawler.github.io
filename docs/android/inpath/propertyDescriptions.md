@@ -83,6 +83,7 @@ An optional LocalDateTime that indicates the rental drop off date.
 > Note
 >
 > If this is not called the drop off date will be set to the same value set in the pickupDateTime + 3 days
+
 ---
 ### dropOffLocationIATA
 A string IATA code for drop off location, e.g "DUB" for Dublin.
@@ -121,20 +122,20 @@ An optional CTSdkPassenger, passing this will pre-populate the driver details fo
 
 The CTSdkPassenger object has the following optional parameters:
 
-| Parameter          | Description                                  | Usage                                                                                                                                       | Type      | 
-|:-------------------|:---------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| firstName          | Customer's name                              | First name displayed on the driver details' screen                                                                                          | String    |
-| lastName           | Customer's last name                         | Last name displayed on the driver details' screen                                                                                           | String    |
-| email              | Customer's email                             | Email displayed on the driver details' screen                                                                                               | String    |
-| phoneCountryCode   | Customer's 3 digit phone country code        | Phone code displayed on the driver details' screen. If not set, it is retrieved from user's country code                                    | String    |
-| phoneNumber        | Customer's phone number in national format   | Phone number displayed on the driver details' screen                                                                                        | String    |
-| address            | Customer's Address                           | Adress displayed on the driver details' screen                                                                                              | String    |
-| city               | Customer's city                              | City displayed on the driver details' screen                                                                                                | String    |
-| postcode           | Customer's postcode                          | Postcode displayed on the driver details' screen                                                                                            | String    |
-| country            | Customer's country                           | Country displayed on the driver details' screen. If not set, it fallbacks to the country set in the main CTSdkData or the device's country  | String    |
-| flightNumber       | Customer's flight number                     | Flight number displayed on the driver details' screen                                                                                       | String    |
-| age                | Customer's age                               | Age displayed on the driver details' screen                                                                                                 | String    |
-| membershipId       | Customer's loyalty program id                | Loyalty number displayed on the driver details' screen and also used to retrieve loyalty points to be displayed during the booking flow     | String    |
+| Parameter          | Description                                  | Usage                                                                                                                                      | Type      | 
+|:-------------------|:---------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| firstName          | Customer's name                              | First name displayed on the driver details screen                                                                                          | String    |
+| lastName           | Customer's last name                         | Last name displayed on the driver details screen                                                                                           | String    |
+| email              | Customer's email                             | Email displayed on the driver details screen                                                                                               | String    |
+| phoneCountryCode   | Customer's 3 digit phone country code        | Phone code displayed on the driver details screen. If not set, it is retrieved from user's country code                                    | String    |
+| phoneNumber        | Customer's phone number in national format   | Phone number displayed on the driver details screen                                                                                        | String    |
+| address            | Customer's Address                           | Address displayed on the driver details screen                                                                                             | String    |
+| city               | Customer's city                              | City displayed on the driver details screen                                                                                                | String    |
+| postcode           | Customer's postcode                          | Postcode displayed on the driver details screen                                                                                            | String    |
+| country            | Customer's country                           | Country displayed on the driver details screen. If not set, it fallbacks to the country set in the main CTSdkData or the device's country  | String    |
+| flightNumber       | Customer's flight number                     | Flight number displayed on the driver details screen                                                                                       | String    |
+| age                | Customer's age                               | Age displayed on the driver details screen                                                                                                 | String    |
+| membershipId       | Customer's loyalty program id                | Loyalty number displayed on the driver details screen and also used to retrieve loyalty points to be displayed during the booking flow     | String    |
 
 ```java
 //Example CTSdkPassenger initialisation
@@ -152,6 +153,9 @@ val passenger = CTSdkPassenger.Builder()
         .age("29")
         .membershipId("123456")
         .build()
+
+//Use CTSdkPassenger when initialising CTSdkBuilder
+val sdkData = CTSdkData.Builder(clientId = clientId).passenger(passenger).build()
 ```
 
 ---
