@@ -102,6 +102,44 @@ A String value that represents the Order ID for a Flight PNR or Booking Referenc
 ### passenger
 An optional CTSdkPassenger, passing this will pre-populate the driver details form during the booking flow.
 
+The CTSdkPassenger object has the following optional parameters:
+
+| Parameter          | Description                                  | Usage                                                                                                                                      | Type      | 
+|:-------------------|:---------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| firstName          | Customer's name                              | First name displayed on the driver details screen                                                                                          | String    |
+| lastName           | Customer's last name                         | Last name displayed on the driver details screen                                                                                           | String    |
+| email              | Customer's email                             | Email displayed on the driver details screen                                                                                               | String    |
+| phoneCountryCode   | Customer's 3 digit phone country code        | Phone code displayed on the driver details screen. If not set, it is retrieved from user's country code                                    | String    |
+| phoneNumber        | Customer's phone number in national format   | Phone number displayed on the driver details screen                                                                                        | String    |
+| address            | Customer's Address                           | Address displayed on the driver details screen                                                                                             | String    |
+| city               | Customer's city                              | City displayed on the driver details screen                                                                                                | String    |
+| postcode           | Customer's postcode                          | Postcode displayed on the driver details screen                                                                                            | String    |
+| country            | Customer's country                           | Country displayed on the driver details screen. If not set, it fallbacks to the country set in the main CTSdkData or the device's country  | String    |
+| flightNumber       | Customer's flight number                     | Flight number displayed on the driver details screen                                                                                       | String    |
+| age                | Customer's age                               | Age displayed on the driver details screen                                                                                                 | String    |
+| membershipId       | Customer's loyalty program id                | Loyalty number displayed on the driver details screen and also used to retrieve loyalty points to be displayed during the booking flow     | String    |
+
+```java
+//Example CTSdkPassenger initialisation
+val passenger = CTSdkPassenger.Builder()
+        .firstName("John")
+        .lastName("Murphy")
+        .email("mail@mail.com")
+        .phoneCountryCallingCode("353")
+        .phoneNumber("08666666666")
+        .address("Pearse Stree 738")
+        .city("Cork")
+        .postCode("W99NH99")
+        .country("IE")
+        .flightNumber("IE 123")
+        .age("29")
+        .membershipId("123456")
+        .build()
+
+//Use CTSdkPassenger when initialising CTSdkBuilder
+val sdkData = CTSdkData.Builder(clientId = clientId).passenger(passenger).build()
+```
+
 ---
 ### theme
 An `@StyleRes` int that is used to setup the theme for the SDK, for more details check <a href="/docs/android/customisation/themes#styling-the-sdk-and-initialising-your-theme">Themes</a>.
