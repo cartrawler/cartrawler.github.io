@@ -146,7 +146,8 @@ The Driver Details screen can by prepopulated by creating a `CTPassenger` object
   <dt>addressLine2</dt><dd> The customer's second line of address.</dd>
   <dt>city</dt><dd> The customer's city.</dd>
   <dt>postCode</dt><dd> The customer's postcode.</dd>
-  <dt>countryCode</dt><dd> The customer's countryCode.</dd>
+  <dt>countryCode</dt><dd> The customer's countryCode. <br/>
+<u>Note</u>: CTPassenger's countryCode takes priority over CTContext's countryCode property when we make search requests.</dd>
   <dt>age</dt><dd> The customer's age.</dd>
   <dt>email</dt><dd> The customer's email.</dd>
   <dt>phone</dt><dd> The customer's phone number.</dd>
@@ -170,8 +171,9 @@ let passenger = CTPassenger(firstName: "Ryan",
                             phoneCountryPrefix: "353",
                             loyaltyProgramNumber: "1234",
                             isPrimaryDriver: true)
+
+let context = CTContext(implementationID: "your implementation ID",
+                                clientID: "your client ID",
+                                    flow: .standAlone)
 context.passengers = [passenger]
 ```
-
-{: .note }
-`CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.
