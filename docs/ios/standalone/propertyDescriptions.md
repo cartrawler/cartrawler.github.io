@@ -153,7 +153,6 @@ The Driver Details screen can by prepopulated by creating a `CTPassenger` object
   <dt>phone</dt><dd> The customer's phone number.</dd>
   <dt>phoneCountryPrefix</dt><dd> The customer's country phone prefix.</dd>
   <dt><small>loyaltyProgramNumber</small></dt><dd> The customer's loyalty program number.</dd>
-  <dt>isPrimaryDriver</dt><dd> A bool indicating if the customer is the lead driver.</dd>
 </dl>
 
 ```java
@@ -169,8 +168,7 @@ let passenger = CTPassenger(firstName: "Ryan",
                             email: "ryan.oconnor@cartrawler.com",
                             phone: "0838880000",
                             phoneCountryPrefix: "353",
-                            loyaltyProgramNumber: "1234",
-                            isPrimaryDriver: true)
+                            loyaltyProgramNumber: "1234")
 
 let context = CTContext(implementationID: "your implementation ID",
                                 clientID: "your client ID",
