@@ -402,8 +402,7 @@ let passenger = CTPassenger(firstName: "Ryan",
                             email: "ryan.oconnor@cartrawler.com",
                             phone: "0838880000",
                             phoneCountryPrefix: "353",
-                            loyaltyProgramNumber: "1234",
-                            isPrimaryDriver: true)
+                            loyaltyProgramNumber: "1234")
 context.passengers = [passenger]
 ```
 
