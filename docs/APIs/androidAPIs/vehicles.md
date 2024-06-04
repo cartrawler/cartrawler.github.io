@@ -104,6 +104,21 @@ data class VehicleDetails(
     //Price
     val price: Double,
     val pricePerDay: Double,
-    val currencyCode: String
+    val currencyCode: String,
+
+    val ctCashDetails: CTCashDetails?
 )
+```
+
+### CTCash Details class
+{: .no_toc }
+
+```java
+data class CTCashDetails(
+    val offerTitle: String, // title of the special offer, displayed on the car block chip on the vehicle list
+    val originalPrice: Double, // original price, usually displayed with a strikethrough on the car block chip on the vehicle list
+    val discountedPrice: Double, 
+    val discountAmount: Double, 
+    val discountPercentage: Double
+) : Parcelable
 ```

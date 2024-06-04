@@ -101,5 +101,19 @@ class CTVehicleDetails: NSObject {
   let price: NSNumber // vehicle price
   let pricePerDay: NSNumber // vehicle price per day
   let currencyCode: String // vehicle price currency code
+  let ctCashDetails: CTCashDetails // CTCashDetails object
+}
+```
+
+### CTCash Details class
+{: .no_toc }
+
+```java
+class CTCashDetails: NSObject {
+  let offerTitle: String // title of the special offer, displayed on the carblock chip on the vehicle list 
+  let originalPrice: NSNumber // The original price of the vehicle
+  let discountedPrice: NSNumber // The discounted price of the vehicle
+  let discountAmount: NSNumber // The discount amount 
+  let discountPercentage: String // The percentage discount
 }
 ```
