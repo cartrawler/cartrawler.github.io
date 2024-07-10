@@ -26,7 +26,6 @@ To implement the SDK's Standalone flow within your app, please use the following
     Alternatives Standalone flows
   </summary>
   {: .text-delta }
-- <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-search-screen-bypass-the-landing-screen-">Start Standalone Flow in the Search screen</a>
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-in-the-vehicle-list-screen-bypass-the-landing-and-search-screens-">Start Standalone Flow in the vehicle list screen</a>
 - <a href="/docs/android/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens-">Start Standalone Flow on the Vehicle List via Recent Search</a>
 - <a href="/docs/android/standalone/implementation-steps#start-with-a-vehicle-pinned-to-the-top-of-the-list-bypass-the-landing-and-search-screens-">Start with a vehicle pinned to the top of the list</a>
@@ -93,27 +92,10 @@ CartrawlerSDK.start(
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithPinnedVehicle("<vehicle_ref_id_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToAvailabilityWithRecentSearch("<ct_recent_search_data_here>")`<br/>
 > `CTStandaloneNavigation.CTNavigateToLanding`<br/>
-> `CTStandaloneNavigation.CTNavigateToSearch`<br/>
 > `CTStandaloneNavigation.CTNavigateWithDeepLink`<br/>
 
 {: .important }
 The `requestCode` is defined by the consumer app, since it will need to use it inside its `onActivityResult` conditional to capture the booking payload that the SDK sends it back to the consumer app.
-
----
-
-## Start Standalone Flow in the Search screen (bypass the landing screen) <br/>
-{: .no_toc }
-
-This flow will bypass the landing screen and set the start screen as Search, you only need to set the `flow` in CartrawlerSDK.start to:
-
-```kotlin
-CartrawlerSDK.start(
-    activity = this,
-    requestCode = YOUR_REQUEST_CODE_HERE,
-    ctSdkData = sdkDataClientIdXYZ.build(),
-    flow = CTSdkFlow.Standalone(navigateTo = CTStandaloneNavigation.CTNavigateToSearch)
-)
-```
 
 ---
 
