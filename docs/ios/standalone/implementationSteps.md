@@ -30,7 +30,6 @@ To implement the SDK's Standalone flow within your app, please use the following
   </summary>
   {: .text-delta }
 1. <a href="/docs/ios/standalone/implementation-steps#start-the-standalone-flow-on-another-screen">Start the Standalone Flow on Another Screen</a>
-- <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-search-screen-bypass-landing-screen">Start Standalone flow on the Search Screen (bypass Landing Screen)</a>
 - <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-pickup--drop-off-bypass-the-landing-and-search-screens">Start Standalone flow on the Vehicle List via Pickup & Drop Off (bypass the landing and search screens)</a>
 - <a href="/docs/ios/standalone/implementation-steps#start-standalone-flow-on-the-vehicle-list-via-recent-search-bypass-the-landing-and-search-screens">Start Standalone Flow on the Vehicle List via Recent Search (bypass the landing and search screens)</a>
 2. <a href="/docs/ios/standalone/implementation-steps#start-the-standalone-flow-via-url-deeplink">Start the Standalone Flow via URL Deeplink</a>
@@ -135,22 +134,6 @@ CarTrawlerSDK.sharedInstance().push(fromNavigationViewController: navigationCont
 
 When launching the Standalone flow, it is possible to bypass the landing and search screens by setting certain properties of your CTContext object.    
 This is entirely optional. 
-<br/>
-
-### Start Standalone flow on the Search Screen (bypass Landing Screen)
-{: .no_toc }
-
-```java
-// Create a context for standAlone flow
-let context = CTContext(implementationID: "your implementation ID", 
-                        clientID: "your client ID", 
-                        flow: .standAlone)
-context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
-context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
-context.languageCode = "EN" // The language associated with the device’s system region is used by default.
-context.deeplink = .searchForm
-context.delegate = self
-```
 
 <br />
 ### Start Standalone flow on the vehicle list <b>via Pickup & Drop Off</b> (bypass the landing and search screens)
