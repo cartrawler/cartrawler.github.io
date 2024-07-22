@@ -81,9 +81,9 @@ data class VehicleDetails(
     val pictureURL: String,
     val passengerQuantity: Int,
     val doorCount: Int?,
-    val baggageQuantity: Int
+    val baggageQuantity: Int,
     val fuelType: String,
-    val driveType: Stringl,
+    val driveType: String,
     val airConditionInd: Boolean,
     val transmissionType: String,
     val size: String,
@@ -106,14 +106,15 @@ data class VehicleDetails(
     val pricePerDay: Double,
     val currencyCode: String,
 
-    val ctCashDetails: CTCashDetails?
+    val ctCashDetails: CTCashDetails? = null,
+    val ctSpecialOffers: List<CTSpecialOffer> = emptyList()
 )
 ```
 
 ### CTCash Details class
 {: .no_toc }
 
-```java
+```kotlin
 data class CTCashDetails(
     val offerTitle: String, // title of the special offer, displayed on the car block chip on the vehicle list
     val originalPrice: Double, // original price, usually displayed with a strikethrough on the car block chip on the vehicle list
@@ -121,4 +122,24 @@ data class CTCashDetails(
     val discountAmount: Double, 
     val discountPercentage: Double
 ) : Parcelable
+```
+### CTSpecialOffer Details class
+{: .no_toc }
+
+```kotlin
+
+enum class CTOfferType {
+    PERCENTAGE_DISCOUNT,
+    MONETARY_DISCOUNT
+}
+
+data class CTSpecialOffer(
+    val offerType: CTOfferType, // CTOfferType.PERCENTAGE_DISCOUNT or CTOfferType.MONETARY_DISCOUNT
+    val offerShortText: String,
+    val offerText: String,
+    val originalPrice: Double, // original price, usually displayed with a strikethrough on the car block chip on the vehicle list
+    val discountAmount: Double,
+    val discountedPrice: Double,
+    val offerValue: Double? = null
+)
 ```
