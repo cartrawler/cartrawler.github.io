@@ -102,10 +102,11 @@ class CTVehicleDetails: NSObject {
   let pricePerDay: NSNumber // vehicle price per day
   let currencyCode: String // vehicle price currency code
   let ctCashDetails: CTCashDetails // CTCashDetails object
+  let specialOffers: [CTSpecialOfferDetails] // array of CTSpecialOfferDetails objects
 }
 ```
 
-### CTCash Details class
+### CTCashDetails class
 {: .no_toc }
 
 ```java
@@ -115,5 +116,25 @@ class CTCashDetails: NSObject {
   let discountedPrice: NSNumber // The discounted price of the vehicle
   let discountAmount: NSNumber // The discount amount 
   let discountPercentage: String // The percentage discount
+}
+```
+
+### CTSpecialOfferDetails class
+{: .no_toc }
+
+```java
+typedef NS_ENUM(NSUInteger, CTOfferType) {
+    CTOfferTypeMonetary,
+    CTOfferTypePercentage,
+};
+
+class CTSpecialOfferDetails: NSObject {
+  let type: CTOfferType // CTOfferTypeMonetary or CTOfferTypePercentage
+  let shortText: String?
+  let text: String?
+  let discountAmount: NSNumber?
+  let discountedPrice: NSNumber?
+  let value: NSNumber?
+  let originalPrice: NSNumber? // original price, usually displayed with a strikethrough on the car block chip on the vehicle list
 }
 ```
