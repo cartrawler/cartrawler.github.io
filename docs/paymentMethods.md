@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Release Notes
-nav_order: 11
+title: Payment Methods
+nav_order: 5
 has_children: true
-permalink: docs/release-notes
+permalink: docs/payment-methods
 ---
 
-# Release Notes
+# Payment Methods
 
 {: .no_toc }
 
