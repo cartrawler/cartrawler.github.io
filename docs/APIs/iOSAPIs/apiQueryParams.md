@@ -26,7 +26,8 @@ params.clientID = "your clientID"
 params.countryCode = "IE" // The country code associated with the device’s system region is used by default.
 params.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
 params.languageCode = "EN" // The language associated with the device’s system region is used by default.
-params.iataCode = "DUB"
+params.iataCode = "DUB" // use IATACode for Objective-C
+params.iataCodeDropoff = "DUB" // use IATACodeDropoff for Objective-C
 params.pickupDate = Date(timeIntervalSinceNow: 86400) // next day
 params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
 params.numberOfVehicles = 20
@@ -52,6 +53,8 @@ params.sortType = .recommended
 <dd><b>[Required]</b> A Drop-off Date.</dd>
 <dt>IATACode </dt>
 <dd>An IATA code for pick-up location.</dd>
+<dt>IATACodeDropoff</dt>
+<dd>An IATA code for drop-off location.</dd>
 <dt>pickupLocationID</dt>
 <dd>An OTA Location ID for pick-up location.</dd>
 <dt>dropOffLocationID</dt>
