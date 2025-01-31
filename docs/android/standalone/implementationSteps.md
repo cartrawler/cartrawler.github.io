@@ -164,6 +164,35 @@ CartrawlerSDK.start(
 
 ---
 
+## Start standalone flow on the manage my booking screen (bypass the landing) <br/>
+{: .no_toc }
+
+To start from this alternate point in the flow, a CTBooking object must be provided. If the booking is not already available in the app, it will be imported first, and the user will then be redirected.
+
+You can provide a booking ID from any booking made on your platforms (web, iOS, Android, etc.). If the booking needs to be imported (e.g., it was not created using the Android SDK), ensure that you also supply the associated email address
+
+```kotlin
+val sdkDataClientIdXYZ = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+
+val booking = CTBooking(
+    id = "IE123456789, 
+    email = "mail@mail.com" //optional see description above
+)    
+
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkDataClientIdXYZ.build(),
+    flow = CTSdkFlow.Standalone(
+        navigateTo = CTStandaloneNavigation.CTNavigateToBookingDetails(bookingDetails = booking)
+    )
+)
+```
+
+---
+
 ## Start the Standalone Flow via URL Deeplink
 {: .no_toc }
 
@@ -209,6 +238,11 @@ To open the SDK on the landing screen, simply set the type to landing: `type=lan
 
 To open the SDK on the vehicle list screen, simply set the type to search-result: `type=search-result`, make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page.
 
+### Start Standalone flow on the Manage Booking screen
+{: .no_toc }
+
+To open the SDK on the manage booking screen, simply set the type to booking-details: `type=booking-details` and make sure to provide the booking id and email. Email is only required to import the booking if it was made through a different platform (e.g iOS, Web)
+
 ### List of Parameters
 {: .no_toc }
 
@@ -223,6 +257,20 @@ Below are all the available parameters for use in the URL. As you will see, some
 | client_id           | 123456  | yes      |
 | ctyCode (residency) | IE      | no       |
 | ccy (currency)      | EUR     | no       |
+
+
+##### Manage Booking
+{: .no_toc }
+
+| Parameter           | Example          | Required                                                              | 
+|:--------------------|:-----------------|:----------------------------------------------------------------------|
+| type                | booking -details | yes                                                                   |
+| client_id           | 123456           | yes                                                                   |
+| ctyCode (residency) | IE               | no                                                                    |
+| ccy (currency)      | EUR              | no                                                                    |
+| booking             | IE123456789      | yes                                                                   |
+| email               | mail@mail.com    | no (only required if importing the booking from a different platform) |
+
 
 ##### Search Results
 {: .no_toc }
