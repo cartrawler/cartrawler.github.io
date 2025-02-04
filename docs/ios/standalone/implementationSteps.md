@@ -252,6 +252,11 @@ To open the SDK on the vehicle list page, set the type to search-result: `type=s
 {: .note}
 Make sure to provide pickup and drop off dates, and a pickup location ID, or IATA code. If any of these are missing, the SDK will instead open on the landing page. 
 
+### Start Standalone flow on the Manage Booking screen
+{: .no_toc }
+
+To open the SDK on the manage booking screen, simply set the type to booking-details: `type=booking-details` and make sure to provide the booking id and email. Email is only required to import the booking if it was made through a different platform (e.g Android, Web)
+
 ### List of Parameters
 
 Below are all the available parameters for use in the URL. 
@@ -267,6 +272,18 @@ Below are all the available parameters for use in the URL.
 | client_id           | 123456  | yes      |
 | ctyCode (residency) | IE      | no       |
 | ccy (currency)      | EUR     | no       |
+
+##### Manage Booking
+{: .no_toc }
+
+| Parameter           | Example          | Required                                                              | 
+|:--------------------|:-----------------|:----------------------------------------------------------------------|
+| type                | booking -details | yes                                                                   |
+| client_id           | 123456           | yes                                                                   |
+| ctyCode (residency) | IE               | no                                                                    |
+| ccy (currency)      | EUR              | no                                                                    |
+| booking             | IE123456789      | yes                                                                   |
+| email               | mail@mail.com    | no (only required if importing the booking from a different platform) |
 
 ##### Search Results
 {: .no_toc }
