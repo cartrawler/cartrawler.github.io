@@ -21,8 +21,27 @@ permalink: /docs/android/standalone/property-descriptions/
 
 ---
 
-### CTSdkData Builder
+## CTSdkData Builder
 {: .no_toc }
+
+### Pick Up & Drop Off Location parameters
+Pick up location can be passed as a IATA, coordinates or OTA Location ID. 
+Priority is IATA > OTA location id > coordinates
+
+- 'pickupLocationIATA' and 'dropOffLocationIATA':
+  It takes a three-letter code that represents airports worldwide. E.g 'DUB' for Dublin.
+
+- 'pickUpLocationCoordinate's and 'dropOffLocationCoordinates':
+  It takes a CTCoordinates object:
+  ```java 
+  data class CtCoordinates(
+      val latitude: Double,
+      val longitude: Double
+  )
+  ```
+- 'pickupLocationId' and 'dropOffLocationId':
+  It takes a string OTA Location ID for pickup location, e.g “11” for Dublin.
+
 
 ### addPromotionCode(promotionCodeType: CTPromotionCodeType)
 This allows Partners to pass a promotion code type to the SDK as the main toggle to display promotion code field on the search form or not. The following types can be used:
@@ -46,6 +65,7 @@ CTPromotionCodeType.WithCodeType(promotionCode: String)
 > If `addPromotionCode` method is not called with any of the options described above the promotion code field will not be shown in the search form screen.
 
 ---
+
 ### accountId
 A string value that represents the Account ID.
 
