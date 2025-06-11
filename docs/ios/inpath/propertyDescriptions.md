@@ -39,6 +39,21 @@ Please ensure any custom fonts used are included in your main bundle.
 <br />
 To initialise the In Path flow, it is necessary to instantiate a CTContext object and set the context in the SDK.
 
+### Pick Up & Drop Off Location parameters
+Pick up location can be passed as a IATA, coordinates or OTA Location ID. 
+Priority is IATA > OTA location id > coordinates
+
+- 'pickupLocation' and 'dropOffLocation':
+  It takes a three-letter code that represents airports worldwide. E.g 'DUB' for Dublin.
+
+- 'pickupLocationCoordinate's and 'dropOffLocationCoordinate':
+  ```swift 
+  context.pickupLocationCoordinate = CLLocationCoordinate2DMake(53.3333, -6.2408989)
+  context.dropOffLocationCoordinate = CLLocationCoordinate2DMake(51.903614, -8.468399)
+  ```
+- 'pickupLocationId' and 'dropOffLocationId':
+  It takes a string OTA Location ID for pickup location, e.g “11” for Dublin.
+
 {: .note } 
 The `countryCode` property refers to the country of residency, and this is used when we make search requests.
 
@@ -50,9 +65,13 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A language code to switch between languages. Default is "EN" if not provided.</dd>
   <dt>pickupDate</dt><dd><b>[Required]</b> Pick-up Date.</dd>
-  <dt>dropOffDate</dt><dd><b>[Required]</b> Drop-off Date.</dd>
-  <dt>pickupLocation</dt><dd><b>[Required]</b> An IATA code for pick-up location.</dd>
-  <dt>dropOffLocation</dt><dd> An IATA code for drop-off location.</dd>
+  <dt>dropOffDate</dt><dd> Drop-off Date. If this is not set the drop off date will be set to the same value set in the pickupDate + 3 days</dd>
+  <dt>pickupLocation</dt><dd><b>[Required for search by IATA]</b>An IATA code for pick-up location.</dd>
+  <dt>dropOffLocation</dt><dd> An IATA code for drop-up location. Fallback to pickupLocation if is not set.</dd>
+  <dt>pickupLocationID</dt><dd><b>[Required for search by location ID]</b> An OTA Location ID for pick-up location.</dd>
+  <dt>dropOffLocationID</dt><dd> An OTA Location ID for drop-off location. Fallback to pickupLocationID if is not set.</dd>
+  <dt><span style="font-size:0.8em">pickupLocationCoordinate</span></dt><dd><b>[Required for search by coordinates]</b> A CLLocationCoordinate2D for pick-up coordinates.</dd>
+  <dt><span style="font-size:0.8em">dropOffLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for drop-off coordinates. Fallback to pickupLocationCoordinate if is not set.</dd>
   <dt>pinnedVehicleID</dt><dd> A refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deep link.</dd>
   <dt>passengers</dt><dd> An Array of Passengers, the first one will be the main passenger.</dd>
   <dt>delegate</dt><dd> A delegate that will handle callback methods.</dd>

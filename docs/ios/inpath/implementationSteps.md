@@ -102,6 +102,8 @@ class CTContext: NSObject {
     let recentSearch: CTRecentSearch
     let supplierBenefitAutoApplied: Bool
     let clientUserIdentifier: String
+    let pickupLocationCoordinate: CLLocationCoordinate2D
+    let dropOffLocationCoordinate: CLLocationCoordinate2D
 }
 ```
 <small>Click <a href="/docs/ios//inpath/property-descriptions#initialising-ctcontext-for-in-path">here</a> for an in depth explanation of CTContext's properties.</small>

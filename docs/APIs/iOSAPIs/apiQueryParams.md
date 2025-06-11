@@ -32,7 +32,24 @@ params.pickupDate = Date(timeIntervalSinceNow: 86400) // next day
 params.dropOffDate = Date(timeIntervalSinceNow: 86400 * 3) // next day + 3 days
 params.numberOfVehicles = 20
 params.sortType = .recommended
+params.pickupLocationCoordinate = CLLocationCoordinate2DMake(53.3333, -6.2408989)
+params.dropOffLocationCoordinate = CLLocationCoordinate2DMake(51.903614, -8.468399)
 ```
+
+### Pick Up & Drop Off Location parameters
+Pick up location can be passed as a IATA, coordinates or OTA Location ID. 
+Priority is IATA > OTA location id > coordinates
+
+- 'pickupLocation' and 'dropOffLocation':
+  It takes a three-letter code that represents airports worldwide. E.g 'DUB' for Dublin.
+
+- 'pickupLocationCoordinate's and 'dropOffLocationCoordinate':
+  ```swift 
+  context.pickupLocationCoordinate = CLLocationCoordinate2DMake(53.3333, -6.2408989)
+  context.dropOffLocationCoordinate = CLLocationCoordinate2DMake(51.903614, -8.468399)
+  ```
+- 'pickupLocationId' and 'dropOffLocationId':
+  It takes a string OTA Location ID for pickup location, e.g “11” for Dublin.
 
 ### Property Descriptions
 
@@ -59,6 +76,8 @@ params.sortType = .recommended
 <dd>An OTA Location ID for pick-up location.</dd>
 <dt>dropOffLocationID</dt>
 <dd>An OTA Location ID for drop-off location.</dd>
+<dt><span style="font-size:0.8em">pickupLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for pick-up coordinates.</dd>
+<dt><span style="font-size:0.8em">dropOffLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for drop-off coordinates. Fallback to pickupLocationCoordinate if is not set.</dd>
 <dt>passengers</dt>
 <dd>An Array of Passengers, the first one will be the main passenger.</dd>
 <dt>numberOfVehicles</dt>
