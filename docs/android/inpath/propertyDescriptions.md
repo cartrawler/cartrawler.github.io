@@ -21,8 +21,26 @@ permalink: /docs/android/inpath/property-descriptions/
 
 ---
 
-### CTSdkData Builder
+## CTSdkData Builder
 {: .no_toc }
+
+### Pick Up & Drop Off Location parameters
+Pick up location can be passed as a IATA, coordinates or OTA Location ID. 
+Priority is IATA > OTA location id > coordinates
+
+- 'pickupLocationIATA' and 'dropOffLocationIATA':
+  It takes a three-letter code that represents airports worldwide. E.g 'DUB' for Dublin.
+
+- 'pickUpLocationCoordinate's and 'dropOffLocationCoordinates':
+  It takes a CTCoordinates object:
+  ```java 
+  data class CtCoordinates(
+      val latitude: Double,
+      val longitude: Double
+  )
+  ```
+- 'pickupLocationId' and 'dropOffLocationId':
+  It takes a string OTA Location ID for pickup location, e.g “11” for Dublin.
 
 ### addPromotionCode(promotionCodeType: CTPromotionCodeType)
 This allows Partners to pass a promotion code type to the SDK as the main toggle to display promotion code field on the search form or not. The following types can be used:
@@ -83,14 +101,6 @@ An optional LocalDateTime that indicates the rental drop off date.
 > Note
 >
 > If this is not called the drop off date will be set to the same value set in the pickupDateTime + 3 days
-
----
-### dropOffLocationIATA
-A string IATA code for drop off location, e.g "DUB" for Dublin.
-
----
-### dropOffLocationId
-A string OTA Location ID for drop off location, e.g "11" for Dublin.
 
 ---
 ### enableCustomCashTreatment
@@ -162,13 +172,6 @@ val sdkData = CTSdkData.Builder(clientId = clientId).passenger(passenger).build(
 ### pickupDateTime
 A <b>required</b> LocalDateTime that indicates the rental pickup date.
 
----
-### pickupLocationIATA
-A string IATA code for pickup location, e.g "DUB" for Dublin.
-
----
-### pickupLocationId
-A string OTA Location ID for pickup location, e.g "11" for Dublin.
 
 {: .note-title }
 > Note

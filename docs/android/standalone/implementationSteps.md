@@ -275,17 +275,19 @@ Below are all the available parameters for use in the URL. As you will see, some
 ##### Search Results
 {: .no_toc }
 
-| Parameter                 | Example              | Required                | 
-|:--------------------------|:---------------------|:------------------------|
-| type                      | search-result        | yes                     |
-| client_id                 | 123456               | yes                     |
-| pt (pickup time)          | 2023-08-18T10:00:00Z | yes                     |
-| dt (drop off time)        | 2023-08-20T10:00:00Z | yes                     |
-| pkIATA (pickup IATA)      | DUB                  | yes (if pl not set)     |
-| doIATA (drop off IATA)    | DUB                  | no                      |
-| pl (pickup location ID)   | 11                   | yes (if pkIATA not set) |
-| dl (drop off location ID) | 11                   | no                      |
-| age                       | 30                   | no                      |
-| ctyCode (residency)       | IE                   | no                      |
-| ccy (currency)            | EUR                  | no                      |
-| pinVeh (pinned vehicle)   | 123456789            | no                      |
+| Parameter                     | Example              | Required                | 
+|:------------------------------|:---------------------|:------------------------|
+| type                          | search-result        | yes                     |
+| client_id                     | 123456               | yes                     |
+| pt (pickup time)              | 2023-08-18T10:00:00Z | yes                     |
+| dt (drop off time)            | 2023-08-20T10:00:00Z | yes                     |
+| pkIATA (pickup IATA)          | DUB                  | yes (if pl not set)     |
+| doIATA (drop off IATA)        | DUB                  | no                      |
+| pkLtLng (pickup coordinates)  | 53.3333,-6.24089     | yes (for geo search)    |
+| doLtLng (drop off coordinates)| 53.3333,-6.24089     | no                      |
+| pl (pickup location ID)       | 11                   | yes (if pkIATA not set) |
+| dl (drop off location ID)     | 11                   | no                      |
+| age                           | 30                   | no                      |
+| ctyCode (residency)           | IE                   | no                      |
+| ccy (currency)                | EUR                  | no                      |
+| pinVeh (pinned vehicle)       | 123456789            | no                      |
