@@ -73,7 +73,7 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt><span style="font-size:0.8em">pickupLocationCoordinate</span></dt><dd><b>[Required for search by coordinates]</b> A CLLocationCoordinate2D for pick-up coordinates.</dd>
   <dt><span style="font-size:0.8em">dropOffLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for drop-off coordinates. Fallback to pickupLocationCoordinate if is not set.</dd>
   <dt>pinnedVehicleID</dt><dd> A refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deep link.</dd>
-  <dt>passengers</dt><dd> An Array of Passengers, the first one will be the main passenger.</dd>
+  <dt>passenger</dt><dd>The main driver details.</dd>
   <dt>delegate</dt><dd> A delegate that will handle callback methods.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
@@ -87,7 +87,7 @@ For the `promotionCode` property: To display the field and prepopulate it, pleas
 ### CTPassenger
 {: .no_toc }
 
-The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passengers` property on your `CTContext`.
+The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passenger` property on your `CTContext`.
 
 <dl>
   <dt>firstName</dt><dd> The customer's first name. </dd>
@@ -106,7 +106,7 @@ The Driver Details screen can by prepopulated by creating a `CTPassenger` object
 </dl>
 
 ```java
-//Passenger object
+// Passenger object
 let passenger = CTPassenger(firstName: "Ryan",
                             lastName: "O'Connor",
                             addressLine1: "DunDrum",
@@ -123,5 +123,5 @@ let passenger = CTPassenger(firstName: "Ryan",
 let context = CTContext(implementationID: "your implementation ID", 
                                 clientID: "your client ID", 
                                     flow: .inPath)
-context.passengers = [passenger]
+context.passenger = passenger
 ```

@@ -51,7 +51,7 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A code for setting the language. The language associated with the device’s system region is used by default.</dd>
   <dt>flightNumber</dt><dd> A flight number string to pre populate the equivalent field on driver details screen.</dd>
-  <dt>passengers</dt><dd> An array of passengers, the first one will be the main passenger.</dd>
+  <dt>passenger</dt><dd>The main driver details.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression used to validate the loyalty number field.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
@@ -112,7 +112,7 @@ Priority is IATA > OTA location id > coordinates
   <dt><span style="font-size:0.8em">pickupLocationCoordinate</span></dt><dd><b>[Required for search by coordinates]</b> A CLLocationCoordinate2D for pick-up coordinates.</dd>
   <dt><span style="font-size:0.8em">dropOffLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for drop-off coordinates. Fallback to pickupLocationCoordinate if is not set.</dd>
   <dt>pinnedVehicleID</dt><dd> A refId to highlight and pin a vehicle to the top of the list. Returned by the abandonment deep link.</dd>
-  <dt>passengers</dt><dd> An Array of Passengers, the first one will be the main passenger.</dd>
+  <dt>passenger</dt><dd>The main driver details.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
@@ -142,7 +142,7 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt>countryCode</dt><dd> A country code, such as "US". Default is the device location if not provided.</dd>
   <dt>currencyCode</dt><dd> A currency code, based on the ISO standard currency codes e.g "USD". The currency associated with the device’s system region is used by default.</dd>
   <dt>languageCode</dt><dd> A language code to switch between languages. The language associated with the device’s system region is used by default.</dd>
-  <dt>passengers</dt><dd> An array of Passengers, the first one will be the main passenger.</dd>
+  <dt>passenger</dt><dd>The main driver details.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression to validate loyalty number field. Example: ^[A-Za-z0-9]{6, }$</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
@@ -154,7 +154,7 @@ The `countryCode` property refers to the country of residency, and this is used 
 ### CTPassenger
 {: .no_toc }
 
-The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passengers` property on your `CTContext`.
+The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passenger` property on your `CTContext`.
 
 <dl>
   <dt>firstName</dt><dd> The customer's first name. </dd>
@@ -190,5 +190,5 @@ let passenger = CTPassenger(firstName: "Ryan",
 let context = CTContext(implementationID: "your implementation ID",
                                 clientID: "your client ID",
                                     flow: .standAlone)
-context.passengers = [passenger]
+context.passenger = passenger
 ```

@@ -78,8 +78,8 @@ Priority is IATA > OTA location id > coordinates
 <dd>An OTA Location ID for drop-off location.</dd>
 <dt><span style="font-size:0.8em">pickupLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for pick-up coordinates.</dd>
 <dt><span style="font-size:0.8em">dropOffLocationCoordinate</span></dt><dd>A CLLocationCoordinate2D for drop-off coordinates. Fallback to pickupLocationCoordinate if is not set.</dd>
-<dt>passengers</dt>
-<dd>An Array of Passengers, the first one will be the main passenger.</dd>
+<dt>passenger</dt>
+<dd>The main driver details.</dd>
 <dt>numberOfVehicles</dt>
 <dd>A number of vehicles to return, used in the <a href="/docs/ios/apis/vehicles">Vehicles API</a></dd>
 <dt>sortType</dt>
