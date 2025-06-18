@@ -95,7 +95,7 @@ class CTContext: NSObject {
     let pickupLocationID: String
     let dropOffLocationID: String
     let pinnedVehicleID: String
-    let passengers: [CTPassenger]
+    let passenger: CTPassenger
     let loyaltyRegex: String
     let customCashTreatment: Bool
     let promotionCode: String
@@ -304,7 +304,7 @@ class CTLoyalty: NSObject {
 ## Prepopulate Driver Details:
 {: .no_toc }
 
-The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passengers` property on your `CTContext`. 
+The Driver Details screen can by prepopulated by creating a `CTPassenger` object and setting the `passenger` property on your `CTContext`. 
 
 ```java
 //Passenger object
@@ -320,6 +320,6 @@ let passenger = CTPassenger(firstName: "Ryan",
                             phone: "0838880000",
                             phoneCountryPrefix: "353",
                             loyaltyProgramNumber: "1234")
-context.passengers = [passenger]
+context.passenger = passenger
 ```
 <b>Note: `CTPassenger` `countryCode` takes priority over `CTContext`'s `countryCode` property when we make search requests.</b>
