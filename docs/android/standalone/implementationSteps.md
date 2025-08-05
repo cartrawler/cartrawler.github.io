@@ -269,7 +269,7 @@ Below are all the available parameters for use in the URL. As you will see, some
 | ctyCode (residency) | IE               | no                                                                    |
 | ccy (currency)      | EUR              | no                                                                    |
 | booking             | IE123456789      | yes                                                                   |
-| email               | mail@mail.com    | no (only required if importing the booking from a different platform) |
+| email               | mail@mail.com    | yes                                                                   |
 
 
 ##### Search Results
