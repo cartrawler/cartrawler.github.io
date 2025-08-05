@@ -2,7 +2,7 @@
 layout: default
 title: SwiftUI 
 parent: iOS Integration
-nav_order: 7
+nav_order: 8
 ---
 
 # SwiftUI

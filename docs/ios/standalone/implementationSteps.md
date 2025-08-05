@@ -280,12 +280,12 @@ Below are all the available parameters for use in the URL.
 
 | Parameter           | Example          | Required                                                              | 
 |:--------------------|:-----------------|:----------------------------------------------------------------------|
-| type                | booking -details | yes                                                                   |
+| type                | booking-details  | yes                                                                   |
 | client_id           | 123456           | yes                                                                   |
 | ctyCode (residency) | IE               | no                                                                    |
 | ccy (currency)      | EUR              | no                                                                    |
 | booking             | IE123456789      | yes                                                                   |
-| email               | mail@mail.com    | no (only required if importing the booking from a different platform) |
+| email               | mail@mail.com    | yes                                                                   |
 
 ##### Search Results
 {: .no_toc }

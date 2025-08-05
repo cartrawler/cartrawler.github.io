@@ -2,7 +2,7 @@
 layout: default
 title: Currencies
 parent: Android Integration
-nav_order: 5
+nav_order: 6
 ---
 
 # Currencies
