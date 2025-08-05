@@ -1,7 +1,7 @@
 ---
 layout: default
 title: In Path with Grid View
-parent: iOS Integration
+parent: Android Integration
 nav_order: 4
 has_children: true
 ---

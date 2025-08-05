@@ -59,4 +59,5 @@ CTFlightDetails object:
 | bags                     | Number of extra bags added by the customer.                                                                | 1                                                                        | UInt       |
 | loyaltyNumber            | Loyalty program membership ID, if applicable.                                                              | ABC123456                                                                 | String     |
 | loyaltyTier              | Loyalty program tier name, if applicable.                                                                  | gold                                                                      | String     |
+| context                  | Where in the flow the grid view is loaded. IN_PATH or CONFIRMATION                                         | IN_PATH                                                                   | String     |
 

@@ -143,6 +143,7 @@ class Step1ViewController: UIViewController {
     }
 }
 ```
+---
 
 ## Present Grid View
 The grid view is a component returned by the SDK where a number of recommended vehicles will be displayed as a grid.
@@ -166,6 +167,60 @@ class Step2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Request grid view  
+        let gridView = CarTrawlerSDK.sharedInstance().getGridView(from: self, context: context)
+
+        // Add to subview
+        self.view.addSubview(gridView)
+    }
+}
+```
+
+---
+
+## Present Grid View with alternative flow (FBE)
+The default behaviour of the grid view is `flightDetails.context = "IN_PATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
+
+Alternatively, you can use the grid view in the end of your flow, for example as a post booking option, after the user has paid for the flight but didn't rent a car.
+
+On that case, the `flightDetails.context` can be set to `CONFIRMATION` and when the user taps on any vehicle, it will open a FBE flow, which is the complete flow (vehicle and insurance selection, payment and confirmation) provided by CarTrawler.
+
+Example of request grid view with alternative flow (FBE):
+```java
+import CarTrawlerSDK
+
+class Step2ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Create a context for in Path flow
+        let context = CTContext(implementationID: "your implementation ID", 
+                                      clientID: "your client ID", 
+                                      flow: .inPath)
+        context.countryCode = "IE" // The country code associated with the device’s system region is used by default.
+        context.currencyCode = "EUR" // The currency associated with the device’s system region is used by default.
+        context.languageCode = "EN" // The language associated with the device’s system region is used by default.
+
+        // Create CTFLightDetails 
+        let flightDetails = CTFlightDetails()
+        flightDetails.flightOrigin = "DUB|LHR|2025-01-16T06:05:00|2025-01-16T07:25:00|XX8719"
+        flightDetails.flightReturn = "LHR|DUB|2025-01-22T21:20:00|2025-01-23T22:45:00|XX8720"
+        flightDetails.passengerBreakdown = CTFlightPassengerBreakdown(adults: 2, teens: 0, children: 0, infants: 0)
+        flightDetails.firstName = "John"
+        flightDetails.surName	 = "Doe"
+        flightDetails.customerEmail	 = "john.doe@example.com"
+        flightDetails.fareClass	 = "business"
+        flightDetails.flightFare = 175.95
+        flightDetails.bags = 1
+        flightDetails.loyaltyNumber = "ABC123456"
+        flightDetails.loyaltyTier = "gold"
+
+        flightDetails.context = "CONFIRMATION" // Needed to define the flow
+
+        // Set flight details on context
+        context.flightDetails = flightDetails
 
         // Request grid view  
         let gridView = CarTrawlerSDK.sharedInstance().getGridView(from: self, context: context)
