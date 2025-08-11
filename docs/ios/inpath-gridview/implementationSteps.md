@@ -120,7 +120,8 @@ class CTFlightPassengerBreakdown: NSObject {
 
 After initialisation and setup of your `CTContext` object for In Path, you can pre warm the grid view. 
 Prewarm mode allows the Grid View to preload all necessary API data before the user reaches the car rental offer page, resulting in significantly faster load times. 
-To use prewarm, you must request the CTGridView object to the SDK and add as a subview to a UIView, the component doesn't to appear on the screen, can be hidden, at this point the grid view won't display any UI, instead, it will fetch and cache API responses. These cached responses are then used when the user navigates to the main offer page, making the experience seamless and quick.
+To use prewarm, you must request the CTGridView object to the SDK and add as a subview to a visible UIView, the component doesn't need to appear on the screen and it's hidden by default.
+At this point the grid view won't display any UI, instead, it will fetch and cache API responses. These cached responses are then used when the user navigates to the main offer page, making the experience seamless and quick.
 
 It is recommended to prewarm the grid view in a previous step or ViewController before you reach the ViewController where it will effectively be presented. Example:
 
@@ -132,11 +133,8 @@ class Step1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Request prewarmed grid view  
+        // Request prewarmed grid view hidden by default 
         let gridView = CarTrawlerSDK.sharedInstance().preWarmGridView(with: context)
-
-        // Set hidden
-        gridView.isHidden = true
 
         // Add to subview
         self.view.addSubview(gridView)
