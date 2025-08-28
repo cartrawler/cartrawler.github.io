@@ -67,7 +67,7 @@ val flightDetails = CTFlightDetails.Builder()
         .bags(1)
         .loyaltyNumber("ABC123456")
         .loyaltyTier("gold")
-        .context("IN_PATH")
+        .context("INPATH")
         .build()
 
 val sdkData = CTSdkData.Builder(clientId = clientId)
@@ -154,11 +154,11 @@ binding.webViewContainer.addView(webview)
 ---
 
 ## Present Grid View with alternative flow (FBE)
-The default behaviour of the grid view is `flightDetails.context = "IN_PATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
+The default behaviour of the grid view is `flightDetails.context = "INPATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
 
 Alternatively, you can use the grid view in the end of your flow, for example as a post booking option, after the user has paid for the flight but didn't rent a car.
 
-On that case, the `flightDetails.context` can be set to `CONFIRMATION` and when the user taps on any vehicle, it will open a FBE flow, which is the complete flow (vehicle and insurance selection, payment and confirmation) provided by CarTrawler.
+On that case, the `flightDetails.context` can be set to `MMB` and when the user taps on any vehicle, it will open a FBE flow, which is the complete flow (vehicle and insurance selection, payment and confirmation) provided by CarTrawler.
 
 Example of request grid view with alternative flow (FBE):
 ```kotlin
@@ -174,7 +174,7 @@ val flightDetails = CTFlightDetails.Builder()
         .bags(1)
         .loyaltyNumber("ABC123456")
         .loyaltyTier("gold")
-        .context("CONFIRMATION") // Needed to define the flow
+        .context("MMB") // Needed to define the flow
         .build()
 
 val sdkData = CTSdkData.Builder(clientId = clientId)

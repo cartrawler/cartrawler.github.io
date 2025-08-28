@@ -177,12 +177,49 @@ class Step2ViewController: UIViewController {
 
 ---
 
+## Present Carousel View
+The carousel view is a component returned by the SDK where a number of recommended vehicles will be displayed as a carousel.
+
+When the user taps on a vehicle block, the carousel view will work internally to present the SDK in a modal from the UIViewContoller sent as a parameter.
+
+Request grid view to the CarTrawlerSDK:
+```java
+func getGridView(
+                from: UIViewController, // The UIViewController from where the SDK modal will be presented
+                context: CTContext // The CTContext with all parameters needed
+                )
+```
+
+
+Add the carousel view to your own view controller:
+```java
+class Step2ViewController: UIViewController {
+  
+    var context: CTContext! // Previously configured context
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Set flight details context
+        context.flightDetails.context = "CONFIRM"
+
+        // Request grid view  
+        let gridView = CarTrawlerSDK.sharedInstance().getGridView(from: self, context: context)
+
+        // Add to subview
+        self.view.addSubview(gridView)
+    }
+}
+```
+
+---
+
 ## Present Grid View with alternative flow (FBE)
-The default behaviour of the grid view is `flightDetails.context = "IN_PATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
+The default behaviour of the grid view is `flightDetails.context = "INPATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
 
 Alternatively, you can use the grid view in the end of your flow, for example as a post booking option, after the user has paid for the flight but didn't rent a car.
 
-On that case, the `flightDetails.context` can be set to `CONFIRMATION` and when the user taps on any vehicle, it will open a FBE flow, which is the complete flow (vehicle and insurance selection, payment and confirmation) provided by CarTrawler.
+On that case, the `flightDetails.context` can be set to `MMB` and when the user taps on any vehicle, it will open a FBE flow, which is the complete flow (vehicle and insurance selection, payment and confirmation) provided by CarTrawler.
 
 Example of request grid view with alternative flow (FBE):
 ```java
@@ -215,7 +252,7 @@ class Step2ViewController: UIViewController {
         flightDetails.loyaltyNumber = "ABC123456"
         flightDetails.loyaltyTier = "gold"
 
-        flightDetails.context = "CONFIRMATION" // Needed to define the flow
+        flightDetails.context = "MMB" // Needed to define the flow
 
         // Set flight details on context
         context.flightDetails = flightDetails
