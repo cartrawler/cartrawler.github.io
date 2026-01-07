@@ -3,7 +3,7 @@ layout: default
 title: SwiftUI
 parent: In Path with Grid View
 grand_parent: iOS Integration
-nav_order: 4
+nav_order: 5
 permalink: /docs/ios/inpath-gridview/swiftUI
 ---
 
