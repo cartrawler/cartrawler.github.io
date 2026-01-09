@@ -100,14 +100,15 @@ CartrawlerSDK.getInPathGridView(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
     ctSdkData = sdkData,
-    flow = CTSdkFlow.InPath(),
     preLoad = true
 )
 ```
 
 ---
 
-## Present Grid View
+## Presentation
+
+### Present Grid View
 The `SmartBlockWidgetWebview` grid view is a component returned by the SDK where a number of recommended vehicles will be displayed as a grid.
 
 When the user taps on a vehicle block, the grid view will work internally to present the SDK in a modal.
@@ -145,15 +146,66 @@ Request a new grid view with parameters previously configured and plugin it to y
 CartrawlerSDK.getInPathGridView(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
-    ctSdkData = sdkData,
-    flow = CTSdkFlow.InPath()
+    ctSdkData = sdkData
 )
 binding.webViewContainer.addView(webview)
 ```
 
 ---
 
-## Present Grid View with alternative flow (FBE)
+### Present Carousel View
+The carousel view is a component returned by the SDK where a number of recommended vehicles will be displayed as a carousel.
+
+to display the grid view as a carousel view you must set the `flightDetails.context` as `CONFIRM`
+
+You can request a preloaded carousel view or a new one. Below some implementation examples. 
+
+Example of layout:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/widgets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <FrameLayout
+            android:id="@+id/webViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            />
+</LinearLayout>
+```
+
+Set `flightDetails.context` to `CONFIRM`
+```kotlin
+//Example CTFLightDetails initialisation
+val flightDetails = CTFlightDetails.Builder()
+        .flightOrigin("DUB|LHR|2025-01-16T06:05:00|2025-01-16T07:25:00|XX8719")
+        .context("CONFIRM")
+        .build()
+
+val sdkData = CTSdkData.Builder(clientId = clientId)
+    .flightDetails(flightDetails)
+    .build()
+```
+
+Request a new grid view with parameters previously configured and plugin it to your own view:
+```kotlin
+CartrawlerSDK.getInPathGridView(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkData
+)
+binding.webViewContainer.addView(webview)
+```
+
+---
+
+### Present Grid View with alternative flow (FBE)
 The default behaviour of the grid view is `flightDetails.context = "INPATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
 
 Alternatively, you can use the grid view in the end of your flow, for example as a post booking option, after the user has paid for the flight but didn't rent a car.
@@ -186,8 +238,7 @@ val sdkData = CTSdkData.Builder(clientId = clientId)
 CartrawlerSDK.getInPathGridView(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
-    ctSdkData = sdkData,
-    flow = CTSdkFlow.InPath()
+    ctSdkData = sdkData
 )
 binding.webViewContainer.addView(webview)
 ```

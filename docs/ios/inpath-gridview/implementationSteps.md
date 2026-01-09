@@ -143,7 +143,9 @@ class Step1ViewController: UIViewController {
 ```
 ---
 
-## Present Grid View
+## Presentation
+
+### Present Grid View
 The grid view is a component returned by the SDK where a number of recommended vehicles will be displayed as a grid.
 
 When the user taps on a vehicle block, the grid view will work internally to present the SDK in a modal from the UIViewContoller sent as a parameter.
@@ -177,7 +179,7 @@ class Step2ViewController: UIViewController {
 
 ---
 
-## Present Carousel View
+### Present Carousel View
 The carousel view is a component returned by the SDK where a number of recommended vehicles will be displayed as a carousel.
 
 When the user taps on a vehicle block, the carousel view will work internally to present the SDK in a modal from the UIViewContoller sent as a parameter.
@@ -214,7 +216,7 @@ class Step2ViewController: UIViewController {
 
 ---
 
-## Present Grid View with alternative flow (FBE)
+### Present Grid View with alternative flow (FBE)
 The default behaviour of the grid view is `flightDetails.context = "INPATH"`, which means it will assume it has been presented during the flight selection, it will open the InPath flow and return the booking JSON when the user selects the vehicle.
 
 Alternatively, you can use the grid view in the end of your flow, for example as a post booking option, after the user has paid for the flight but didn't rent a car.
