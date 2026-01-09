@@ -35,7 +35,6 @@ val sdkData = CTSdkData.Builder(clientId = clientId)
 val receiptView = CartrawlerSDK.getInPathGridView(
     activity = this,
     requestCode = YOUR_REQUEST_CODE_HERE,
-    ctSdkData = sdkData,
-    flow = CTSdkFlow.InPath()
+    ctSdkData = sdkData
 )
 ```
