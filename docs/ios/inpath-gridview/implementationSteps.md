@@ -224,7 +224,7 @@ Alternatively, you can use the grid view in the end of your flow, for example as
 On that case, the `flightDetails.context` can be set to `MMB` and when the user taps on any vehicle, it will open a FBE flow, which is the complete flow (vehicle and insurance selection, payment and confirmation) provided by CarTrawler.
 
 Example of request grid view with alternative flow (FBE):
-```java
+```swift
 import CarTrawlerSDK
 
 class Step2ViewController: UIViewController {
@@ -264,6 +264,52 @@ class Step2ViewController: UIViewController {
 
         // Add to subview
         self.view.addSubview(gridView)
+    }
+}
+```
+
+---
+
+### Present alternative flow (FBE) deep link to the vehicle list
+
+It is possible to present the SDK directly to the vehicle list. To enable this behavior, `flightDetails.context` must be set to `MMB`, and the flight information must be provided via `flightDetails.flightOrigin` and `flightDetails.flightReturn`.
+
+The flow must be defined as `.standAlone` and presented using the `CarTrawlerSDK.sharedInstance().present` method.
+
+Example of presenting the SDK using the alternative flow (FBE) and deeplinking directly to the vehicle list:
+```swift
+import CarTrawlerSDK
+
+class Step2ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Create a context for the flow
+        let context = CTContext(
+            implementationID: "your implementation ID",
+            clientID: "your client ID",
+            flow: .standAlone
+        )
+
+        context.countryCode = "IE"     // Defaults to the device’s system region if not provided.
+        context.currencyCode = "EUR"   // Defaults to the device’s system region if not provided.
+        context.languageCode = "EN"    // Defaults to the device’s system region if not provided.
+
+        // Set your view controller as the CarTrawlerSDK delegate
+        context.delegate = self
+
+        // Create flight details
+        let flightDetails = CTFlightDetails()
+        flightDetails.flightOrigin = "MAD|DUB|2026-03-16T06:05:00|2026-03-16T07:25:00|XX8719"
+        flightDetails.flightReturn = "DUB|MAD|2026-03-22T21:20:00|2026-03-23T22:45:00|XX8720"
+        flightDetails.context = "MMB" // Required to enable the alternative flow
+
+        // Assign flight details to the context
+        context.flightDetails = flightDetails
+
+        // Present the SDK
+        CarTrawlerSDK.sharedInstance().present(from: self, context: context)
     }
 }
 ```
