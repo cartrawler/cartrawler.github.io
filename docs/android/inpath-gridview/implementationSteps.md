@@ -245,6 +245,36 @@ binding.webViewContainer.addView(webview)
 
 ---
 
+### Present alternative flow (FBE) deep link to the vehicle list
+
+It is possible to present the SDK directly to the vehicle list. To enable this behavior, `flightDetails.context` must be set to `MMB`, and the flight information must be provided via `flightDetails.flightOrigin` and `flightDetails.flightReturn`.
+
+The flow must be defined as `CTSdkFlow.Standalone()` and presented using the `CartrawlerSDK.start` method.
+
+Example of presenting the SDK using the alternative flow (FBE) and deeplinking directly to the vehicle list:
+```kotlin
+val flightDetails = CTFlightDetails.Builder()
+        .flightOrigin("MAD|DUB|2026-03-16T06:05:00|2026-03-16T07:25:00|XX8719")
+        .flightReturn("DUB|MAD|2026-03-22T21:20:00|2026-03-23T22:45:00|XX8720")
+        .context("MMB") // Required to enable the alternative flow
+        .build()
+
+val sdkData = CTSdkData.Builder(clientId = clientId)
+    .country(twoLetterISOCountry = "IE")
+    .currency(currency = "EUR")
+    .flightDetails(flightDetails)
+    .build()
+
+CartrawlerSDK.start(
+    activity = this,
+    requestCode = YOUR_REQUEST_CODE_HERE,
+    ctSdkData = sdkData,
+    flow = CTSdkFlow.Standalone()
+)
+```
+
+---
+
 ## Retrieval of objects from the In Path Process
 
 If a user selected a car during the In Path process, the `onActivityForResult` will be fired. Objects can be retrieved at this point, namely the payload, the fees object and the vehicle details object
