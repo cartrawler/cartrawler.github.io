@@ -61,6 +61,7 @@ To initialise the In Path Grid View flow, it is necessary to build and set a CTF
 | loyaltyTier              | Loyalty program tier name, if applicable.                                                                  | gold                                                                      | String     |
 | context                  | Where in the flow the grid view is loaded. INPATH, CONFIRM or MMB                                          | INPATH                                                                    | String     |
 | visitorID                | Used to track visitor abandonment.                                                                         | abc123-visitor-id                                                         | String     |
+| flightSizeFare           | Flight fare T-shirt sizing; typical values include S, M, L, and XL.                                         | M                                                                         | String     |
 
 
 ```java
@@ -79,6 +80,7 @@ val flightDetails = CTFlightDetails.Builder()
         .loyaltyTier("gold")
         .context("INPATH")
         .visitorID("abc123-visitor-id")
+        .flightSizeFare("M")
         .build()
 
 //Use CTFlightDetails when initialising CTSdkBuilder
