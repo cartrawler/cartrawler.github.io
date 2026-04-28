@@ -26,7 +26,6 @@ permalink: /docs/ios/standalone/property-descriptions
 <dl>
 <dt><b>style</b></dt><dd>An optional <a href="/docs/ios/customisation/themes#creating-a-ctstyle">CTStyle</a> object, used to set the fonts as well as the primary, secondary, and accent colors in the SDK. </dd>
 <dt><b>customParameters</b></dt><dd>A dictionary of custom parameters, it may contain:</dd>
-<dd><b>orderID</b>: A String value that represents the Order ID for a Flight PNR or Booking Reference, Example: IE1234 (limited to 32 characters)</dd>
 <dd><b>flightNumberRequired</b>: A boolean key to enable Flight Number as a required field in the Payment Form. Default: 0 (optional field)</dd>
 <dt><b>production</b></dt><dd>A boolean for switching between endpoints. Set to true for production and false for dev.</dd>
 </dl>
@@ -54,6 +53,7 @@ The `countryCode` property refers to the country of residency, and this is used 
   <dt>passenger</dt><dd>The main driver details.</dd>
   <dt>delegate</dt><dd> A delegate to receive reservation details after the payment, as well as other callbacks.</dd>
   <dt>loyaltyRegex</dt><dd> A regular expression used to validate the loyalty number field.</dd>
+  <dt>orderID</dt><dd>A String value that represents the Order ID for a Flight PNR or Booking Reference, example: IE1234 (limited to 64 characters). If it is more than 32 characters, it will be split in the following format when retrieving this data: {first32characters}.{remainingCharacters}.</dd>
   <dt>customCashTreatment</dt><dd> A boolean used in the SDK as the main toggle to display enhanced cash voucher merchandising throughout the booking flow.</dd>
   <dt>promotionCode</dt><dd> A string used by the SDK to toggle the display of and prepopulate the promotion code field on the search form.</dd>
   <dt><span style="font-size:0.7em">supplierBenefitAutoApplied</span></dt><dd>A boolean that allows Partners to initialise the SDK and opt in to apply ALL automatic codes that can be applied for suppliers.</dd>
